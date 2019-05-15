@@ -6,6 +6,7 @@ import {User} from '../model/user';
   providedIn: 'root'
 })
 export class LoginService {
+  private user: User;
 
   constructor(private _http: HttpClient) {
   }
@@ -14,7 +15,15 @@ export class LoginService {
     const user = new User();
     user.userName = value;
     user.password = value2;
-    return this._http.post('http://localhost:8080/user', user);
+    return this._http.post<User>('http://localhost:8080/user', user);
 
+  }
+
+  setUser(user: User) {
+    this.user = user;
+  }
+
+  getUser(): User {
+    return this.user;
   }
 }

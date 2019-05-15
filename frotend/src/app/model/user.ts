@@ -1,6 +1,9 @@
+import {Gym} from './gym';
+
 export class User {
-  id;
-  name;
-  userName;
-  password;
+  id: number;
+  name: string;
+  userName: string;
+  password: string;
+  gym: Gym;
 }

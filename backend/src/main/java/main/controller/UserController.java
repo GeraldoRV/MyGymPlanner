@@ -14,7 +14,6 @@ public class UserController {
 
     @PostMapping
     public User login(@RequestBody User user) {
-
         return userService.login(user);
     }
 }
