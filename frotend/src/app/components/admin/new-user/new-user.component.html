@@ -1,0 +1,11 @@
+<form [formGroup]="userAddForm" (ngSubmit)="submit()">
+  <label for="name">Nombre del usario</label>
+  <input type="text" formControlName="name" id="name">
+  <label for="username">Nick</label>
+  <input type="text" formControlName="username" id="username">
+  <label for="roles">Rol</label>
+  <select formControlName="roles" id="roles">
+    <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
+  </select>
+  <input type="submit" value="Crear">
+</form>

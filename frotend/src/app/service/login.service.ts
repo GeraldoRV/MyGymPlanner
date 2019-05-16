@@ -15,7 +15,7 @@ export class LoginService {
     const user = new User();
     user.userName = value;
     user.password = value2;
-    return this._http.post<User>('http://localhost:8080/user', user);
+    return this._http.post<User>('http://localhost:8080/login', user);
 
   }
 

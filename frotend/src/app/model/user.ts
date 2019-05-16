@@ -5,5 +5,6 @@ export class User {
   name: string;
   userName: string;
   password: string;
+  rol: string;
   gym: Gym;
 }

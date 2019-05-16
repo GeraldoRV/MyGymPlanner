@@ -1,5 +1,6 @@
 package main.model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -10,16 +11,11 @@ public class User {
     private String name;
     private String userName;
     private String password;
+    private String rol;
+
     @ManyToOne
     private Gym gym;
 
-    public Gym getGym() {
-        return gym;
-    }
-
-    public void setGym(Gym gym) {
-        this.gym = gym;
-    }
 
     public Integer getId() {
         return id;
@@ -51,5 +47,20 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public Gym getGym() {
+        return gym;
+    }
+
+    public void setGym(Gym gym) {
+        this.gym = gym;
     }
 }

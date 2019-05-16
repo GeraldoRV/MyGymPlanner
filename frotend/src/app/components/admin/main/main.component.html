@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let user of users">
+    <span>{{user.name}}</span>
+  </li>
+</ul>
+<a [routerLink]="['./add-user']">Nuevo</a>
+<router-outlet></router-outlet>

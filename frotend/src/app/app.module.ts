@@ -9,17 +9,26 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './service/login.service';
 import {HomeComponent} from './components/home/home.component';
 import {GymService} from './service/gym.service';
+import {MainComponent} from './components/admin/main/main.component';
+import {UserService} from './service/user.service';
+import {NewUserComponent} from './components/admin/new-user/new-user.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {
+    path: 'admin', component: MainComponent,
+    children: [{path: 'add-user', component: NewUserComponent}]
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MainComponent,
+    NewUserComponent
   ],
   imports: [
     FormsModule,
@@ -28,7 +37,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, GymService],
+  providers: [LoginService, GymService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

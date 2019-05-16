@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-login',
@@ -27,9 +28,17 @@ export class LoginComponent implements OnInit {
       this.loginForm.controls.userName.value, this.loginForm.controls.password.value).subscribe((user) => {
       this.loginService.setUser(user);
       console.log(user);
-      this._route.navigate(['/home']);
+      this.navigate(user);
     }, (error) => {
       console.log(error);
     });
+  }
+
+  navigate(user: User) {
+    if (user.rol === 'Cliente') {
+      this._route.navigate(['/home']);
+    } else {
+      this._route.navigate(['/admin']);
+    }
   }
 }
