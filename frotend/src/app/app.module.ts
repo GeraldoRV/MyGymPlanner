@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
+    NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [LoginService, GymService, UserService],
