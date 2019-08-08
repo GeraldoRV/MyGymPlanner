@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

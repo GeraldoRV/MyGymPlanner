@@ -13,6 +13,8 @@ import {GymService} from './service/gym.service';
 import {MainComponent} from './components/admin/main/main.component';
 import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
+import { AlertComponent } from './components/alert/alert.component';
+import {AlertService} from './service/alert.service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     MainComponent,
-    NewUserComponent
+    NewUserComponent,
+    AlertComponent
   ],
   imports: [
     FormsModule,
