@@ -4,8 +4,10 @@
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +80,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -97,7 +102,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -233,6 +238,8 @@
       <workItem from="1564046729922" duration="724000" />
       <workItem from="1564048830923" duration="2140000" />
       <workItem from="1564131064382" duration="6302000" />
+      <workItem from="1565264544377" duration="192000" />
+      <workItem from="1565708561265" duration="5683000" />
     </task>
     <servers />
   </component>
