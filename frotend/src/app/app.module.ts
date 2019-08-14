@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './service/login.service';
 import {HomeComponent} from './components/home/home.component';
 import {GymService} from './service/gym.service';
-import {MainComponent} from './components/admin/main/main.component';
+import {MainComponent, NgbdSortableHeader} from './components/admin/main/main.component';
 import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
 import { AlertComponent } from './components/alert/alert.component';
@@ -34,6 +34,7 @@ const appRoutes: Routes = [
     MainComponent,
     NewUserComponent,
     AlertComponent,
+    NgbdSortableHeader,
     NavbarComponent
   ],
   imports: [

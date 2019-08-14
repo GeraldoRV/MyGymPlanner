@@ -78,6 +78,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -97,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">

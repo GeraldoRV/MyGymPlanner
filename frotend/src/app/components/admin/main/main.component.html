@@ -1,7 +1,22 @@
-<ul>
-  <li *ngFor="let user of users">
-    <span>{{user.name}}</span>
-  </li>
-</ul>
-<a [routerLink]="['./add-user']">Nuevo</a>
-<router-outlet></router-outlet>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" sortable="name" (sort)="onSort($event)">Nombre</th>
+      <th scope="col"sortable="userName" (sort)="onSort($event)">Nick</th>
+      <th scope="col" sortable="rol" (sort)="onSort($event)">Rol</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.userName}}</td>
+      <td>{{user.rol}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <a [routerLink]="['./add-user']">Nuevo</a>
+  <router-outlet></router-outlet>
+</div>
