@@ -6,7 +6,7 @@ import {User} from '../model/user';
   providedIn: 'root'
 })
 export class LoginService {
-  private user: User;
+  private user: User = null;
 
   constructor(private _http: HttpClient) {
   }
@@ -25,5 +25,9 @@ export class LoginService {
 
   getUser(): User {
     return this.user;
+  }
+
+  logout() {
+    this.user = null;
   }
 }

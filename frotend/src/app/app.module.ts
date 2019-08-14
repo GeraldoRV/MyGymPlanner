@@ -15,6 +15,7 @@ import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
 import { AlertComponent } from './components/alert/alert.component';
 import {AlertService} from './service/alert.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MainComponent,
     NewUserComponent,
-    AlertComponent
+    AlertComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

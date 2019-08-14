@@ -1,0 +1,4 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark " *ngIf="loginService.getUser() !== null">
+  <a class="navbar-brand" href="#">MyGymPlanner</a>
+  <button class="btn btn-primary" (click)="logout()">Cerrar sesion</button>
+</nav>
