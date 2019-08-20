@@ -14,7 +14,6 @@ public class UserService {
 
     public User login(User user) {
         return userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
-
     }
 
     public User createUser(User user) {

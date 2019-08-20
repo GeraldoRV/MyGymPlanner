@@ -1,21 +1,22 @@
 package main.model;
 
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class User {
+public class WorkoutTable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private String userName;
-    private String password;
-    private String rol;
-
+    private Character level;
     @ManyToOne
     private Gym gym;
+    @OneToMany
+    private List<Exercise> exerciseList;
 
+    public WorkoutTable() {
+    }
 
     public Integer getId() {
         return id;
@@ -33,28 +34,12 @@ public class User {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
+    public Character getLevel() {
+        return level;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setLevel(Character level) {
+        this.level = level;
     }
 
     public Gym getGym() {
@@ -63,5 +48,13 @@ public class User {
 
     public void setGym(Gym gym) {
         this.gym = gym;
+    }
+
+    public List<Exercise> getExerciseList() {
+        return exerciseList;
+    }
+
+    public void setExerciseList(List<Exercise> exerciseList) {
+        this.exerciseList = exerciseList;
     }
 }
