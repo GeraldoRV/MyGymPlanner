@@ -1,0 +1,10 @@
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{exercise.exerciseType.name}}</h5>
+      <small>{{exercise.repeticiones}} repeticiones</small>
+    </div>
+    <p class="mb-1">{{exercise.exerciseType.desciption}}</p>
+  </a>
+</div>

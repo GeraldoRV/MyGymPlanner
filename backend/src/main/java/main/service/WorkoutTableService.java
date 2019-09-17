@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WorkoutTableService {
@@ -14,5 +15,9 @@ public class WorkoutTableService {
 
     public List<WorkoutTable> getAllTables() {
         return (List<WorkoutTable>) wtDao.findAll();
+    }
+
+    public Optional<WorkoutTable> get(Integer id) {
+        return wtDao.findById(id);
     }
 }

@@ -64,7 +64,7 @@ export class MainComponent implements OnInit {
       }
     });
 
-    // sorting countries
+    // sorting users
     if (direction === '') {
       this.users = this.usersWithOut;
     } else {

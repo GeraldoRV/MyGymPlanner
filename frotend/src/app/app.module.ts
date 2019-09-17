@@ -13,9 +13,12 @@ import {GymService} from './service/gym.service';
 import {MainComponent, NgbdSortableHeader} from './components/admin/main/main.component';
 import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
-import { AlertComponent } from './components/alert/alert.component';
+import {AlertComponent} from './components/alert/alert.component';
 import {AlertService} from './service/alert.service';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {TablesComponent} from './components/tables/tables.component';
+import {WorkoutTableService} from './service/workout-table.service';
+import { TableComponent} from './components/table/table.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -23,7 +26,9 @@ const appRoutes: Routes = [
   {
     path: 'admin', component: MainComponent,
     children: [{path: 'add-user', component: NewUserComponent}]
-  }
+  },
+  {path: 'routines', component: TablesComponent},
+  {path: 'routine', component: TableComponent}
 ];
 
 @NgModule({
@@ -35,7 +40,9 @@ const appRoutes: Routes = [
     NewUserComponent,
     AlertComponent,
     NgbdSortableHeader,
-    NavbarComponent
+    NavbarComponent,
+    TablesComponent,
+    TableComponent
   ],
   imports: [
     FormsModule,
@@ -45,7 +52,7 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, GymService, UserService],
+  providers: [LoginService, GymService, UserService, WorkoutTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,6 @@
+<ul class="list-group">
+  <button  (click)="seeRoutine(table.id)" type="button"
+           class="list-group-item list-group-item-action" *ngFor="let table of tables">
+      {{table.name}}
+  </button>
+</ul>
