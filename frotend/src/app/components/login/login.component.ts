@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
   navigate(user: User) {
     if (user.rol === 'Cliente' || user.rol === 'cliente') {
-      this._route.navigate(['/routines']);
+      this._route.navigate(['/home']);
     } else {
       this._route.navigate(['/admin']);
     }

@@ -1,4 +1,11 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark " *ngIf="loginService.getUser() !== null">
+<nav class="navbar navbar-expand-sm navbar-dark ">
   <a class="navbar-brand" href="#">MyGymPlanner</a>
-  <button class="btn btn-primary" (click)="logout()">Cerrar sesion</button>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/routines" class="nav-link">Routines</a>
+      </li>
+    </ul>
+  </div>
+  <button class="btn button" (click)="logout()">Cerrar sesion</button>
 </nav>
