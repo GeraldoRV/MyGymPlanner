@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark ">
+<nav class="navbar navbar-expand-sm navbar-dark" *ngIf="loginService.getUser() !== null">
   <a class="navbar-brand" href="#">MyGymPlanner</a>
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
