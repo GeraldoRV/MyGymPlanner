@@ -18,14 +18,22 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {TablesComponent} from './components/tables/tables.component';
 import {WorkoutTableService} from './service/workout-table.service';
 import {TableComponent} from './components/table/table.component';
+import {AuthGuard} from './service/authentication/auth.guard';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'admin', component: MainComponent},
-  {path: 'new-user', component: NewUserComponent},
-  {path: 'routines', component: TablesComponent},
-  {path: 'routine', component: TableComponent}
+  {
+    path: 'home', component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {path: 'admin', component: MainComponent,
+    canActivate: [AuthGuard]},
+  {path: 'new-user', component: NewUserComponent,
+    canActivate: [AuthGuard]},
+  {path: 'routines', component: TablesComponent,
+    canActivate: [AuthGuard]},
+  {path: 'routine', component: TableComponent,
+    canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -49,7 +57,7 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, GymService, UserService, WorkoutTableService],
+  providers: [LoginService, GymService, UserService, WorkoutTableService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

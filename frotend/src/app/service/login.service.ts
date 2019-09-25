@@ -30,4 +30,8 @@ export class LoginService {
   logout() {
     this.user = null;
   }
+
+  isLoginIn() {
+    return this.user !== null;
+  }
 }
