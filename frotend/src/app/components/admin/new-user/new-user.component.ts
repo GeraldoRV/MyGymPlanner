@@ -41,7 +41,6 @@ export class NewUserComponent implements OnInit {
     user.userName = this.userAddForm.controls.username.value;
     user.password = '1234';
     this._userService.createUser(user).subscribe(res => {
-      console.log(res);
       this._route.navigate(['/admin']);
     }, error => {
       console.log(error);

@@ -8,8 +8,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let table of tables;">
-      <td>{{table.id}}</td>
+    <tr *ngFor="let table of tables; let i = index">
+      <td>{{i + 1}}</td>
       <td>{{table.name}}</td>
       <td>{{table.level}}</td>
     </tr>

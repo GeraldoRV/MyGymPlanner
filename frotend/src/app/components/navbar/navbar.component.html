@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-sm navbar-dark" *ngIf="loginService.getUser() !== null">
   <a class="navbar-brand" href="#">MyGymPlanner</a>
   <div class="collapse navbar-collapse">
-    <div *ngIf="isClient() == true; then client else admin "></div>
     <ul class="navbar-nav">
+    <div *ngIf="isClient() == true; then client else admin "></div>
       <ng-template #client>
         <li class="nav-item">
           <a routerLink="/home" class="nav-link">

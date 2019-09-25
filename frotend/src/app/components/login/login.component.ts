@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
         this.userNotFoundAlert();
       } else {
         this.loginService.setUser(user);
-        console.log(user);
         this.navigate(user);
       }
     }, (error) => {

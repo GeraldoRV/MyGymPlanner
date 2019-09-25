@@ -17,7 +17,6 @@ export class TablesComponent implements OnInit {
   ngOnInit() {
     this._wtService.getAllWorkTable().subscribe((tables) => {
       this.tables = tables;
-      console.log(tables);
     }, (err) => {
       console.log(err);
     });

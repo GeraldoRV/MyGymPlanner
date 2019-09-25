@@ -51,7 +51,6 @@ export class MainComponent implements OnInit {
     this._userService.getAllUser().subscribe((users) => {
       this.users = users;
       this.usersWithOut = users;
-      console.log(users);
     }, (error) => {
       console.log(error);
     });

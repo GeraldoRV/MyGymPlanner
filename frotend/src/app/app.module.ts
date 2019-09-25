@@ -14,19 +14,16 @@ import {MainComponent, NgbdSortableHeader} from './components/admin/main/main.co
 import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
 import {AlertComponent} from './components/alert/alert.component';
-import {AlertService} from './service/alert.service';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {TablesComponent} from './components/tables/tables.component';
 import {WorkoutTableService} from './service/workout-table.service';
-import { TableComponent} from './components/table/table.component';
+import {TableComponent} from './components/table/table.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {
-    path: 'admin', component: MainComponent,
-    children: [{path: 'add-user', component: NewUserComponent}]
-  },
+  {path: 'admin', component: MainComponent},
+  {path: 'new-user', component: NewUserComponent},
   {path: 'routines', component: TablesComponent},
   {path: 'routine', component: TableComponent}
 ];
