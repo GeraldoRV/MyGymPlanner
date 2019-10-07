@@ -41,16 +41,16 @@ export class NgbdSortableHeader {
 })
 export class MainComponent implements OnInit {
   users: User[];
-  usersWithOut: User[];
+  usersDontSort: User[];
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   constructor(private _userService: UserService) {
   }
 
   ngOnInit() {
-    this._userService.getAllUser().subscribe((users) => {
+    this._userService.getAllUsers().subscribe((users) => {
       this.users = users;
-      this.usersWithOut = users;
+      this.usersDontSort = users;
     }, (error) => {
       console.log(error);
     });
@@ -65,9 +65,9 @@ export class MainComponent implements OnInit {
 
     // sorting users
     if (direction === '') {
-      this.users = this.usersWithOut;
+      this.users = this.usersDontSort;
     } else {
-      this.users = [...this.usersWithOut].sort((a, b) => {
+      this.users = [...this.usersDontSort].sort((a, b) => {
         const res = compare(a[column], b[column]);
         return direction === 'asc' ? res : -res;
       });

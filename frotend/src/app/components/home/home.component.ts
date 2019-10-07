@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const user = this._loginService.getUser();
+
     this.nameGym = user.gym.name;
     this.directionGym = user.gym.direction;
   }

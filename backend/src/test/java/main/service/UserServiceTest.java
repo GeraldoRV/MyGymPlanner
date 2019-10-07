@@ -77,8 +77,20 @@ public class UserServiceTest {
     }
 
     @Test
-    public void when_getAll_returnAListUserInDB() {
+    public void givenADBWithUsers_whenGetAll_returnAListUserInDB() {
         List<User> all = userService.getAll();
         assertEquals("Hubo un fallo",1, all.size());
     }
+    
+    @Test
+    public void givenADBWithNotUsers_whenGetAll_returnAListUserInDB() {
+        List<User> all = userService.getAll();
+        userDao.deleteAll();
+        List<User> none = userService.getAll();
+
+        assertEquals("Hubo un fallo",0, none.size());
+
+        userDao.saveAll(all);
+    }
+
 }

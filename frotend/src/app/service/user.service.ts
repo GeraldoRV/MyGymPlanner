@@ -11,7 +11,7 @@ export class UserService {
   constructor(private _http: HttpClient) {
   }
 
-  getAllUser() {
+  getAllUsers() {
     return this._http.get<User[]>(this.baseUrl);
   }
 

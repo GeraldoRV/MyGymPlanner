@@ -11,6 +11,7 @@ import java.util.Optional;
 @RequestMapping("/gym")
 @CrossOrigin(origins = "http://localhost:4200")
 public class GymController {
+
     @Autowired
     private GymService gymService;
 

@@ -7,12 +7,12 @@ import javax.persistence.Id;
 
 @Entity
 public class Gym {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String direction;
-
 
     public Gym() {
     }

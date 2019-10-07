@@ -5,13 +5,16 @@ import java.util.List;
 
 @Entity
 public class WorkoutTable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private Character level;
+
     @ManyToOne
     private Gym gym;
+
     @OneToMany
     private List<Exercise> exerciseList;
 

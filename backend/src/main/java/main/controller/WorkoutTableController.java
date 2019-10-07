@@ -12,6 +12,7 @@ import java.util.Optional;
 @RequestMapping("/table")
 @CrossOrigin(origins = "http://localhost:4200")
 public class WorkoutTableController {
+
     @Autowired
     private WorkoutTableService wtService;
 

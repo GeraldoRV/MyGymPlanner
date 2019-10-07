@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Service
 public class GymService {
+
     @Autowired
     private GymDao gymDao;
 

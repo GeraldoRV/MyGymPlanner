@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -15,7 +16,6 @@ public class User {
 
     @ManyToOne
     private Gym gym;
-
 
     public Integer getId() {
         return id;

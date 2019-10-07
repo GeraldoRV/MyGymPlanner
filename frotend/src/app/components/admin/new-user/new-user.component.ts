@@ -34,17 +34,23 @@ export class NewUserComponent implements OnInit {
   }
 
   submit() {
+    const user = this.getUserDetails();
+
+    this._userService.createUser(user).subscribe(res => {
+      this._route.navigate(['/admin']);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  private getUserDetails(): User {
     const user = new User();
     user.name = this.userAddForm.controls.name.value;
     user.gym = this._loginService.getUser().gym;
     user.rol = this.userAddForm.controls.roles.value;
     user.userName = this.userAddForm.controls.username.value;
     user.password = '1234';
-    this._userService.createUser(user).subscribe(res => {
-      this._route.navigate(['/admin']);
-    }, error => {
-      console.log(error);
-    });
+    return user;
   }
 
 }

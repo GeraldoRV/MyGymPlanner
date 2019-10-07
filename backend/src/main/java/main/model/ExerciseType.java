@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class ExerciseType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
