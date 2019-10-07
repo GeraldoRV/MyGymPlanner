@@ -1,0 +1,15 @@
+
+.login-page {
+  margin-top: 25px;
+  width: 30%;
+}
+
+.button {
+  background-color: #8bc34a;
+  color: white;
+}
+
+.card-header {
+  background-color: #4caf50;
+  color: white;
+}
