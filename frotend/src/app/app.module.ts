@@ -18,6 +18,7 @@ import {TablesComponent} from './components/tables/tables.component';
 import {WorkoutTableService} from './service/workout-table.service';
 import {TableComponent} from './components/table/table.component';
 import {AuthGuard} from './service/authentication/auth.guard';
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -25,14 +26,23 @@ const appRoutes: Routes = [
     path: 'home', component: HomeComponent,
     canActivate: [AuthGuard]
   },
-  {path: 'admin', component: MainComponent,
-    canActivate: [AuthGuard]},
-  {path: 'new-user', component: NewUserComponent,
-    canActivate: [AuthGuard]},
-  {path: 'routines', component: TablesComponent,
-    canActivate: [AuthGuard]},
-  {path: 'routine', component: TableComponent,
-    canActivate: [AuthGuard]}
+  {
+    path: 'admin', component: MainComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'new-user', component: NewUserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'routines', component: TablesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'routine', component: TableComponent,
+    canActivate: [AuthGuard]
+  },
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -46,7 +56,8 @@ const appRoutes: Routes = [
     NgbdSortableHeader,
     NavbarComponent,
     TablesComponent,
-    TableComponent
+    TableComponent,
+    NotFoundComponent
   ],
   imports: [
     FormsModule,
