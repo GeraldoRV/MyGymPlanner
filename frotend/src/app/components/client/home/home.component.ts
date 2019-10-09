@@ -3,6 +3,7 @@ import {LoginService} from '../../../service/login.service';
 import {ClassDirected} from '../../../model/class-directed';
 import {ClassDirectedService} from '../../../service/class-directed.service';
 import {User} from '../../../model/user';
+import {Gym} from '../../../model/gym';
 
 @Component({
   selector: 'app-home',
@@ -13,21 +14,23 @@ export class HomeComponent implements OnInit {
   nameGym: string;
   directionGym: string;
   taughtClasses: ClassDirected[];
-  private user: User;
+  private gym: Gym;
+  mondayToFriday: string;
+  saturdays: string;
+  sundaysAndHolidays: string;
 
   constructor(private _loginService: LoginService,
               private _classDirectedService: ClassDirectedService) {
   }
 
   ngOnInit() {
-    this.user = this._loginService.getUser();
-    this.nameGym = this.user.gym.name;
-    this.directionGym = this.user.gym.direction;
+    this.gym = this._loginService.getUser().gym;
+    this.setGymDetails();
     this.getAllClasses();
   }
 
   private getAllClasses() {
-    this._classDirectedService.getAllClassesOfGym(this.user.gym.id).subscribe(res => {
+    this._classDirectedService.getAllClassesOfGym(this.gym.id).subscribe(res => {
       this.taughtClasses = res;
     }, error => {
       console.log(error);
@@ -35,4 +38,11 @@ export class HomeComponent implements OnInit {
 
   }
 
+  private setGymDetails() {
+    this.nameGym = this.gym.name;
+    this.directionGym = this.gym.direction;
+    this.mondayToFriday = this.gym.openingHours.mondaysToFridays;
+    this.saturdays = this.gym.openingHours.saturdays;
+    this.sundaysAndHolidays = this.gym.openingHours.sundaysAndHolidays;
+  }
 }
