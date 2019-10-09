@@ -8,17 +8,18 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './service/login.service';
-import {HomeComponent} from './components/home/home.component';
+import {HomeComponent} from './components/client/home/home.component';
 import {MainComponent, NgbdSortableHeader} from './components/admin/main/main.component';
 import {UserService} from './service/user.service';
 import {NewUserComponent} from './components/admin/new-user/new-user.component';
 import {AlertComponent} from './components/alert/alert.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {TablesComponent} from './components/tables/tables.component';
+import {TablesComponent} from './components/client/tables/tables.component';
 import {WorkoutTableService} from './service/workout-table.service';
-import {TableComponent} from './components/table/table.component';
+import {TableComponent} from './components/client/table/table.component';
 import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import {ClassDirectedComponent} from './components/client/class-directed/class-directed.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
   {
     path: 'routine', component: TableComponent,
     canActivate: [AuthGuard]
-  },
+  }, {path: 'classes', component: ClassDirectedComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     TablesComponent,
     TableComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ClassDirectedComponent
   ],
   imports: [
     FormsModule,

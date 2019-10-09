@@ -17,7 +17,7 @@
       <div>
         <h4>Targeted activities</h4>
         <ul class="list-group">
-          <li class="list-group-item">Name activity</li>
+          <li *ngFor="let taughtClass of taughtClasses" class="list-group-item">{{taughtClass.typeClass.name}}</li>
         </ul>
       </div>
     </div>
