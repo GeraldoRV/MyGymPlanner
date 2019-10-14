@@ -15,4 +15,8 @@ public class ClassDirectedService {
     public List<ClassDirected> getAllClassDirectedOfGym(Integer id) {
         return classDirectedDao.findAllByGym_Id(id);
     }
+
+    public List<ClassDirected> getAllClassDirectedOfDayAndGym(String dayOfWeek, Integer id){
+        return classDirectedDao.findAllByClassSchedule_DayOfWeekAndGym_Id(dayOfWeek,id);
+    }
 }

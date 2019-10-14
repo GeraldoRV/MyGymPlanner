@@ -1,3 +1,53 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let class of classes">{{class.typeClass.name}}</li>
-</ul>
+
+<ngb-tabset (tabChange)="beforeChange($event)">
+  <ngb-tab id="tab-Monday" title="Monday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfMon">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Tuesday" title="Tuesday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfTues">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Wednesday" title="Wednesday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfWed">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Thursday" title="Thursday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfThur">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Friday" title="Friday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfFri">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Saturday" title="Saturday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfSat">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-Sunday" title="Sunday">
+    <ng-template ngbTabContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let class of classesOfSun">{{class.typeClass.name}}</li>
+      </ul>
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>

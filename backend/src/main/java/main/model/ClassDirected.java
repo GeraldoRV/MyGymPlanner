@@ -15,7 +15,8 @@ public class ClassDirected {
     private Integer capacity;
     @ManyToMany
     private List<User> clientList;
-
+    @Embedded
+    private ClassSchedule classSchedule;
 
     @ManyToOne
     private Gym gym;
@@ -66,5 +67,13 @@ public class ClassDirected {
 
     public void setGym(Gym gym) {
         this.gym = gym;
+    }
+
+    public ClassSchedule getClassSchedule() {
+        return classSchedule;
+    }
+
+    public void setClassSchedule(ClassSchedule classSchedule) {
+        this.classSchedule = classSchedule;
     }
 }
