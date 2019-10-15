@@ -20,6 +20,7 @@ import {TableComponent} from './components/client/table/table.component';
 import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ClassDirectedComponent} from './components/client/class-directed/class-directed.component';
+import {DatePipe} from '@angular/common';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -69,7 +70,7 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, UserService, WorkoutTableService, AuthGuard],
+  providers: [LoginService, UserService, WorkoutTableService, AuthGuard, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

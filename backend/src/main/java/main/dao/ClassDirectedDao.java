@@ -10,5 +10,5 @@ import java.util.List;
 public interface ClassDirectedDao extends CrudRepository<ClassDirected, Integer> {
     List<ClassDirected> findAllByGym_Id(Integer id);
 
-    List<ClassDirected> findAllByClassSchedule_DayOfWeekAndGym_Id(String dayOfWeek, Integer id);
+    List<ClassDirected> findAllByClassSchedule_DayOfWeekAndGym_IdOrderByClassSchedule_StartTimeAsc(String dayOfWeek, Integer id);
 }
