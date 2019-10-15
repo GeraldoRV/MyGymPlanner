@@ -30,7 +30,7 @@ export class NewUserComponent implements OnInit {
   }
 
   private getRoles() {
-    return ['cliente', 'admin'];
+    return ['client', 'admin', 'monitor'];
   }
 
   submit() {
@@ -47,7 +47,7 @@ export class NewUserComponent implements OnInit {
     const user = new User();
     user.name = this.userAddForm.controls.name.value;
     user.gym = this._loginService.getUser().gym;
-    user.rol = this.userAddForm.controls.roles.value;
+    user.role = this.userAddForm.controls.roles.value;
     user.userName = this.userAddForm.controls.username.value;
     user.password = '1234';
     return user;

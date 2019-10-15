@@ -12,7 +12,9 @@ public class User {
     private String name;
     private String userName;
     private String password;
-    private String rol;
+    private String role;
+    @Embedded
+    private WorkingHours workingHours;
 
     @ManyToOne
     private Gym gym;
@@ -49,12 +51,12 @@ public class User {
         this.password = password;
     }
 
-    public String getRol() {
-        return rol;
+    public String getRole() {
+        return role;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Gym getGym() {
@@ -63,5 +65,13 @@ public class User {
 
     public void setGym(Gym gym) {
         this.gym = gym;
+    }
+
+    public WorkingHours getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(WorkingHours workingHours) {
+        this.workingHours = workingHours;
     }
 }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
-import {User} from '../../model/user';
 import {AlertService} from '../../service/alert.service';
 
 @Component({
@@ -32,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.userNotFoundAlert();
       } else {
         this.loginService.setUser(user);
-        this.navigate(user);
+        this._route.navigate([user.role]);
       }
     }, (error) => {
       console.log(error);
@@ -52,13 +51,5 @@ export class LoginComponent implements OnInit {
     this.alertService.setMessage('User not found');
     this.alertService.setDismissible(false);
     this.alertService.show();
-  }
-
-  navigate(user: User) {
-    if (user.rol === 'Cliente' || user.rol === 'cliente') {
-      this._route.navigate(['/home']);
-    } else {
-      this._route.navigate(['/admin']);
-    }
   }
 }

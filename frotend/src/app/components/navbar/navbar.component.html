@@ -2,10 +2,9 @@
   <a class="navbar-brand" href="#">MyGymPlanner</a>
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
-    <div *ngIf="isClient() == true; then client else admin "></div>
-      <ng-template #client>
+      <ng-template [ngIf]="getRole()==='client'">
         <li class="nav-item">
-          <a routerLink="/home" class="nav-link">
+          <a routerLink="/client" class="nav-link">
             Home
           </a>
         </li>
@@ -21,10 +20,17 @@
         </li>
 
       </ng-template>
-      <ng-template #admin>
+      <ng-template [ngIf]="getRole()==='admin'">
         <li class="nav-item">
           <a routerLink="/admin" class="nav-link">
             Users
+          </a>
+        </li>
+      </ng-template>
+      <ng-template [ngIf]="getRole()==='monitor'">
+        <li class="nav-item">
+          <a routerLink="/monitor" class="nav-link">
+            Working Hours
           </a>
         </li>
       </ng-template>

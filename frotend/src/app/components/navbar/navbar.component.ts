@@ -10,7 +10,6 @@ import {User} from '../../model/user';
 })
 export class NavbarComponent implements OnInit {
   userLogin: User;
-
   constructor(private _route: Router, private loginService: LoginService) {
   }
 
@@ -22,13 +21,8 @@ export class NavbarComponent implements OnInit {
     this._route.navigate(['']);
   }
 
-  isClient() {
+  getRole() {
     this.userLogin = this.loginService.getUser();
-    if (this.userLogin !== null) {
-      if (this.userLogin.rol === 'cliente') {
-        return true;
-      }
-    }
-    return false;
+    return this.userLogin.role;
   }
 }

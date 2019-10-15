@@ -21,11 +21,12 @@ import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ClassDirectedComponent} from './components/client/class-directed/class-directed.component';
 import {DatePipe} from '@angular/common';
+import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {
-    path: 'home', component: HomeComponent,
+    path: 'client', component: HomeComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -43,7 +44,11 @@ const appRoutes: Routes = [
   {
     path: 'routine', component: TableComponent,
     canActivate: [AuthGuard]
-  }, {path: 'classes', component: ClassDirectedComponent},
+  }, {
+    path: 'classes', component: ClassDirectedComponent,
+    canActivate: [AuthGuard]
+  },
+  {path: 'monitor', component: MainMonitorComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -60,7 +65,8 @@ const appRoutes: Routes = [
     TablesComponent,
     TableComponent,
     NotFoundComponent,
-    ClassDirectedComponent
+    ClassDirectedComponent,
+    MainMonitorComponent,
   ],
   imports: [
     FormsModule,
