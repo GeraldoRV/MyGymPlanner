@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {ClassDirectedService} from '../../../service/class-directed.service';
-import {Gym} from '../../../model/gym';
 import {ClassDirected} from '../../../model/class-directed';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
+import {User} from '../../../model/user';
 
 @Component({
   selector: 'app-class-directed',
@@ -12,7 +12,7 @@ import {DatePipe} from '@angular/common';
   styleUrls: ['./class-directed.component.css']
 })
 export class ClassDirectedComponent implements OnInit {
-  private gym: Gym;
+  private user: User;
   classesOfMon: ClassDirected[] = null;
   classesOfTues: ClassDirected[] = null;
   classesOfWed: ClassDirected[] = null;
@@ -28,26 +28,46 @@ export class ClassDirectedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gym = this._loginService.getUser().gym;
+    this.user = this._loginService.getUser();
     const todayDate = new Date();
     const todayDayOfWeek = this._datePipe.transform(todayDate, 'EEEE');
     this.activeId = 'tab-' + todayDayOfWeek;
+    if (this.isClient()) {
+      this.setClassesForClient(this.user.gym.id, todayDayOfWeek);
+    } else {
+      this.setClassesForMonitor(this.user.id, todayDayOfWeek);
+    }
+  }
 
-    this._classDirectedService.getAllClassesOfGymAndDay(this.gym.id, todayDayOfWeek).subscribe(res => {
-      this.setClass(todayDayOfWeek, res);
+  private setClassesForMonitor(userId: number, dayOfWeek: string) {
+    this._classDirectedService.getAllClassesOfMonitorAndDay(userId, dayOfWeek).subscribe(res => {
+      this.setClass(dayOfWeek, res);
+    }, error => {
+      console.log(error);
+    });
+
+  }
+
+  private setClassesForClient(gymId: number, dayOfWeek: string) {
+    this._classDirectedService.getAllClassesOfGymAndDay(gymId, dayOfWeek).subscribe(res => {
+      this.setClass(dayOfWeek, res);
     }, error => {
       console.log(error);
     });
   }
 
+  private isClient() {
+    return this.user.role === 'client';
+  }
+
   public beforeChange($event: NgbTabChangeEvent) {
     const dayOfWeek = $event.nextId.substring(4);
     if (this.isNullList(dayOfWeek)) {
-      this._classDirectedService.getAllClassesOfGymAndDay(this.gym.id, dayOfWeek).subscribe(res => {
-        this.setClass(dayOfWeek, res);
-      }, error => {
-        console.log(error);
-      });
+      if (this.isClient()) {
+        this.setClassesForClient(this.user.gym.id, dayOfWeek);
+      } else {
+        this.setClassesForMonitor(this.user.id, dayOfWeek);
+      }
     }
   }
 

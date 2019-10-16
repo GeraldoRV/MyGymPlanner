@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Add monitor user back and front and view of working hours">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkingHours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/model/working-hours.ts" afterDir="false" />
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Added in the view the classes assigned of the monitor(back and front)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/model/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -270,7 +261,8 @@
       <workItem from="1570612827462" duration="7808000" />
       <workItem from="1571041218264" duration="1366000" />
       <workItem from="1571070583212" duration="8419000" />
-      <workItem from="1571123684886" duration="14117000" />
+      <workItem from="1571123684886" duration="14736000" />
+      <workItem from="1571214677606" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -279,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569397750606</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add monitor user back and front and view of working hours">
+      <created>1571141964388</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571141964388</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +305,8 @@
     </ignored-roots>
     <MESSAGE value="Improve the control of the navbar" />
     <MESSAGE value="Add monitor user back and front and view of working hours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add monitor user back and front and view of working hours" />
+    <MESSAGE value="Added in the view the classes assigned of the monitor(back and front)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in the view the classes assigned of the monitor(back and front)" />
   </component>
   <component name="masterDetails">
     <states>

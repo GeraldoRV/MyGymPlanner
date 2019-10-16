@@ -18,8 +18,14 @@ public class ClassDirectedController {
     public List<ClassDirected> getAllByGym(@PathVariable Integer id) {
         return classDirectedService.getAllClassDirectedOfGym(id);
     }
+
     @GetMapping("gym/{id}/{dayOfWeek}")
-    public List<ClassDirected> getAllByGymAndDay(@PathVariable Integer id, @PathVariable String dayOfWeek){
-        return classDirectedService.getAllClassDirectedOfDayAndGym(dayOfWeek,id);
+    public List<ClassDirected> getAllByGymAndDay(@PathVariable Integer id, @PathVariable String dayOfWeek) {
+        return classDirectedService.getAllClassDirectedOfDayAndGym(dayOfWeek, id);
+    }
+
+    @GetMapping("monitor/{id}/{dayOfWeek}")
+    public List<ClassDirected> getAllByMonitorAndDay(@PathVariable Integer id, @PathVariable String dayOfWeek) {
+        return classDirectedService.getAllClassDirectedOfMonitorAndDay(id, dayOfWeek);
     }
 }

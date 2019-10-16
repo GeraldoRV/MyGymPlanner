@@ -18,4 +18,8 @@ export class ClassDirectedService {
   getAllClassesOfGymAndDay(gym_id: number, dayOfWeek: string) {
     return this._http.get<ClassDirected[]>(this.baseUrl + '/gym/' + gym_id + '/' + dayOfWeek);
   }
+
+  getAllClassesOfMonitorAndDay(monitor_id: number, dayOfWeek: string) {
+    return this._http.get<ClassDirected[]>(this.baseUrl + '/monitor/' + monitor_id + '/' + dayOfWeek);
+  }
 }
