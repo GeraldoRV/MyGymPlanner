@@ -13,7 +13,7 @@ public class WorkoutTable {
     private Character level;
 
     @ManyToOne
-    private Gym gym;
+    private User user;
 
     @OneToMany
     private List<Exercise> exerciseList;
@@ -45,19 +45,19 @@ public class WorkoutTable {
         this.level = level;
     }
 
-    public Gym getGym() {
-        return gym;
-    }
-
-    public void setGym(Gym gym) {
-        this.gym = gym;
-    }
-
     public List<Exercise> getExerciseList() {
         return exerciseList;
     }
 
     public void setExerciseList(List<Exercise> exerciseList) {
         this.exerciseList = exerciseList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

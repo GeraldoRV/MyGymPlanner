@@ -21,6 +21,6 @@ export class WorkoutTableService {
   }
 
   getWorkTable() {
-    return this._http.get<WorkoutTable>(this.base_url + '/' + this.id);
+    return this._http.get<WorkoutTable>(this.base_url + '/' + 1);
   }
 }

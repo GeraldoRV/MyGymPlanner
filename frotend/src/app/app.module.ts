@@ -19,7 +19,7 @@ import {WorkoutTableService} from './service/workout-table.service';
 import {TableComponent} from './components/client/table/table.component';
 import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
-import {ClassDirectedComponent} from './components/client/class-directed/class-directed.component';
+import {ClassDirectedComponent} from './components/class-directed/class-directed.component';
 import {DatePipe} from '@angular/common';
 import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
 
@@ -42,8 +42,8 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'routine', component: TableComponent,
-    canActivate: [AuthGuard]
+    path: 'routine', component: TableComponent
+    // canActivate: [AuthGuard]
   }, {
     path: 'classes', component: ClassDirectedComponent,
     canActivate: [AuthGuard]

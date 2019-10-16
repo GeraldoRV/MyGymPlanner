@@ -9,7 +9,7 @@ import {Exercise} from '../../../model/exercise';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  private table: WorkoutTable;
+  table: WorkoutTable;
   exerciseList: Exercise[];
 
   constructor(private _wtService: WorkoutTableService) {

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Added in the view the classes assigned of the monitor(back and front)">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Working in save a routine for client back and some changes">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ExerciseDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/not-found/not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/not-found/not-found.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/model/exercise-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/model/exercise-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/model/exercise.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/model/exercise.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,9 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -82,9 +96,8 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -92,8 +105,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,7 +276,7 @@
       <workItem from="1571041218264" duration="1366000" />
       <workItem from="1571070583212" duration="8419000" />
       <workItem from="1571123684886" duration="14736000" />
-      <workItem from="1571214677606" duration="2887000" />
+      <workItem from="1571214677606" duration="10269000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -278,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571141964388</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added in the view the classes assigned of the monitor(back and front)">
+      <created>1571217702037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571217702037</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +327,8 @@
     <MESSAGE value="Improve the control of the navbar" />
     <MESSAGE value="Add monitor user back and front and view of working hours" />
     <MESSAGE value="Added in the view the classes assigned of the monitor(back and front)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added in the view the classes assigned of the monitor(back and front)" />
+    <MESSAGE value="Working in save a routine for client back and some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working in save a routine for client back and some changes" />
   </component>
   <component name="masterDetails">
     <states>

@@ -16,13 +16,18 @@ public class WorkoutTableController {
     @Autowired
     private WorkoutTableService wtService;
 
-    @GetMapping
-    public List<WorkoutTable> findAll() {
-        return wtService.getAllTables();
+    @GetMapping("gym/{id}")
+    public List<WorkoutTable> findAllByGym(@PathVariable Integer id) {
+        return wtService.getAllTablesByGym(id);
     }
 
     @GetMapping("/{id}")
     public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {
         return wtService.get(id);
+    }
+
+    @PutMapping("client")
+    public WorkoutTable modifyWorkoutTableClient(@RequestBody WorkoutTable workoutTable){
+        return wtService.modifyToClient(workoutTable);
     }
 }

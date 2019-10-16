@@ -11,7 +11,7 @@ public class Exercise {
 
     @ManyToOne
     private ExerciseType exerciseType;
-    private Integer repeticiones;
+    private Integer repetitions;
     private Integer sets;
 
     public Exercise() {
@@ -33,12 +33,12 @@ public class Exercise {
         this.exerciseType = exerciseType;
     }
 
-    public Integer getRepeticiones() {
-        return repeticiones;
+    public Integer getRepetitions() {
+        return repetitions;
     }
 
-    public void setRepeticiones(Integer repeticiones) {
-        this.repeticiones = repeticiones;
+    public void setRepetitions(Integer repetitions) {
+        this.repetitions = repetitions;
     }
 
     public Integer getSets() {

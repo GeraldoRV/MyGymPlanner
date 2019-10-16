@@ -3,6 +3,6 @@ import {ExerciseCategory} from './exercise-category';
 export class ExerciseType {
   id: number;
   name: string;
-  desciption: string;
+  description: string;
   category: ExerciseCategory;
 }
