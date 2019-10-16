@@ -1,10 +1,10 @@
-import {Gym} from './gym';
 import {Exercise} from './exercise';
+import {User} from './user';
 
 export class WorkoutTable {
   id: number;
   name: string;
   level: string;
-  gym: Gym;
+  user: User;
   exerciseList: Exercise[];
 }

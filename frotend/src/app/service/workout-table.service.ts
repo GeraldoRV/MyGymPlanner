@@ -12,8 +12,8 @@ export class WorkoutTableService {
   constructor(private _http: HttpClient) {
   }
 
-  getAllWorkTable() {
-    return this._http.get<WorkoutTable[]>(this.base_url);
+  getAllWorkTableByGym(gymId: number) {
+    return this._http.get<WorkoutTable[]>(this.base_url + '/gym/' + gymId);
   }
 
   setWorkTable(id: number) {
@@ -21,6 +21,10 @@ export class WorkoutTableService {
   }
 
   getWorkTable() {
-    return this._http.get<WorkoutTable>(this.base_url + '/' + 1);
+    return this._http.get<WorkoutTable>(this.base_url + '/' + this.id);
+  }
+
+  saveTable(workoutTable: WorkoutTable) {
+    return this._http.put<WorkoutTable>(this.base_url + '/client', workoutTable);
   }
 }

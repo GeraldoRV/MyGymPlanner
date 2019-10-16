@@ -29,6 +29,7 @@ public class WorkoutTableService {
 
     public WorkoutTable modifyToClient(WorkoutTable workoutTable) {
         workoutTable.setId(null);
+        workoutTable.setName(workoutTable.getName().concat("(copy)"));
         List<Exercise> exerciseList = workoutTable.getExerciseList();
         if (exerciseList != null && !exerciseList.isEmpty()) {
             List<Exercise> exercises = new ArrayList<>();

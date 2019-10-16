@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {WorkoutTableService} from '../../../service/workout-table.service';
 import {WorkoutTable} from '../../../model/workout-table';
 import {Router} from '@angular/router';
+import {LoginService} from '../../../service/login.service';
+import {Gym} from '../../../model/gym';
 
 @Component({
   selector: 'app-tables',
@@ -10,12 +12,15 @@ import {Router} from '@angular/router';
 })
 export class TablesComponent implements OnInit {
   tables: WorkoutTable[];
+  private gym: Gym;
 
-  constructor(private _route: Router, private _wtService: WorkoutTableService) {
+  constructor(private _route: Router, private _wtService: WorkoutTableService,
+              private _loginService: LoginService) {
   }
 
   ngOnInit() {
-    this._wtService.getAllWorkTable().subscribe((tables) => {
+    this.gym = this._loginService.getUser().gym;
+    this._wtService.getAllWorkTableByGym(this.gym.id).subscribe((tables) => {
       this.tables = tables;
     }, (err) => {
       console.log(err);

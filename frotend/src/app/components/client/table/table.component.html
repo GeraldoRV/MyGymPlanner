@@ -2,7 +2,7 @@
   <h4>{{table.name}}</h4>
   <h5>Level {{table.level}}</h5>
   <button class="btn btn-success">Add new exercise</button>
-  <button class="btn btn-success">Save routine</button>
+  <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn btn-success">Save routine</button>
   <div class="list-group">
     <a href="#" class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
       <div class="d-flex w-100 justify-content-between">
