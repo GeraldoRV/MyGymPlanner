@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Working in update a routine in back and persist changes in the db">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ExerciseDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.WorkoutTableServiceTest">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -149,6 +147,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkoutTableServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.service" />
+      <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WorkoutTableServiceTest" />
         <item itemvalue="JUnit.main in backend" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
         <item itemvalue="JUnit.GymServiceTest" />
-        <item itemvalue="JUnit.main in backend" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571225809717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Working in update a routine in back and persist changes in the db">
+      <created>1571395167963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571395167963</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

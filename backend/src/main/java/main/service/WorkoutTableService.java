@@ -23,10 +23,17 @@ public class WorkoutTableService {
     }
 
     public WorkoutTable modifyToClient(WorkoutTable workoutTable) {
+        if(!isOfTheGym(workoutTable)){
+            return null;
+        }
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));
 
         return wtDao.save(workoutTable);
+    }
+
+    private boolean isOfTheGym(WorkoutTable workoutTable) {
+        return wtDao.existsByIdAndUser_Role(workoutTable.getId(), "admin");
     }
 
     public WorkoutTable update(WorkoutTable workoutTable) {
