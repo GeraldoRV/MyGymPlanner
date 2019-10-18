@@ -15,7 +15,7 @@ public class WorkoutTable {
     @ManyToOne
     private User user;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Exercise> exerciseList;
 
     public WorkoutTable() {

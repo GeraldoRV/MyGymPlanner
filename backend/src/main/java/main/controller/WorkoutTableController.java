@@ -30,4 +30,9 @@ public class WorkoutTableController {
     public WorkoutTable modifyWorkoutTableClient(@RequestBody WorkoutTable workoutTable){
         return wtService.modifyToClient(workoutTable);
     }
+
+    @PutMapping
+    public WorkoutTable updateWorkoutTable(@RequestBody WorkoutTable workoutTable){
+        return wtService.update(workoutTable);
+    }
 }
