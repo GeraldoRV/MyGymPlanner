@@ -3,6 +3,7 @@ package main.service;
 import main.dao.GymDao;
 import main.dao.UserDao;
 import main.dao.WorkoutTableDao;
+import main.model.Exercise;
 import main.model.Gym;
 import main.model.User;
 import main.model.WorkoutTable;
@@ -36,16 +37,36 @@ public class WorkoutTableServiceTest {
     @Autowired
     private WorkoutTableService wtService;
     private Gym gymWithWK;
-    private List<WorkoutTable> workoutTableOfGym;
     private User admin;
     private User client;
+    private WorkoutTable workoutTableAdmin;
+    private WorkoutTable workoutTableClient;
+    private WorkoutTable workoutTableNEAdmin;
+    private WorkoutTable workoutTable2EAdmin;
 
     @Before
     public void setUp() throws Exception {
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setName("WKT");
+        WorkoutTable workoutTableNotExercises = new WorkoutTable();
+        workoutTableNotExercises.setName("WKTNE");
+        WorkoutTable workoutTableTwoExercises = new WorkoutTable();
+        workoutTableTwoExercises.setName("WKT2");
         WorkoutTable workoutTableUser = new WorkoutTable();
         workoutTableUser.setName("WKT");
+        List<Exercise> exercises = new ArrayList<>();
+        List<Exercise> exercises2 = new ArrayList<>();
+        Exercise exercise = new Exercise();
+        Exercise exercise2 = new Exercise();
+        Exercise exercise3 = new Exercise();
+        Exercise exercise4 = new Exercise();
+        exercises.add(exercise);
+        exercises2.add(exercise2);
+        List<Exercise> exercisesTwoExercise = new ArrayList<>(Arrays.asList(exercise3, exercise4));
+        workoutTableUser.setExerciseList(exercises);
+        workoutTable.setExerciseList(exercises2);
+        workoutTableTwoExercises.setExerciseList(exercisesTwoExercise);
+
         Gym gym = new Gym();
         gym.setName("G");
         Gym save = gymDao.save(gym);
@@ -60,10 +81,16 @@ public class WorkoutTableServiceTest {
         client.setRole("client");
 
         this.admin = userDao.save(admin);
-         this.client = userDao.save(client);
+        this.client = userDao.save(client);
+
         workoutTable.setUser(this.admin);
+        workoutTableNotExercises.setUser(this.admin);
+        workoutTableTwoExercises.setUser(this.admin);
         workoutTableUser.setUser(this.client);
-        workoutTableOfGym= (List<WorkoutTable>) wtDao.saveAll(Arrays.asList(workoutTableUser, workoutTable));
+        workoutTableAdmin = wtDao.save(workoutTable);
+        workoutTableClient = wtDao.save(workoutTableUser);
+        workoutTableNEAdmin = wtDao.save(workoutTableNotExercises);
+        workoutTable2EAdmin = wtDao.save(workoutTableTwoExercises);
     }
 
 
@@ -71,7 +98,7 @@ public class WorkoutTableServiceTest {
     public void givenAExistGymWithWT_whenGetAllTablesByGym_returnAllWorkoutTablesOfTheGym() {
         List<WorkoutTable> allTablesByGym = wtService.getAllTablesByGym(gymWithWK.getId());
 
-        assertEquals("Algo ha salido mal", 1, allTablesByGym.size());
+        assertEquals("Algo ha salido mal", 3, allTablesByGym.size());
     }
 
     @Test
@@ -97,55 +124,119 @@ public class WorkoutTableServiceTest {
 
     @Test
     public void givenAExistWT_whenGet_returnAWorkoutTable() {
-        WorkoutTable workoutTable = workoutTableOfGym.get(0);
-        Optional<WorkoutTable> workoutTableDB = wtService.get(workoutTable.getId());
-        assertTrue("Algo ha salido mal",workoutTableDB.isPresent());
+        Optional<WorkoutTable> workoutTableDB = wtService.get(workoutTableAdmin.getId());
+        assertTrue("Algo ha salido mal", workoutTableDB.isPresent());
     }
 
     @Test
     public void givenANotExistWT_whenGet_returnNull() {
         Optional<WorkoutTable> workoutTableDB = wtService.get(255);
-        assertFalse("Algo ha salido mal",workoutTableDB.isPresent());
+        assertFalse("Algo ha salido mal", workoutTableDB.isPresent());
+    }
+
+
+    @Test
+    public void givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk() {
+        Optional<WorkoutTable> byId = wtDao.findById(workoutTableAdmin.getId());
+        if (!byId.isPresent()) return;
+        WorkoutTable workoutTable1 = byId.get();
+        workoutTable1.setUser(client);
+        WorkoutTable workoutTable = wtService.modifyToClient(workoutTable1);
+        assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 
     @Test
-    public void givenAWTOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk() {
-        WorkoutTable workoutTableModified = new WorkoutTable();
-        for (WorkoutTable workoutTable: workoutTableOfGym
-             ) {
-            if(workoutTable.getUser().getRole().equals("admin")){
-                workoutTableModified= workoutTable;
-                break;
-            }
-        }
-
-        workoutTableModified.setUser(client);
-        WorkoutTable workoutTable = wtService.modifyToClient(workoutTableModified);
-        assertEquals("Algo Mal",workoutTableModified.getUser().getRole(),workoutTable.getUser().getRole());
+    public void givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk() {
+        Optional<WorkoutTable> byId = wtDao.findById(workoutTableNEAdmin.getId());
+        if (!byId.isPresent()) return;
+        WorkoutTable workoutTable1 = byId.get();
+        workoutTable1.setUser(client);
+        WorkoutTable workoutTable = wtService.modifyToClient(workoutTable1);
+        assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 
     @Test
     public void givenAWTOfTheClientModifiedForClient_whenModifyToClient_returnAModifyNull() {
-        WorkoutTable workoutTableModified = new WorkoutTable();
-        for (WorkoutTable workoutTable: workoutTableOfGym
-        ) {
-            if(workoutTable.getUser().getRole().equals("client")){
-                workoutTableModified= workoutTable;
-                break;
-            }
-        }
 
-        workoutTableModified.setUser(client);
-        WorkoutTable workoutTable = wtService.modifyToClient(workoutTableModified);
-        assertNull("Algo Mal",workoutTable);
+
+        workoutTableClient.setUser(client);
+        WorkoutTable workoutTable = wtService.modifyToClient(workoutTableClient);
+        assertNull("Algo Mal", workoutTable);
     }
 
     @Test
-    public void givenAExistWTModified_whenUpdate_ReturnWtModified() {
-        WorkoutTable workoutTable = workoutTableOfGym.get(0);
-        workoutTable.setLevel('C');
-        workoutTable.setExerciseList(new ArrayList<>());
-        WorkoutTable update = wtService.update(workoutTable);
+    public void givenAExistWTWithNotExerciseModified_whenUpdate_ReturnWtModified() {
+
+        workoutTableNEAdmin.setLevel('C');
+
+        WorkoutTable update = wtService.update(workoutTableNEAdmin);
         assertEquals("Algo ha ido mal", new Character('C'), update.getLevel());
     }
+
+    @Test
+    public void givenAExistWTWithNotExerciseAddNewExercise_whenUpdate_ReturnWtModified() {
+        List<Exercise> exerciseList = new ArrayList<>();
+
+        exerciseList.add(new Exercise());
+        workoutTableNEAdmin.setExerciseList(exerciseList);
+
+        WorkoutTable update = wtService.update(workoutTableNEAdmin);
+
+        assertEquals("Algo ha ido mal", 1, update.getExerciseList().size());
+    }
+
+    @Test
+    public void givenAExistWTWithExercisesAddNewExercise_whenUpdate_ReturnWtModified() {
+        List<Exercise> exerciseList = workoutTableAdmin.getExerciseList();
+
+        exerciseList.add(new Exercise());
+        workoutTableAdmin.setExerciseList(exerciseList);
+
+        WorkoutTable update = wtService.update(workoutTableAdmin);
+
+        assertEquals("Algo ha ido mal", 2, update.getExerciseList().size());
+    }
+
+    @Test
+    public void givenAExistWTWithExercisesExerciseModified_whenUpdate_ReturnWtModified() {
+
+        List<Exercise> exerciseList = workoutTableAdmin.getExerciseList();
+
+        Exercise exercise = exerciseList.get(0);
+        exercise.setSets(3);
+        exerciseList.remove(0);
+        exerciseList.add(exercise);
+        workoutTableAdmin.setExerciseList(exerciseList);
+
+        WorkoutTable update = wtService.update(workoutTableAdmin);
+        Exercise exerciseUp = update.getExerciseList().get(0);
+        Integer integer = 3;
+        assertEquals(integer, exerciseUp.getSets());
+    }
+
+    @Test
+    public void givenAExistWTWithExercisesRemoveAExercise_whenUpdate_ReturnWtModified() {
+        List<Exercise> exerciseList = workoutTable2EAdmin.getExerciseList();
+
+        exerciseList.remove(0);
+        workoutTable2EAdmin.setExerciseList(exerciseList);
+
+        WorkoutTable update = wtService.update(workoutTable2EAdmin);
+
+        assertEquals("Algo ha ido mal", 1, update.getExerciseList().size());
+    }
+
+    @Test
+    public void givenAExistWTWithExercisesRemoveAllExercise_whenUpdate_ReturnWtModified() {
+        List<Exercise> exerciseList = workoutTable2EAdmin.getExerciseList();
+
+        exerciseList.clear();
+        workoutTable2EAdmin.setExerciseList(exerciseList);
+
+        WorkoutTable update = wtService.update(workoutTable2EAdmin);
+
+        assertEquals("Algo ha ido mal", 0, update.getExerciseList().size());
+    }
+
+
 }

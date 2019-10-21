@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Working in the tests of wTService(problems with the orphanRemoval)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,21 +105,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.WorkoutTableServiceTest">
-    <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.GymServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -163,6 +147,22 @@
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkoutTableServiceTest.givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.service" />
+      <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
+      <option name="METHOD_NAME" value="givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -213,10 +213,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.WorkoutTableServiceTest" />
+        <item itemvalue="JUnit.WorkoutTableServiceTest.givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
         <item itemvalue="JUnit.main in backend" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
-        <item itemvalue="JUnit.GymServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -275,6 +275,7 @@
       <workItem from="1571070583212" duration="8419000" />
       <workItem from="1571123684886" duration="14736000" />
       <workItem from="1571214677606" duration="12336000" />
+      <workItem from="1571651590565" duration="7157000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -342,7 +343,8 @@
     <MESSAGE value="Working in save a routine for client back and some changes" />
     <MESSAGE value="Working in save a routine for client front and some changes" />
     <MESSAGE value="Working in update a routine in back and persist changes in the db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working in update a routine in back and persist changes in the db" />
+    <MESSAGE value="Working in the tests of wTService(problems with the orphanRemoval)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working in the tests of wTService(problems with the orphanRemoval)" />
   </component>
   <component name="masterDetails">
     <states>
