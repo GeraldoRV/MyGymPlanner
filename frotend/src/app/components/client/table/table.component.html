@@ -3,15 +3,15 @@
   <h5>Level {{table.level}}</h5>
   <button class="btn btn-success">Add new exercise</button>
   <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn btn-success">Save routine</button>
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{exercise.exerciseType.name}}</h5>
         <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
       </div>
       <p class="mb-1">{{exercise.exerciseType.description}} </p>
-      <button class="btn btn-success">Remove</button>
+      <button class="btn btn-success" (click)="remove(exercise)">Remove</button>
       <button class="btn btn-success">Change sets or reps</button>
-    </a>
-  </div>
+    </li>
+  </ul>
 </div>

@@ -41,4 +41,12 @@ export class TableComponent implements OnInit {
   isAdminProperty() {
     return this.userOfTable === 'admin';
   }
+
+  remove(exercise: Exercise) {
+    this.table.exerciseList.forEach((exer, index) => {
+      if (exer.id === exercise.id) {
+        this.table.exerciseList.splice(index, 1);
+      }
+    });
+  }
 }
