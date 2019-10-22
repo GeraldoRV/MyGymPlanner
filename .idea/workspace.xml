@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ExerciseTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ExerciseTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
     </list>
@@ -79,8 +84,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -88,9 +94,10 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.model" />
     </key>
   </component>
   <component name="RunDashboard">

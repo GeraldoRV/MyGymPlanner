@@ -3,6 +3,9 @@ import {WorkoutTableService} from '../../../service/workout-table.service';
 import {WorkoutTable} from '../../../model/workout-table';
 import {Exercise} from '../../../model/exercise';
 import {LoginService} from '../../../service/login.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ExerciseType} from '../../../model/exercise-type';
+import {ExerciseTypeService} from '../../../service/exercise-type.service';
 
 @Component({
   selector: 'app-table',
@@ -13,8 +16,10 @@ export class TableComponent implements OnInit {
   table: WorkoutTable;
   exerciseList: Exercise[];
   userOfTable: string;
+  exerciseTypeList: ExerciseType[] = null;
 
-  constructor(private _wtService: WorkoutTableService, private _loginService: LoginService) {
+  constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
+              private _modalService: NgbModal, private _exeTService: ExerciseTypeService) {
   }
 
   ngOnInit() {
@@ -48,5 +53,17 @@ export class TableComponent implements OnInit {
         this.table.exerciseList.splice(index, 1);
       }
     });
+  }
+
+  openModal(content) {
+    if (this.exerciseTypeList === null) {
+      this._exeTService.getAllExerciseType().subscribe((res) => {
+        this.exerciseTypeList = res;
+      }, error => {
+        console.log(error);
+      });
+    }
+    this._modalService.open(content);
+
   }
 }

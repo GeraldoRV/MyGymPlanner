@@ -1,7 +1,7 @@
 <div class="container">
   <h4>{{table.name}}</h4>
   <h5>Level {{table.level}}</h5>
-  <button class="btn btn-success">Add new exercise</button>
+  <button class="btn btn-success" (click)="openModal(content)">Add new exercise</button>
   <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn btn-success">Save routine</button>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
@@ -15,3 +15,33 @@
     </li>
   </ul>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add exercise </h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="exerciseType">
+          Choose Exercise
+        </label>
+        <select class="form-control" id="exerciseType">
+          <option *ngFor="let exerciseType of exerciseTypeList">{{exerciseType.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sets">Sets</label>
+        <input class="form-control" id="sets" type="text" placeholder="Sets">
+      </div>
+      <div class="form-group">
+        <label for="repetitions">Set the repetitions</label>
+        <input class="form-control" id="repetitions" type="text" placeholder="Repetitions">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success">Add</button>
+    <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
+  </div>
+</ng-template>
