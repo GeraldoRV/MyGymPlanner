@@ -6,6 +6,7 @@ import {LoginService} from '../../../service/login.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -17,9 +18,13 @@ export class TableComponent implements OnInit {
   exerciseList: Exercise[];
   userOfTable: string;
   exerciseTypeList: ExerciseType[] = null;
+  addForm: FormGroup;
+  private newExercises: Exercise[] = [];
+  other: string;
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
-              private _modalService: NgbModal, private _exeTService: ExerciseTypeService) {
+              private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
+              private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -30,6 +35,7 @@ export class TableComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
+    // this.newExercises = [];
   }
 
   save() {
@@ -43,10 +49,6 @@ export class TableComponent implements OnInit {
     });
   }
 
-  isAdminProperty() {
-    return this.userOfTable === 'admin';
-  }
-
   remove(exercise: Exercise) {
     this.table.exerciseList.forEach((exer, index) => {
       if (exer.id === exercise.id) {
@@ -56,6 +58,7 @@ export class TableComponent implements OnInit {
   }
 
   openModal(content) {
+    this.builderForm();
     if (this.exerciseTypeList === null) {
       this._exeTService.getAllExerciseType().subscribe((res) => {
         this.exerciseTypeList = res;
@@ -64,6 +67,35 @@ export class TableComponent implements OnInit {
       });
     }
     this._modalService.open(content);
+
+  }
+
+  private builderForm() {
+    this.addForm = this.fb.group(
+      {
+        sets: [''],
+        repetitions: [''],
+        exerciseType: ['']
+      }
+    );
+  }
+
+  onSubmit() {
+    const newExercise = new Exercise;
+    newExercise.exerciseType = this.addForm.controls.exerciseType.value;
+    newExercise.sets = this.addForm.controls.sets.value;
+    newExercise.repetitions = this.addForm.controls.repetitions.value;
+    this.newExercises.push(newExercise);
+    this.addForm.reset();
+    this.other = 'other';
+  }
+
+  saveExercises() {
+    this.newExercises.forEach((exercise) => {
+      this.table.exerciseList.push(exercise);
+    });
+    this._modalService.dismissAll();
+    this.other = '';
 
   }
 }

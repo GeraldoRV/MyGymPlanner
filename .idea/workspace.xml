@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ExerciseTypeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ExerciseTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
     </list>
@@ -267,6 +261,8 @@
       <workItem from="1571070583212" duration="8419000" />
       <workItem from="1571123684886" duration="14736000" />
       <workItem from="1571214677606" duration="12336000" />
+      <workItem from="1571758203976" duration="79000" />
+      <workItem from="1571820105825" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>

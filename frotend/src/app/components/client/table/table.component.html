@@ -21,27 +21,29 @@
     <h4 class="modal-title">Add exercise </h4>
   </div>
   <div class="modal-body">
-    <form>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="exerciseType">
           Choose Exercise
         </label>
-        <select class="form-control" id="exerciseType">
-          <option *ngFor="let exerciseType of exerciseTypeList">{{exerciseType.name}}</option>
+        <select class="form-control" formControlName="exerciseType" id="exerciseType">
+          <option *ngFor="let exerciseType of exerciseTypeList" [ngValue]="exerciseType">{{exerciseType.name}}</option>
         </select>
       </div>
       <div class="form-group">
         <label for="sets">Sets</label>
-        <input class="form-control" id="sets" type="text" placeholder="Sets">
+        <input class="form-control" id="sets" type="text" formControlName="sets" placeholder="Sets">
       </div>
       <div class="form-group">
         <label for="repetitions">Set the repetitions</label>
-        <input class="form-control" id="repetitions" type="text" placeholder="Repetitions">
+        <input class="form-control" id="repetitions" type="text" formControlName="repetitions"
+               placeholder="Repetitions">
       </div>
+      <button class="btn btn-success" type="submit">Add {{other}} exercise</button>
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-success">Add</button>
+    <button class="btn btn-success" (click)="saveExercises()">Save changes</button>
     <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
   </div>
 </ng-template>
