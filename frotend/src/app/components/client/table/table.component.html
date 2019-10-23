@@ -11,20 +11,20 @@
       </div>
       <p class="mb-1">{{exercise.exerciseType.description}} </p>
       <button class="btn btn-success" (click)="remove(exercise)">Remove</button>
-      <button class="btn btn-success">Change sets or reps</button>
+      <button class="btn btn-success" (click)="openModalChange(content,exercise)">Change sets or reps</button>
     </li>
   </ul>
 </div>
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Add exercise </h4>
+    <h4 class="modal-title">{{modalTitle}}</h4>
   </div>
   <div class="modal-body">
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="exerciseType">
-          Choose Exercise
+          {{choose}}Exercise
         </label>
         <select class="form-control" formControlName="exerciseType" id="exerciseType">
           <option *ngFor="let exerciseType of exerciseTypeList" [ngValue]="exerciseType">{{exerciseType.name}}</option>
@@ -39,7 +39,7 @@
         <input class="form-control" id="repetitions" type="text" formControlName="repetitions"
                placeholder="Repetitions">
       </div>
-      <button class="btn btn-success" type="submit">Add {{other}} exercise</button>
+      <button class="btn btn-success" type="submit">{{nameButtonAdd}}</button>
     </form>
   </div>
   <div class="modal-footer">

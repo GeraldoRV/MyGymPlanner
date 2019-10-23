@@ -106,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -262,7 +262,7 @@
       <workItem from="1571123684886" duration="14736000" />
       <workItem from="1571214677606" duration="12336000" />
       <workItem from="1571758203976" duration="79000" />
-      <workItem from="1571820105825" duration="4454000" />
+      <workItem from="1571820105825" duration="10403000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -292,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571225809717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update routine modify for client add exercise done">
+      <created>1571824758600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571824758600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +330,8 @@
     <MESSAGE value="Working in save a routine for client back and some changes" />
     <MESSAGE value="Working in save a routine for client front and some changes" />
     <MESSAGE value="Working in update a routine in back and persist changes in the db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working in update a routine in back and persist changes in the db" />
+    <MESSAGE value="Update routine modify for client add exercise done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update routine modify for client add exercise done" />
   </component>
   <component name="masterDetails">
     <states>
