@@ -27,18 +27,19 @@ public class WorkoutTableService {
     
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));
-        List<Exercise> exerciseList = changeIdsExercise(workoutTable.getExerciseList());
+        List<Exercise> exerciseList = workoutTable.getExerciseList();
+        if (exerciseList != null){
+            changeIdsExercise(exerciseList);
+        }
 
-        workoutTable.setExerciseList(exerciseList);
         return wtDao.save(workoutTable);
     }
 
-    private List<Exercise> changeIdsExercise(List<Exercise> exerciseList) {
+    private void changeIdsExercise(List<Exercise> exerciseList) {
         for (Exercise exercise :
                 exerciseList) {
             exercise.setId(null);
         }
-        return exerciseList;
     }
 
     public WorkoutTable update(WorkoutTable workoutTable) {
