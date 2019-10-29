@@ -28,6 +28,8 @@ export class TableComponent implements OnInit {
   private newSets: any;
   private newRepetitions: any;
   nameButtonAdd: string;
+  nameTable: string;
+  levelTable: string;
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
@@ -37,6 +39,8 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this._wtService.getWorkTable().subscribe((table) => {
       this.table = table;
+      this.nameTable = table.name;
+      this.levelTable = table.level;
       this.exerciseList = table.exerciseList;
       this.userOfTable = table.user.role;
     }, (err) => {

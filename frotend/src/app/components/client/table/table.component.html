@@ -1,6 +1,6 @@
 <div class="container">
-  <h4>{{table.name}}</h4>
-  <h5>Level {{table.level}}</h5>
+  <h4>{{nameTable}}</h4>
+  <h5>Level {{levelTable}}</h5>
   <button class="btn btn-success" (click)="openModal(content)">Add new exercise</button>
   <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn btn-success">Save routine</button>
   <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn btn-success">Save all changes</button>

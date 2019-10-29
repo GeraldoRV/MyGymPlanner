@@ -43,13 +43,16 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'routine', component: TableComponent
-    // canActivate: [AuthGuard]
+    path: 'routine', component: TableComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'classes', component: ClassDirectedComponent,
     canActivate: [AuthGuard]
   },
-  {path: 'monitor', component: MainMonitorComponent},
+  {
+    path: 'monitor', component: MainMonitorComponent,
+    canActivate: [AuthGuard]
+  },
   {path: '**', component: NotFoundComponent}
 ];
 
