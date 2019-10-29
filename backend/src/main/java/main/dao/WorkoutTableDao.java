@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface WorkoutTableDao extends CrudRepository<WorkoutTable, Integer> {
     List<WorkoutTable> findAllByUser_Gym_IdAndUser_Role(Integer id,String role);
+    List<WorkoutTable> findAllByUser_Id(Integer id);
 }

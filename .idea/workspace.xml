@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/WorkoutTableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +268,8 @@
       <workItem from="1571123684886" duration="14736000" />
       <workItem from="1571214677606" duration="12336000" />
       <workItem from="1571758203976" duration="79000" />
-      <workItem from="1571820105825" duration="10403000" />
+      <workItem from="1571820105825" duration="10632000" />
+      <workItem from="1572350291541" duration="3188000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -299,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571824758600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update routine modify for client modify a exercise done">
+      <created>1571831285287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571831285287</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +345,8 @@
     <MESSAGE value="Working in save a routine for client front and some changes" />
     <MESSAGE value="Working in update a routine in back and persist changes in the db" />
     <MESSAGE value="Update routine modify for client add exercise done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update routine modify for client add exercise done" />
+    <MESSAGE value="Update routine modify for client modify a exercise done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update routine modify for client modify a exercise done" />
   </component>
   <component name="masterDetails">
     <states>

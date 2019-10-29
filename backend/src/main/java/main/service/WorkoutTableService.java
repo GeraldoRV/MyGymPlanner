@@ -43,4 +43,8 @@ public class WorkoutTableService {
     public WorkoutTable update(WorkoutTable workoutTable) {
         return wtDao.save(workoutTable);
     }
+
+    public List<WorkoutTable> getAllTablesByUser(Integer id) {
+        return wtDao.findAllByUser_Id(id);
+    }
 }

@@ -27,4 +27,12 @@ export class WorkoutTableService {
   saveTable(workoutTable: WorkoutTable) {
     return this._http.put<WorkoutTable>(this.base_url + '/client', workoutTable);
   }
+
+  getAllMyWorkTable(userId: number) {
+    return this._http.get<WorkoutTable[]>(this.base_url + '/user/' + userId);
+  }
+
+  updateWorkTable(workoutTable: WorkoutTable) {
+    return this._http.put<WorkoutTable>(this.base_url, workoutTable);
+  }
 }

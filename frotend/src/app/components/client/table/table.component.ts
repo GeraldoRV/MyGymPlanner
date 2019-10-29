@@ -174,4 +174,12 @@ export class TableComponent implements OnInit {
       this.modifiedExercise.exerciseType, {onlySelf: true});
 
   }
+
+  saveChanges() {
+    this._wtService.updateWorkTable(this.table).subscribe((table) => {
+      this.table = table;
+    }, error => {
+      console.log(error);
+    });
+  }
 }
