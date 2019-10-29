@@ -1,6 +1,7 @@
 package main.service;
 
 import main.dao.WorkoutTableDao;
+import main.model.Exercise;
 import main.model.WorkoutTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,20 +24,28 @@ public class WorkoutTableService {
     }
 
     public WorkoutTable modifyToClient(WorkoutTable workoutTable) {
-        if(!isOfTheGym(workoutTable)){
-            return null;
-        }
+    
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));
+        List<Exercise> exerciseList = changeIdsExercise(workoutTable.getExerciseList());
 
+        workoutTable.setExerciseList(exerciseList);
         return wtDao.save(workoutTable);
     }
 
-    private boolean isOfTheGym(WorkoutTable workoutTable) {
-        return wtDao.existsByIdAndUser_Role(workoutTable.getId(), "admin");
+    private List<Exercise> changeIdsExercise(List<Exercise> exerciseList) {
+        for (Exercise exercise :
+                exerciseList) {
+            exercise.setId(null);
+        }
+        return exerciseList;
     }
 
     public WorkoutTable update(WorkoutTable workoutTable) {
         return wtDao.save(workoutTable);
+    }
+
+    public List<WorkoutTable> getAllTablesByUser(Integer id) {
+        return wtDao.findAllByUser_Id(id);
     }
 }

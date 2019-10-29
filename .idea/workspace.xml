@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Working in the tests of wTService(problems with the orphanRemoval)">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +79,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -87,9 +89,10 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,8 +107,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WorkoutTableServiceTest">
-    <configuration name="GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
+    <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -275,7 +278,9 @@
       <workItem from="1571070583212" duration="8419000" />
       <workItem from="1571123684886" duration="14736000" />
       <workItem from="1571214677606" duration="12336000" />
-      <workItem from="1571651590565" duration="7157000" />
+      <workItem from="1571758203976" duration="79000" />
+      <workItem from="1571820105825" duration="10632000" />
+      <workItem from="1572350291541" duration="3818000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -305,14 +310,28 @@
       <option name="project" value="LOCAL" />
       <updated>1571225809717</updated>
     </task>
-    <task id="LOCAL-00005" summary="Working in update a routine in back and persist changes in the db">
-      <created>1571395167963</created>
+    <task id="LOCAL-00005" summary="Update routine modify for client add exercise done">
+      <created>1571824758600</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1571395167963</updated>
+      <updated>1571824758600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update routine modify for client modify a exercise done">
+      <created>1571831285287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571831285287</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update a routine for particular user done">
+      <created>1572353613586</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572353613586</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,8 +362,11 @@
     <MESSAGE value="Working in save a routine for client back and some changes" />
     <MESSAGE value="Working in save a routine for client front and some changes" />
     <MESSAGE value="Working in update a routine in back and persist changes in the db" />
-    <MESSAGE value="Working in the tests of wTService(problems with the orphanRemoval)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working in the tests of wTService(problems with the orphanRemoval)" />
+    <MESSAGE value="Update routine modify for client add exercise done" />
+    <MESSAGE value="Update routine modify for client modify a exercise done" />
+    <MESSAGE value="Update routine done" />
+    <MESSAGE value="Update a routine for particular user done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a routine for particular user done" />
   </component>
   <component name="masterDetails">
     <states>

@@ -22,6 +22,7 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ClassDirectedComponent} from './components/class-directed/class-directed.component';
 import {DatePipe} from '@angular/common';
 import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
+import {ExerciseTypeService} from './service/exercise-type.service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -42,13 +43,16 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'routine', component: TableComponent
-    // canActivate: [AuthGuard]
+    path: 'routine', component: TableComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'classes', component: ClassDirectedComponent,
     canActivate: [AuthGuard]
   },
-  {path: 'monitor', component: MainMonitorComponent},
+  {
+    path: 'monitor', component: MainMonitorComponent,
+    canActivate: [AuthGuard]
+  },
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -76,7 +80,7 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, UserService, WorkoutTableService, AuthGuard, DatePipe],
+  providers: [LoginService, UserService, WorkoutTableService, ExerciseTypeService, AuthGuard, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

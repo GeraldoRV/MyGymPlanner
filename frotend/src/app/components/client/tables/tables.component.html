@@ -1,18 +1,46 @@
 <div class="container py-3">
-  <table class="table">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Level</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let table of tables; let i = index" (click)="seeRoutine(table.id)">
-      <td>{{i + 1}}</td>
-      <td>{{table.name}}</td>
-      <td>{{table.level}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <ngb-tabset (tabChange)="beforeChange($event)">
+    <ngb-tab id="tab-routines" title="Routines">
+      <ng-template ngbTabContent>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Level</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let table of tables; let i = index" (click)="seeRoutine(table.id)">
+            <td>{{i + 1}}</td>
+            <td>{{table.name}}</td>
+            <td>{{table.level}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-myRoutines" title="My Routines">
+      <ng-template ngbTabContent>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Level</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let table of myTables; let i = index" (click)="seeRoutine(table.id)">
+            <td>{{i + 1}}</td>
+            <td>{{table.name}}</td>
+            <td>{{table.level}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+
+    </ngb-tab>
+  </ngb-tabset>
 </div>
