@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -77,9 +78,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -87,10 +89,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,7 +106,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.ClassDirectedServiceTest">
+    <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.service" />
+      <option name="MAIN_CLASS_NAME" value="main.service.ClassDirectedServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WorkoutTableServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -148,22 +164,6 @@
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
       <option name="METHOD_NAME" value="givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutTableServiceTest.givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
-      <option name="METHOD_NAME" value="givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClassDirectedServiceTest" />
         <item itemvalue="JUnit.WorkoutTableServiceTest" />
         <item itemvalue="JUnit.WorkoutTableServiceTest.givenAExistWTWithExercisesExerciseModified_whenUpdate_ReturnWtModified" />
         <item itemvalue="JUnit.main in backend" />
         <item itemvalue="JUnit.WorkoutTableServiceTest.givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
-        <item itemvalue="JUnit.WorkoutTableServiceTest.givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
       </list>
     </recent_temporary>
   </component>
