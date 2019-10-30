@@ -38,22 +38,24 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this._wtService.getWorkTable().subscribe((table) => {
-      this.table = table;
-      this.nameTable = table.name;
-      this.levelTable = table.level;
-      this.exerciseList = table.exerciseList;
-      this.userOfTable = table.user.role;
+      this.setRoutine(table);
     }, (err) => {
       console.log(err);
     });
   }
 
+  private setRoutine(table: WorkoutTable) {
+    this.table = table;
+    this.nameTable = table.name;
+    this.levelTable = table.level;
+    this.exerciseList = table.exerciseList;
+    this.userOfTable = table.user.role;
+  }
+
   save() {
     this.table.user = this._loginService.getUser();
     this._wtService.saveTable(this.table).subscribe(table => {
-      this.table = table;
-      this.exerciseList = this.table.exerciseList;
-      this.userOfTable = table.user.role;
+      this.setRoutine(table);
     }, error => {
       console.log(error);
     });
@@ -181,7 +183,7 @@ export class TableComponent implements OnInit {
 
   saveChanges() {
     this._wtService.updateWorkTable(this.table).subscribe((table) => {
-      this.table = table;
+     this.setRoutine(table);
     }, error => {
       console.log(error);
     });
