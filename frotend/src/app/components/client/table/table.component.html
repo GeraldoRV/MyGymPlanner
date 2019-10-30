@@ -1,9 +1,9 @@
 <div class="container">
   <h4>{{nameTable}}</h4>
   <h5>Level {{levelTable}}</h5>
-  <button class="btn btn-success" (click)="openModal(content)">Add new exercise</button>
-  <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn btn-success">Save routine</button>
-  <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn btn-success">Save all changes</button>
+  <button class="btn my-button-success" (click)="openModal(content)">Add new exercise</button>
+  <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn my-button-success">Save routine</button>
+  <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Save all changes</button>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
       <div class="d-flex w-100 justify-content-between">
@@ -11,8 +11,8 @@
         <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
       </div>
       <p class="mb-1">{{exercise.exerciseType.description}} </p>
-      <button class="btn btn-success" (click)="remove(exercise)">Remove</button>
-      <button class="btn btn-success" (click)="openModalChange(content,exercise)">Change sets or reps</button>
+      <button class="btn my-button-success" (click)="remove(exercise)">Remove</button>
+      <button class="btn my-button-success" (click)="openModalChange(content,exercise)">Change sets or reps</button>
     </li>
   </ul>
 </div>
@@ -40,11 +40,11 @@
         <input class="form-control" id="repetitions" type="text" formControlName="repetitions"
                placeholder="Repetitions">
       </div>
-      <button class="btn btn-success" type="submit">{{nameButtonAdd}}</button>
+      <button class="btn my-button-success" type="submit">{{nameButtonAdd}}</button>
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-success" (click)="saveExercises()">Save changes</button>
+    <button class="btn my-button-success" (click)="saveExercises()">Save changes</button>
     <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
   </div>
 </ng-template>

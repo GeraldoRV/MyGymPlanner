@@ -1,4 +1,12 @@
-tbody>tr:hover{
+tbody > tr:hover {
   cursor: pointer;
-  background-color: greenyellow;
+  background-color: #c8e6c9;
+}
+
+:host ::ng-deep .tabSet a.nav-link {
+   color: #c8e6c9;
+ }
+:host ::ng-deep .tabSet a.nav-link.active {
+  color: #8bc34a;
+
 }
