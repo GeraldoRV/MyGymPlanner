@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClassDirectedServiceTest">
+  <component name="RunManager" selected="JUnit.ExerciseTypeServiceTest">
     <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -117,6 +116,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.ClassDirectedServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExerciseTypeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.service" />
+      <option name="MAIN_CLASS_NAME" value="main.service.ExerciseTypeServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,22 +162,6 @@
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
       <option name="METHOD_NAME" value="givenAExistWTWithExercisesExerciseModified_whenUpdate_ReturnWtModified" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutTableServiceTest.givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
-      <option name="METHOD_NAME" value="givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExerciseTypeServiceTest" />
         <item itemvalue="JUnit.ClassDirectedServiceTest" />
         <item itemvalue="JUnit.WorkoutTableServiceTest" />
         <item itemvalue="JUnit.WorkoutTableServiceTest.givenAExistWTWithExercisesExerciseModified_whenUpdate_ReturnWtModified" />
         <item itemvalue="JUnit.main in backend" />
-        <item itemvalue="JUnit.WorkoutTableServiceTest.givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk" />
       </list>
     </recent_temporary>
   </component>
@@ -281,6 +279,7 @@
       <workItem from="1571820105825" duration="10632000" />
       <workItem from="1572350291541" duration="8906000" />
       <workItem from="1572430699308" duration="1461000" />
+      <workItem from="1572859457613" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
