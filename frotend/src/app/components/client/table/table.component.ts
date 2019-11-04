@@ -6,7 +6,7 @@ import {LoginService} from '../../../service/login.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -91,9 +91,11 @@ export class TableComponent implements OnInit {
     this.nameButtonAdd = 'Add Exercise';
     this.addForm = this.fb.group(
       {
-        sets: [''],
-        repetitions: [''],
-        exerciseType: ['']
+        sets: ['',
+          [Validators.required, Validators.min(1), Validators.max(30)]],
+        repetitions: ['',
+          [Validators.required, Validators.min(1), Validators.max(200)]],
+        exerciseType: ['', Validators.required]
       }
     );
   }
@@ -104,8 +106,10 @@ export class TableComponent implements OnInit {
     this.choose = null;
     this.addForm = this.fb.group(
       {
-        sets: [this.modifiedExercise.sets],
-        repetitions: [this.modifiedExercise.repetitions],
+        sets: [this.modifiedExercise.sets,
+          [Validators.required, Validators.min(1), Validators.max(30)]],
+        repetitions: [this.modifiedExercise.repetitions,
+          [Validators.required, Validators.min(1), Validators.max(200)]],
         exerciseType: []
       }
     );
@@ -137,10 +141,12 @@ export class TableComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.addExerciseModal) {
-      this.submitNewExercises();
-    } else {
-      this.submitUpdateExercise();
+    if (this.addForm.valid) {
+      if (this.addExerciseModal) {
+        this.submitNewExercises();
+      } else {
+        this.submitUpdateExercise();
+      }
     }
   }
 
@@ -185,5 +191,9 @@ export class TableComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  get controls() {
+    return this.addForm.controls;
   }
 }

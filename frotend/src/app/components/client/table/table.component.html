@@ -12,7 +12,8 @@
       </div>
       <p class="mb-1">{{exercise.exerciseType.description}} </p>
       <button class="btn my-button-success" (click)="remove(exercise)">Remove</button>
-      <button class="btn my-button-success" (click)="openUpdateExerciseModal(content,exercise)">Change sets or reps</button>
+      <button class="btn my-button-success" (click)="openUpdateExerciseModal(content,exercise)">Change sets or reps
+      </button>
     </li>
   </ul>
 </div>
@@ -30,15 +31,49 @@
         <select class="form-control" formControlName="exerciseType" id="exerciseType">
           <option *ngFor="let exerciseType of exerciseTypeList" [ngValue]="exerciseType">{{exerciseType.name}}</option>
         </select>
+        <div *ngIf="controls.exerciseType.invalid && (controls.exerciseType.dirty || controls.exerciseType.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="controls.exerciseType.errors.required">
+            Exercise is required.
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="sets">Sets</label>
-        <input class="form-control" id="sets" type="text" formControlName="sets" placeholder="Sets">
+        <input class="form-control" id="sets" type="number" formControlName="sets" placeholder="Sets">
+        <div *ngIf="controls.sets.invalid && (controls.sets.dirty || controls.sets.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="controls.sets.errors.required">
+            Sets is required.
+          </div>
+          <div *ngIf="controls.sets.errors.min">
+            This number must be higher than 0.
+          </div>
+          <div *ngIf="controls.sets.errors.max">
+            This number is too big.
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="repetitions">Set the repetitions</label>
-        <input class="form-control" id="repetitions" type="text" formControlName="repetitions"
+        <input class="form-control" id="repetitions" type="number" formControlName="repetitions"
                placeholder="Repetitions">
+        <div *ngIf="controls.repetitions.invalid
+        && (controls.repetitions.dirty || controls.repetitions.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="controls.repetitions.errors.required">
+            Repetitions is required.
+          </div>
+          <div *ngIf="controls.repetitions.errors.min">
+            This number must be higher than 0.
+          </div>
+          <div *ngIf="controls.repetitions.errors.max">
+            This number is too big.
+          </div>
+        </div>
       </div>
       <button class="btn my-button-success" type="submit">{{nameButtonAdd}}</button>
     </form>

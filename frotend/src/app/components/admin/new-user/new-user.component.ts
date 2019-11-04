@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../../model/user';
 import {LoginService} from '../../../service/login.service';
 import {UserService} from '../../../service/user.service';
@@ -26,22 +26,25 @@ export class NewUserComponent implements OnInit {
   ngOnInit() {
     this.userAddForm = this.fb.group(
       {
-        name: [''],
-        username: [''],
-        roles: ['']
+        name: ['', Validators.required],
+        username: ['', Validators.required],
+        roles: ['', Validators.required]
       }
     );
     this.roles = NewUserComponent.getRoles();
   }
 
   submit() {
-    const user = this.getUserDetails();
+    if (this.userAddForm.valid) {
+      const user = this.getUserDetails();
 
-    this._userService.createUser(user).subscribe(() => {
-      this._route.navigate(['/admin']).then();
-    }, error => {
-      console.log(error);
-    });
+      this._userService.createUser(user).subscribe(() => {
+        this._route.navigate(['/admin']).then();
+      }, error => {
+        console.log(error);
+      });
+
+    }
   }
 
   private getUserDetails(): User {
@@ -52,6 +55,10 @@ export class NewUserComponent implements OnInit {
     user.userName = this.userAddForm.controls.username.value;
     user.password = '1234';
     return user;
+  }
+
+  get controls() {
+    return this.userAddForm.controls;
   }
 
 }
