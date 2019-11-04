@@ -1,89 +1,91 @@
-<ngb-tabset [activeId]="activeId" (tabChange)="beforeChange($event)">
-  <ngb-tab id="tab-Monday" title="Monday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfMon">
-          <h5>
+<div class="container">
+  <ngb-tabset class="tabSet" justify="fill" [activeId]="activeId" (tabChange)="beforeChange($event)">
+    <ngb-tab id="tab-Monday" title="Monday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfMon">
+            <h5>
+              {{classDirected.typeClass.name}}
+            </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Tuesday" title="Tuesday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfTues"><h5>
             {{classDirected.typeClass.name}}
           </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p>
-        </li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Tuesday" title="Tuesday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfTues"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Wednesday" title="Wednesday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfWed"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Thursday" title="Thursday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfThur"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Friday" title="Friday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfFri"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Saturday" title="Saturday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfSat"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="tab-Sunday" title="Sunday">
-    <ng-template ngbTabContent>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let classDirected of classesOfSun"><h5>
-          {{classDirected.typeClass.name}}
-        </h5>
-          <p>
-            {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-          </p></li>
-      </ul>
-    </ng-template>
-  </ngb-tab>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Wednesday" title="Wednesday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfWed"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Thursday" title="Thursday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfThur"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Friday" title="Friday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfFri"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Saturday" title="Saturday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfSat"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Sunday" title="Sunday">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfSun"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+            </p></li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
 
-</ngb-tabset>
+  </ngb-tabset>
+</div>
