@@ -17,23 +17,23 @@ public class WorkoutTableController {
     private WorkoutTableService wtService;
 
     @GetMapping("gym/{id}")
-    public List<WorkoutTable> findAllByGym(@PathVariable Integer id) {
+    public List<WorkoutTable> getAllByGym(@PathVariable Integer id) {
         return wtService.getAllTablesByGym(id);
     }
 
     @GetMapping("user/{id}")
-    public List<WorkoutTable> findAllByUser(@PathVariable Integer id) {
+    public List<WorkoutTable> getAllByUser(@PathVariable Integer id) {
         return wtService.getAllTablesByUser(id);
     }
 
     @GetMapping("/{id}")
-    public Optional<WorkoutTable> findWorkTable(@PathVariable Integer id) {
+    public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {
         return wtService.get(id);
     }
 
     @PutMapping("client")
     public WorkoutTable modifyWorkoutTableClient(@RequestBody WorkoutTable workoutTable) {
-        return wtService.modifyToClient(workoutTable);
+        return wtService.createACopyToClient(workoutTable);
     }
 
     @PutMapping

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {ClassDirected} from '../../../model/class-directed';
 import {ClassDirectedService} from '../../../service/class-directed.service';
-import {User} from '../../../model/user';
 import {Gym} from '../../../model/gym';
 
 @Component({

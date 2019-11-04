@@ -11,11 +11,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  userAddForm: FormGroup;
-  roles = [];
 
   constructor(private fb: FormBuilder, private _loginService: LoginService,
               private _userService: UserService, private _route: Router) {
+  }
+
+  userAddForm: FormGroup;
+  roles = [];
+
+  private static getRoles() {
+    return ['client', 'admin', 'monitor'];
   }
 
   ngOnInit() {
@@ -26,18 +31,14 @@ export class NewUserComponent implements OnInit {
         roles: ['']
       }
     );
-    this.roles = this.getRoles();
-  }
-
-  private getRoles() {
-    return ['client', 'admin', 'monitor'];
+    this.roles = NewUserComponent.getRoles();
   }
 
   submit() {
     const user = this.getUserDetails();
 
-    this._userService.createUser(user).subscribe(res => {
-      this._route.navigate(['/admin']);
+    this._userService.createUser(user).subscribe(() => {
+      this._route.navigate(['/admin']).then();
     }, error => {
       console.log(error);
     });

@@ -62,19 +62,55 @@ export class TableComponent implements OnInit {
   }
 
   remove(exercise: Exercise) {
-    this.table.exerciseList.forEach((exer, index) => {
-      if (exer.id === exercise.id) {
+    this.table.exerciseList.forEach((exerciseOfList, index) => {
+      if (exerciseOfList.id === exercise.id) {
         this.table.exerciseList.splice(index, 1);
       }
     });
   }
 
-  openModal(content) {
+  openAddExercisesModal(content) {
     this.addExerciseModal = true;
-    this.builderForm();
+    this.builderAddExerciseForm();
     this.getAllExercisesType();
     this._modalService.open(content);
 
+  }
+
+  openUpdateExerciseModal(content, exercise: Exercise) {
+    this.modifiedExercise = exercise;
+    this.addExerciseModal = false;
+    this.builderUpdateExerciseForm();
+    this.getAllExercisesType();
+    this._modalService.open(content);
+  }
+
+  private builderAddExerciseForm() {
+    this.modalTitle = 'Add Exercise';
+    this.choose = 'Choose ';
+    this.nameButtonAdd = 'Add Exercise';
+    this.addForm = this.fb.group(
+      {
+        sets: [''],
+        repetitions: [''],
+        exerciseType: ['']
+      }
+    );
+  }
+
+  private builderUpdateExerciseForm() {
+    this.modalTitle = 'Modify Exercise';
+    this.nameButtonAdd = 'Change';
+    this.choose = null;
+    this.addForm = this.fb.group(
+      {
+        sets: [this.modifiedExercise.sets],
+        repetitions: [this.modifiedExercise.repetitions],
+        exerciseType: []
+      }
+    );
+    this.addForm.controls.exerciseType.setValue(
+      this.modifiedExercise.exerciseType, {onlySelf: true});
   }
 
   private getAllExercisesType() {
@@ -88,7 +124,6 @@ export class TableComponent implements OnInit {
     } else {
       this.setDefault();
     }
-
   }
 
   private setDefault() {
@@ -99,19 +134,6 @@ export class TableComponent implements OnInit {
       this.addForm.controls.exerciseType.disable();
     }
 
-  }
-
-  private builderForm() {
-    this.modalTitle = 'Add Exercise';
-    this.choose = 'Choose ';
-    this.nameButtonAdd = 'Add Exercise';
-    this.addForm = this.fb.group(
-      {
-        sets: [''],
-        repetitions: [''],
-        exerciseType: ['']
-      }
-    );
   }
 
   onSubmit() {
@@ -157,33 +179,9 @@ export class TableComponent implements OnInit {
 
   }
 
-  openModalChange(content, exercise: Exercise) {
-    this.modifiedExercise = exercise;
-    this.addExerciseModal = false;
-    this.buildFormUpdate();
-    this.getAllExercisesType();
-    this._modalService.open(content);
-  }
-
-  private buildFormUpdate() {
-    this.modalTitle = 'Modify Exercise';
-    this.nameButtonAdd = 'Change';
-    this.choose = null;
-    this.addForm = this.fb.group(
-      {
-        sets: [this.modifiedExercise.sets],
-        repetitions: [this.modifiedExercise.repetitions],
-        exerciseType: []
-      }
-    );
-    this.addForm.controls.exerciseType.setValue(
-      this.modifiedExercise.exerciseType, {onlySelf: true});
-
-  }
-
   saveChanges() {
     this._wtService.updateWorkTable(this.table).subscribe((table) => {
-     this.setRoutine(table);
+      this.setRoutine(table);
     }, error => {
       console.log(error);
     });

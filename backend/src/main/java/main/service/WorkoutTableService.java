@@ -23,7 +23,7 @@ public class WorkoutTableService {
         return wtDao.findById(id);
     }
 
-    public WorkoutTable modifyToClient(WorkoutTable workoutTable) {
+    public WorkoutTable createACopyToClient(WorkoutTable workoutTable) {
     
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));

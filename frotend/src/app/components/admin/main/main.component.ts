@@ -63,7 +63,6 @@ export class MainComponent implements OnInit {
       }
     });
 
-    // sorting users
     if (direction === '') {
       this.users = this.usersDontSort;
     } else {

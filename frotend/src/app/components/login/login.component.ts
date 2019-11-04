@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.userNotFoundAlert();
       } else {
         this.loginService.setUser(user);
-        this._route.navigate([user.role]);
+        this._route.navigate([user.role]).then();
       }
     }, (error) => {
       console.log(error);

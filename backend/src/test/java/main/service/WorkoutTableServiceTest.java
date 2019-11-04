@@ -7,7 +7,6 @@ import main.model.Exercise;
 import main.model.Gym;
 import main.model.User;
 import main.model.WorkoutTable;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -143,7 +142,7 @@ public class WorkoutTableServiceTest {
         if (!byId.isPresent()) return;
         WorkoutTable workoutTable1 = byId.get();
         workoutTable1.setUser(client);
-        WorkoutTable workoutTable = wtService.modifyToClient(workoutTable1);
+        WorkoutTable workoutTable = wtService.createACopyToClient(workoutTable1);
         assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 
@@ -154,7 +153,7 @@ public class WorkoutTableServiceTest {
         if (!byId.isPresent()) return;
         WorkoutTable workoutTable1 = byId.get();
         workoutTable1.setUser(client);
-        WorkoutTable workoutTable = wtService.modifyToClient(workoutTable1);
+        WorkoutTable workoutTable = wtService.createACopyToClient(workoutTable1);
         assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 

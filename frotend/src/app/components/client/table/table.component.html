@@ -1,7 +1,7 @@
 <div class="container">
   <h4>{{nameTable}}</h4>
   <h5>Level {{levelTable}}</h5>
-  <button class="btn my-button-success" (click)="openModal(content)">Add new exercise</button>
+  <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Add new exercise</button>
   <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn my-button-success">Save routine</button>
   <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Save all changes</button>
   <ul class="list-group">
@@ -12,7 +12,7 @@
       </div>
       <p class="mb-1">{{exercise.exerciseType.description}} </p>
       <button class="btn my-button-success" (click)="remove(exercise)">Remove</button>
-      <button class="btn my-button-success" (click)="openModalChange(content,exercise)">Change sets or reps</button>
+      <button class="btn my-button-success" (click)="openUpdateExerciseModal(content,exercise)">Change sets or reps</button>
     </li>
   </ul>
 </div>
