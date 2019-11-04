@@ -26,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -86,9 +86,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -96,10 +97,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
   <component name="RunDashboard">
