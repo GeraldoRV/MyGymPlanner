@@ -18,7 +18,21 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        return userDao.save(user);
+        if (isValidUser(user)) {
+            return userDao.save(user);
+        }
+
+        return null;
+    }
+
+    private boolean isValidUser(User user) {
+        return user.getName() != null && !user.getName().isEmpty() &&
+                user.getUserName() != null && !user.getUserName().isEmpty() &&
+                user.getRole() != null && !user.getRole().isEmpty() && !isNotARoleValid(user.getRole());
+    }
+
+    private boolean isNotARoleValid(String role) {
+        return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
     }
 
     public List<User> getAll() {
