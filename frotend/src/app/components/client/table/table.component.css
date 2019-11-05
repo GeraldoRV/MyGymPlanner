@@ -9,3 +9,12 @@
   background-color: #388e3c;
 }
 
+.container {
+  position: relative;
+}
+
+.message-alert {
+  position: absolute;
+  top: 14px;
+  left: 30%;
+}

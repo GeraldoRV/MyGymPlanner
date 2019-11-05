@@ -9,7 +9,7 @@
           <input class="form-control" id="userName" formControlName="userName" placeholder="Username"
                  type="text">
           <div *ngIf="controls.userName.invalid && (submit || controls.userName.dirty || controls.userName.touched)"
-               class="alert alert-danger">
+               class="text-danger">
 
             <div *ngIf="controls.userName.errors.required">
               Username is required.
@@ -20,7 +20,7 @@
           <input class="form-control" id="password" formControlName="password" placeholder="Password"
                  type="password">
           <div *ngIf="controls.password.invalid && (submit ||controls.password.dirty || controls.password.touched)"
-               class="alert alert-danger">
+               class="text-danger">
 
             <div *ngIf="controls.password.errors.required">
               Password is required.

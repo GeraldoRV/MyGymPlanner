@@ -8,7 +8,7 @@
         <label for="name">Full Name</label>
         <input class="form-control" type="text" formControlName="name" id="name">
         <div *ngIf="controls.name.invalid && ( submit ||controls.name.dirty || controls.name.touched)"
-             class="alert alert-danger">
+             class="text-danger">
 
           <div *ngIf="controls.name.errors.required">
             Name is required.
@@ -20,7 +20,7 @@
         <label for="username">Username</label>
         <input class="form-control" type="text" formControlName="username" id="username">
         <div *ngIf="controls.username.invalid && (submit || controls.username.dirty || controls.username.touched)"
-             class="alert alert-danger">
+             class="text-danger">
 
           <div *ngIf="controls.username.errors.required">
             Username is required.
@@ -35,7 +35,7 @@
         <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
       </select>
       <div *ngIf="controls.roles.invalid && (submit || controls.roles.dirty || controls.roles.touched)"
-           class="alert alert-danger">
+           class="text-danger">
 
         <div *ngIf="controls.roles.errors.required">
           Role is required.

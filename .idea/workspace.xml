@@ -4,14 +4,10 @@
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/alert/alert.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/alert/alert.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/alert/alert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/alert/alert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/alert.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/alert.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +110,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
