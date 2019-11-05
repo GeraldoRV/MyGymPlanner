@@ -24,11 +24,11 @@ public class WorkoutTableService {
     }
 
     public WorkoutTable createACopyToClient(WorkoutTable workoutTable) {
-    
+
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));
         List<Exercise> exerciseList = workoutTable.getExerciseList();
-        if (exerciseList != null){
+        if (exerciseList != null) {
             changeIdsExercise(exerciseList);
         }
 
@@ -48,5 +48,9 @@ public class WorkoutTableService {
 
     public List<WorkoutTable> getAllTablesByUser(Integer id) {
         return wtDao.findAllByUser_Id(id);
+    }
+
+    public void deleteWorkoutTable(Integer workoutTableId) {
+        wtDao.deleteById(workoutTableId);
     }
 }
