@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/GymServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/GymServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.main in backend">
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -213,8 +214,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.main in backend" />
+        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
         <item itemvalue="JUnit.GymServiceTest" />
         <item itemvalue="JUnit.WorkoutTableServiceTest" />
@@ -280,7 +281,8 @@
       <workItem from="1571820105825" duration="10632000" />
       <workItem from="1572350291541" duration="8906000" />
       <workItem from="1572430699308" duration="5627000" />
-      <workItem from="1572865934418" duration="5831000" />
+      <workItem from="1572865934418" duration="5878000" />
+      <workItem from="1572949130129" duration="1091000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -359,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572871309758</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Put validators in back create user">
+      <created>1572872357728</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572872357728</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +406,8 @@
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little refactor" />
     <MESSAGE value="Put validators in the forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put validators in the forms" />
+    <MESSAGE value="Put validators in back create user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Put validators in back create user" />
   </component>
   <component name="masterDetails">
     <states>
