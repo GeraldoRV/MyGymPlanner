@@ -1,10 +1,10 @@
 <div class="container">
   <h4>{{nameTable}}</h4>
   <h5>Level {{levelTable}}</h5>
+  <app-alert class="message-alert"></app-alert>
   <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Add new exercise</button>
   <button *ngIf="userOfTable==='admin'" (click)="saveRoutine()" class="btn my-button-success">Save routine</button>
   <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Save all changes</button>
-  <app-alert></app-alert>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
       <div class="d-flex w-100 justify-content-between">
@@ -34,7 +34,7 @@
         </select>
         <div
           *ngIf="controls.exerciseType.invalid && (controls.exerciseType.dirty || controls.exerciseType.touched)"
-          class="alert alert-danger">
+          class="text-danger">
 
           <div *ngIf="controls.exerciseType.errors.required">
             Exercise is required.
@@ -45,7 +45,7 @@
         <label for="sets">Sets</label>
         <input class="form-control" id="sets" type="number" formControlName="sets" placeholder="Sets">
         <div *ngIf="controls.sets.invalid && (controls.sets.dirty || controls.sets.touched)"
-             class="alert alert-danger">
+             class="text-danger">
 
           <div *ngIf="controls.sets.errors.required">
             Sets is required.
@@ -64,7 +64,7 @@
                placeholder="Repetitions">
         <div *ngIf="controls.repetitions.invalid
         && (controls.repetitions.dirty || controls.repetitions.touched)"
-             class="alert alert-danger">
+             class="text-danger">
 
           <div *ngIf="controls.repetitions.errors.required">
             Repetitions is required.

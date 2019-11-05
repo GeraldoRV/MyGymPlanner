@@ -176,7 +176,7 @@ export class TableComponent implements OnInit {
     this._alertService.setDismissible(false);
     this._alertService.setMessage('Updated done');
     this._alertService.show();
-    this._alertService.setTimeout(5000);
+    this._alertService.setTimeout(2000);
   }
 
   saveExercises() {
