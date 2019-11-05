@@ -18,6 +18,7 @@ export class NewUserComponent implements OnInit {
 
   userAddForm: FormGroup;
   roles = [];
+  submit = false;
 
   private static getRoles() {
     return ['client', 'admin', 'monitor'];
@@ -34,7 +35,8 @@ export class NewUserComponent implements OnInit {
     this.roles = NewUserComponent.getRoles();
   }
 
-  submit() {
+  onSubmit() {
+    this.submit = true;
     if (this.userAddForm.valid) {
       const user = this.getUserDetails();
 

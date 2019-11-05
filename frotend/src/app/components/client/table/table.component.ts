@@ -7,6 +7,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AlertService} from '../../../service/alert.service';
 
 @Component({
   selector: 'app-table',
@@ -33,7 +34,7 @@ export class TableComponent implements OnInit {
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder, private _alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -52,10 +53,11 @@ export class TableComponent implements OnInit {
     this.userOfTable = table.user.role;
   }
 
-  save() {
+  saveRoutine() {
     this.table.user = this._loginService.getUser();
     this._wtService.saveTable(this.table).subscribe(table => {
       this.setRoutine(table);
+      this.routineUpdateMessageAlert();
     }, error => {
       console.log(error);
     });
@@ -169,6 +171,14 @@ export class TableComponent implements OnInit {
 
   }
 
+  private routineUpdateMessageAlert() {
+    this._alertService.setType('success');
+    this._alertService.setDismissible(false);
+    this._alertService.setMessage('Updated done');
+    this._alertService.show();
+    this._alertService.setTimeout(5000);
+  }
+
   saveExercises() {
     if (this.addExerciseModal) {
 
@@ -188,6 +198,7 @@ export class TableComponent implements OnInit {
   saveChanges() {
     this._wtService.updateWorkTable(this.table).subscribe((table) => {
       this.setRoutine(table);
+      this.routineUpdateMessageAlert();
     }, error => {
       console.log(error);
     });

@@ -2,8 +2,9 @@
   <h4>{{nameTable}}</h4>
   <h5>Level {{levelTable}}</h5>
   <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Add new exercise</button>
-  <button *ngIf="userOfTable==='admin'" (click)="save()" class="btn my-button-success">Save routine</button>
+  <button *ngIf="userOfTable==='admin'" (click)="saveRoutine()" class="btn my-button-success">Save routine</button>
   <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Save all changes</button>
+  <app-alert></app-alert>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let exercise of exerciseList">
       <div class="d-flex w-100 justify-content-between">
@@ -31,8 +32,9 @@
         <select class="form-control" formControlName="exerciseType" id="exerciseType">
           <option *ngFor="let exerciseType of exerciseTypeList" [ngValue]="exerciseType">{{exerciseType.name}}</option>
         </select>
-        <div *ngIf="controls.exerciseType.invalid && (controls.exerciseType.dirty || controls.exerciseType.touched)"
-             class="alert alert-danger">
+        <div
+          *ngIf="controls.exerciseType.invalid && (controls.exerciseType.dirty || controls.exerciseType.touched)"
+          class="alert alert-danger">
 
           <div *ngIf="controls.exerciseType.errors.required">
             Exercise is required.

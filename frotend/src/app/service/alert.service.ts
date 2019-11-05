@@ -26,6 +26,10 @@ export class AlertService {
     this.alert.setDismissible(dismissible);
   }
 
+  setTimeout(time: number) {
+    this.alert.setTimeout(time);
+  }
+
   show() {
     this.alert.show();
   }
