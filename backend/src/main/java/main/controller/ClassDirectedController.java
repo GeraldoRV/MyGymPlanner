@@ -28,4 +28,9 @@ public class ClassDirectedController {
     public List<ClassDirected> getAllByMonitorAndDay(@PathVariable Integer id, @PathVariable String dayOfWeek) {
         return classDirectedService.getAllClassDirectedOfMonitorAndDay(id, dayOfWeek);
     }
+
+    @PutMapping("client/{id}")
+    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) {
+        return classDirectedService.addClientInAClass(classDirected, id);
+    }
 }

@@ -1,6 +1,7 @@
 package main.dao;
 
 import main.model.ClassDirected;
+import main.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +14,6 @@ public interface ClassDirectedDao extends CrudRepository<ClassDirected, Integer>
     List<ClassDirected> findAllByClassSchedule_DayOfWeekAndGym_IdOrderByClassSchedule_StartTimeAsc(String dayOfWeek, Integer id);
 
     List<ClassDirected> findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(Integer id, String dayOfWeek);
+
+    Boolean existsByIdAndClientListContains(Integer id, User user);
 }
