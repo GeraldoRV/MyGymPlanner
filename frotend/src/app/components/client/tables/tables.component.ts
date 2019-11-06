@@ -44,4 +44,16 @@ export class TablesComponent implements OnInit {
       });
     }
   }
+
+  deleteRoutine(id: number) {
+    if (confirm('Are you sure to delete the routine?')) {
+      this._wtService.deleteWorkoutTable(id).subscribe(() => {
+        const indexToDelete = this.myTables.findIndex(routine => routine.id === id);
+        console.log(indexToDelete);
+        this.myTables.splice(indexToDelete, 1);
+      }, error => {
+        console.log(error);
+      });
+    }
+  }
 }

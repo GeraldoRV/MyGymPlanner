@@ -28,6 +28,7 @@
             <th>#</th>
             <th>Name</th>
             <th>Level</th>
+            <th></th>
           </tr>
           </thead>
           <tbody>
@@ -35,6 +36,7 @@
             <td>{{i + 1}}</td>
             <td>{{table.name}}</td>
             <td>{{table.level}}</td>
+            <td><button class="btn btn-danger" (click)="$event.stopPropagation();deleteRoutine(table.id)">Delete</button></td>
           </tr>
           </tbody>
         </table>
