@@ -14,9 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.*;
 
@@ -35,6 +38,7 @@ public class ClassDirectedServiceTest {
     private Gym gymWithoutClasses;
     private Gym gymWithClasses;
     private User monitor;
+    private ClassDirected classWithNotClient;
 
     @Before
     public void setUp() throws Exception {
@@ -54,6 +58,10 @@ public class ClassDirectedServiceTest {
         classDirected2.setCapacity(21);
         classDirected2.setGym(gymWithClasses);
 
+        ClassDirected classDirected3 = new ClassDirected();
+        classDirected3.setCapacity(21);
+        classDirected3.setGym(gymWithClasses);
+
         ClassSchedule classSchedule = new ClassSchedule();
         classSchedule.setDayOfWeek("Monday");
         classSchedule.setStartTime("20:00");
@@ -66,12 +74,22 @@ public class ClassDirectedServiceTest {
         classSchedule2.setEndTime("20:45");
         classDirected2.setClassSchedule(classSchedule2);
 
+        ClassSchedule classSchedule3 = new ClassSchedule();
+        classSchedule3.setDayOfWeek("Friday");
+        classSchedule3.setStartTime("20:00");
+        classSchedule3.setEndTime("20:45");
+        classDirected3.setClassSchedule(classSchedule3);
+
         User user = new User();
         user.setRole("monitor");
         user.setName("monitor");
         monitor = userDao.save(user);
         classDirected.setAssignedMonitor(monitor);
-        classDirectedDao.saveAll(Arrays.asList(classDirected, classDirected2));
+        classDirectedDao.save(classDirected);
+        classDirectedDao.save(classDirected2);
+        classWithNotClient = classDirectedDao.save(classDirected3);
+
+
     }
 
     @Test
@@ -123,6 +141,23 @@ public class ClassDirectedServiceTest {
     public void givenAExistMonitorAndACorrectDayOfWeekWithClassesInThatDayWithoutThatMonitor_whenGetAllClassDirectedOfMonitorAndDay_returnAEmptyWith() {
         List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfMonitorAndDay(monitor.getId(), "Tuesday");
         assertTrue(classes.isEmpty());
+    }
+
+    @Test
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void givenAExistClassWithoutClientsAndOneNewClientInTheDayOfTheClass_whenAddClientInAClass_returnTrue() {
+        User client = new User();
+        client.setRole("client");
+        User save = userDao.save(client);
+
+        boolean add = classDirectedService.addClientInAClass(classWithNotClient, save.getId());
+        assertTrue("Algo fue mal",add);
+        Optional<ClassDirected> byId = classDirectedDao.findById(classWithNotClient.getId());
+        if (byId.isPresent()) {
+            ClassDirected classDirected = byId.get();
+            assertEquals(1, classDirected.getClientList().size());
+        }
+
     }
 
 }

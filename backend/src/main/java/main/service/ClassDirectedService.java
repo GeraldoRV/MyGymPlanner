@@ -2,12 +2,14 @@ package main.service;
 
 import main.dao.ClassDirectedDao;
 import main.model.ClassDirected;
+import main.model.ClassSchedule;
 import main.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 public class ClassDirectedService {
@@ -30,16 +32,34 @@ public class ClassDirectedService {
         User user = new User();
         user.setId(userId);
         if (!isInTheClass(classDirected.getId(), user)) {
-            Optional<ClassDirected> byId = classDirectedDao.findById(classDirected.getId());
-            if (byId.isPresent()) {
-                ClassDirected classDirected1 = byId.get();
-                classDirected1.getClientList().add(user);
-                ClassDirected save = classDirectedDao.save(classDirected1);
-                return (save != null);
-            }
+            if (checkTheDayIsToday(classDirected.getClassSchedule())) {
+                Optional<ClassDirected> byId = classDirectedDao.findById(classDirected.getId());
+                if (byId.isPresent()) {
+                    ClassDirected classDirected1 = byId.get();
 
+
+                    if (classDirected.getClientList() == null) {
+                        classDirected1.setClientList(new ArrayList<>());
+
+                    }
+                    classDirected1.getClientList().add(user);
+                    ClassDirected save = classDirectedDao.save(classDirected1);
+                    return (save != null);
+                }
+            }
         }
         return false;
+    }
+
+    private boolean checkTheDayIsToday(ClassSchedule classSchedule) {
+        Date today = new Date();
+        String pattern ="EEEEE";
+        Locale locale = new Locale("en", "UK");
+        SimpleDateFormat simpleDateFormat =
+                new SimpleDateFormat(pattern, locale);
+        String todayDayOfWeek = simpleDateFormat.format(today);
+
+        return todayDayOfWeek.equals(classSchedule.getDayOfWeek());
     }
 
     private boolean isInTheClass(Integer classDirectedId, User user) {
