@@ -40,4 +40,9 @@ public class WorkoutTableController {
     public WorkoutTable updateWorkoutTable(@RequestBody WorkoutTable workoutTable) {
         return wtService.update(workoutTable);
     }
+
+    @DeleteMapping("{id}")
+    public void deleteWorkoutTable(@PathVariable Integer id) {
+        wtService.deleteWorkoutTable(id);
+    }
 }

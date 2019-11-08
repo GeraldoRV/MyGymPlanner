@@ -141,4 +141,17 @@ export class ClassDirectedComponent implements OnInit {
         this.classesOfSun = classes;
     }
   }
+
+  addClientToClass(classDirected: ClassDirected) {
+    this._classDirectedService.addClientToClass(classDirected, this.user.id).subscribe((res) => {
+      if (res === true) {
+        classDirected.clientList.push(this.user);
+        alert('Added');
+      } else {
+        alert('Something wrong');
+      }
+    }, error => {
+      console.log(error);
+    });
+  }
 }

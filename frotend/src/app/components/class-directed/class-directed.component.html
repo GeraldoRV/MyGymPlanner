@@ -10,6 +10,9 @@
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
           </li>
         </ul>
       </ng-template>
@@ -22,7 +25,11 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
@@ -34,7 +41,12 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
@@ -46,7 +58,12 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
@@ -58,7 +75,12 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
@@ -70,7 +92,12 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
@@ -82,10 +109,12 @@
           </h5>
             <p>
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
-            </p></li>
+            </p>
+            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+          </li>
         </ul>
       </ng-template>
     </ngb-tab>
-
   </ngb-tabset>
 </div>

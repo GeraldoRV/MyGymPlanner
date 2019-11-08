@@ -35,4 +35,8 @@ export class WorkoutTableService {
   updateWorkTable(workoutTable: WorkoutTable) {
     return this._http.put<WorkoutTable>(this.base_url, workoutTable);
   }
+
+  deleteWorkoutTable(workoutTableId: number) {
+    return this._http.delete(this.base_url + '/' + workoutTableId);
+  }
 }

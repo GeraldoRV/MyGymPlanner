@@ -11,6 +11,7 @@ import {AlertService} from '../../service/alert.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  submit = false;
 
   constructor(private fb: FormBuilder, private loginService: LoginService,
               private _route: Router, private alertService: AlertService) {
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submit = true;
     if (this.loginForm.valid) {
       this.loginService.login(
         this.loginForm.controls.userName.value, this.loginForm.controls.password.value).subscribe((user) => {
@@ -53,6 +55,7 @@ export class LoginComponent implements OnInit {
     this.alertService.setMessage('User not found');
     this.alertService.setDismissible(false);
     this.alertService.show();
+    this.alertService.setTimeout(5000);
   }
 
   get controls() {

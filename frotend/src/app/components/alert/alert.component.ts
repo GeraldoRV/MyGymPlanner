@@ -35,6 +35,10 @@ export class AlertComponent implements OnInit {
     this.dismissible = dismissible;
   }
 
+  setTimeout(time: number) {
+    setTimeout(() => this.element.style.display = 'none', time);
+  }
+
   show() {
     this.element.style.display = 'block';
   }

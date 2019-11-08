@@ -8,7 +8,7 @@ public class ClassDirected {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private TypeClass typeClass;
     @ManyToOne
     private User assignedMonitor;
