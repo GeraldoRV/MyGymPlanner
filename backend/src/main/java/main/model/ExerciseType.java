@@ -9,8 +9,9 @@ public class ExerciseType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    @Column(length = 1000)
     private String description;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private ExerciseCategory category;
 
     public ExerciseType() {
