@@ -17,7 +17,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -75,7 +78,7 @@ public class ClassDirectedServiceTest {
         classDirected2.setClassSchedule(classSchedule2);
 
         ClassSchedule classSchedule3 = new ClassSchedule();
-        classSchedule3.setDayOfWeek("Friday");
+        classSchedule3.setDayOfWeek("Tuesday");
         classSchedule3.setStartTime("20:00");
         classSchedule3.setEndTime("20:45");
         classDirected3.setClassSchedule(classSchedule3);
@@ -145,19 +148,24 @@ public class ClassDirectedServiceTest {
 
     @Test
     @Transactional(propagation = Propagation.REQUIRED)
-    public void givenAExistClassWithoutClientsAndOneNewClientInTheDayOfTheClass_whenAddClientInAClass_returnTrue() {
+    public void givenAExistClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnTrue() throws ParseException {
         User client = new User();
         client.setRole("client");
         User save = userDao.save(client);
-
-        boolean add = classDirectedService.addClientInAClass(classWithNotClient, save.getId());
-        assertTrue("Algo fue mal",add);
+        Date date = getDate("2019-11-12 19:45:00.0");
+        boolean add = classDirectedService.addClientInAClass(classWithNotClient, save.getId(), date);
+        assertTrue("Algo fue mal", add);
         Optional<ClassDirected> byId = classDirectedDao.findById(classWithNotClient.getId());
         if (byId.isPresent()) {
             ClassDirected classDirected = byId.get();
             assertEquals(1, classDirected.getClientList().size());
         }
 
+    }
+
+    private Date getDate(String date) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return simpleDateFormat.parse(date);
     }
 
 }

@@ -31,6 +31,6 @@ public class ClassDirectedController {
 
     @PutMapping("client/{id}")
     public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) {
-        return classDirectedService.addClientInAClass(classDirected, id);
+        return classDirectedService.addClientInAClass(classDirected, id, null);
     }
 }
