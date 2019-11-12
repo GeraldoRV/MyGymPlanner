@@ -42,6 +42,7 @@ public class ClassDirectedServiceTest {
     private Gym gymWithClasses;
     private User monitor;
     private ClassDirected classWithNotClient;
+    private ClassDirected fullClass;
 
     @Before
     public void setUp() throws Exception {
@@ -54,8 +55,13 @@ public class ClassDirectedServiceTest {
         gymWithClasses = gymDao.save(gym2);
 
         ClassDirected classDirected = new ClassDirected();
-        classDirected.setCapacity(21);
+        classDirected.setCapacity(1);
         classDirected.setGym(gymWithClasses);
+        User user1 = new User();
+        user1.setRole("client");
+        User client = userDao.save(user1);
+        classDirected.getClientList().add(client);
+        classDirected.setFull(true);
 
         ClassDirected classDirected2 = new ClassDirected();
         classDirected2.setCapacity(21);
@@ -88,7 +94,7 @@ public class ClassDirectedServiceTest {
         user.setName("monitor");
         monitor = userDao.save(user);
         classDirected.setAssignedMonitor(monitor);
-        classDirectedDao.save(classDirected);
+         fullClass = classDirectedDao.save(classDirected);
         classDirectedDao.save(classDirected2);
         classWithNotClient = classDirectedDao.save(classDirected3);
 
@@ -148,7 +154,7 @@ public class ClassDirectedServiceTest {
 
     @Test
     @Transactional(propagation = Propagation.REQUIRED)
-    public void givenAExistClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnTrue() throws ParseException {
+    public void givenAExistFullClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnTrue() throws ParseException {
         User client = new User();
         client.setRole("client");
         User save = userDao.save(client);
@@ -156,6 +162,23 @@ public class ClassDirectedServiceTest {
         boolean add = classDirectedService.addClientInAClass(classWithNotClient, save.getId(), date);
         assertTrue("Algo fue mal", add);
         Optional<ClassDirected> byId = classDirectedDao.findById(classWithNotClient.getId());
+        if (byId.isPresent()) {
+            ClassDirected classDirected = byId.get();
+            assertEquals(1, classDirected.getClientList().size());
+        }
+
+    }
+
+    @Test
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void givenAExistFullClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnFalse() throws ParseException {
+        User client = new User();
+        client.setRole("client");
+        User save = userDao.save(client);
+        Date date = getDate("2019-11-11 19:45:00.0");
+        boolean add = classDirectedService.addClientInAClass(fullClass, save.getId(), date);
+        assertFalse("Algo fue mal", add);
+        Optional<ClassDirected> byId = classDirectedDao.findById(fullClass.getId());
         if (byId.isPresent()) {
             ClassDirected classDirected = byId.get();
             assertEquals(1, classDirected.getClientList().size());

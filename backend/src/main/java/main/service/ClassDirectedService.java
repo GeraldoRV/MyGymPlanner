@@ -30,20 +30,19 @@ public class ClassDirectedService {
     public boolean addClientInAClass(ClassDirected classDirected, Integer userId, Date date) {
         User user = new User();
         user.setId(userId);
-        if (!isInTheClass(classDirected.getId(), user)) {
-            if (checkTheDayIsToday(classDirected.getClassSchedule(),date)) {
-                Optional<ClassDirected> byId = classDirectedDao.findById(classDirected.getId());
-                if (byId.isPresent()) {
-                    ClassDirected classDirected1 = byId.get();
-
-
-                    if (classDirected.getClientList() == null) {
-                        classDirected1.setClientList(new ArrayList<>());
-
+        if (!classDirected.isFull()) {
+            if (!isInTheClass(classDirected.getId(), user)) {
+                if (checkTheDayIsToday(classDirected.getClassSchedule(), date)) {
+                    Optional<ClassDirected> byId = classDirectedDao.findById(classDirected.getId());
+                    if (byId.isPresent()) {
+                        ClassDirected classDirected1 = byId.get();
+                        if (classDirected.isFull()) return false;
+                        classDirected1.getClientList().add(user);
+                        if (classDirected.getClientList().size() == classDirected.getCapacity())
+                            classDirected.setFull(true);
+                        ClassDirected save = classDirectedDao.save(classDirected1);
+                        return (save != null);
                     }
-                    classDirected1.getClientList().add(user);
-                    ClassDirected save = classDirectedDao.save(classDirected1);
-                    return (save != null);
                 }
             }
         }
@@ -52,7 +51,7 @@ public class ClassDirectedService {
 
     private boolean checkTheDayIsToday(ClassSchedule classSchedule, Date date) {
         Date today;
-        if (date != null){
+        if (date != null) {
             today = date;
         } else {
             today = new Date();
