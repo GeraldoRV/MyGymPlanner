@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +108,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
+  <component name="RunManager" selected="JUnit.ClassDirectedServiceTest">
+    <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.service" />
+      <option name="MAIN_CLASS_NAME" value="main.service.ClassDirectedServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -150,21 +165,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutTableServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.WorkoutTableServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -215,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.ClassDirectedServiceTest" />
         <item itemvalue="JUnit.main in backend" />
+        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
         <item itemvalue="JUnit.GymServiceTest" />
-        <item itemvalue="JUnit.WorkoutTableServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -282,9 +282,11 @@
       <workItem from="1571820105825" duration="10632000" />
       <workItem from="1572350291541" duration="8906000" />
       <workItem from="1572430699308" duration="5627000" />
-      <workItem from="1572865934418" duration="5831000" />
-      <workItem from="1573026877252" duration="10471000" />
-      <workItem from="1573200732444" duration="11346000" />
+      <workItem from="1572865934418" duration="5878000" />
+      <workItem from="1572949130129" duration="1091000" />
+      <workItem from="1573217259763" duration="579000" />
+      <workItem from="1573576460432" duration="100000" />
+      <workItem from="1573576969536" duration="7293000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -363,35 +365,28 @@
       <option name="project" value="LOCAL" />
       <updated>1572871309758</updated>
     </task>
-    <task id="LOCAL-00012" summary="Add delete one workout table in back">
-      <created>1572963025140</created>
+    <task id="LOCAL-00012" summary="Put validators in back create user">
+      <created>1572872357728</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1572963025140</updated>
+      <updated>1572872357728</updated>
     </task>
-    <task id="LOCAL-00013" summary="Add delete one workout table in front">
-      <created>1573029273959</created>
+    <task id="LOCAL-00013" summary="Testing the method addClientToClassWith the different conditions">
+      <created>1573216781646</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1573029273959</updated>
+      <updated>1573216781646</updated>
     </task>
-    <task id="LOCAL-00014" summary="Working in add a client in a class directed">
-      <created>1573039342281</created>
+    <task id="LOCAL-00014" summary="Change method addClientToClass added the conditions(test)">
+      <created>1573582242112</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1573039342281</updated>
+      <updated>1573582242112</updated>
     </task>
-    <task id="LOCAL-00015" summary="Add DBSeeder with data">
-      <created>1573209351146</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1573209351146</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,11 +424,10 @@
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little refactor" />
     <MESSAGE value="Put validators in the forms" />
-    <MESSAGE value="Add delete one workout table in back" />
-    <MESSAGE value="Add delete one workout table in front" />
-    <MESSAGE value="Working in add a client in a class directed" />
-    <MESSAGE value="Add DBSeeder with data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DBSeeder with data" />
+    <MESSAGE value="Put validators in back create user" />
+    <MESSAGE value="Testing the method addClientToClassWith the different conditions" />
+    <MESSAGE value="Change method addClientToClass added the conditions(test)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change method addClientToClass added the conditions(test)" />
   </component>
   <component name="masterDetails">
     <states>

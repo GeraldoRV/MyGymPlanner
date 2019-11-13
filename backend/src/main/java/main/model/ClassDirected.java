@@ -1,6 +1,7 @@
 package main.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,8 +14,9 @@ public class ClassDirected {
     @ManyToOne
     private User assignedMonitor;
     private Integer capacity;
+    private Boolean isFull = false;
     @ManyToMany
-    private List<User> clientList;
+    private List<User> clientList = new ArrayList<>();
     @Embedded
     private ClassSchedule classSchedule;
 
@@ -75,5 +77,13 @@ public class ClassDirected {
 
     public void setClassSchedule(ClassSchedule classSchedule) {
         this.classSchedule = classSchedule;
+    }
+
+    public Boolean isFull() {
+        return isFull;
+    }
+
+    public void setFull(Boolean full) {
+        isFull = full;
     }
 }

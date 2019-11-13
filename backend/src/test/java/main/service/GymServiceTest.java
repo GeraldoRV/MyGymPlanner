@@ -38,7 +38,7 @@ public class GymServiceTest {
 
     @Test
     public void givenNotExistGym_WhenGetGym_thenReturnGym() {
-        Optional<Gym> gym = gymService.getGym(2);
+        Optional<Gym> gym = gymService.getGym(200000);
         assertFalse(gym.isPresent());
     }
 }

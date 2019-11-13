@@ -43,6 +43,30 @@ public class UserServiceTest {
     }
 
     @Test
+    public void givenANewUserNotValid_whenCreateUser_returnNull() {
+        User user = new User();
+        user.setUserName("marco");
+        user.setPassword("marco");
+
+        User newUser = userService.createUser(user);
+
+        assertNull(newUser);
+    }
+
+    @Test
+    public void givenANewUserValid_whenCreateUser_returnNull() {
+        User user = new User();
+        user.setUserName("marco");
+        user.setPassword("marco");
+        user.setName("Marco");
+        user.setRole("admin");
+
+        User newUser = userService.createUser(user);
+
+        assertNotNull(newUser);
+    }
+
+    @Test
     public void givenUserRegister_whenLogin_returnUser() {
         User user = new User();
         user.setUserName("juan");
@@ -63,17 +87,6 @@ public class UserServiceTest {
         User login = userService.login(user);
 
         assertNull(login);
-    }
-
-    @Test
-    public void givenNewUser_whenCreateUser_returnUser() {
-        User user = new User();
-        user.setUserName("marco");
-        user.setPassword("marco");
-
-        User newUser = userService.createUser(user);
-
-        assertNotNull(newUser);
     }
 
     @Test
