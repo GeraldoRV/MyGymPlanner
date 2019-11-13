@@ -97,33 +97,18 @@ public class ClassDirectedService {
         String pattern = "HH:mm";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String currentTime = simpleDateFormat.format(today);
-        String[] currentTimeArray = currentTime.split(":");
-        String[] startTimeArray = startTime.split(":");
-        if (compareHour(startTimeArray[0], currentTimeArray[0])) {
-            return compareMint(startTimeArray[1], currentTimeArray[1]);
-        }
-        return false;
+        return compareMint(startTime, currentTime);
+
     }
 
     private boolean compareMint(String startTime, String currentTime) {
-        int nStartTime, nCurrentTime;
-        if (startTime.equals("00")) {
-            nStartTime = 60;
-        } else {
-            nStartTime = Integer.parseInt(startTime);
-        }
-        if (currentTime.equals("00")) {
-            nCurrentTime = 60;
-        } else {
-            nCurrentTime = Integer.parseInt(currentTime);
-        }
+        String[] currentTimeArray = currentTime.split(":");
+        String[] startTimeArray = startTime.split(":");
+
+        int nStartTime = Integer.parseInt(startTimeArray[0]) * 60 + Integer.parseInt(startTimeArray[1]);
+        int nCurrentTime = Integer.parseInt(currentTimeArray[0]) * 60 + Integer.parseInt(currentTimeArray[1]);
 
         return nStartTime - nCurrentTime >= 15;
     }
 
-    private boolean compareHour(String startTime, String currentTime) {
-        int nStartTime = Integer.parseInt(startTime);
-        int nCurrentTime = Integer.parseInt(currentTime);
-        return nCurrentTime <= nStartTime;
-    }
 }
