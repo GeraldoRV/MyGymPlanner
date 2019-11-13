@@ -28,34 +28,28 @@ public class ClassDirectedService {
     }
 
     public boolean addClientInAClass(ClassDirected classDirected, Integer userId, Date date) {
-        User user = new User();
-        user.setId(userId);
-        if (!classDirected.isFull()) {
-            if (!isInTheClass(classDirected.getId(), user)) {
-                if (checkTheDayIsToday(classDirected.getClassSchedule(), date)) {
-                    Optional<ClassDirected> byId = classDirectedDao.findById(classDirected.getId());
-                    if (byId.isPresent()) {
-                        ClassDirected classDirected1 = byId.get();
-                        if (classDirected.isFull()) return false;
-                        classDirected1.getClientList().add(user);
-                        if (classDirected.getClientList().size() == classDirected.getCapacity())
-                            classDirected.setFull(true);
-                        ClassDirected save = classDirectedDao.save(classDirected1);
-                        return (save != null);
-                    }
-                }
+        if (checkClass(classDirected, date)) {
+            User user = new User();
+            user.setId(userId);
+            if (!isTheClientInTheClass(classDirected.getId(), user)) {
+                return addClientInClientList(classDirected, user);
             }
         }
         return false;
     }
 
+    private boolean checkClass(ClassDirected classToCheck, Date date) {
+        if (isFullTheClass(classToCheck)) return false;
+        return checkTheDayIsToday(classToCheck.getClassSchedule(), date);
+    }
+
+    private boolean isFullTheClass(ClassDirected classToCheck) {
+        return classDirectedDao.existsByIdAndIsFull(classToCheck.getId(), true);
+    }
+
     private boolean checkTheDayIsToday(ClassSchedule classSchedule, Date date) {
-        Date today;
-        if (date != null) {
-            today = date;
-        } else {
-            today = new Date();
-        }
+        Date today = getCurrentDay(date);
+
         String pattern = "EEEEE";
         Locale locale = new Locale("en", "UK");
         SimpleDateFormat simpleDateFormat =
@@ -66,6 +60,37 @@ public class ClassDirectedService {
             return checkTime(today, classSchedule.getStartTime());
         }
         return false;
+    }
+
+    private boolean isTheClientInTheClass(Integer classId, User user) {
+        return classDirectedDao.existsByIdAndClientListContains(classId, user);
+    }
+
+    private boolean addClientInClientList(ClassDirected classDirected, User user) {
+        ClassDirected theClassInDB = getTheClassInDB(classDirected.getId());
+
+        theClassInDB.getClientList().add(user);
+
+        setFull(theClassInDB);
+
+        ClassDirected save = classDirectedDao.save(theClassInDB);
+        return (save != null);
+
+    }
+
+    private void setFull(ClassDirected theClassInDB) {
+        if (theClassInDB.getClientList().size() == theClassInDB.getCapacity())
+            theClassInDB.setFull(true);
+    }
+
+    private ClassDirected getTheClassInDB(Integer id) {
+        Optional<ClassDirected> byId = classDirectedDao.findById(id);
+        return byId.orElse(null);
+    }
+
+    private Date getCurrentDay(Date date) {
+        if (date != null) return date;
+        return new Date();
     }
 
     private boolean checkTime(Date today, String startTime) {
@@ -100,9 +125,5 @@ public class ClassDirectedService {
         int nStartTime = Integer.parseInt(startTime);
         int nCurrentTime = Integer.parseInt(currentTime);
         return nCurrentTime <= nStartTime;
-    }
-
-    private boolean isInTheClass(Integer classDirectedId, User user) {
-        return classDirectedDao.existsByIdAndClientListContains(classDirectedId, user);
     }
 }

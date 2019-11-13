@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Simple refactor in the class directed service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -286,7 +285,8 @@
       <workItem from="1572949130129" duration="1091000" />
       <workItem from="1573217259763" duration="579000" />
       <workItem from="1573576460432" duration="100000" />
-      <workItem from="1573576969536" duration="7293000" />
+      <workItem from="1573576969536" duration="7690000" />
+      <workItem from="1573643843453" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -386,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573582242112</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Change method addClientToClass added the conditions(full/test)">
+      <created>1573584445745</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573584445745</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +434,9 @@
     <MESSAGE value="Put validators in back create user" />
     <MESSAGE value="Testing the method addClientToClassWith the different conditions" />
     <MESSAGE value="Change method addClientToClass added the conditions(test)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change method addClientToClass added the conditions(test)" />
+    <MESSAGE value="Change method addClientToClass added the conditions(full/test)" />
+    <MESSAGE value="Simple refactor in the class directed service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple refactor in the class directed service" />
   </component>
   <component name="masterDetails">
     <states>

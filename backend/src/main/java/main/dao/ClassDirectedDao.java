@@ -16,4 +16,6 @@ public interface ClassDirectedDao extends CrudRepository<ClassDirected, Integer>
     List<ClassDirected> findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(Integer id, String dayOfWeek);
 
     Boolean existsByIdAndClientListContains(Integer id, User user);
+
+    Boolean existsByIdAndIsFull(Integer id, Boolean isFull);
 }
