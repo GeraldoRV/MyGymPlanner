@@ -13,3 +13,16 @@
   background-color: #4caf50;
   color: white;
 }
+
+@media (max-width: 1200px) {
+  .login-page {
+    width: 40%;
+  }
+}
+
+@media (max-width: 740px) {
+  .login-page {
+    width: 100%;
+    margin-top: 0;
+  }
+}
