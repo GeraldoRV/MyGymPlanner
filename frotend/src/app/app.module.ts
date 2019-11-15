@@ -23,6 +23,7 @@ import {ClassDirectedComponent} from './components/class-directed/class-directed
 import {DatePipe} from '@angular/common';
 import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
 import {ExerciseTypeService} from './service/exercise-type.service';
+import {Global} from './utilities/global';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -80,7 +81,8 @@ const appRoutes: Routes = [
     NgbModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [LoginService, UserService, WorkoutTableService, ExerciseTypeService, AuthGuard, DatePipe],
+  providers: [LoginService, UserService, WorkoutTableService, ExerciseTypeService,
+    AuthGuard, DatePipe, Global],
   bootstrap: [AppComponent]
 })
 export class AppModule {

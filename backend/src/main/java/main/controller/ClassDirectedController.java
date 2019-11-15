@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/class")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ClassDirectedController {
     @Autowired
     private ClassDirectedService classDirectedService;

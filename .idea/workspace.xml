@@ -2,16 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/utilities/global.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/GymController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/workout-table.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -46,6 +72,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -57,7 +84,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/MyGymPlanner" />
+    <property name="last_opened_file_path" value="C:/Program Files/MySQL/MySQL Workbench 8.0 CE/data/data.db" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -287,7 +314,8 @@
       <workItem from="1573217259763" duration="579000" />
       <workItem from="1573576460432" duration="100000" />
       <workItem from="1573576969536" duration="7690000" />
-      <workItem from="1573643843453" duration="8329000" />
+      <workItem from="1573643843453" duration="8557000" />
+      <workItem from="1573805985910" duration="6994000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -408,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573649630239</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Working in the medias queries">
+      <created>1573652795826</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1573652795826</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +487,8 @@
     <MESSAGE value="Change method addClientToClass added the conditions(full/test)" />
     <MESSAGE value="Simple refactor in the class directed service" />
     <MESSAGE value="Simple refactor in the class directed service to checkTime" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple refactor in the class directed service to checkTime" />
+    <MESSAGE value="Working in the medias queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working in the medias queries" />
   </component>
   <component name="masterDetails">
     <states>

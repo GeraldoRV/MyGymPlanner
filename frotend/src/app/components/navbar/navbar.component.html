@@ -2,9 +2,9 @@
   <button class="navbar-toggler" type="button" (click)="toggleNavBar()" >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
   <a class="navbar-brand" href="#">MyGymPlanner</a>
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
+    <ul (click)="toggleNavBar()" class="navbar-nav">
       <ng-template [ngIf]="getRole()==='client'">
         <li class="nav-item">
           <a routerLink="/client" class="nav-link">

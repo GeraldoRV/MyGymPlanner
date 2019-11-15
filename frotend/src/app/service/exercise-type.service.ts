@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ExerciseType} from '../model/exercise-type';
+import {Global} from '../utilities/global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExerciseTypeService {
-  private baseUrl = 'http://localhost:8080/exerciseType';
+  private readonly baseUrl: string;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _global: Global) {
+    this.baseUrl = _global.IpAddress + 'exerciseType';
   }
 
   getAllExerciseType() {

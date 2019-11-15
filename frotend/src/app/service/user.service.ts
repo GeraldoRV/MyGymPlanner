@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../model/user';
+import {Global} from '../utilities/global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:8080/user';
+  private readonly baseUrl: string;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _global: Global) {
+    this.baseUrl = _global.IpAddress + 'user';
   }
 
   getAllUsers() {

@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
   private logout() {
     this.loginService.logout();
     this._route.navigate(['']).then();
+    this.toggleNavBar();
   }
 
   getRole() {
