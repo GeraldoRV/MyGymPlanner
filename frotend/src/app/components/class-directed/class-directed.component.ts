@@ -152,6 +152,7 @@ export class ClassDirectedComponent implements OnInit {
       }
     }, error => {
       console.log(error);
+      alert(error.error.message);
     });
   }
 }

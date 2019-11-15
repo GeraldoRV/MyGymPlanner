@@ -1,6 +1,7 @@
 package main.service;
 
 import main.dao.UserDao;
+import main.exception.UserNotFoundException;
 import main.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,11 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public User login(User user) {
-        return userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+    public User login(User user) throws UserNotFoundException {
+
+        User userLogged = userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+        if (userLogged == null) throw new UserNotFoundException();
+        return userLogged;
     }
 
     public User createUser(User user) {
