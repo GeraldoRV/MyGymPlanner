@@ -14,6 +14,8 @@ export class AssignedClassComponent implements OnInit {
   private assignedClass: ClassDirected;
   searchClientForm: FormGroup;
   clientFound: User[];
+  classDirectedName: string;
+  clientListOfClass: User[];
 
   constructor(private _classDirectedService: ClassDirectedService, private _fb: FormBuilder,
               private _userService: UserService) {
@@ -22,7 +24,8 @@ export class AssignedClassComponent implements OnInit {
   ngOnInit() {
     this._classDirectedService.getClassDirected().subscribe(classDirected => {
       this.assignedClass = classDirected;
-      console.log(classDirected);
+      this.classDirectedName = classDirected.typeClass.name;
+      this.clientListOfClass = classDirected.clientList;
     }, error => {
       console.log(error);
     });
@@ -46,7 +49,7 @@ export class AssignedClassComponent implements OnInit {
       if (res === true) {
         alert('Client added');
         const clientAdded = this.clientFound.find(user => user.id === id);
-        this.assignedClass.clientList.push(clientAdded);
+        this.clientListOfClass.push(clientAdded);
       } else {
         alert('Client no added');
       }

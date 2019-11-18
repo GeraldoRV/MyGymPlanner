@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Monitor add client in a class done">
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" afterDir="false" />
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/class-directed.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -413,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573646813184</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Monitor add client in a class done">
+      <created>1574082474883</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574082474883</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
