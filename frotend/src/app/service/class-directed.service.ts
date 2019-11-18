@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ClassDirected} from '../model/class-directed';
+import {Global} from '../utilities/global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClassDirectedService {
-  private baseUrl = 'http://localhost:8080/class';
+  private readonly baseUrl: string;
   private classDirectedId: number;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _global: Global) {
+    this.baseUrl = _global.IpAddress + 'class';
   }
 
   getAllClassesOfGym(gym_id: number) {

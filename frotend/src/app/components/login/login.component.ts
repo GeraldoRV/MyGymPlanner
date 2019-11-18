@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submit = true;
     if (this.loginForm.valid) {
+      const username = this.loginForm.controls.userName.value.toLowerCase();
       this.loginService.login(
-        this.loginForm.controls.userName.value, this.loginForm.controls.password.value).subscribe((user) => {
+        username, this.loginForm.controls.password.value).subscribe((user) => {
         if (user === null) {
           this.userNotFoundAlert();
         } else {
