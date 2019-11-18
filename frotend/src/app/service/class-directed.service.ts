@@ -8,6 +8,7 @@ import {Global} from '../utilities/global';
 })
 export class ClassDirectedService {
   private readonly baseUrl: string;
+  private classDirectedId: number;
 
   constructor(private _http: HttpClient, private _global: Global) {
     this.baseUrl = _global.IpAddress + 'class';
@@ -25,7 +26,19 @@ export class ClassDirectedService {
     return this._http.get<ClassDirected[]>(this.baseUrl + '/monitor/' + monitor_id + '/' + dayOfWeek);
   }
 
-  addClientToClass(classDirected: ClassDirected, user_id: number) {
+  reserveClass(classDirected: ClassDirected, user_id: number) {
     return this._http.put(this.baseUrl + '/client/' + user_id, classDirected);
+  }
+
+  setClassDirected(id: number) {
+    this.classDirectedId = id;
+  }
+
+  getClassDirected() {
+    return this._http.get<ClassDirected>(this.baseUrl + '/' + this.classDirectedId);
+  }
+
+  addClientToClass(clientId: number, assignedClass: ClassDirected) {
+    return this._http.put(this.baseUrl + '/add/client/' + clientId, assignedClass);
   }
 }

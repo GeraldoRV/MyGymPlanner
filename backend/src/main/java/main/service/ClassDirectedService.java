@@ -27,7 +27,7 @@ public class ClassDirectedService {
         return classDirectedDao.findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(id, dayOfWeek);
     }
 
-    public boolean addClientInAClass(ClassDirected classDirected, Integer userId, Date date) {
+    public boolean reserveAClass(ClassDirected classDirected, Integer userId, Date date) {
         if (checkClass(classDirected, date)) {
             User user = new User();
             user.setId(userId);
@@ -111,4 +111,16 @@ public class ClassDirectedService {
         return nStartTime - nCurrentTime >= 15;
     }
 
+    public Optional<ClassDirected> getClassDirected(Integer id) {
+        return classDirectedDao.findById(id);
+    }
+
+    public boolean addClientToClass(ClassDirected classDirected, Integer id) {
+        User client = new User();
+        client.setId(id);
+        if (isTheClientInTheClass(classDirected.getId(), client)) {
+            return false;
+        }
+        return addClientInClientList(classDirected, client);
+    }
 }

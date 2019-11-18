@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/class")
@@ -14,6 +15,10 @@ public class ClassDirectedController {
     @Autowired
     private ClassDirectedService classDirectedService;
 
+    @GetMapping("{id}")
+    public Optional<ClassDirected> getClassDirected(@PathVariable Integer id){
+        return classDirectedService.getClassDirected(id);
+    }
     @GetMapping("/gym/{id}")
     public List<ClassDirected> getAllByGym(@PathVariable Integer id) {
         return classDirectedService.getAllClassDirectedOfGym(id);
@@ -30,7 +35,11 @@ public class ClassDirectedController {
     }
 
     @PutMapping("client/{id}")
-    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) {
-        return classDirectedService.addClientInAClass(classDirected, id, null);
+    public boolean reserveClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) {
+        return classDirectedService.reserveAClass(classDirected, id, null);
+    }
+    @PutMapping("add/client/{id}")
+    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id){
+        return classDirectedService.addClientToClass(classDirected,id);
     }
 }
