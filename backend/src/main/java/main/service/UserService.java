@@ -38,4 +38,8 @@ public class UserService {
     public List<User> getAll() {
         return (List<User>) userDao.findAll();
     }
+
+    public List<User> getAllClientsWhereNameLike(String name) {
+        return userDao.findAllByNameContainingAndRole(name,"client");
+    }
 }

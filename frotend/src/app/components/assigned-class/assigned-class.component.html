@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>{{assignedClass.typeClass.name}}</h1>
+  <div class="row">
+<div class="col">
+
+  <ul>
+    <li *ngFor="let client of assignedClass.clientList">
+      {{client.name}}
+    </li>
+  </ul>
+</div>
+    <div class="col">
+      <form [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
+        <label for="name-to-find">Find client</label>
+        <input id="name-to-find" type="text" formControlName="name" placeholder="Write the name...">
+        <button type="submit">Search Client</button>
+      </form>
+      <ul>
+        <li *ngFor="let client of clientFound">
+          {{client.name}}
+          <button type="button" (click)="addToClass(client.id)">Add to class</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,8 @@
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            </button>
           </li>
         </ul>
       </ng-template>
@@ -29,6 +31,8 @@
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            </button>
           </li>
         </ul>
       </ng-template>
@@ -45,6 +49,8 @@
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
             </button>
           </li>
         </ul>
@@ -63,6 +69,8 @@
             <button *ngIf="isClient()"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            </button>
           </li>
         </ul>
       </ng-template>
@@ -79,6 +87,8 @@
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
             </button>
           </li>
         </ul>
@@ -97,6 +107,8 @@
             <button *ngIf="isClient()"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            </button>
           </li>
         </ul>
       </ng-template>
@@ -112,6 +124,8 @@
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            </button>
           </li>
         </ul>
       </ng-template>

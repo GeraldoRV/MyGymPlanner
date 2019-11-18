@@ -23,6 +23,7 @@ import {ClassDirectedComponent} from './components/class-directed/class-directed
 import {DatePipe} from '@angular/common';
 import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
 import {ExerciseTypeService} from './service/exercise-type.service';
+import {AssignedClassComponent} from './components/assigned-class/assigned-class.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -48,6 +49,9 @@ const appRoutes: Routes = [
   }, {
     path: 'classes', component: ClassDirectedComponent,
     canActivate: [AuthGuard]
+  }, {
+    path: 'assigned-class', component: AssignedClassComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'monitor', component: MainMonitorComponent,
@@ -71,6 +75,7 @@ const appRoutes: Routes = [
     NotFoundComponent,
     ClassDirectedComponent,
     MainMonitorComponent,
+    AssignedClassComponent,
   ],
   imports: [
     FormsModule,
