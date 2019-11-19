@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
-import {ClassDirected} from '../../../model/class-directed';
-import {ClassDirectedService} from '../../../service/class-directed.service';
 import {Gym} from '../../../model/gym';
+import {TypeClassService} from '../../../service/type-class.service';
+import {TypeClass} from '../../../model/type-class';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +12,14 @@ import {Gym} from '../../../model/gym';
 export class HomeComponent implements OnInit {
   nameGym: string;
   directionGym: string;
-  taughtClasses: ClassDirected[];
+  taughtClasses: TypeClass[];
   private gym: Gym;
   mondayToFriday: string;
   saturdays: string;
   sundaysAndHolidays: string;
 
   constructor(private _loginService: LoginService,
-              private _classDirectedService: ClassDirectedService) {
+              private _typeClassService: TypeClassService) {
   }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   private getAllClasses() {
-    this._classDirectedService.getAllClassesOfGym(this.gym.id).subscribe(res => {
+    this._typeClassService.getAllTaughtClass().subscribe(res => {
       this.taughtClasses = res;
     }, error => {
       console.log(error);

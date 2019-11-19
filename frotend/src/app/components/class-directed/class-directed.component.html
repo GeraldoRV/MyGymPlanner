@@ -11,7 +11,8 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
             </button>
@@ -29,8 +30,9 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
             </button>
           </li>
@@ -47,7 +49,7 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()"
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
@@ -66,7 +68,7 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()"
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
@@ -85,7 +87,7 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()"
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
@@ -104,7 +106,7 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()"
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
                     (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
             </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
@@ -123,7 +125,9 @@
               {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" (click)="addClientToClass(classDirected)" class="btn btn-success">Book class</button>
+            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+            </button>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
             </button>
           </li>

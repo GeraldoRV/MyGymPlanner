@@ -6,6 +6,7 @@ import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
 import {User} from '../../model/user';
 import {Router} from '@angular/router';
+import {ClassSchedule} from '../../model/class-schedule';
 
 @Component({
   selector: 'app-class-directed',
@@ -160,5 +161,11 @@ export class ClassDirectedComponent implements OnInit {
   seeClass(id: number) {
     this._classDirectedService.setClassDirected(id);
     this._route.navigate(['/assigned-class']).then();
+  }
+
+  isTheCorrectTime(classSchedule: ClassSchedule) {
+    const today = new Date();
+    const todayDayOfWeek = this._datePipe.transform(today, 'EEEE');
+    return classSchedule.dayOfWeek === todayDayOfWeek;
   }
 }

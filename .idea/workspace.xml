@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/TypeClassDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Gym.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Gym.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
