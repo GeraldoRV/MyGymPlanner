@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.exception.UserNotFoundException;
 import main.model.User;
 import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping
-    public User login(@RequestBody User user) {
+    public User login(@RequestBody User user) throws UserNotFoundException {
         return userService.login(user);
     }
 }

@@ -1,5 +1,8 @@
 package main.controller;
 
+import main.exception.ClassDirectedFullException;
+import main.exception.NotValidDayToReserveException;
+import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
 import main.service.ClassDirectedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +38,13 @@ public class ClassDirectedController {
     }
 
     @PutMapping("client/{id}")
-    public boolean reserveClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) {
+    public boolean reserveClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) 
+            throws NotValidDayToReserveException, TheClientIsInTheClassException,
+            ClassDirectedFullException {
         return classDirectedService.reserveAClass(classDirected, id, null);
     }
     @PutMapping("add/client/{id}")
-    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id){
+    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) throws TheClientIsInTheClassException {
         return classDirectedService.addClientToClass(classDirected,id);
     }
 }

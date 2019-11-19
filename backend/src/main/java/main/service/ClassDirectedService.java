@@ -1,6 +1,9 @@
 package main.service;
 
 import main.dao.ClassDirectedDao;
+import main.exception.ClassDirectedFullException;
+import main.exception.NotValidDayToReserveException;
+import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
 import main.model.User;
@@ -27,20 +30,21 @@ public class ClassDirectedService {
         return classDirectedDao.findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(id, dayOfWeek);
     }
 
-    public boolean reserveAClass(ClassDirected classDirected, Integer userId, Date date) {
-        if (checkClass(classDirected, date)) {
-            User user = new User();
-            user.setId(userId);
-            if (!isTheClientInTheClass(classDirected.getId(), user)) {
-                return addClientInClientList(classDirected, user);
-            }
-        }
-        return false;
+    public boolean reserveAClass(ClassDirected classDirected, Integer userId, Date date) throws NotValidDayToReserveException, ClassDirectedFullException, TheClientIsInTheClassException {
+        checkClass(classDirected, date);
+        User user = new User();
+        user.setId(userId);
+        isTheClientInTheClass(classDirected.getId(), user);
+        return addClientInClientList(classDirected, user);
     }
 
-    private boolean checkClass(ClassDirected classToCheck, Date date) {
-        if (isFullTheClass(classToCheck)) return false;
-        return checkTheDayIsToday(classToCheck.getClassSchedule(), date);
+    private void checkClass(ClassDirected classToCheck, Date date) throws NotValidDayToReserveException, ClassDirectedFullException {
+        if (!checkTheDayIsToday(classToCheck.getClassSchedule(), date)) {
+            throw new NotValidDayToReserveException();
+        }
+        if (isFullTheClass(classToCheck)) {
+            throw new ClassDirectedFullException();
+        }
     }
 
     private boolean isFullTheClass(ClassDirected classToCheck) {
@@ -62,8 +66,12 @@ public class ClassDirectedService {
         return false;
     }
 
-    private boolean isTheClientInTheClass(Integer classId, User user) {
-        return classDirectedDao.existsByIdAndClientListContains(classId, user);
+    private void isTheClientInTheClass(Integer classId, User user) throws TheClientIsInTheClassException {
+        Boolean exists = classDirectedDao.existsByIdAndClientListContains(classId, user);
+
+        if (exists) {
+            throw new TheClientIsInTheClassException();
+        }
     }
 
     private boolean addClientInClientList(ClassDirected classDirected, User user) {
@@ -115,12 +123,11 @@ public class ClassDirectedService {
         return classDirectedDao.findById(id);
     }
 
-    public boolean addClientToClass(ClassDirected classDirected, Integer id) {
+    public boolean addClientToClass(ClassDirected classDirected, Integer id) throws TheClientIsInTheClassException {
         User client = new User();
         client.setId(id);
-        if (isTheClientInTheClass(classDirected.getId(), client)) {
-            return false;
-        }
+        isTheClientInTheClass(classDirected.getId(), client);
+
         return addClientInClientList(classDirected, client);
     }
 }

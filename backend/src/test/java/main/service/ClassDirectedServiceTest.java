@@ -151,7 +151,7 @@ public class ClassDirectedServiceTest {
         assertTrue(classes.isEmpty());
     }
 
-    @Test
+   /* @Test
     @Transactional(propagation = Propagation.REQUIRED)
     public void givenAExistFullClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnTrue() throws ParseException {
         User client = new User();
@@ -182,8 +182,8 @@ public class ClassDirectedServiceTest {
             ClassDirected classDirected = byId.get();
             assertEquals(1, classDirected.getClientList().size());
         }
-
     }
+*/
 
     private Date getDate(String date) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
