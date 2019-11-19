@@ -123,12 +123,11 @@ public class ClassDirectedService {
         return classDirectedDao.findById(id);
     }
 
-    public boolean addClientToClass(ClassDirected classDirected, Integer id) {
+    public boolean addClientToClass(ClassDirected classDirected, Integer id) throws TheClientIsInTheClassException {
         User client = new User();
         client.setId(id);
-        if (isTheClientInTheClass(classDirected.getId(), client)) {
-            return false;
-        }
+        isTheClientInTheClass(classDirected.getId(), client);
+
         return addClientInClientList(classDirected, client);
     }
 }

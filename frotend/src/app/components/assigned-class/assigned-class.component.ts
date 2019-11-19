@@ -38,7 +38,6 @@ export class AssignedClassComponent implements OnInit {
     const name = this.searchClientForm.controls.name.value;
     this._userService.getAllClientsLike(name).subscribe(clients => {
       this.clientFound = clients;
-      console.log(clients);
     }, error => {
       console.log(error);
     });
@@ -54,7 +53,7 @@ export class AssignedClassComponent implements OnInit {
         alert('Client no added');
       }
     }, error => {
-      console.log(error);
+      alert(error.error.message);
     });
   }
 }

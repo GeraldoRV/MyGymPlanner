@@ -44,7 +44,7 @@ public class ClassDirectedController {
         return classDirectedService.reserveAClass(classDirected, id, null);
     }
     @PutMapping("add/client/{id}")
-    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id){
+    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) throws TheClientIsInTheClassException {
         return classDirectedService.addClientToClass(classDirected,id);
     }
 }
