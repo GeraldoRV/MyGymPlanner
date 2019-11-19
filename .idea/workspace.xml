@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -436,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573652795826</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Some changes important in front for home and reserve">
+      <created>1574166135166</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574166135166</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +482,8 @@
     <MESSAGE value="Simple refactor in the class directed service" />
     <MESSAGE value="Simple refactor in the class directed service to checkTime" />
     <MESSAGE value="Working in the medias queries" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working in the medias queries" />
+    <MESSAGE value="Some changes important in front for home and reserve" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes important in front for home and reserve" />
   </component>
   <component name="masterDetails">
     <states>
