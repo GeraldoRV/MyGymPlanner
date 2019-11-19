@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/TypeClassDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ClassDirected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/ExerciseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Gym.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Gym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/WorkoutTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,9 +106,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.dao" />
+      <recent name="main.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -107,11 +118,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.exception" />
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
   <component name="RunDashboard">

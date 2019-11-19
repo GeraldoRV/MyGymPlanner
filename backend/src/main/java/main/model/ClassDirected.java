@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class ClassDirected {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(cascade = CascadeType.PERSIST)
     private TypeClass typeClass;
