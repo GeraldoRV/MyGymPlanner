@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -159,7 +158,7 @@ public class ClassDirectedServiceTest {
         client.setRole("client");
         User save = userDao.save(client);
         Date date = getDate("2019-11-12 19:45:00.0");
-        boolean add = classDirectedService.addClientInAClass(classWithNotClient, save.getId(), date);
+        boolean add = classDirectedService.reserveAClass(classWithNotClient, save.getId(), date);
         assertTrue("Algo fue mal", add);
         Optional<ClassDirected> byId = classDirectedDao.findById(classWithNotClient.getId());
         if (byId.isPresent()) {
@@ -176,7 +175,7 @@ public class ClassDirectedServiceTest {
         client.setRole("client");
         User save = userDao.save(client);
         Date date = getDate("2019-11-11 19:45:00.0");
-        boolean add = classDirectedService.addClientInAClass(fullClass, save.getId(), date);
+        boolean add = classDirectedService.reserveAClass(fullClass, save.getId(), date);
         assertFalse("Algo fue mal", add);
         Optional<ClassDirected> byId = classDirectedDao.findById(fullClass.getId());
         if (byId.isPresent()) {

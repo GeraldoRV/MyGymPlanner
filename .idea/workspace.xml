@@ -69,6 +69,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -80,7 +81,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/MyGymPlanner" />
+    <property name="last_opened_file_path" value="C:/Program Files/MySQL/MySQL Workbench 8.0 CE/data/data.db" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -311,7 +312,8 @@
       <workItem from="1573217259763" duration="579000" />
       <workItem from="1573576460432" duration="100000" />
       <workItem from="1573576969536" duration="7690000" />
-      <workItem from="1573643843453" duration="5399000" />
+      <workItem from="1573643843453" duration="8557000" />
+      <workItem from="1573805985910" duration="6994000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -425,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573646813184</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Simple refactor in the class directed service to checkTime">
+      <created>1573649630239</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1573649630239</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Working in the medias queries">
+      <created>1573652795826</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1573652795826</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +484,9 @@
     <MESSAGE value="Change method addClientToClass added the conditions(test)" />
     <MESSAGE value="Change method addClientToClass added the conditions(full/test)" />
     <MESSAGE value="Simple refactor in the class directed service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple refactor in the class directed service" />
+    <MESSAGE value="Simple refactor in the class directed service to checkTime" />
+    <MESSAGE value="Working in the medias queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working in the medias queries" />
   </component>
   <component name="masterDetails">
     <states>

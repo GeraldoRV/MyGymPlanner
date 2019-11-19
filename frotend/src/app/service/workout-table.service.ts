@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {WorkoutTable} from '../model/workout-table';
+import {Global} from '../utilities/global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkoutTableService {
   private id: number;
-  private base_url = 'http://localhost:8080/table';
+  private readonly base_url: string;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _global: Global) {
+    this.base_url = _global.IpAddress + 'table';
   }
 
   getAllWorkTableByGym(gymId: number) {

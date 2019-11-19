@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("exerciseType")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ExerciseTypeController {
     @Autowired
     private ExerciseTypeService exerciseTypeService;

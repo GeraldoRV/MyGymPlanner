@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -23,5 +23,9 @@ public class UserController {
     @GetMapping
     public List<User> getUsers() {
         return userService.getAll();
+    }
+    @GetMapping("client/{name}")
+    public List<User> getClientsLikeTheName(@PathVariable String name){
+        return userService.getAllClientsWhereNameLike(name);
     }
 }

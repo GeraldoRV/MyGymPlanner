@@ -5,6 +5,7 @@ import {ClassDirected} from '../../model/class-directed';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
 import {User} from '../../model/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-class-directed',
@@ -24,7 +25,7 @@ export class ClassDirectedComponent implements OnInit {
 
 
   constructor(private _loginService: LoginService, private _classDirectedService: ClassDirectedService,
-              private _datePipe: DatePipe) {
+              private _datePipe: DatePipe, private _route: Router) {
   }
 
   ngOnInit() {
@@ -143,7 +144,7 @@ export class ClassDirectedComponent implements OnInit {
   }
 
   addClientToClass(classDirected: ClassDirected) {
-    this._classDirectedService.addClientToClass(classDirected, this.user.id).subscribe((res) => {
+    this._classDirectedService.reserveClass(classDirected, this.user.id).subscribe((res) => {
       if (res === true) {
         classDirected.clientList.push(this.user);
         alert('Added');
@@ -154,5 +155,10 @@ export class ClassDirectedComponent implements OnInit {
       console.log(error);
       alert(error.error.message);
     });
+  }
+
+  seeClass(id: number) {
+    this._classDirectedService.setClassDirected(id);
+    this._route.navigate(['/assigned-class']).then();
   }
 }
