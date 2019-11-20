@@ -19,9 +19,10 @@ public class ClassDirectedController {
     private ClassDirectedService classDirectedService;
 
     @GetMapping("{id}")
-    public Optional<ClassDirected> getClassDirected(@PathVariable Integer id){
+    public Optional<ClassDirected> getClassDirected(@PathVariable Integer id) {
         return classDirectedService.getClassDirected(id);
     }
+
     @GetMapping("/gym/{id}")
     public List<ClassDirected> getAllByGym(@PathVariable Integer id) {
         return classDirectedService.getAllClassDirectedOfGym(id);
@@ -38,13 +39,14 @@ public class ClassDirectedController {
     }
 
     @PutMapping("client/{id}")
-    public boolean reserveClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) 
+    public boolean reserveClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id)
             throws NotValidDayToReserveException, TheClientIsInTheClassException,
             ClassDirectedFullException {
         return classDirectedService.reserveAClass(classDirected, id, null);
     }
+
     @PutMapping("add/client/{id}")
     public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) throws TheClientIsInTheClassException {
-        return classDirectedService.addClientToClass(classDirected,id);
+        return classDirectedService.addClientToClass(classDirected, id);
     }
 }

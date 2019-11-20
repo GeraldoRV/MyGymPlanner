@@ -50,7 +50,7 @@ public class WorkoutTableService {
         return wtDao.findAllByUser_Id(id);
     }
 
-    public void deleteWorkoutTable(Integer workoutTableId) {
+    public void delete(Integer workoutTableId) {
         wtDao.deleteById(workoutTableId);
     }
 }

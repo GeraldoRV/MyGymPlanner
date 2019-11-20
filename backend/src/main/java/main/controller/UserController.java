@@ -15,17 +15,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
-    }
-
     @GetMapping
     public List<User> getUsers() {
         return userService.getAll();
     }
+
     @GetMapping("client/{name}")
-    public List<User> getClientsLikeTheName(@PathVariable String name){
+    public List<User> getClientsLikeTheName(@PathVariable String name) {
         return userService.getAllClientsWhereNameLike(name);
+    }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return userService.createUser(user);
     }
 }

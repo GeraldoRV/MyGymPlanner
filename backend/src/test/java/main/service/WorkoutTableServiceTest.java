@@ -228,7 +228,7 @@ public class WorkoutTableServiceTest {
     @Test
     public void givenAExistWTId_whenDeleteWorkoutTable_thenIsNoLongerInDB() {
         Integer id = workoutTableClient.getId();
-        wtService.deleteWorkoutTable(id);
+        wtService.delete(id);
         Optional<WorkoutTable> nothing = wtDao.findById(id);
 
         assertFalse(nothing.isPresent());

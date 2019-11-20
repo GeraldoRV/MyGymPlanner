@@ -14,6 +14,14 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
+    public List<User> getAll() {
+        return (List<User>) userDao.findAll();
+    }
+
+    public List<User> getAllClientsWhereNameLike(String name) {
+        return userDao.findAllByNameContainingAndRole(name,"client");
+    }
+
     public User login(User user) throws UserNotFoundException {
 
         User userLogged = userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
@@ -37,13 +45,5 @@ public class UserService {
 
     private boolean isNotARoleValid(String role) {
         return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
-    }
-
-    public List<User> getAll() {
-        return (List<User>) userDao.findAll();
-    }
-
-    public List<User> getAllClientsWhereNameLike(String name) {
-        return userDao.findAllByNameContainingAndRole(name,"client");
     }
 }

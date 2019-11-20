@@ -16,6 +16,11 @@ public class WorkoutTableController {
     @Autowired
     private WorkoutTableService wtService;
 
+    @GetMapping("/{id}")
+    public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {
+        return wtService.get(id);
+    }
+
     @GetMapping("gym/{id}")
     public List<WorkoutTable> getAllByGym(@PathVariable Integer id) {
         return wtService.getAllTablesByGym(id);
@@ -24,11 +29,6 @@ public class WorkoutTableController {
     @GetMapping("user/{id}")
     public List<WorkoutTable> getAllByUser(@PathVariable Integer id) {
         return wtService.getAllTablesByUser(id);
-    }
-
-    @GetMapping("/{id}")
-    public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {
-        return wtService.get(id);
     }
 
     @PutMapping("client")
@@ -43,6 +43,6 @@ public class WorkoutTableController {
 
     @DeleteMapping("{id}")
     public void deleteWorkoutTable(@PathVariable Integer id) {
-        wtService.deleteWorkoutTable(id);
+        wtService.delete(id);
     }
 }
