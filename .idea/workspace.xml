@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -303,7 +304,7 @@
       <workItem from="1573576969536" duration="7690000" />
       <workItem from="1573643843453" duration="8557000" />
       <workItem from="1573805985910" duration="6994000" />
-      <workItem from="1574237764479" duration="5793000" />
+      <workItem from="1574237764479" duration="7282000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -459,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574242670173</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added the test to the method get class directed">
+      <created>1574243682311</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1574243682311</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +516,8 @@
     <MESSAGE value="Added the test for reserve a class" />
     <MESSAGE value="Change one test in the user service" />
     <MESSAGE value="Added the test to the method delete routine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the test to the method delete routine" />
+    <MESSAGE value="Added the test to the method get class directed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the test to the method get class directed" />
   </component>
   <component name="masterDetails">
     <states>

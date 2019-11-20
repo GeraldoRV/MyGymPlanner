@@ -18,6 +18,10 @@ public class ClassDirectedService {
     @Autowired
     private ClassDirectedDao classDirectedDao;
 
+    public Optional<ClassDirected> getClassDirected(Integer id) {
+        return classDirectedDao.findById(id);
+    }
+
     public List<ClassDirected> getAllClassDirectedOfGym(Integer id) {
         return classDirectedDao.findAllByGym_Id(id);
     }
@@ -32,10 +36,15 @@ public class ClassDirectedService {
 
     public boolean reserveAClass(ClassDirected classDirected, Integer userId, Date date) throws NotValidDayToReserveException, ClassDirectedFullException, TheClientIsInTheClassException {
         checkClass(classDirected, date);
-        User user = new User();
-        user.setId(userId);
-        isTheClientInTheClass(classDirected.getId(), user);
-        return addClientInClientList(classDirected, user);
+        User client = getUser(userId);
+        isTheClientInTheClass(classDirected.getId(), client);
+        return addClientInClientList(classDirected, client);
+    }
+
+    public boolean addClientToClass(ClassDirected classDirected, Integer clientId) throws TheClientIsInTheClassException {
+        User client = getUser(clientId);
+        isTheClientInTheClass(classDirected.getId(), client);
+        return addClientInClientList(classDirected, client);
     }
 
     private void checkClass(ClassDirected classToCheck, Date date) throws NotValidDayToReserveException, ClassDirectedFullException {
@@ -45,25 +54,6 @@ public class ClassDirectedService {
         if (isFullTheClass(classToCheck)) {
             throw new ClassDirectedFullException();
         }
-    }
-
-    private boolean isFullTheClass(ClassDirected classToCheck) {
-        return classDirectedDao.existsByIdAndIsFull(classToCheck.getId(), true);
-    }
-
-    private boolean checkTheDayIsToday(ClassSchedule classSchedule, Date date) {
-        Date today = getCurrentDay(date);
-
-        String pattern = "EEEEE";
-        Locale locale = new Locale("en", "UK");
-        SimpleDateFormat simpleDateFormat =
-                new SimpleDateFormat(pattern, locale);
-        String todayDayOfWeek = simpleDateFormat.format(today);
-
-        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek())) {
-            return checkTime(today, classSchedule.getStartTime());
-        }
-        return false;
     }
 
     private void isTheClientInTheClass(Integer classId, User user) throws TheClientIsInTheClassException {
@@ -84,6 +74,20 @@ public class ClassDirectedService {
         ClassDirected save = classDirectedDao.save(theClassInDB);
         return (save != null);
 
+    }
+
+    private boolean checkTheDayIsToday(ClassSchedule classSchedule, Date date) {
+        Date today = getCurrentDay(date);
+
+        String todayDayOfWeek = getTodayDayOfWeek(today);
+        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek())) {
+            return checkTime(today, classSchedule.getStartTime());
+        }
+        return false;
+    }
+
+    private boolean isFullTheClass(ClassDirected classToCheck) {
+        return classDirectedDao.existsByIdAndIsFull(classToCheck.getId(), true);
     }
 
     private void setFull(ClassDirected theClassInDB) {
@@ -109,6 +113,14 @@ public class ClassDirectedService {
 
     }
 
+    private String getTodayDayOfWeek(Date today) {
+        String pattern = "EEEEE";
+        Locale locale = new Locale("en", "UK");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, locale);
+
+        return simpleDateFormat.format(today);
+    }
+
     private boolean compareMint(String startTime, String currentTime) {
         String[] currentTimeArray = currentTime.split(":");
         String[] startTimeArray = startTime.split(":");
@@ -119,15 +131,9 @@ public class ClassDirectedService {
         return nStartTime - nCurrentTime >= 15;
     }
 
-    public Optional<ClassDirected> getClassDirected(Integer id) {
-        return classDirectedDao.findById(id);
-    }
-
-    public boolean addClientToClass(ClassDirected classDirected, Integer id) throws TheClientIsInTheClassException {
-        User client = new User();
-        client.setId(id);
-        isTheClientInTheClass(classDirected.getId(), client);
-
-        return addClientInClientList(classDirected, client);
+    private User getUser(Integer userId) {
+        User user = new User();
+        user.setId(userId);
+        return user;
     }
 }
