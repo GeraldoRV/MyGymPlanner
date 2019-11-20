@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.ClassDirectedServiceTest">
     <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -303,6 +303,7 @@
       <workItem from="1573576969536" duration="7690000" />
       <workItem from="1573643843453" duration="8557000" />
       <workItem from="1573805985910" duration="6994000" />
+      <workItem from="1574237764479" duration="3070000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>

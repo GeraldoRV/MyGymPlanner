@@ -3,6 +3,9 @@ package main.service;
 import main.dao.ClassDirectedDao;
 import main.dao.GymDao;
 import main.dao.UserDao;
+import main.exception.ClassDirectedFullException;
+import main.exception.NotValidDayToReserveException;
+import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
 import main.model.Gym;
@@ -42,6 +45,8 @@ public class ClassDirectedServiceTest {
     private User monitor;
     private ClassDirected classWithNotClient;
     private ClassDirected fullClass;
+    private User clientInTheClass;
+    private ClassDirected notFullClass;
 
     @Before
     public void setUp() throws Exception {
@@ -66,6 +71,12 @@ public class ClassDirectedServiceTest {
         classDirected2.setCapacity(21);
         classDirected2.setGym(gymWithClasses);
 
+        User clientNotSave = new User();
+        clientNotSave.setRole("client");
+        clientNotSave.setName("client");
+        clientInTheClass = userDao.save(clientNotSave);
+        classDirected2.getClientList().add(clientInTheClass);
+
         ClassDirected classDirected3 = new ClassDirected();
         classDirected3.setCapacity(21);
         classDirected3.setGym(gymWithClasses);
@@ -88,13 +99,14 @@ public class ClassDirectedServiceTest {
         classSchedule3.setEndTime("20:45");
         classDirected3.setClassSchedule(classSchedule3);
 
-        User user = new User();
-        user.setRole("monitor");
-        user.setName("monitor");
-        monitor = userDao.save(user);
+        User monitorNotSave = new User();
+        monitorNotSave.setRole("monitor");
+        monitorNotSave.setName("monitor");
+        monitor = userDao.save(monitorNotSave);
+
         classDirected.setAssignedMonitor(monitor);
-         fullClass = classDirectedDao.save(classDirected);
-        classDirectedDao.save(classDirected2);
+        fullClass = classDirectedDao.save(classDirected);
+        notFullClass = classDirectedDao.save(classDirected2);
         classWithNotClient = classDirectedDao.save(classDirected3);
 
 
@@ -151,15 +163,20 @@ public class ClassDirectedServiceTest {
         assertTrue(classes.isEmpty());
     }
 
-   /* @Test
+    @Test
     @Transactional(propagation = Propagation.REQUIRED)
-    public void givenAExistFullClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnTrue() throws ParseException {
+    public void givenAExistClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenReserveAClass_returnTrue() throws ParseException {
         User client = new User();
         client.setRole("client");
         User save = userDao.save(client);
         Date date = getDate("2019-11-12 19:45:00.0");
-        boolean add = classDirectedService.reserveAClass(classWithNotClient, save.getId(), date);
-        assertTrue("Algo fue mal", add);
+        boolean add = false;
+        try {
+            add = classDirectedService.reserveAClass(classWithNotClient, save.getId(), date);
+        } catch (NotValidDayToReserveException | ClassDirectedFullException | TheClientIsInTheClassException e) {
+            e.printStackTrace();
+        }
+        assertTrue("Something wrong", add);
         Optional<ClassDirected> byId = classDirectedDao.findById(classWithNotClient.getId());
         if (byId.isPresent()) {
             ClassDirected classDirected = byId.get();
@@ -168,22 +185,42 @@ public class ClassDirectedServiceTest {
 
     }
 
-    @Test
+    @Test(expected = ClassDirectedFullException.class)
     @Transactional(propagation = Propagation.REQUIRED)
-    public void givenAExistFullClassWithoutClientsAndOneNewClientInTheCorrectTimeReserve_whenAddClientInAClass_returnFalse() throws ParseException {
+    public void givenAExistFullClassAndOneNewClientInTheCorrectTimeReserve_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
         User client = new User();
         client.setRole("client");
         User save = userDao.save(client);
         Date date = getDate("2019-11-11 19:45:00.0");
-        boolean add = classDirectedService.reserveAClass(fullClass, save.getId(), date);
-        assertFalse("Algo fue mal", add);
-        Optional<ClassDirected> byId = classDirectedDao.findById(fullClass.getId());
-        if (byId.isPresent()) {
-            ClassDirected classDirected = byId.get();
-            assertEquals(1, classDirected.getClientList().size());
-        }
+        classDirectedService.reserveAClass(fullClass, save.getId(), date);
     }
-*/
+
+    @Test(expected = NotValidDayToReserveException.class)
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void givenAExistsNotFullClassAndOneNewClientInTheCorrectDayButNotInTheCorrectTime_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
+        User client = new User();
+        client.setRole("client");
+        User save = userDao.save(client);
+        Date date = getDate("2019-11-12 20:00:00.0");
+        classDirectedService.reserveAClass(classWithNotClient, save.getId(), date);
+    }
+
+    @Test(expected = NotValidDayToReserveException.class)
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void givenAExistsNotFullClassAndOneNewClientNotInTheCorrectDay_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
+        User client = new User();
+        client.setRole("client");
+        User save = userDao.save(client);
+        Date date = getDate("2019-11-11 19:45:00.0");
+        classDirectedService.reserveAClass(classWithNotClient, save.getId(), date);
+    }
+
+    @Test(expected = TheClientIsInTheClassException.class)
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void givenAExistsNotFullClassAndOneClientInTheClassYetButInTheCorrectTime_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
+        Date date = getDate("2019-11-12 19:45:00.0");
+        classDirectedService.reserveAClass(notFullClass,clientInTheClass.getId(),date);
+    }
 
     private Date getDate(String date) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
