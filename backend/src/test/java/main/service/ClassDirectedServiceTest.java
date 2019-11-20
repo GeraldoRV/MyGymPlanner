@@ -219,7 +219,21 @@ public class ClassDirectedServiceTest {
     @Transactional(propagation = Propagation.REQUIRED)
     public void givenAExistsNotFullClassAndOneClientInTheClassYetButInTheCorrectTime_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
         Date date = getDate("2019-11-12 19:45:00.0");
-        classDirectedService.reserveAClass(notFullClass,clientInTheClass.getId(),date);
+        classDirectedService.reserveAClass(notFullClass, clientInTheClass.getId(), date);
+    }
+
+    @Test
+    public void givenAExistClassId_whenGetClassDirected_returnTheClass() {
+        Optional<ClassDirected> classDirected = classDirectedService.getClassDirected(fullClass.getId());
+        assertTrue(classDirected.isPresent());
+        ClassDirected classDirected1 = classDirected.get();
+        assertEquals(fullClass.getId(), classDirected1.getId());
+    }
+
+    @Test
+    public void givenANotExistClassId_whenGetClassDirected_returnNotPresent() {
+        Optional<ClassDirected> classDirected = classDirectedService.getClassDirected(1500);
+        assertFalse(classDirected.isPresent());
     }
 
     private Date getDate(String date) throws ParseException {
