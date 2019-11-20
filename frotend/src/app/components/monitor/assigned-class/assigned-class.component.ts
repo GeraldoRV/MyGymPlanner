@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ClassDirectedService} from '../../service/class-directed.service';
-import {ClassDirected} from '../../model/class-directed';
+import {ClassDirectedService} from '../../../service/class-directed.service';
+import {ClassDirected} from '../../../model/class-directed';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {UserService} from '../../service/user.service';
-import {User} from '../../model/user';
+import {UserService} from '../../../service/user.service';
+import {User} from '../../../model/user';
 
 @Component({
   selector: 'app-assigned-class',
@@ -23,15 +23,12 @@ export class AssignedClassComponent implements OnInit {
 
   ngOnInit() {
     this._classDirectedService.getClassDirected().subscribe(classDirected => {
-      this.assignedClass = classDirected;
-      this.classDirectedName = classDirected.typeClass.name;
-      this.clientListOfClass = classDirected.clientList;
+      this.setAssignedClass(classDirected);
     }, error => {
       console.log(error);
     });
-    this.searchClientForm = this._fb.group({
-      name: ['']
-    });
+    this.builderForm();
+
   }
 
   onSubmit() {
@@ -41,6 +38,18 @@ export class AssignedClassComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  private builderForm() {
+    this.searchClientForm = this._fb.group({
+      name: ['']
+    });
+  }
+
+  private setAssignedClass(classDirected: ClassDirected) {
+    this.assignedClass = classDirected;
+    this.classDirectedName = classDirected.typeClass.name;
+    this.clientListOfClass = classDirected.clientList;
   }
 
   addToClass(id: number) {

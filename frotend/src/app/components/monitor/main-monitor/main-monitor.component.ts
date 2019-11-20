@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from '../../service/login.service';
-import {User} from '../../model/user';
+import {LoginService} from '../../../service/login.service';
+import {User} from '../../../model/user';
 
 @Component({
   selector: 'app-main-monitor',

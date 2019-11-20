@@ -21,10 +21,10 @@ import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ClassDirectedComponent} from './components/class-directed/class-directed.component';
 import {DatePipe} from '@angular/common';
-import {MainMonitorComponent} from './components/main-monitor/main-monitor.component';
+import {MainMonitorComponent} from './components/monitor/main-monitor/main-monitor.component';
 import {ExerciseTypeService} from './service/exercise-type.service';
 import {Global} from './utilities/global';
-import {AssignedClassComponent} from './components/assigned-class/assigned-class.component';
+import {AssignedClassComponent} from './components/monitor/assigned-class/assigned-class.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},

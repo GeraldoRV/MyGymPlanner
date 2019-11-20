@@ -41,13 +41,48 @@ export class ClassDirectedComponent implements OnInit {
     }
   }
 
+  public beforeChange($event: NgbTabChangeEvent) {
+    const dayOfWeek = $event.nextId.substring(4);
+    if (this.isNullList(dayOfWeek)) {
+      if (this.isClient()) {
+        this.setClassesForClient(this.user.gym.id, dayOfWeek);
+      } else {
+        this.setClassesForMonitor(this.user.id, dayOfWeek);
+      }
+    }
+  }
+
+  public addClientToClass(classDirected: ClassDirected) {
+    this._classDirectedService.reserveClass(classDirected, this.user.id).subscribe((res) => {
+      if (res === true) {
+        classDirected.clientList.push(this.user);
+        alert('Added');
+      } else {
+        alert('Something wrong');
+      }
+    }, error => {
+      console.log(error);
+      alert(error.error.message);
+    });
+  }
+
+  public seeClass(id: number) {
+    this._classDirectedService.setClassDirected(id);
+    this._route.navigate(['/assigned-class']).then();
+  }
+
+  public isTheCorrectTime(classSchedule: ClassSchedule) {
+    const today = new Date();
+    const todayDayOfWeek = this._datePipe.transform(today, 'EEEE');
+    return classSchedule.dayOfWeek === todayDayOfWeek;
+  }
+
   private setClassesForMonitor(userId: number, dayOfWeek: string) {
     this._classDirectedService.getAllClassesOfMonitorAndDay(userId, dayOfWeek).subscribe(res => {
       this.setClass(dayOfWeek, res);
     }, error => {
       console.log(error);
     });
-
   }
 
   private setClassesForClient(gymId: number, dayOfWeek: string) {
@@ -62,14 +97,28 @@ export class ClassDirectedComponent implements OnInit {
     return this.user.role === 'client';
   }
 
-  public beforeChange($event: NgbTabChangeEvent) {
-    const dayOfWeek = $event.nextId.substring(4);
-    if (this.isNullList(dayOfWeek)) {
-      if (this.isClient()) {
-        this.setClassesForClient(this.user.gym.id, dayOfWeek);
-      } else {
-        this.setClassesForMonitor(this.user.id, dayOfWeek);
-      }
+  private setClass(dayOfWeek: string, classes: ClassDirected[]) {
+    switch (dayOfWeek) {
+      case 'Monday':
+        this.classesOfMon = classes;
+        break;
+      case 'Tuesday':
+        this.classesOfTues = classes;
+        break;
+      case 'Wednesday':
+        this.classesOfWed = classes;
+        break;
+      case 'Thursday':
+        this.classesOfThur = classes;
+        break;
+      case 'Friday':
+        this.classesOfFri = classes;
+        break;
+      case 'Saturday':
+        this.classesOfSat = classes;
+        break;
+      case 'Sunday':
+        this.classesOfSun = classes;
     }
   }
 
@@ -117,55 +166,5 @@ export class ClassDirectedComponent implements OnInit {
         }
     }
     return true;
-  }
-
-  private setClass(dayOfWeek: string, classes: ClassDirected[]) {
-    switch (dayOfWeek) {
-      case 'Monday':
-        this.classesOfMon = classes;
-        break;
-      case 'Tuesday':
-        this.classesOfTues = classes;
-        break;
-      case 'Wednesday':
-        this.classesOfWed = classes;
-        break;
-      case 'Thursday':
-        this.classesOfThur = classes;
-        break;
-      case 'Friday':
-        this.classesOfFri = classes;
-        break;
-      case 'Saturday':
-        this.classesOfSat = classes;
-        break;
-      case 'Sunday':
-        this.classesOfSun = classes;
-    }
-  }
-
-  addClientToClass(classDirected: ClassDirected) {
-    this._classDirectedService.reserveClass(classDirected, this.user.id).subscribe((res) => {
-      if (res === true) {
-        classDirected.clientList.push(this.user);
-        alert('Added');
-      } else {
-        alert('Something wrong');
-      }
-    }, error => {
-      console.log(error);
-      alert(error.error.message);
-    });
-  }
-
-  seeClass(id: number) {
-    this._classDirectedService.setClassDirected(id);
-    this._route.navigate(['/assigned-class']).then();
-  }
-
-  isTheCorrectTime(classSchedule: ClassSchedule) {
-    const today = new Date();
-    const todayDayOfWeek = this._datePipe.transform(today, 'EEEE');
-    return classSchedule.dayOfWeek === todayDayOfWeek;
   }
 }

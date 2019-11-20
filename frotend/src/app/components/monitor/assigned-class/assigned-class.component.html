@@ -1,22 +1,23 @@
 <div class="container">
   <h1>{{classDirectedName}}</h1>
   <div class="row">
-<div class="col">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let client of clientListOfClass">
-      {{client.name}}
-    </li>
-  </ul>
-</div>
+    <div class="col">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let client of clientListOfClass">
+          {{client.name}}
+        </li>
+      </ul>
+    </div>
     <div class="col">
       <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
         <label for="name-to-find">Find client:</label>
-        <input class="form-control" id="name-to-find" type="text" formControlName="name" placeholder="Write the name...">
+        <input class="form-control" id="name-to-find" type="text" formControlName="name"
+               placeholder="Write the name...">
         <button class="btn btn-success" type="submit">Search Client</button>
       </form>
       <ul class="list-group">
-        <li  class=" list-group-item list-group-item-action  d-flex justify-content-between align-items-center"
-             *ngFor="let client of clientFound">
+        <li class=" list-group-item list-group-item-action  d-flex justify-content-between align-items-center"
+            *ngFor="let client of clientFound">
           {{client.name}}
           <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Add to class</button>
         </li>
