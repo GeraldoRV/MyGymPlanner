@@ -1,6 +1,7 @@
 package main.service;
 
 import main.dao.UserDao;
+import main.exception.UserNotFoundException;
 import main.model.Gym;
 import main.model.User;
 import org.junit.After;
@@ -29,7 +30,7 @@ public class UserServiceTest {
     UserDao userDao;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
         User user = new User();
         user.setUserName("juan");
         user.setPassword("juan");
@@ -38,7 +39,7 @@ public class UserServiceTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown()  {
         userDao.deleteAll();
     }
 
@@ -66,8 +67,8 @@ public class UserServiceTest {
         assertNotNull(newUser);
     }
 
-   /* @Test
-    public void givenUserRegister_whenLogin_returnUser() {
+    @Test
+    public void givenUserRegister_whenLogin_returnUser() throws UserNotFoundException {
         User user = new User();
         user.setUserName("juan");
         user.setPassword("juan");
@@ -78,16 +79,15 @@ public class UserServiceTest {
         assertNotNull(login);
     }
 
-    @Test
-    public void givenNotUserRegister_whenLogin_returnNull() {
+    @Test(expected = UserNotFoundException.class)
+    public void givenNotUserRegister_whenLogin_thenExpectationsSatisfied() throws UserNotFoundException {
         User user = new User();
         user.setUserName("marco");
         user.setPassword("juan");
 
-        User login = userService.login(user);
+        userService.login(user);
 
-        assertNull(login);
-    }*/
+    }
 
     @Test
     public void givenADBWithUsers_whenGetAll_returnAListUserInDB() {

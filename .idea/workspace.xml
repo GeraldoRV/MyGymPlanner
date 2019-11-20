@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.main in backend">
     <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -229,8 +229,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClassDirectedServiceTest" />
         <item itemvalue="JUnit.main in backend" />
+        <item itemvalue="JUnit.ClassDirectedServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
         <item itemvalue="JUnit.GymServiceTest" />
@@ -303,6 +303,7 @@
       <workItem from="1573576969536" duration="7690000" />
       <workItem from="1573643843453" duration="8557000" />
       <workItem from="1573805985910" duration="6994000" />
+      <workItem from="1574237764479" duration="5793000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -437,7 +438,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574166135166</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added the test for reserve a class">
+      <created>1574241091232</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574241091232</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change one test in the user service">
+      <created>1574241776601</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574241776601</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added the test to the method delete routine">
+      <created>1574242670173</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574242670173</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +505,10 @@
     <MESSAGE value="Simple refactor in the class directed service to checkTime" />
     <MESSAGE value="Working in the medias queries" />
     <MESSAGE value="Some changes important in front for home and reserve" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes important in front for home and reserve" />
+    <MESSAGE value="Added the test for reserve a class" />
+    <MESSAGE value="Change one test in the user service" />
+    <MESSAGE value="Added the test to the method delete routine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the test to the method delete routine" />
   </component>
   <component name="masterDetails">
     <states>

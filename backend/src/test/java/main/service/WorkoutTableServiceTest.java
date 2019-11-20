@@ -225,5 +225,12 @@ public class WorkoutTableServiceTest {
         assertEquals("Algo ha ido mal", 0, update.getExerciseList().size());
     }
 
+    @Test
+    public void givenAExistWTId_whenDeleteWorkoutTable_thenIsNoLongerInDB() {
+        Integer id = workoutTableClient.getId();
+        wtService.deleteWorkoutTable(id);
+        Optional<WorkoutTable> nothing = wtDao.findById(id);
 
+        assertFalse(nothing.isPresent());
+    }
 }
