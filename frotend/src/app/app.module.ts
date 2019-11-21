@@ -26,6 +26,7 @@ import {ExerciseTypeService} from './service/exercise-type.service';
 import {Global} from './utilities/global';
 import {AssignedClassComponent} from './components/monitor/assigned-class/assigned-class.component';
 import {EvenOrOdd} from './utilities/even-or-odd';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -86,6 +87,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     NgbModule,
+    FontAwesomeModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [LoginService, UserService, WorkoutTableService, ExerciseTypeService,

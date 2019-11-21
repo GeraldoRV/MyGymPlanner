@@ -8,6 +8,7 @@ import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../../../service/alert.service';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-table',
@@ -31,7 +32,7 @@ export class TableComponent implements OnInit {
   nameButtonAdd: string;
   nameTable: string;
   levelTable: string;
-
+  faTrashAlt = faTrashAlt;
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
               private fb: FormBuilder, private _alertService: AlertService) {
