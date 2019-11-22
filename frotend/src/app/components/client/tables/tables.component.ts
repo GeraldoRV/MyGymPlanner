@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {LoginService} from '../../../service/login.service';
 import {Gym} from '../../../model/gym';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tables',
@@ -15,6 +16,7 @@ export class TablesComponent implements OnInit {
   tables: WorkoutTable[];
   myTables: WorkoutTable[] = null;
   private gym: Gym;
+  faTrashAlt = faTrashAlt;
 
   constructor(private _route: Router, private _wtService: WorkoutTableService,
               private _loginService: LoginService) {

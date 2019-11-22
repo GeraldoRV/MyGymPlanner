@@ -9,3 +9,15 @@
   background-color: #388e3c;
 }
 
+.home-main {
+  padding: 25px 50px;
+}
+
+@media (max-width: 740px) {
+  .home-main {
+    padding: 10px;
+  }
+  .my-btn-success{
+    border: 1px solid;
+  }
+}

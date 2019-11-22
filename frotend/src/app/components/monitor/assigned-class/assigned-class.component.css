@@ -1,0 +1,28 @@
+.modal-mobile {
+  display: none;
+}
+
+#name-to-find, .submit-find-button {
+  margin-left: 3px;
+}
+
+@media (max-width: 740px) {
+  .mobile {
+    display: none;
+  }
+
+  .modal-mobile {
+    display: block;
+  }
+
+  #name-to-find-modal {
+    width: 86%;
+  }
+  .submit-find-button {
+    margin: auto;
+  }
+
+  #client-found-modal{
+    padding-top: 5px;
+  }
+}

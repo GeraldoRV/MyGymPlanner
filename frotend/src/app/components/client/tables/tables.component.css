@@ -4,9 +4,14 @@ tbody > tr:hover {
 }
 
 :host ::ng-deep .tabSet a.nav-link {
-   color: #c8e6c9;
- }
+  color: #c8e6c9;
+}
+
 :host ::ng-deep .tabSet a.nav-link.active {
   color: #8bc34a;
+}
 
+.btn-danger {
+  padding-top: 1px;
+  padding-bottom: 3px;
 }

@@ -3,16 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/assigned-class/assigned-class.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/main-monitor/main-monitor.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/main-monitor/main-monitor.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/main-monitor/main-monitor.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/main-monitor/main-monitor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/main-monitor/main-monitor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/monitor/assigned-class/assigned-class.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/login.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +105,8 @@
       <recent name="main.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\monitor" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
@@ -132,7 +136,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.main in backend">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -313,7 +317,8 @@
       <workItem from="1573576969536" duration="7690000" />
       <workItem from="1573643843453" duration="8557000" />
       <workItem from="1573805985910" duration="6994000" />
-      <workItem from="1574237764479" duration="9061000" />
+      <workItem from="1574237764479" duration="17657000" />
+      <workItem from="1574420109054" duration="8435000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -490,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574247388128</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Some refactor front">
+      <created>1574248179196</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1574248179196</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +527,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Added in the view the classes assigned of the monitor(back and front)" />
     <MESSAGE value="Working in save a routine for client back and some changes" />
     <MESSAGE value="Working in save a routine for client front and some changes" />
     <MESSAGE value="Working in update a routine in back and persist changes in the db" />
@@ -540,7 +551,8 @@
     <MESSAGE value="Added the test to the method get class directed" />
     <MESSAGE value="Some refactor" />
     <MESSAGE value="Some refactor back" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some refactor back" />
+    <MESSAGE value="Some refactor front" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some refactor front" />
   </component>
   <component name="masterDetails">
     <states>
