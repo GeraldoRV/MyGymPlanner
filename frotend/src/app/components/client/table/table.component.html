@@ -15,7 +15,7 @@
           <h5 class="card-title mb-1">{{exercise.exerciseType.name}}</h5>
           <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
         <p class="card-text mb-1">{{exercise.exerciseType.description}} </p>
-        <button class="btn my-button-success" (click)="remove(exercise)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+        <button class="btn btn-danger" (click)="remove(exercise)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
         <button class="btn my-button-success" (click)="openUpdateExerciseModal(content,exercise)">Change sets or reps
         </button>
         </div>

@@ -33,6 +33,7 @@ export class TableComponent implements OnInit {
   nameTable: string;
   levelTable: string;
   faTrashAlt = faTrashAlt;
+
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
               private fb: FormBuilder, private _alertService: AlertService) {
@@ -85,7 +86,11 @@ export class TableComponent implements OnInit {
     this.addExerciseModal = false;
     this.builderUpdateExerciseForm();
     this.getAllExercisesType();
-    this._modalService.open(content);
+    this._modalService.open(content).result.then(() => {
+      this.modifiedExercise = null;
+    }, () => {
+      this.modifiedExercise = null;
+    });
   }
 
   private builderAddExerciseForm() {

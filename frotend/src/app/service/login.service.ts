@@ -35,4 +35,8 @@ export class LoginService {
   isLoginIn() {
     return this.user !== null;
   }
+
+  getUserRole() {
+    return this.user.role;
+  }
 }

@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {ClassDirectedService} from '../../../service/class-directed.service';
 import {ClassDirected} from '../../../model/class-directed';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-assigned-class',
@@ -16,9 +18,10 @@ export class AssignedClassComponent implements OnInit {
   clientFound: User[];
   classDirectedName: string;
   clientListOfClass: User[];
+  faSearch = faSearch;
 
   constructor(private _classDirectedService: ClassDirectedService, private _fb: FormBuilder,
-              private _userService: UserService) {
+              private _userService: UserService, private _modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -58,11 +61,26 @@ export class AssignedClassComponent implements OnInit {
         alert('Client added');
         const clientAdded = this.clientFound.find(user => user.id === id);
         this.clientListOfClass.push(clientAdded);
+        this.clearForm();
       } else {
         alert('Client no added');
       }
     }, error => {
       alert(error.error.message);
     });
+  }
+
+  openModal(content: TemplateRef<any>) {
+    this._modalService.open(content).result.then(() => {
+      this.clearForm();
+    }, () => {
+      this.clearForm();
+    });
+  }
+
+  private clearForm() {
+    this.clientFound = [];
+    this.searchClientForm.reset();
+
   }
 }
