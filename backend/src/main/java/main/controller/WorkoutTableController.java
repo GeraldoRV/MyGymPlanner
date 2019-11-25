@@ -18,7 +18,7 @@ public class WorkoutTableController {
 
     @GetMapping("/{id}")
     public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {
-        return wtService.get(id);
+        return wtService.getWTable(id);
     }
 
     @GetMapping("gym/{id}")
@@ -32,8 +32,8 @@ public class WorkoutTableController {
     }
 
     @PutMapping("client")
-    public WorkoutTable modifyWorkoutTableClient(@RequestBody WorkoutTable workoutTable) {
-        return wtService.createACopyToClient(workoutTable);
+    public WorkoutTable setTableToClient(@RequestBody WorkoutTable workoutTable) {
+        return wtService.setTableToClient(workoutTable);
     }
 
     @PutMapping

@@ -15,15 +15,19 @@ public class WorkoutTableService {
     @Autowired
     private WorkoutTableDao wtDao;
 
+    public Optional<WorkoutTable> getWTable(Integer id) {
+        return wtDao.findById(id);
+    }
+
     public List<WorkoutTable> getAllTablesByGym(Integer id) {
         return wtDao.findAllByUser_Gym_IdAndUser_Role(id, "admin");
     }
 
-    public Optional<WorkoutTable> get(Integer id) {
-        return wtDao.findById(id);
+    public List<WorkoutTable> getAllTablesByUser(Integer id) {
+        return wtDao.findAllByUser_Id(id);
     }
 
-    public WorkoutTable createACopyToClient(WorkoutTable workoutTable) {
+    public WorkoutTable setTableToClient(WorkoutTable workoutTable) {
 
         workoutTable.setId(null);
         workoutTable.setName(workoutTable.getName().concat("(copy)"));
@@ -35,22 +39,18 @@ public class WorkoutTableService {
         return wtDao.save(workoutTable);
     }
 
+    public WorkoutTable update(WorkoutTable workoutTable) {
+        return wtDao.save(workoutTable);
+    }
+
+    public void delete(Integer workoutTableId) {
+        wtDao.deleteById(workoutTableId);
+    }
+
     private void changeIdsExercise(List<Exercise> exerciseList) {
         for (Exercise exercise :
                 exerciseList) {
             exercise.setId(null);
         }
-    }
-
-    public WorkoutTable update(WorkoutTable workoutTable) {
-        return wtDao.save(workoutTable);
-    }
-
-    public List<WorkoutTable> getAllTablesByUser(Integer id) {
-        return wtDao.findAllByUser_Id(id);
-    }
-
-    public void delete(Integer workoutTableId) {
-        wtDao.deleteById(workoutTableId);
     }
 }

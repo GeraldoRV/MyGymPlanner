@@ -94,6 +94,18 @@ public class WorkoutTableServiceTest {
         workoutTable2EAdmin = wtDao.save(workoutTableTwoExercises);
     }
 
+    @Test
+    public void givenAExistWT_whenGetWTable_returnAWorkoutTable() {
+        Optional<WorkoutTable> workoutTableDB = wtService.getWTable(workoutTableAdmin.getId());
+        assertTrue("Algo ha salido mal", workoutTableDB.isPresent());
+    }
+
+    @Test
+    public void givenANotExistWT_whenGetWTable_returnNull() {
+        Optional<WorkoutTable> workoutTableDB = wtService.getWTable(255);
+        assertFalse("Algo ha salido mal", workoutTableDB.isPresent());
+    }
+
 
     @Test
     public void givenAExistGymWithWT_whenGetAllTablesByGym_returnAllWorkoutTablesOfTheGym() {
@@ -124,36 +136,24 @@ public class WorkoutTableServiceTest {
     }
 
     @Test
-    public void givenAExistWT_whenGet_returnAWorkoutTable() {
-        Optional<WorkoutTable> workoutTableDB = wtService.get(workoutTableAdmin.getId());
-        assertTrue("Algo ha salido mal", workoutTableDB.isPresent());
-    }
-
-    @Test
-    public void givenANotExistWT_whenGet_returnNull() {
-        Optional<WorkoutTable> workoutTableDB = wtService.get(255);
-        assertFalse("Algo ha salido mal", workoutTableDB.isPresent());
-    }
-
-    @Test
     @Transactional(propagation= Propagation.REQUIRED)
-    public void givenAWTWithExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk() {
+    public void givenAWTWithExercisesOfTheGymModifiedForClient_whenSetTableToClient_returnAModifyWtk() {
         Optional<WorkoutTable> byId = wtDao.findById(workoutTableAdmin.getId());
         if (!byId.isPresent()) return;
         WorkoutTable workoutTable1 = byId.get();
         workoutTable1.setUser(client);
-        WorkoutTable workoutTable = wtService.createACopyToClient(workoutTable1);
+        WorkoutTable workoutTable = wtService.setTableToClient(workoutTable1);
         assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 
     @Test
     @Transactional(propagation= Propagation.REQUIRED)
-    public void givenAWTWithNotExercisesOfTheGymModifiedForClient_whenModifyToClient_returnAModifyWtk() {
+    public void givenAWTWithNotExercisesOfTheGymModifiedForClient_whenSetTableToClient_returnAModifyWtk() {
         Optional<WorkoutTable> byId = wtDao.findById(workoutTableNEAdmin.getId());
         if (!byId.isPresent()) return;
         WorkoutTable workoutTable1 = byId.get();
         workoutTable1.setUser(client);
-        WorkoutTable workoutTable = wtService.createACopyToClient(workoutTable1);
+        WorkoutTable workoutTable = wtService.setTableToClient(workoutTable1);
         assertEquals("Algo Mal", workoutTable1.getUser().getRole(), workoutTable.getUser().getRole());
     }
 
@@ -183,7 +183,6 @@ public class WorkoutTableServiceTest {
         List<Exercise> exerciseList = workoutTableAdmin.getExerciseList();
 
         exerciseList.add(new Exercise());
-
 
         WorkoutTable update = wtService.update(workoutTableAdmin);
 
