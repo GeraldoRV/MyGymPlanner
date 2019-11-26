@@ -9,8 +9,16 @@
   background-color: #388e3c;
 }
 
+.card {
+  pointer-events: none;
+}
+
 .container {
   position: relative;
+}
+
+.btn-danger, .my-button-success {
+  pointer-events: auto;
 }
 
 .message-alert {
@@ -24,11 +32,13 @@ img {
   padding: 4%;
   margin: 6%;
 }
+
 @media (max-width: 1200px) {
   .col-2 {
     flex: 0 0 25%;
     max-width: 25%;
   }
+
   .col-10 {
     flex: 0 0 75%;
     max-width: 75%;
@@ -37,21 +47,23 @@ img {
 }
 
 @media (max-width: 740px) {
-  .row {
-    display: block;
+  .card {
+    pointer-events: auto;
   }
 
   .col-2 {
-    max-width: 65%
-  }
-
-  img {
-    padding: 0;
-    margin: 6% 6% 6% 30%;
+    flex: 0 0 35%;
+    max-width: 35%;
   }
 
   .col-10 {
-    max-width: 100%
+    flex: 0 0 65%;
+    max-width: 65%;
   }
+
+  .mobile {
+    display: none;
+  }
+
 
 }

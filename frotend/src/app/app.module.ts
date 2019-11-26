@@ -27,6 +27,7 @@ import {Global} from './utilities/global';
 import {AssignedClassComponent} from './components/monitor/assigned-class/assigned-class.component';
 import {EvenOrOdd} from './utilities/even-or-odd';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {ExerciseDetailsComponent} from './components/client/exercise-details/exercise-details.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -48,6 +49,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'routine', component: TableComponent,
+    canActivate: [AuthGuard]
+  }, {
+    path: 'exercise', component: ExerciseDetailsComponent,
     canActivate: [AuthGuard]
   }, {
     path: 'classes', component: ClassDirectedComponent,
@@ -79,7 +83,8 @@ const appRoutes: Routes = [
     ClassDirectedComponent,
     MainMonitorComponent,
     AssignedClassComponent,
-    EvenOrOdd
+    EvenOrOdd,
+    ExerciseDetailsComponent
   ],
   imports: [
     FormsModule,

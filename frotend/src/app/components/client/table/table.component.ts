@@ -9,6 +9,8 @@ import {ExerciseTypeService} from '../../../service/exercise-type.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../../../service/alert.service';
 import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {Router} from '@angular/router';
+import {ExerciseService} from '../../../service/exercise.service';
 
 @Component({
   selector: 'app-table',
@@ -36,7 +38,8 @@ export class TableComponent implements OnInit {
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
-              private fb: FormBuilder, private _alertService: AlertService) {
+              private fb: FormBuilder, private _alertService: AlertService,
+              private _route: Router, private _exerciseService: ExerciseService) {
   }
 
   ngOnInit() {
@@ -212,5 +215,10 @@ export class TableComponent implements OnInit {
 
   get controls() {
     return this.addForm.controls;
+  }
+
+  seeDetails(exercise: Exercise) {
+    this._exerciseService.setExercise(exercise);
+    this._route.navigate(['/exercise']).then();
   }
 }
