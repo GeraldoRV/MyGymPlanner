@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/client/exercise-details/exercise-details.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/client/exercise-details/exercise-details.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/client/exercise-details/exercise-details.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/client/exercise-details/exercise-details.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/exercise.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/table/table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/class-directed/class-directed.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/utilities/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/utilities/global.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -319,7 +310,8 @@
       <workItem from="1574237764479" duration="17657000" />
       <workItem from="1574420109054" duration="10414000" />
       <workItem from="1574680641623" duration="2770000" />
-      <workItem from="1574774636438" duration="5164000" />
+      <workItem from="1574774636438" duration="5312000" />
+      <workItem from="1574786332544" duration="2390000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -517,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574683411179</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added the exercise details page">
+      <created>1574780025516</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1574780025516</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +541,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Working in update a routine in back and persist changes in the db" />
     <MESSAGE value="Update routine modify for client add exercise done" />
     <MESSAGE value="Update routine modify for client modify a exercise done" />
     <MESSAGE value="Update routine done" />
@@ -567,7 +565,8 @@
     <MESSAGE value="Some refactor front" />
     <MESSAGE value="Working in the layout in general" />
     <MESSAGE value="Some refactor in back" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some refactor in back" />
+    <MESSAGE value="Added the exercise details page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the exercise details page" />
   </component>
   <component name="masterDetails">
     <states>
