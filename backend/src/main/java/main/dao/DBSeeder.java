@@ -34,7 +34,6 @@ public class DBSeeder implements CommandLineRunner {
         userDao.saveAll(createUsers(gym));
         createWorkoutTables();
         createClassesDirected(gym);*/
-
     }
 
     private void createClassesDirected(Gym gym) {
@@ -100,6 +99,7 @@ public class DBSeeder implements CommandLineRunner {
         createWorkoutTableSecond();
         createWorkoutTableThird();
     }
+
     private void createWorkoutTableFirst() {
         List<Exercise> exercises = createExerciseFirst();
         WorkoutTable workoutTable = new WorkoutTable();

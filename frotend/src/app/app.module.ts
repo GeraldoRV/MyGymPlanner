@@ -28,6 +28,8 @@ import {AssignedClassComponent} from './components/monitor/assigned-class/assign
 import {EvenOrOdd} from './utilities/even-or-odd';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {ExerciseDetailsComponent} from './components/client/exercise-details/exercise-details.component';
+import {TeamsListComponent} from './components/admin/teams-list/teams-list.component';
+import {NewTeamComponent} from './components/admin/new-team/new-team.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -41,6 +43,14 @@ const appRoutes: Routes = [
   },
   {
     path: 'new-user', component: NewUserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'teams', component: TeamsListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'new-team', component: NewTeamComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -84,7 +94,9 @@ const appRoutes: Routes = [
     MainMonitorComponent,
     AssignedClassComponent,
     EvenOrOdd,
-    ExerciseDetailsComponent
+    ExerciseDetailsComponent,
+    TeamsListComponent,
+    NewTeamComponent
   ],
   imports: [
     FormsModule,

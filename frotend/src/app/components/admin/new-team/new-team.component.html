@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>New Team</h2>
+  <form [formGroup]="teamForm">
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="name-team-form">Name team</label>
+        <input class="form-control" formControlName="teamName" id="name-team-form" type="text">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="leader-team-form">Select leader</label>
+        <select class="form-control" formControlName="leader" name="leader" id="leader-team-form">
+          <option>First monitor</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="form-group col-5">
+        <label for="no-added-members">Monitors</label>
+        <select multiple class="form-control" formControlName="monitors" name="members" id="no-added-members">
+          <option>One</option>
+          <option>One</option>
+          <option>One</option>
+        </select>
+      </div>
+
+      <div class="col-1">
+        <div class="btn-group-vertical">
+          <button class="btn btn-success">Right</button>
+          <button class="btn btn-success">Left</button>
+          <button class="btn btn-success">All right</button>
+          <button class="btn btn-success">All Left</button>
+        </div>
+      </div>
+
+      <div class="form-group col-6">
+        <label for="added-members">Monitors in the team</label>
+        <select multiple name="members" formControlName="members" class="form-control" id="added-members"></select>
+      </div>
+
+    </div>
+    <button class="btn btn-success" type="submit">Create Team</button>
+  </form>
+</div>

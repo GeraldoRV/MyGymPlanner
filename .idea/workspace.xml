@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/TeamDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/model/team.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/team.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frotend/src/app/service/team.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-user/new-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/utilities/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/utilities/global.ts" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +71,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -98,18 +114,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.exception" />
-      <recent name="main.model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
@@ -117,20 +121,20 @@
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.model" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -418,6 +422,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -491,7 +507,9 @@
       <workItem from="1574786332544" duration="2390000" />
       <workItem from="1574851716481" duration="452000" />
       <workItem from="1574873234086" duration="2819000" />
-      <workItem from="1575025484129" duration="7659000" />
+      <workItem from="1575025484129" duration="7731000" />
+      <workItem from="1575289874219" duration="172000" />
+      <workItem from="1575291359737" duration="7227000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -696,7 +714,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574780025516</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added team model, service.. backend">
+      <created>1575034210607</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1575034210607</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +746,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Update routine modify for client add exercise done" />
     <MESSAGE value="Update routine modify for client modify a exercise done" />
     <MESSAGE value="Update routine done" />
     <MESSAGE value="Update a routine for particular user done" />
@@ -746,7 +770,50 @@
     <MESSAGE value="Working in the layout in general" />
     <MESSAGE value="Some refactor in back" />
     <MESSAGE value="Added the exercise details page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the exercise details page" />
+    <MESSAGE value="Added team model, service.. backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added team model, service.. backend" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="114" key="GridCell.Tab.0.bottom" timestamp="1575294407333">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575294407333" />
+    <state width="1323" height="114" key="GridCell.Tab.0.center" timestamp="1575294407332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575294407332" />
+    <state width="1323" height="114" key="GridCell.Tab.0.left" timestamp="1575294407332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575294407332" />
+    <state width="1323" height="114" key="GridCell.Tab.0.right" timestamp="1575294407333">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575294407333" />
+    <state width="1323" height="325" key="GridCell.Tab.1.bottom" timestamp="1575293807197">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="325" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575293807197" />
+    <state width="1323" height="325" key="GridCell.Tab.1.center" timestamp="1575293807196">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="325" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1575293807196" />
+    <state width="1323" height="325" key="GridCell.Tab.1.left" timestamp="1575293807196">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="325" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1575293807196" />
+    <state width="1323" height="325" key="GridCell.Tab.1.right" timestamp="1575293807196">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="325" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1575293807196" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1575291950337">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575291950337" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1575298178503">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1575298178503" />
   </component>
   <component name="masterDetails">
     <states>

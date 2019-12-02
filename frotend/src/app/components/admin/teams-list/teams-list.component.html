@@ -1,0 +1,19 @@
+<a routerLink="/new-team" class="btn btn-success">Add new team</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"> Team</th>
+    <th scope="col"> Leader</th>
+    <th scope="col"> Nº members</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let team of teams; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <th>{{team.name}}</th>
+    <th>{{team.leader.name}}</th>
+    <th>{{team.members.length}}</th>
+  </tr>
+  </tbody>
+</table>

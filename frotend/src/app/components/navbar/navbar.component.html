@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark" *ngIf="loginService.getUser() !== null">
-  <button class="navbar-toggler" type="button" (click)="toggleNavBar()" >
+  <button class="navbar-toggler" type="button" (click)="toggleNavBar()">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">MyGymPlanner</a>
@@ -29,6 +29,11 @@
             Users
           </a>
         </li>
+        <li>
+          <a routerLink="/teams" class="nav-link">
+            Teams
+          </a>
+        </li>
       </ng-template>
       <ng-template [ngIf]="getRole()==='monitor'">
         <li class="nav-item">
@@ -38,6 +43,6 @@
         </li>
       </ng-template>
     </ul>
-  <button class="btn button" (click)="logout()">Sign out</button>
+    <button class="btn button" (click)="logout()">Sign out</button>
   </div>
 </nav>
