@@ -2,7 +2,6 @@ package main.controller;
 
 import main.model.Team;
 import main.service.TeamService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.List;
 @RequestMapping("team")
 @CrossOrigin(origins = "*")
 public class TeamController {
-    @Autowired
-    private TeamService teamService;
+    private final TeamService teamService;
+
+    public TeamController(TeamService teamService) {
+        this.teamService = teamService;
+    }
 
     @PostMapping
     public Team createTeam(@RequestBody Team team) {

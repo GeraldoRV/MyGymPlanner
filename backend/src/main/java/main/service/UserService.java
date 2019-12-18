@@ -3,7 +3,6 @@ package main.service;
 import main.dao.UserDao;
 import main.exception.UserNotFoundException;
 import main.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.List;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserDao userDao;
+    private final UserDao userDao;
+
+    public UserService(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     public List<User> getAll() {
         return (List<User>) userDao.findAll();

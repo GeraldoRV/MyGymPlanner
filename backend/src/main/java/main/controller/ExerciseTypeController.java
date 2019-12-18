@@ -2,7 +2,6 @@ package main.controller;
 
 import main.model.ExerciseType;
 import main.service.ExerciseTypeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,11 @@ import java.util.List;
 @RequestMapping("exerciseType")
 @CrossOrigin(origins = "*")
 public class ExerciseTypeController {
-    @Autowired
-    private ExerciseTypeService exerciseTypeService;
+    private final ExerciseTypeService exerciseTypeService;
+
+    public ExerciseTypeController(ExerciseTypeService exerciseTypeService) {
+        this.exerciseTypeService = exerciseTypeService;
+    }
 
     @GetMapping
     public List<ExerciseType> getAllExerciseType() {

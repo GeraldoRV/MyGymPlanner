@@ -2,7 +2,6 @@ package main.controller;
 
 import main.model.Gym;
 import main.service.GymService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -12,8 +11,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class GymController {
 
-    @Autowired
-    private GymService gymService;
+    private final GymService gymService;
+
+    public GymController(GymService gymService) {
+        this.gymService = gymService;
+    }
 
     @GetMapping("/{id}")
     public Optional<Gym> getGym(@PathVariable Integer id) {

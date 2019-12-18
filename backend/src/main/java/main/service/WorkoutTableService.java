@@ -3,7 +3,6 @@ package main.service;
 import main.dao.WorkoutTableDao;
 import main.model.Exercise;
 import main.model.WorkoutTable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.Optional;
 @Service
 public class WorkoutTableService {
 
-    @Autowired
-    private WorkoutTableDao wtDao;
+    private final WorkoutTableDao wtDao;
+
+    public WorkoutTableService(WorkoutTableDao wtDao) {
+        this.wtDao = wtDao;
+    }
 
     public Optional<WorkoutTable> getWTable(Integer id) {
         return wtDao.findById(id);

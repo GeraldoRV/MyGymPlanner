@@ -5,7 +5,6 @@ import main.exception.NotValidDayToReserveException;
 import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
 import main.service.ClassDirectedService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +14,11 @@ import java.util.Optional;
 @RequestMapping("/class")
 @CrossOrigin(origins = "*")
 public class ClassDirectedController {
-    @Autowired
-    private ClassDirectedService classDirectedService;
+    private final ClassDirectedService classDirectedService;
+
+    public ClassDirectedController(ClassDirectedService classDirectedService) {
+        this.classDirectedService = classDirectedService;
+    }
 
     @GetMapping("{id}")
     public Optional<ClassDirected> getClassDirected(@PathVariable Integer id) {

@@ -2,7 +2,6 @@ package main.controller;
 
 import main.model.WorkoutTable;
 import main.service.WorkoutTableService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,8 +12,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class WorkoutTableController {
 
-    @Autowired
-    private WorkoutTableService wtService;
+    private final WorkoutTableService wtService;
+
+    public WorkoutTableController(WorkoutTableService wtService) {
+        this.wtService = wtService;
+    }
 
     @GetMapping("/{id}")
     public Optional<WorkoutTable> getWorkTable(@PathVariable Integer id) {

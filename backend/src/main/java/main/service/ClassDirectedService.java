@@ -7,16 +7,21 @@ import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
 import main.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 
 @Service
 public class ClassDirectedService {
-    @Autowired
-    private ClassDirectedDao classDirectedDao;
+    private final ClassDirectedDao classDirectedDao;
+
+    public ClassDirectedService(ClassDirectedDao classDirectedDao) {
+        this.classDirectedDao = classDirectedDao;
+    }
 
     public Optional<ClassDirected> getClassDirected(Integer id) {
         return classDirectedDao.findById(id);
