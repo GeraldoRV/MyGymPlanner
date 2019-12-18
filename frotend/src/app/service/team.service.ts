@@ -16,4 +16,10 @@ export class TeamService {
   getAllTeams() {
     return this._http.get<Team[]>(this.baseUrl);
   }
+
+  createTeam(name: any, leader: any, members: any) {
+    const team = new Team();
+    team.name = name;
+
+  }
 }

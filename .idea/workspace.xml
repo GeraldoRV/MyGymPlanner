@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="Little refactor, team list added and working in create team front">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ClassDirectedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/ExerciseTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/GymController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/WorkoutTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ClassDirectedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/ExerciseTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/ExerciseTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/GymService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/GymService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/WorkoutTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -521,7 +508,8 @@
       <workItem from="1575649492474" duration="872000" />
       <workItem from="1575912287624" duration="573000" />
       <workItem from="1575969781418" duration="582000" />
-      <workItem from="1576669782547" duration="368000" />
+      <workItem from="1576669782547" duration="860000" />
+      <workItem from="1576671676669" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -740,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575299272752</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Little refactor: autowired deleted">
+      <created>1576670375847</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1576670375847</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -765,7 +760,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Update routine done" />
     <MESSAGE value="Update a routine for particular user done" />
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little refactor" />
@@ -790,53 +784,54 @@
     <MESSAGE value="Added the exercise details page" />
     <MESSAGE value="Added team model, service.. backend" />
     <MESSAGE value="Little refactor, team list added and working in create team front" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little refactor, team list added and working in create team front" />
+    <MESSAGE value="Little refactor: autowired deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little refactor: autowired deleted" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1575632447140">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1366.728@0.0.1366.728" timestamp="1575632447140" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1576670221798">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1576675361379">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576670221798" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576675361379" />
     <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1575475219399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="114" key="GridCell.Tab.0.bottom" timestamp="1575299281384">
+    <state width="1323" height="308" key="GridCell.Tab.0.bottom" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575299281384" />
-    <state width="1323" height="114" key="GridCell.Tab.0.center" timestamp="1575299281384">
+    <state width="1323" height="308" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.0.center" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575299281384" />
-    <state width="1323" height="114" key="GridCell.Tab.0.left" timestamp="1575299281383">
+    <state width="1323" height="308" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.0.left" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575299281383" />
-    <state width="1323" height="114" key="GridCell.Tab.0.right" timestamp="1575299281384">
+    <state width="1323" height="308" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.0.right" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575299281384" />
-    <state width="1323" height="325" key="GridCell.Tab.1.bottom" timestamp="1575299281252">
+    <state width="1323" height="308" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.1.bottom" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="325" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575299281252" />
-    <state width="1323" height="325" key="GridCell.Tab.1.center" timestamp="1575299281252">
+    <state width="1323" height="308" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.1.center" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="325" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1575299281252" />
-    <state width="1323" height="325" key="GridCell.Tab.1.left" timestamp="1575299281252">
+    <state width="1323" height="308" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.1.left" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="325" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1575299281252" />
-    <state width="1323" height="325" key="GridCell.Tab.1.right" timestamp="1575299281252">
+    <state width="1323" height="308" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="308" key="GridCell.Tab.1.right" timestamp="1576673008759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="325" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1575299281252" />
+    <state width="1323" height="308" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1575632458268">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
