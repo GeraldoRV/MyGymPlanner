@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/new-team/new-team.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/team.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/team.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +134,7 @@
       <recent name="main.model" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -509,7 +518,8 @@
       <workItem from="1575912287624" duration="573000" />
       <workItem from="1575969781418" duration="582000" />
       <workItem from="1576669782547" duration="860000" />
-      <workItem from="1576671676669" duration="3457000" />
+      <workItem from="1576671676669" duration="5574000" />
+      <workItem from="1577448817110" duration="5038000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -735,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576670375847</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Working in the create team in front, given the correct form">
+      <created>1576675388004</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1576675388004</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -760,7 +777,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Update a routine for particular user done" />
     <MESSAGE value="Little changes" />
     <MESSAGE value="Little refactor" />
     <MESSAGE value="Put validators in the forms" />
@@ -785,53 +801,62 @@
     <MESSAGE value="Added team model, service.. backend" />
     <MESSAGE value="Little refactor, team list added and working in create team front" />
     <MESSAGE value="Little refactor: autowired deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little refactor: autowired deleted" />
+    <MESSAGE value="Working in the create team in front, given the correct form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working in the create team in front, given the correct form" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#SQL_Dialects" timestamp="1577449154501">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1577449154501" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577449085530">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577449085530" />
     <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1575632447140">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1366.728@0.0.1366.728" timestamp="1575632447140" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1576675361379">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1577453990497">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576675361379" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577453990497" />
     <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1575475219399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="308" key="GridCell.Tab.0.bottom" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom" timestamp="1577453990590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.0.center" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577453990590" />
+    <state width="1323" height="176" key="GridCell.Tab.0.center" timestamp="1577453990590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.0.left" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577453990590" />
+    <state width="1323" height="176" key="GridCell.Tab.0.left" timestamp="1577453990590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.0.right" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577453990590" />
+    <state width="1323" height="176" key="GridCell.Tab.0.right" timestamp="1577453990590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.1.bottom" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577453990590" />
+    <state width="1323" height="176" key="GridCell.Tab.1.bottom" timestamp="1577453990591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.1.center" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577453990591" />
+    <state width="1323" height="176" key="GridCell.Tab.1.center" timestamp="1577453990591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.1.left" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577453990591" />
+    <state width="1323" height="176" key="GridCell.Tab.1.left" timestamp="1577453990591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
-    <state width="1323" height="308" key="GridCell.Tab.1.right" timestamp="1576673008759">
+    <state width="1323" height="176" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577453990591" />
+    <state width="1323" height="176" key="GridCell.Tab.1.right" timestamp="1577453990591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="308" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576673008759" />
+    <state width="1323" height="176" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577453990591" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1575632458268">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -844,10 +869,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="65" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1575475228375" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1575298178503">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1577453456631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1575298178503" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577453456631" />
   </component>
   <component name="masterDetails">
     <states>

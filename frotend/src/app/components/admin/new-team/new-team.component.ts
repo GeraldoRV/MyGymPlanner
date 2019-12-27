@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {TeamService} from '../../../service/team.service';
+import {UserService} from '../../../service/user.service';
+import {User} from '../../../model/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-team',
@@ -9,10 +12,11 @@ import {TeamService} from '../../../service/team.service';
 })
 export class NewTeamComponent implements OnInit {
   teamForm: FormGroup;
-  newMonitors: string[] = [];
-  monitors = ['monitor 1', 'monitor 2', 'monitor 4'];
+  newMonitors: User[] = [];
+  monitors: User[];
 
-  constructor(private fb: FormBuilder, private _teamService: TeamService) {
+  constructor(private fb: FormBuilder, private _teamService: TeamService,
+              private _userService: UserService, private _route: Router) {
   }
 
   ngOnInit() {
@@ -24,6 +28,11 @@ export class NewTeamComponent implements OnInit {
         members: [[]]
       }
     );
+    this._userService.getAllMonitorsNotMembers().subscribe(result => {
+      this.monitors = result;
+    }, error => {
+      console.log(error);
+    });
   }
 
   moveRight() {
@@ -58,14 +67,17 @@ export class NewTeamComponent implements OnInit {
 
   moveAllLeft() {
     this.newMonitors.forEach(item => this.monitors.push(item));
-
     this.newMonitors = [];
   }
 
   onSubmit() {
     const name = this.teamForm.controls.teamName.value;
     const leader = this.teamForm.controls.leader.value;
-    const members = this.teamForm.controls.members.value;
-    this._teamService.createTeam(name, leader, members);
+    const members = this.newMonitors;
+    this._teamService.createTeam(name, leader, members).subscribe(() => {
+      this._route.navigate(['/teams']);
+    }, error => {
+      console.log(error);
+    });
   }
 }

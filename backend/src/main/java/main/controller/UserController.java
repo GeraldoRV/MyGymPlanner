@@ -27,8 +27,19 @@ public class UserController {
         return userService.getAllClientsWhereNameLike(name);
     }
 
+    @GetMapping("monitor/not-leaders")
+    public List<User> getAllMonitorsNotLeaders() {
+        return userService.getAllMonitorsNotLeaders();
+    }
+
+    @GetMapping("monitor/not-members")
+    public List<User> getAllMonitorNotInTeam() {
+        return userService.getAllMonitorsNotInATeam();
+    }
+
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
+
 }

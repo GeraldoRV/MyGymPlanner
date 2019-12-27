@@ -2,6 +2,7 @@ package main.service;
 
 import main.dao.TeamDAO;
 import main.model.Team;
+import main.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class TeamService {
     }
 
     public Team create(Team team) {
+        User leader = team.getLeader();
+        team.getMembers().add(leader);
         return teamDAO.save(team);
     }
 

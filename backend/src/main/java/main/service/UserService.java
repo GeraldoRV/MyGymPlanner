@@ -21,11 +21,14 @@ public class UserService {
     }
 
     public List<User> getAllClientsWhereNameLike(String name) {
-        return userDao.findAllByNameContainingAndRole(name,"client");
+        return userDao.findAllByNameContainingAndRole(name, "client");
+    }
+
+    public List<User> getAllMonitorsNotLeaders() {
+        return userDao.findAllMonitorNotLeaders();
     }
 
     public User login(User user) throws UserNotFoundException {
-
         User userLogged = userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
         if (userLogged == null) throw new UserNotFoundException();
         return userLogged;
@@ -47,5 +50,9 @@ public class UserService {
 
     private boolean isNotARoleValid(String role) {
         return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
+    }
+
+    public List<User> getAllMonitorsNotInATeam() {
+        return userDao.findAllMonitorsNotInATeam();
     }
 }

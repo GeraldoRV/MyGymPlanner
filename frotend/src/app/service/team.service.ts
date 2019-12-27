@@ -17,9 +17,13 @@ export class TeamService {
     return this._http.get<Team[]>(this.baseUrl);
   }
 
-  createTeam(name: any, leader: any, members: any) {
+  createTeam(name: any, leader, members) {
     const team = new Team();
     team.name = name;
+    team.leader = leader;
+    team.members = members;
+    return this._http.post(this.baseUrl, team);
+
 
   }
 }

@@ -24,4 +24,8 @@ export class UserService {
   getAllClientsLike(name: string) {
     return this._http.get<User[]>(this.baseUrl + '/client/' + name);
   }
+
+  getAllMonitorsNotMembers() {
+    return this._http.get<User[]>(this.baseUrl + '/monitor/not-members');
+  }
 }

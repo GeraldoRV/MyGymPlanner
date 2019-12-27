@@ -11,9 +11,9 @@
   <tbody>
   <tr *ngFor="let team of teams; let i = index">
     <th scope="row">{{i + 1}}</th>
-    <th>{{team.name}}</th>
-    <th>{{team.leader.name}}</th>
-    <th>{{team.members.length}}</th>
+    <td>{{team.name}}</td>
+    <td>{{team.leader.name}}</td>
+    <td>{{team.members.length}}</td>
   </tr>
   </tbody>
 </table>
