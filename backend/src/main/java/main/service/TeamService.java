@@ -24,4 +24,8 @@ public class TeamService {
     public List<Team> getAll() {
         return (List<Team>) teamDAO.findAll();
     }
+
+    public Team getTeamOfLeader(Integer leaderId) {
+        return teamDAO.findByLeader_Id(leaderId);
+    }
 }

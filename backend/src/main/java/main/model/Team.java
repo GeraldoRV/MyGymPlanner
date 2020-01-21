@@ -13,6 +13,8 @@ public class Team {
     private User leader;
     @OneToMany
     private List<User> members;
+    @OneToMany
+    private List<TypeClass> classes;
 
     public Integer getId() {
         return id;
@@ -44,5 +46,13 @@ public class Team {
 
     public void setMembers(List<User> members) {
         this.members = members;
+    }
+
+    public List<TypeClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<TypeClass> classes) {
+        this.classes = classes;
     }
 }

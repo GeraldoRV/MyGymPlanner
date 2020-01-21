@@ -16,13 +16,18 @@ public class TeamController {
         this.teamService = teamService;
     }
 
+    @GetMapping
+    public List<Team> getAllTeams() {
+        return teamService.getAll();
+    }
+
+    @GetMapping("leader/{id}")
+    public Team getTeamOfLeader(@PathVariable Integer id) {
+        return teamService.getTeamOfLeader(id);
+    }
+
     @PostMapping
     public Team createTeam(@RequestBody Team team) {
         return teamService.create(team);
-    }
-
-    @GetMapping
-    public List<Team> getAllTeams(){
-        return teamService.getAll();
     }
 }
