@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/leader/my-team/my-team.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/leader/my-team/my-team.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/leader/my-team/my-team.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frotend/src/app/components/leader/my-team/my-team.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/model/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/team.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/team.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -115,18 +109,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.exception" />
-      <recent name="main.model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
@@ -134,8 +116,20 @@
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.TeamServiceTest">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -217,7 +211,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassDirectedServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeamServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -226,13 +220,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.ClassDirectedServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="main.service.TeamServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GymServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -241,39 +235,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.GymServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.GymServiceTest" />
-      <option name="METHOD_NAME" value="givenNotExistGym_WhenGetGym_thenReturnGym" />
+      <option name="MAIN_CLASS_NAME" value="main.service.TeamServiceTest" />
+      <option name="METHOD_NAME" value="givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.service" />
-      <option name="MAIN_CLASS_NAME" value="main.service.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -413,13 +377,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application (frotend)" />
+      <item itemvalue="JUnit.main in backend" />
+      <item itemvalue="JUnit.TeamServiceTest" />
+      <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
+      <item itemvalue="npm.Angular CLI Server (frotend)" />
+      <item itemvalue="Protractor.E2E Tests (frotend)" />
+      <item itemvalue="Spring Boot.BackendApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeamServiceTest" />
+        <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
         <item itemvalue="JUnit.main in backend" />
-        <item itemvalue="JUnit.ClassDirectedServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.GymServiceTest.givenNotExistGym_WhenGetGym_thenReturnGym" />
-        <item itemvalue="JUnit.GymServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -524,7 +495,8 @@
       <workItem from="1578996375566" duration="843000" />
       <workItem from="1579611410067" duration="1837000" />
       <workItem from="1580817956417" duration="2685000" />
-      <workItem from="1580986364952" duration="3874000" />
+      <workItem from="1580986364952" duration="7780000" />
+      <workItem from="1581000622200" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -757,7 +729,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576675388004</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="See my team in front">
+      <created>1580994619847</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1580994619847</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -782,7 +761,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Little changes" />
     <MESSAGE value="Little refactor" />
     <MESSAGE value="Put validators in the forms" />
     <MESSAGE value="Put validators in back create user" />
@@ -807,17 +785,18 @@
     <MESSAGE value="Little refactor, team list added and working in create team front" />
     <MESSAGE value="Little refactor: autowired deleted" />
     <MESSAGE value="Working in the create team in front, given the correct form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working in the create team in front, given the correct form" />
+    <MESSAGE value="See my team in front" />
+    <option name="LAST_COMMIT_MESSAGE" value="See my team in front" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#SQL_Dialects" timestamp="1577449154501">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1577449154501" />
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577449085530">
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580995641934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577449085530" />
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995641934" />
     <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1575632447140">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -826,10 +805,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580991701900" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1577453990497">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581000903303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577453990497" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581000903303" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -838,46 +817,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1580993307824">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580993307824" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1580993307823">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580993307823" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1580993307823">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580993307823" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1580993307823">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580993307823" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1580992648383">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580992648383" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1580992648383">
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580992648383" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1580992648382">
+    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580992648382" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1580992648383">
+    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580992648383" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1575632458268">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575632458268" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1580990993805">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000750079">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580990993805" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581000750079" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1581000687735">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581000687735" />
+    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580995219685">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995219685" />
     <state x="65" y="65" key="new project wizard" timestamp="1575475228375">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

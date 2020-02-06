@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.exception.NotValidTeam;
 import main.model.Team;
 import main.service.TeamService;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class TeamController {
     }
 
     @PostMapping
-    public Team createTeam(@RequestBody Team team) {
+    public Team createTeam(@RequestBody Team team) throws NotValidTeam {
         return teamService.create(team);
     }
 }

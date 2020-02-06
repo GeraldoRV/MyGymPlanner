@@ -1,6 +1,7 @@
 package main.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ public class Team {
     @OneToOne
     private User leader;
     @OneToMany
-    private List<User> members;
+    private List<User> members = new ArrayList<>();
     @OneToMany
     private List<TypeClass> classes;
 
