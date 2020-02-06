@@ -9,4 +9,5 @@ export class User {
   role: string;
   gym: Gym;
   workingHours: WorkingHours;
+  leader: boolean;
 }

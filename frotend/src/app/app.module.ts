@@ -30,6 +30,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {ExerciseDetailsComponent} from './components/client/exercise-details/exercise-details.component';
 import {TeamsListComponent} from './components/admin/teams-list/teams-list.component';
 import {NewTeamComponent} from './components/admin/new-team/new-team.component';
+import {MyTeamComponent} from './components/leader/my-team/my-team.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -69,6 +70,9 @@ const appRoutes: Routes = [
   }, {
     path: 'assigned-class', component: AssignedClassComponent,
     canActivate: [AuthGuard]
+  }, {
+    path: 'assigned-classes', component: MyTeamComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'monitor', component: MainMonitorComponent,
@@ -96,7 +100,8 @@ const appRoutes: Routes = [
     EvenOrOdd,
     ExerciseDetailsComponent,
     TeamsListComponent,
-    NewTeamComponent
+    NewTeamComponent,
+    MyTeamComponent
   ],
   imports: [
     FormsModule,

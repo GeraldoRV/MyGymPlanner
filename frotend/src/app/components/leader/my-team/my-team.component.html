@@ -1,0 +1,16 @@
+<h2>{{teamName}}</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col" sortable="name">Full Name</th>
+    <th scope="col" sortable="name">UserName</th>
+  </tr>
+  </thead>
+  <tbody><tr *ngFor="let user of members; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{user.name}}</td>
+    <td>{{user.userName}}</td>
+  </tr>
+  </tbody>
+</table>

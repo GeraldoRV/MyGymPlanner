@@ -23,7 +23,9 @@ export class TeamService {
     team.leader = leader;
     team.members = members;
     return this._http.post(this.baseUrl, team);
+  }
 
-
+  getTeamByLeader(id: number) {
+    return this._http.get<Team>(this.baseUrl + '/leader/' + id);
   }
 }

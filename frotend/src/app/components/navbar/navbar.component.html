@@ -41,6 +41,13 @@
             Working Hours
           </a>
         </li>
+        <ng-template [ngIf]="isLeader()===true">
+          <li class="nav-item">
+            <a routerLink="/assigned-classes" class="nav-link">
+              Assigned Classes
+            </a>
+          </li>
+        </ng-template>
       </ng-template>
     </ul>
     <button class="btn button" (click)="logout()">Sign out</button>

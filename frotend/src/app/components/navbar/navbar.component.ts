@@ -33,4 +33,8 @@ export class NavbarComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
 
   }
+
+  isLeader() {
+    return this.userLogin.leader;
+  }
 }

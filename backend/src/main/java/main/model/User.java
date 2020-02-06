@@ -19,6 +19,8 @@ public class User {
     @ManyToOne
     private Gym gym;
 
+    private Boolean isLeader = false;
+
     public Integer getId() {
         return id;
     }
@@ -73,5 +75,13 @@ public class User {
 
     public void setWorkingHours(WorkingHours workingHours) {
         this.workingHours = workingHours;
+    }
+
+    public Boolean isLeader() {
+        return isLeader;
+    }
+
+    public void setLeader(Boolean leader) {
+        isLeader = leader;
     }
 }
