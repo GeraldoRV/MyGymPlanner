@@ -125,17 +125,14 @@ public class TeamServiceTest {
     public void givenAUserIDOfNotALeader_whenGetTeamOfLeader_thenExpectationsSatisfied() throws TeamNotFoundException {
         Team newTeam = initNewTeam("Team T", "Leader T", null);
         teamDAO.save(newTeam);
-        User user = new User();
-        user.setName("Fran");
-        user.setRole("monitor");
-        User someUser = userDao.save(user);
+        User someUser = createUser("Fran");
 
         teamService.getTeamOfLeader(someUser.getId());
     }
 
     @Test(expected = TeamNotFoundException.class)
     public void givenAUserIDOfAMemberNotLeader_whenGetTeamOfLeader_thenExpectationsSatisfied() throws TeamNotFoundException {
-        Team newTeam = initNewTeam("Team T", "Leader T", "Fran");
+        Team newTeam = initNewTeam("Team T", "Leader T", "Member");
         Team team = teamDAO.save(newTeam);
         User member = team.getMembers().get(0);
 
@@ -146,19 +143,21 @@ public class TeamServiceTest {
         Team newTeam = new Team();
         newTeam.setName(teamName);
         if (leaderName != null) {
-            User newLeader = new User();
-            newLeader.setName(leaderName);
-            newLeader.setRole("monitor");
-            User leader = userDao.save(newLeader);
+            User leader = createUser(leaderName);
             newTeam.setLeader(leader);
         }
         if (memberName != null) {
-            User user = new User();
-            user.setName(memberName);
-            user.setRole("monitor");
-            User newMember = userDao.save(user);
+            User newMember = createUser(memberName);
             newTeam.getMembers().add(newMember);
         }
         return newTeam;
+    }
+
+    private User createUser(String userName) {
+        User user = new User();
+        user.setName(userName);
+        user.setRole("monitor");
+        return userDao.save(user);
+
     }
 }
