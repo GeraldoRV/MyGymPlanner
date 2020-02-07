@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/TeamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/TeamDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -500,7 +495,7 @@
       <workItem from="1580817956417" duration="2685000" />
       <workItem from="1580986364952" duration="7780000" />
       <workItem from="1581000622200" duration="324000" />
-      <workItem from="1581074990200" duration="2451000" />
+      <workItem from="1581074990200" duration="5308000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -747,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581000930067</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Testing teamservice, getTeamByLeader method and refactor">
+      <created>1581077613157</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1581077613157</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,7 +774,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Put validators in the forms" />
     <MESSAGE value="Put validators in back create user" />
     <MESSAGE value="Testing the method addClientToClassWith the different conditions" />
     <MESSAGE value="Change method addClientToClass added the conditions(test)" />
@@ -797,7 +798,8 @@
     <MESSAGE value="Working in the create team in front, given the correct form" />
     <MESSAGE value="See my team in front" />
     <MESSAGE value="Testing teamservice, getall and create method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing teamservice, getall and create method" />
+    <MESSAGE value="Testing teamservice, getTeamByLeader method and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing teamservice, getTeamByLeader method and refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#SQL_Dialects" timestamp="1577449154501">
@@ -816,10 +818,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580991701900" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581000925442">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581077607341">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581000925442" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581077607341" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -828,22 +830,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1581077071532">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1581080414414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1581077071532">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581080414414" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1581080414414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1581077071532">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581080414414" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1581080414414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1581077071532">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581080414414" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1581080414414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581080414414" />
     <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -880,6 +882,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="65" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1575475228375" />
+    <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1581079047182">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1581079047182" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1577453456631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

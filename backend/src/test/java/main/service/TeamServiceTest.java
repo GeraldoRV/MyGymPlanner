@@ -7,7 +7,6 @@ import main.exception.TeamNotFoundException;
 import main.model.Team;
 import main.model.User;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class TeamServiceTest {
 
     @Test
     public void givenAValidNewTeam_whenCreate_returnTheNewTeam() throws NotValidTeamException {
-        Team newTeam = initNewTeam();
+        Team newTeam = initNewTeam("Team T", "Leader T", null);
 
         Team team = teamService.create(newTeam);
 
@@ -50,7 +49,7 @@ public class TeamServiceTest {
 
     @Test(expected = NotValidTeamException.class)
     public void givenANewTeamWithNotNameAndLeader_whenCreate_thenExpectationsSatisfied() throws NotValidTeamException {
-        Team newTeam = initNewTeam();
+        Team newTeam = initNewTeam(null, "Leader T", null);
         newTeam.setName(null);
 
         teamService.create(newTeam);
@@ -59,8 +58,7 @@ public class TeamServiceTest {
 
     @Test(expected = NotValidTeamException.class)
     public void givenANewTeamWithNameAndNotLeader_whenCreate_thenExpectationsSatisfied() throws NotValidTeamException {
-        Team newTeam = initNewTeam();
-        newTeam.setLeader(null);
+        Team newTeam = initNewTeam("Team T", null, null);
 
         teamService.create(newTeam);
 
@@ -73,9 +71,30 @@ public class TeamServiceTest {
         teamService.create(newTeam);
     }
 
+    @Test(expected = NotValidTeamException.class)
+    public void givenANewTeamWithLeaderOfOtherTeam_whenCreate_thenExpectationSatisfied() throws NotValidTeamException {
+        Team newTeam = initNewTeam("Team T", "Leader T", null);
+        Team newTeam1 = initNewTeam("Team T2", null, null);
+        Team team = teamService.create(newTeam);
+        newTeam1.setLeader(team.getLeader());
+
+        teamService.create(newTeam1);
+    }
+
+    @Test(expected = NotValidTeamException.class)
+    public void givenANewTeamWithMembersOfOtherTeam_whenCreate_thenExpectationSatisfied()
+            throws NotValidTeamException {
+        Team newTeam = initNewTeam("Team T", "Leader T", "Member 1");
+        Team newTeam1 = initNewTeam("Team T2", "Leader T2", null);
+        Team team = teamService.create(newTeam);
+        newTeam1.getMembers().add(team.getMembers().get(0));
+
+        teamService.create(newTeam1);
+    }
+
     @Test
     public void givenADBWithTeams_whenGetAll_ReturnAListNotEmpty() {
-        Team team = initNewTeam();
+        Team team = initNewTeam("Team T", "Leader T", null);
         teamDAO.save(team);
 
         List<Team> all = teamService.getAll();
@@ -92,7 +111,7 @@ public class TeamServiceTest {
 
     @Test
     public void givenAUserIDOfALeader_whenGetTeamOfLeader_returnTheTeam() throws TeamNotFoundException {
-        Team newTeam = initNewTeam();
+        Team newTeam = initNewTeam("Team T", "Leader T", null);
         teamDAO.save(newTeam);
         User leader = newTeam.getLeader();
 
@@ -104,7 +123,7 @@ public class TeamServiceTest {
 
     @Test(expected = TeamNotFoundException.class)
     public void givenAUserIDOfNotALeader_whenGetTeamOfLeader_thenExpectationsSatisfied() throws TeamNotFoundException {
-        Team newTeam = initNewTeam();
+        Team newTeam = initNewTeam("Team T", "Leader T", null);
         teamDAO.save(newTeam);
         User user = new User();
         user.setName("Fran");
@@ -116,25 +135,30 @@ public class TeamServiceTest {
 
     @Test(expected = TeamNotFoundException.class)
     public void givenAUserIDOfAMemberNotLeader_whenGetTeamOfLeader_thenExpectationsSatisfied() throws TeamNotFoundException {
-        Team newTeam = initNewTeam();
-        User user = new User();
-        user.setName("Fran");
-        user.setRole("monitor");
-        User newMember = userDao.save(user);
-        newTeam.getMembers().add(newMember);
-        teamDAO.save(newTeam);
+        Team newTeam = initNewTeam("Team T", "Leader T", "Fran");
+        Team team = teamDAO.save(newTeam);
+        User member = team.getMembers().get(0);
 
-        teamService.getTeamOfLeader(newMember.getId());
+        teamService.getTeamOfLeader(member.getId());
     }
 
-    private Team initNewTeam() {
+    private Team initNewTeam(String teamName, String leaderName, String memberName) {
         Team newTeam = new Team();
-        newTeam.setName("Team Test");
-        User newLeader = new User();
-        newLeader.setName("leader");
-        newLeader.setRole("monitor");
-        User leader = userDao.save(newLeader);
-        newTeam.setLeader(leader);
+        newTeam.setName(teamName);
+        if (leaderName != null) {
+            User newLeader = new User();
+            newLeader.setName(leaderName);
+            newLeader.setRole("monitor");
+            User leader = userDao.save(newLeader);
+            newTeam.setLeader(leader);
+        }
+        if (memberName != null) {
+            User user = new User();
+            user.setName(memberName);
+            user.setRole("monitor");
+            User newMember = userDao.save(user);
+            newTeam.getMembers().add(newMember);
+        }
         return newTeam;
     }
 }
