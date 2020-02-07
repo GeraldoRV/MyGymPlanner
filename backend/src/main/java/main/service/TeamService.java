@@ -2,10 +2,10 @@ package main.service;
 
 import main.dao.TeamDAO;
 import main.dao.UserDao;
-import main.exception.NotValidTeam;
+import main.exception.NotValidTeamException;
+import main.exception.TeamNotFoundException;
 import main.model.Team;
 import main.model.User;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +20,9 @@ public class TeamService {
         this.userDao = userDao;
     }
 
-    public Team create(Team team) throws NotValidTeam {
+    public Team create(Team team) throws NotValidTeamException {
         if (!isAValid(team)) {
-            throw new NotValidTeam();
+            throw new NotValidTeamException();
         }
         User leader = team.getLeader();
         leader.setLeader(true);
@@ -31,15 +31,19 @@ public class TeamService {
         return teamDAO.save(team);
     }
 
-    private boolean isAValid(Team team) {
-        return team.getName() != null && !team.getName().isEmpty() && team.getLeader() != null;
-    }
-
     public List<Team> getAll() {
         return (List<Team>) teamDAO.findAll();
     }
 
-    public Team getTeamOfLeader(Integer leaderId) {
-        return teamDAO.findByLeader_Id(leaderId);
+    public Team getTeamOfLeader(Integer leaderId) throws TeamNotFoundException {
+        Team team = teamDAO.findByLeader_Id(leaderId);
+        if (team == null){
+            throw new TeamNotFoundException();
+        }
+        return team;
+    }
+
+    private boolean isAValid(Team team) {
+        return team.getName() != null && !team.getName().isEmpty() && team.getLeader() != null;
     }
 }

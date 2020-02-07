@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,12 +112,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\monitor" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
@@ -122,11 +124,12 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.exception" />
-      <recent name="main.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\monitor" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TeamServiceTest">
@@ -496,7 +499,8 @@
       <workItem from="1579611410067" duration="1837000" />
       <workItem from="1580817956417" duration="2685000" />
       <workItem from="1580986364952" duration="7780000" />
-      <workItem from="1581000622200" duration="167000" />
+      <workItem from="1581000622200" duration="324000" />
+      <workItem from="1581074990200" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -736,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580994619847</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Testing teamservice, getall and create method">
+      <created>1581000930067</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1581000930067</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -761,7 +772,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Little refactor" />
     <MESSAGE value="Put validators in the forms" />
     <MESSAGE value="Put validators in back create user" />
     <MESSAGE value="Testing the method addClientToClassWith the different conditions" />
@@ -786,7 +796,8 @@
     <MESSAGE value="Little refactor: autowired deleted" />
     <MESSAGE value="Working in the create team in front, given the correct form" />
     <MESSAGE value="See my team in front" />
-    <option name="LAST_COMMIT_MESSAGE" value="See my team in front" />
+    <MESSAGE value="Testing teamservice, getall and create method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing teamservice, getall and create method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#SQL_Dialects" timestamp="1577449154501">
@@ -805,10 +816,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580991701900" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581000903303">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581000925442">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581000903303" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581000925442" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -817,22 +828,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1581077071532">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1581077071532">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1581077071532">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1581077071532">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581077071532" />
     <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1580998469320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -853,14 +864,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575632458268" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000750079">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581000750079" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1581000687735">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581000945269" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1581075217523">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581000687735" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581075217523" />
     <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580995219685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

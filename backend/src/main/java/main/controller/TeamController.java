@@ -1,6 +1,7 @@
 package main.controller;
 
-import main.exception.NotValidTeam;
+import main.exception.NotValidTeamException;
+import main.exception.TeamNotFoundException;
 import main.model.Team;
 import main.service.TeamService;
 import org.springframework.web.bind.annotation.*;
@@ -23,12 +24,12 @@ public class TeamController {
     }
 
     @GetMapping("leader/{id}")
-    public Team getTeamOfLeader(@PathVariable Integer id) {
+    public Team getTeamOfLeader(@PathVariable Integer id) throws TeamNotFoundException {
         return teamService.getTeamOfLeader(id);
     }
 
     @PostMapping
-    public Team createTeam(@RequestBody Team team) throws NotValidTeam {
+    public Team createTeam(@RequestBody Team team) throws NotValidTeamException {
         return teamService.create(team);
     }
 }

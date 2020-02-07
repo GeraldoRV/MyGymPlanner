@@ -16,7 +16,6 @@ public interface UserDao extends CrudRepository<User, Integer> {
 
     @Query(nativeQuery = true, value = "SELECT u.* FROM user u LEFT JOIN " +
             "team t on u.id = t.leader_id WHERE t.leader_id IS NULL AND u.role= 'monitor';")
-
     List<User> findAllMonitorNotLeaders();
 
     @Query(nativeQuery = true, value = "SELECT u.* FROM db_gym.user u LEFT JOIN " +

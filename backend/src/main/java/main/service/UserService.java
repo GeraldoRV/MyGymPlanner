@@ -24,8 +24,8 @@ public class UserService {
         return userDao.findAllByNameContainingAndRole(name, "client");
     }
 
-    public List<User> getAllMonitorsNotLeaders() {
-        return userDao.findAllMonitorNotLeaders();
+    public List<User> getAllMonitorsNotInATeam() {
+        return userDao.findAllMonitorsNotInATeam();
     }
 
     public User login(User user) throws UserNotFoundException {
@@ -50,9 +50,5 @@ public class UserService {
 
     private boolean isNotARoleValid(String role) {
         return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
-    }
-
-    public List<User> getAllMonitorsNotInATeam() {
-        return userDao.findAllMonitorsNotInATeam();
     }
 }
