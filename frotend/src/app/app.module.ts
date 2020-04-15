@@ -31,6 +31,7 @@ import {ExerciseDetailsComponent} from './components/client/exercise-details/exe
 import {TeamsListComponent} from './components/admin/teams-list/teams-list.component';
 import {NewTeamComponent} from './components/admin/new-team/new-team.component';
 import {MyTeamComponent} from './components/leader/my-team/my-team.component';
+import {ClassListComponent} from './components/admin/class-list/class-list.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -40,6 +41,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin', component: MainComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin/class-list', component: ClassListComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -101,7 +106,8 @@ const appRoutes: Routes = [
     ExerciseDetailsComponent,
     TeamsListComponent,
     NewTeamComponent,
-    MyTeamComponent
+    MyTeamComponent,
+    ClassListComponent
   ],
   imports: [
     FormsModule,
