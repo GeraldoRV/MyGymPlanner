@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/ClassDirectedFullException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/ClassDirectedFullException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidDayToReserveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidDayToReserveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/TheClientIsInTheClassException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TheClientIsInTheClassException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ClassDirectedServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/ExerciseTypeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/GymServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/GymServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/WorkoutTableServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -503,7 +503,7 @@
       <workItem from="1586513591240" duration="598000" />
       <workItem from="1586515897662" duration="259000" />
       <workItem from="1586517121670" duration="327000" />
-      <workItem from="1586941817627" duration="2159000" />
+      <workItem from="1586941817627" duration="2920000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -764,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581080553054</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Changed exceptions">
+      <created>1586944140754</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1586944140754</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,7 +796,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Testing the method addClientToClassWith the different conditions" />
     <MESSAGE value="Change method addClientToClass added the conditions(test)" />
     <MESSAGE value="Change method addClientToClass added the conditions(full/test)" />
     <MESSAGE value="Simple refactor in the class directed service" />
@@ -814,7 +820,8 @@
     <MESSAGE value="Testing teamservice, getall and create method" />
     <MESSAGE value="Testing teamservice, getTeamByLeader method and refactor" />
     <MESSAGE value="Testing teamservice, create method and condition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing teamservice, create method and condition" />
+    <MESSAGE value="Changed exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed exceptions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580995641934">
@@ -825,30 +832,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580991701900" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1581080550651">
+    <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586944146316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581080550651" />
+    <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1586944146316" />
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1586944125098">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586944125098" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1586943285646">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1586944194562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586943285646" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1586943285645">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586944194562" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1586944194562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586943285645" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1586943285644">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586944194562" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1586944194562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586943285644" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1586943285645">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586944194562" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1586944194562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586943285645" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586944194562" />
     <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1586942216244">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

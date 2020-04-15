@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class TeamService {
     private final TeamDAO teamDAO;
-    private UserDao userDao;
+    private final UserDao userDao;
 
     public TeamService(TeamDAO teamDAO, UserDao userDao) {
         this.teamDAO = teamDAO;

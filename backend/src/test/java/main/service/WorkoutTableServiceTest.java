@@ -46,7 +46,7 @@ public class WorkoutTableServiceTest {
     private WorkoutTable workoutTable2EAdmin;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setName("WKT");
         WorkoutTable workoutTableNotExercises = new WorkoutTable();

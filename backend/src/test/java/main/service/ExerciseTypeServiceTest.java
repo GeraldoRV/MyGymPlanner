@@ -24,7 +24,7 @@ public class ExerciseTypeServiceTest {
     private ExerciseTypeService exerciseTypeService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ExerciseType exerciseType = new ExerciseType();
         exerciseType.setName("Type1");
         exerciseTypeDao.save(exerciseType);

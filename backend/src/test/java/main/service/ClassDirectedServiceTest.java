@@ -49,7 +49,7 @@ public class ClassDirectedServiceTest {
     private ClassDirected notFullClass;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Gym gym = new Gym();
         gym.setName("Gym without classes");
         gymWithoutClasses = gymDao.save(gym);
