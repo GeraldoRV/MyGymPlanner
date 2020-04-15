@@ -60,16 +60,12 @@ public class DBSeeder implements CommandLineRunner {
         newClassDirected(gym, "13:15", "14:00", "Sunday", "noOne", cycling);
     }
 
-    private void plusOne(TypeClass typeClass) {
-        typeClass.setNClassesDirected(typeClass.getNClassesDirected() + 1);
-    }
 
     private TypeClass newTypeClass(String name, Integer duration, String description) {
         TypeClass typeClass = new TypeClass();
         typeClass.setName(name);
         typeClass.setDuration(duration);
         typeClass.setDescription(description);
-        typeClass.setNClassesDirected(0);
         return typeClassDAO.save(typeClass);
     }
 
@@ -90,11 +86,8 @@ public class DBSeeder implements CommandLineRunner {
                     "Zumba applies dance moves from Salsa, Cumbia, Merengue, Rumba, Mambo, Belly Dance, " +
                     "Flamenco, Samba, Tango, Reggaeton and of course Hip Hop.");
             zumba.setDuration(45);
-            zumba.setNClassesDirected(0);
-            plusOne(zumba);
             classDirected.setTypeClass(zumba);
         } else {
-            plusOne(typeClass);
             classDirected.setTypeClass(typeClass);
         }
         User user = userDao.findByUserNameAndPassword(monitor, monitor);

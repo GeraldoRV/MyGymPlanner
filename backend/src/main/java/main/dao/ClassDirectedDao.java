@@ -1,6 +1,7 @@
 package main.dao;
 
 import main.model.ClassDirected;
+import main.model.TypeClass;
 import main.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,8 @@ public interface ClassDirectedDao extends CrudRepository<ClassDirected, Integer>
     Boolean existsByIdAndClientListContains(Integer id, User user);
 
     Boolean existsByIdAndIsFull(Integer id, Boolean isFull);
+
+    int countAllByTypeClass(TypeClass typeClass);
+
+    int countAllByTypeClassAndAssignedMonitorIsNotNull(TypeClass typeClass);
 }

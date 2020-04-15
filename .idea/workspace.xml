@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="GYM-23: Adde">
       <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/converter/TypeClassConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dto/TypeClassDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/main/dto/TypeClassDtoForAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/DBSeeder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/model/TypeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/class-list/class-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/class-list/class-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/class-list/class-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/class-list/class-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/model/type-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/model/type-class.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -502,7 +506,7 @@
       <workItem from="1586513591240" duration="598000" />
       <workItem from="1586515897662" duration="259000" />
       <workItem from="1586517121670" duration="327000" />
-      <workItem from="1586941817627" duration="7342000" />
+      <workItem from="1586941817627" duration="9717000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -784,7 +788,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586947680253</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="GYM-23: Modified TypeClass model">
+      <created>1586949916069</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1586949916069</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -809,7 +820,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Change method addClientToClass added the conditions(full/test)" />
     <MESSAGE value="Simple refactor in the class directed service" />
     <MESSAGE value="Simple refactor in the class directed service to checkTime" />
     <MESSAGE value="Working in the medias queries" />
@@ -834,7 +844,8 @@
     <MESSAGE value="Changed exceptions" />
     <MESSAGE value="Some refactor in back" />
     <MESSAGE value="GYM-23: Added the class list" />
-    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: Added the class list" />
+    <MESSAGE value="GYM-23: Modified TypeClass model" />
+    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: Modified TypeClass model" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Assign_Data_Sources" timestamp="1586948489100">
@@ -845,54 +856,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995641934" />
-    <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1586948712952">
+    <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1586950794227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586948712952" />
+    <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586950794227" />
     <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586944146316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1586944146316" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1586949832856">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1586949911585">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586949832856" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586949911585" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1586949648631">
+    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1586952031869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586949648631" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586952031869" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -1,16 +1,14 @@
-package main.model;
+package main.dto;
 
-import javax.persistence.*;
 
-@Entity
-public class TypeClass {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class TypeClassDtoForAdmin {
     private Integer id;
     private String name;
-    @Column(length = 1000)
     private String description;
     private Integer duration;
+    private int nClassesDirected;
+    private int nClassesAssigned;
 
     public Integer getId() {
         return id;
@@ -44,4 +42,19 @@ public class TypeClass {
         this.duration = duration;
     }
 
+    public int getnClassesDirected() {
+        return nClassesDirected;
+    }
+
+    public void setnClassesDirected(int nClassesDirected) {
+        this.nClassesDirected = nClassesDirected;
+    }
+
+    public int getnClassesAssigned() {
+        return nClassesAssigned;
+    }
+
+    public void setnClassesAssigned(int nClassesAssigned) {
+        this.nClassesAssigned = nClassesAssigned;
+    }
 }
