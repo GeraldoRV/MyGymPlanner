@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/service/TeamServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/ClassDirectedFullException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/ClassDirectedFullException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidDayToReserveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidDayToReserveException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/NotValidTeamException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TeamNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/TheClientIsInTheClassException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/TheClientIsInTheClassException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/exception/UserNotFoundException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +130,7 @@
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeamServiceTest">
+  <component name="RunManager" selected="JUnit.main in backend">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -383,9 +389,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.main in backend" />
         <item itemvalue="JUnit.TeamServiceTest" />
         <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
-        <item itemvalue="JUnit.main in backend" />
       </list>
     </recent_temporary>
   </component>
@@ -493,6 +499,11 @@
       <workItem from="1580986364952" duration="7780000" />
       <workItem from="1581000622200" duration="324000" />
       <workItem from="1581074990200" duration="5686000" />
+      <workItem from="1585818481020" duration="482000" />
+      <workItem from="1586513591240" duration="598000" />
+      <workItem from="1586515897662" duration="259000" />
+      <workItem from="1586517121670" duration="327000" />
+      <workItem from="1586941817627" duration="2159000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -806,18 +817,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Testing teamservice, create method and condition" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#SQL_Dialects" timestamp="1577449154501">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="22" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1577449154501" />
     <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580995641934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995641934" />
-    <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1575632447140">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="143" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1366.728@0.0.1366.728" timestamp="1575632447140" />
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1580991701900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -830,70 +833,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1575475219399">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1586943285646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575475219398" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1581080796975">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586943285646" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1586943285645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581080796975" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1581080796975">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586943285645" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1586943285644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581080796975" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1581080796975">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586943285644" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1586943285645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581080796975" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1581080796975">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586943285645" />
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1586942216244">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581080796975" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586942216244" />
+    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1586942216243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586942216243" />
+    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1586942216243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1580998469320">
+    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586942216243" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1586942216243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1580998469320">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580998469320" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1575632458268">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575632458268" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586942216243" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581000945269" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1581075217523">
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1586942131404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581075217523" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942131404" />
     <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580995219685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995219685" />
-    <state x="65" y="65" key="new project wizard" timestamp="1575475228375">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="65" y="65" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1575475228375" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1581079047182">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1581079047182" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1577453456631">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577453456631" />
   </component>
   <component name="masterDetails">
     <states>
