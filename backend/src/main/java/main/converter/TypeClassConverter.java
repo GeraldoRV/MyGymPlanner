@@ -22,7 +22,6 @@ public class TypeClassConverter {
         typeClassDtoForAdmin.setName(typeClass.getName());
         int allByTypeClass = classDirectedDao.countAllByTypeClass(typeClass);
         typeClassDtoForAdmin.setnClassesDirected(allByTypeClass);
-        typeClassDtoForAdmin.setnClassesAssigned(classDirectedDao.countAllByTypeClassAndAssignedMonitorIsNotNull(typeClass));
         return typeClassDtoForAdmin;
     }
 

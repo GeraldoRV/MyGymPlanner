@@ -5,10 +5,8 @@ package main.dto;
 public class TypeClassDtoForAdmin {
     private Integer id;
     private String name;
-    private String description;
-    private Integer duration;
     private int nClassesDirected;
-    private int nClassesAssigned;
+
 
     public Integer getId() {
         return id;
@@ -26,21 +24,6 @@ public class TypeClassDtoForAdmin {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
 
     public int getnClassesDirected() {
         return nClassesDirected;
@@ -50,11 +33,4 @@ public class TypeClassDtoForAdmin {
         this.nClassesDirected = nClassesDirected;
     }
 
-    public int getnClassesAssigned() {
-        return nClassesAssigned;
-    }
-
-    public void setnClassesAssigned(int nClassesAssigned) {
-        this.nClassesAssigned = nClassesAssigned;
-    }
 }
