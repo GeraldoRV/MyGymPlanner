@@ -11,6 +11,7 @@ public class TypeClass {
     @Column(length = 1000)
     private String description;
     private Integer duration;
+    private Integer NClassesDirected;
 
     public Integer getId() {
         return id;
@@ -42,5 +43,13 @@ public class TypeClass {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    public Integer getNClassesDirected() {
+        return NClassesDirected;
+    }
+
+    public void setNClassesDirected(Integer NClassesDirected) {
+        this.NClassesDirected = NClassesDirected;
     }
 }
