@@ -3,9 +3,11 @@ package main.service;
 import main.dao.UserDao;
 import main.exception.UserNotFoundException;
 import main.model.User;
+import main.model.WorkingHours;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class UserService {
@@ -36,10 +38,42 @@ public class UserService {
 
     public User createUser(User user) {
         if (isValidUser(user)) {
+            if (user.getRole().equals("monitor")) {
+                user.setWorkingHours(createRandomWorkingHours());
+            }
             return userDao.save(user);
         }
 
         return null;
+    }
+
+    private WorkingHours createRandomWorkingHours() {
+        WorkingHours workingHours = new WorkingHours();
+        Random random = new Random();
+        int randomN = random.nextInt(4);
+
+        switch (randomN) {
+            case 1:
+                workingHours.setMondayToFriday("15:00 to 23:00");
+                workingHours.setSaturday("15:00 to 21:00");
+                workingHours.setSunday("Free");
+                break;
+            case 2:
+                workingHours.setMondayToFriday("08:00 to 15:00");
+                workingHours.setSaturday("Free");
+                workingHours.setSunday("08:00 to 15:00");
+                break;
+            case 3:
+                workingHours.setMondayToFriday("08:00 to 15:00");
+                workingHours.setSaturday("09:00 to 15:00");
+                workingHours.setSunday("Free");
+                break;
+            default:
+                workingHours.setMondayToFriday("15:00 to 23:00");
+                workingHours.setSaturday("Free");
+                workingHours.setSunday("08:00 to 15:00");
+        }
+        return workingHours;
     }
 
     private boolean isValidUser(User user) {
