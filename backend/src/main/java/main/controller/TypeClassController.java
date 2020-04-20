@@ -2,6 +2,7 @@ package main.controller;
 
 import main.converter.TypeClassConverter;
 import main.dto.TypeClassDtoForAdmin;
+import main.model.TypeClass;
 import main.service.TypeClassService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +23,13 @@ public class TypeClassController {
         this.typeClassConverter = typeClassConverter;
     }
 
-    @GetMapping
-    public List<TypeClassDtoForAdmin> getAll() {
+    @GetMapping("/admin")
+    public List<TypeClassDtoForAdmin> getAllTypeClassForAdmin() {
         return typeClassConverter.transformToAdminFromEntityList(typeClassService.getAllTypeClass());
+    }
+
+    @GetMapping
+    public List<TypeClass> getAll() {
+        return typeClassService.getAllTypeClass();
     }
 }

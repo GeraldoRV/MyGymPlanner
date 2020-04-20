@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   private getAllClasses() {
-    this._typeClassService.getAllTaughtClass().subscribe(res => {
+    this._typeClassService.getAll().subscribe(res => {
       this.taughtClasses = res;
     }, error => {
       console.log(error);
