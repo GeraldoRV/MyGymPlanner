@@ -52,7 +52,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void givenANewUserValid_whenCreateUser_returnNull() {
+    public void givenANewUserValidWithRoleNotMonitor_whenCreateUser_returnUserWithWorkingHoursNull() {
         User user = new User();
         user.setUserName("marco");
         user.setPassword("marco");
@@ -62,6 +62,20 @@ public class UserServiceTest {
         User newUser = userService.createUser(user);
 
         assertNotNull(newUser);
+        assertNull(newUser.getWorkingHours());
+    }
+    @Test
+    public void givenANewUserValidWithRoleMonitor_whenCreateUser_returnUserWithWorkingHoursNotNull() {
+        User user = new User();
+        user.setUserName("marco");
+        user.setPassword("marco");
+        user.setName("Marco");
+        user.setRole("monitor");
+
+        User newUser = userService.createUser(user);
+
+        assertNotNull(newUser);
+        assertNotNull(newUser.getWorkingHours());
     }
 
     @Test
@@ -70,14 +84,13 @@ public class UserServiceTest {
         user.setUserName("juan");
         user.setPassword("juan");
 
-
         User login = userService.login(user);
 
         assertNotNull(login);
     }
 
     @Test(expected = UserNotFoundException.class)
-    public void givenNotUserRegister_whenLogin_thenExpectationsSatisfied() throws UserNotFoundException {
+    public void givenNotUserRegister_whenLogin_thenExpectationsSatisfied() {
         User user = new User();
         user.setUserName("marco");
         user.setPassword("juan");
