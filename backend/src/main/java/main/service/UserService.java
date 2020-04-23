@@ -41,9 +41,7 @@ public class UserService {
             if (user.getRole().equals("monitor")) {
                 user.setWorkingHours(createRandomWorkingHours());
             }
-            if (user.getPassword() == null || user.getPassword().isEmpty()){
-                user.setPassword("1234");
-            }
+            setDefaultPassword(user);
             return userDao.save(user);
         }
 
@@ -54,6 +52,12 @@ public class UserService {
         return user.getName() != null && !user.getName().isEmpty() &&
                 user.getUserName() != null && !user.getUserName().isEmpty() &&
                 user.getRole() != null && !user.getRole().isEmpty() && !isNotARoleValid(user.getRole());
+    }
+
+    private void setDefaultPassword(User user) {
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            user.setPassword("1234");
+        }
     }
 
     private boolean isNotARoleValid(String role) {
@@ -67,25 +71,24 @@ public class UserService {
 
         switch (randomN) {
             case 1:
-                workingHours.setMondayToFriday("15:00 to 23:00");
-                workingHours.setSaturday("15:00 to 21:00");
-                workingHours.setSunday("Free");
+                setWorkingHours(workingHours, "15:00 to 23:00", "15:00 to 21:00", "Free");
                 break;
             case 2:
-                workingHours.setMondayToFriday("08:00 to 15:00");
-                workingHours.setSaturday("Free");
-                workingHours.setSunday("08:00 to 15:00");
+                setWorkingHours(workingHours, "08:00 to 15:00", "Free", "08:00 to 15:00");
                 break;
             case 3:
-                workingHours.setMondayToFriday("08:00 to 15:00");
-                workingHours.setSaturday("09:00 to 15:00");
-                workingHours.setSunday("Free");
+                setWorkingHours(workingHours, "08:00 to 15:00", "09:00 to 15:00", "Free");
                 break;
             default:
-                workingHours.setMondayToFriday("15:00 to 23:00");
-                workingHours.setSaturday("Free");
-                workingHours.setSunday("08:00 to 15:00");
+                setWorkingHours(workingHours, "15:00 to 23:00", "Free", "08:00 to 15:00");
         }
         return workingHours;
+    }
+
+    private void setWorkingHours(WorkingHours workingHours, String mondayToFriday, String saturdays, String sundays) {
+        workingHours.setMondayToFriday(mondayToFriday);
+        workingHours.setSaturday(saturdays);
+        workingHours.setSunday(sundays);
+
     }
 }
