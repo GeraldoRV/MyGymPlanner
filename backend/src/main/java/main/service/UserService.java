@@ -36,7 +36,7 @@ public class UserService {
         return userLogged;
     }
 
-    public User createUser(User user) {
+    public User create(User user) {
         if (isValidUser(user)) {
             if (user.getRole().equals("monitor")) {
                 user.setWorkingHours(createRandomWorkingHours());
@@ -45,6 +45,16 @@ public class UserService {
         }
 
         return null;
+    }
+
+    private boolean isValidUser(User user) {
+        return user.getName() != null && !user.getName().isEmpty() &&
+                user.getUserName() != null && !user.getUserName().isEmpty() &&
+                user.getRole() != null && !user.getRole().isEmpty() && !isNotARoleValid(user.getRole());
+    }
+
+    private boolean isNotARoleValid(String role) {
+        return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
     }
 
     private WorkingHours createRandomWorkingHours() {
@@ -74,15 +84,5 @@ public class UserService {
                 workingHours.setSunday("08:00 to 15:00");
         }
         return workingHours;
-    }
-
-    private boolean isValidUser(User user) {
-        return user.getName() != null && !user.getName().isEmpty() &&
-                user.getUserName() != null && !user.getUserName().isEmpty() &&
-                user.getRole() != null && !user.getRole().isEmpty() && !isNotARoleValid(user.getRole());
-    }
-
-    private boolean isNotARoleValid(String role) {
-        return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
     }
 }

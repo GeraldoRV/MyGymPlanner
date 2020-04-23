@@ -27,7 +27,7 @@ public class UserServiceTest {
     UserDao userDao;
 
     @Before
-    public void setUp()  {
+    public void setUp() {
         User user = new User();
         user.setUserName("juan");
         user.setPassword("juan");
@@ -36,7 +36,7 @@ public class UserServiceTest {
     }
 
     @After
-    public void tearDown()  {
+    public void tearDown() {
         userDao.deleteAll();
     }
 
@@ -46,7 +46,7 @@ public class UserServiceTest {
         user.setUserName("marco");
         user.setPassword("marco");
 
-        User newUser = userService.createUser(user);
+        User newUser = userService.create(user);
 
         assertNull(newUser);
     }
@@ -59,11 +59,12 @@ public class UserServiceTest {
         user.setName("Marco");
         user.setRole("admin");
 
-        User newUser = userService.createUser(user);
+        User newUser = userService.create(user);
 
         assertNotNull(newUser);
         assertNull(newUser.getWorkingHours());
     }
+
     @Test
     public void givenANewUserValidWithRoleMonitor_whenCreateUser_returnUserWithWorkingHoursNotNull() {
         User user = new User();
@@ -72,7 +73,7 @@ public class UserServiceTest {
         user.setName("Marco");
         user.setRole("monitor");
 
-        User newUser = userService.createUser(user);
+        User newUser = userService.create(user);
 
         assertNotNull(newUser);
         assertNotNull(newUser.getWorkingHours());
@@ -102,16 +103,16 @@ public class UserServiceTest {
     @Test
     public void givenADBWithUsers_whenGetAll_returnAListUserInDB() {
         List<User> all = userService.getAll();
-        assertEquals("Hubo un fallo",1, all.size());
+        assertEquals("Hubo un fallo", 1, all.size());
     }
-    
+
     @Test
     public void givenADBWithNotUsers_whenGetAll_returnAListUserInDB() {
         List<User> all = userService.getAll();
         userDao.deleteAll();
         List<User> none = userService.getAll();
 
-        assertEquals("Hubo un fallo",0, none.size());
+        assertEquals("Hubo un fallo", 0, none.size());
 
         userDao.saveAll(all);
     }
