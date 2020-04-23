@@ -28,8 +28,9 @@ export class NewUserComponent implements OnInit {
     this.userAddForm = this.fb.group(
       {
         name: ['', Validators.required],
-        username: ['', Validators.required],
-        roles: ['', Validators.required]
+        userName: ['', Validators.required],
+        role: ['', Validators.required],
+        password: [null]
       }
     );
     this.roles = NewUserComponent.getRoles();
@@ -50,12 +51,9 @@ export class NewUserComponent implements OnInit {
   }
 
   private getUserDetails(): User {
-    const user = new User();
-    user.name = this.userAddForm.controls.name.value;
+    let user;
+    user = {...this.userAddForm.value} as User;
     user.gym = this._loginService.getUser().gym;
-    user.role = this.userAddForm.controls.roles.value;
-    user.userName = this.userAddForm.controls.username.value;
-    user.password = '1234';
     return user;
   }
 

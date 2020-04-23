@@ -41,6 +41,9 @@ public class UserService {
             if (user.getRole().equals("monitor")) {
                 user.setWorkingHours(createRandomWorkingHours());
             }
+            if (user.getPassword() == null || user.getPassword().isEmpty()){
+                user.setPassword("1234");
+            }
             return userDao.save(user);
         }
 
