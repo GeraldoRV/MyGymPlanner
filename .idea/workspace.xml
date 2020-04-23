@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="GYM-3: Added optional password input in form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/admin/teams-list/teams-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/tables/tables.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,18 +106,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.service" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.exception" />
-      <recent name="main.model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\utilities" />
@@ -124,8 +113,20 @@
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (frotend)">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -499,6 +500,7 @@
       <workItem from="1586515897662" duration="259000" />
       <workItem from="1586517121670" duration="327000" />
       <workItem from="1586941817627" duration="2920000" />
+      <workItem from="1587642684975" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="Improve the control of the navbar">
       <created>1569397750606</created>
@@ -839,50 +841,74 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587380899685">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587642263865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587380899685">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587642263865" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587642263865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587380899685">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587642263865" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587642263865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587380899685">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587642263865" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587642263865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587380899685">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587642263865" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1587642263627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1587380899685">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1587642263627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1587380899685">
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1587642263627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1587380899685">
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1587642263627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587380899685" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1587642263627">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1587642263627">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1587642263627">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
+    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1587642263627">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1587642263627" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581000945269" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1586942131404">
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1587643085374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942131404" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587643085374" />
     <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580995219685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995219685" />
+    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1587643140524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1587643140524" />
+    <state x="347" y="155" key="git4idea.merge.GitMergeDialog" timestamp="1587641560506">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="347" y="155" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587641560506" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1581079047182">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
