@@ -18,28 +18,37 @@
       <div class="form-group col-md">
 
         <label for="username">Username</label>
-        <input class="form-control" type="text" formControlName="username" id="username">
-        <div *ngIf="controls.username.invalid && (submit || controls.username.dirty || controls.username.touched)"
+        <input class="form-control" type="text" formControlName="userName" id="username">
+        <div *ngIf="controls.userName.invalid && (submit || controls.userName.dirty || controls.userName.touched)"
              class="text-danger">
 
-          <div *ngIf="controls.username.errors.required">
+          <div *ngIf="controls.userName.errors.required">
             Username is required.
           </div>
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-row">
 
-      <label for="roles">Role</label>
-      <select class="form-control" formControlName="roles" id="roles">
-        <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
-      </select>
-      <div *ngIf="controls.roles.invalid && (submit || controls.roles.dirty || controls.roles.touched)"
-           class="text-danger">
+      <div class="form-group col-md">
 
-        <div *ngIf="controls.roles.errors.required">
-          Role is required.
+        <label for="roles">Role</label>
+        <select class="form-control" formControlName="role" id="roles">
+          <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
+        </select>
+        <div *ngIf="controls.role.invalid && (submit || controls.role.dirty || controls.role.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.role.errors.required">
+            Role is required.
+          </div>
         </div>
+      </div>
+      <div class="form-group col-md">
+        <label for="password-opt">Optional Password</label>
+        <input class="form-control" type="text" formControlName="password" id="password-opt">
+
+
       </div>
     </div>
     <button class="btn button" type="submit">Add new user</button>
