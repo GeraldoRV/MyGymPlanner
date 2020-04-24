@@ -3,9 +3,11 @@ package main.service;
 import main.dao.UserDao;
 import main.exception.UserNotFoundException;
 import main.model.User;
+import main.model.WorkingHours;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class UserService {
@@ -34,8 +36,12 @@ public class UserService {
         return userLogged;
     }
 
-    public User createUser(User user) {
+    public User create(User user) {
         if (isValidUser(user)) {
+            if (user.getRole().equals("monitor")) {
+                user.setWorkingHours(createRandomWorkingHours());
+            }
+            setDefaultPassword(user);
             return userDao.save(user);
         }
 
@@ -48,7 +54,41 @@ public class UserService {
                 user.getRole() != null && !user.getRole().isEmpty() && !isNotARoleValid(user.getRole());
     }
 
+    private void setDefaultPassword(User user) {
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            user.setPassword("1234");
+        }
+    }
+
     private boolean isNotARoleValid(String role) {
         return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
+    }
+
+    private WorkingHours createRandomWorkingHours() {
+        WorkingHours workingHours = new WorkingHours();
+        Random random = new Random();
+        int randomN = random.nextInt(4);
+
+        switch (randomN) {
+            case 1:
+                setWorkingHours(workingHours, "15:00 to 23:00", "15:00 to 21:00", "Free");
+                break;
+            case 2:
+                setWorkingHours(workingHours, "08:00 to 15:00", "Free", "08:00 to 15:00");
+                break;
+            case 3:
+                setWorkingHours(workingHours, "08:00 to 15:00", "09:00 to 15:00", "Free");
+                break;
+            default:
+                setWorkingHours(workingHours, "15:00 to 23:00", "Free", "08:00 to 15:00");
+        }
+        return workingHours;
+    }
+
+    private void setWorkingHours(WorkingHours workingHours, String mondayToFriday, String saturdays, String sundays) {
+        workingHours.setMondayToFriday(mondayToFriday);
+        workingHours.setSaturday(saturdays);
+        workingHours.setSunday(sundays);
+
     }
 }
