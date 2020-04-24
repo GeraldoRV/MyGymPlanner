@@ -6,7 +6,7 @@ public class TypeClassDtoForAdmin {
     private Integer id;
     private String name;
     private int nClassesDirected;
-
+    private TeamDtoForAdmin team;
 
     public Integer getId() {
         return id;
@@ -24,7 +24,6 @@ public class TypeClassDtoForAdmin {
         this.name = name;
     }
 
-
     public int getnClassesDirected() {
         return nClassesDirected;
     }
@@ -33,4 +32,11 @@ public class TypeClassDtoForAdmin {
         this.nClassesDirected = nClassesDirected;
     }
 
+    public TeamDtoForAdmin getTeam() {
+        return team;
+    }
+
+    public void setTeam(TeamDtoForAdmin team) {
+        this.team = team;
+    }
 }

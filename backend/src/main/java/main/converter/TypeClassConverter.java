@@ -11,9 +11,11 @@ import java.util.List;
 @Service
 public class TypeClassConverter {
     private final ClassDirectedDao classDirectedDao;
+    private final TeamConverter teamConverter;
 
-    public TypeClassConverter(ClassDirectedDao classDirectedDao) {
+    public TypeClassConverter(ClassDirectedDao classDirectedDao, TeamConverter teamConverter) {
         this.classDirectedDao = classDirectedDao;
+        this.teamConverter = teamConverter;
     }
 
     public TypeClassDtoForAdmin transformToAdminFromEntity(TypeClass typeClass) {
@@ -21,6 +23,9 @@ public class TypeClassConverter {
         typeClassDtoForAdmin.setId(typeClass.getId());
         typeClassDtoForAdmin.setName(typeClass.getName());
         typeClassDtoForAdmin.setnClassesDirected(classDirectedDao.countAllByTypeClass(typeClass));
+        if (typeClass.getTeam() != null) {
+            typeClassDtoForAdmin.setTeam(teamConverter.transformToTeamDtoAdminFromEntity(typeClass.getTeam()));
+        }
         return typeClassDtoForAdmin;
     }
 

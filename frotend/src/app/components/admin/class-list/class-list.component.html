@@ -1,5 +1,14 @@
 <h1>Classes</h1>
+<table class="table">
+  <tr>
+    <th>Class</th>
+    <th>Number of classes</th>
+    <th>Team assigned</th>
+  </tr>
+  <tr *ngFor="let typeClass of classes">
+    <td>{{typeClass.name}}</td>
+    <td>{{typeClass.nClassesDirected}}</td>
+    <td><div *ngIf="typeClass.team === null">Not assigned</div>{{typeClass.team?.name}}</td>
 
-<ul class="list-group">
-  <li *ngFor="let typeClass of classes" class="list-group-item">{{typeClass.name}}-{{typeClass.nClassesDirected}}</li>
-</ul>
+  </tr>
+</table>
