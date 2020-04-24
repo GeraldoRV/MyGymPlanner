@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="GYM-3: Added optional password input in form">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/components/client/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frotend/src/app/service/type-class.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -105,19 +103,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main.converter" />
       <recent name="main.service" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.dao" />
-      <recent name="main.service" />
-      <recent name="main.exception" />
-      <recent name="main.model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\assets" />
@@ -126,8 +113,20 @@
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components" />
       <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner\frotend\src\app\components\client" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Geraldo.LAPTOP-09QGLT5H\Documents\Universidad\TFT\Code\MyGymPlanner" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.dao" />
+      <recent name="main.service" />
+      <recent name="main.exception" />
+      <recent name="main.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -235,6 +234,22 @@
       <option name="PACKAGE_NAME" value="main.service" />
       <option name="MAIN_CLASS_NAME" value="main.service.TeamServiceTest" />
       <option name="METHOD_NAME" value="givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.converter" />
+      <option name="MAIN_CLASS_NAME" value="main.converter.TypeClassConverterTest" />
+      <option name="METHOD_NAME" value="givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -383,12 +398,15 @@
       <item itemvalue="npm.Angular CLI Server (frotend)" />
       <item itemvalue="Protractor.E2E Tests (frotend)" />
       <item itemvalue="Spring Boot.BackendApplication" />
+      <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.main in backend" />
-        <item itemvalue="JUnit.TeamServiceTest" />
+        <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
         <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
+        <item itemvalue="JUnit.TeamServiceTest" />
+        <item itemvalue="JUnit.main in backend" />
+        <item itemvalue="JUnit.main in backend" />
       </list>
     </recent_temporary>
   </component>
@@ -881,38 +899,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587719526767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587719526767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587719526767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587719526767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587717305998">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587717305998" />
+    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1587717305997">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587717305997" />
+    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1587717305997">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1587378786486">
+    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587717305997" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1587717305998">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587378786486" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587717305998" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -921,10 +939,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587377269198" />
-    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580995219685">
+    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587717990545">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995219685" />
+    <state x="454" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1587717990545" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1581079047182">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
