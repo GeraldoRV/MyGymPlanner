@@ -1,7 +1,5 @@
 package main.dto;
 
-
-
 public class TypeClassDtoForAdmin {
     private Integer id;
     private String name;
