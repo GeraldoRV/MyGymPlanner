@@ -414,12 +414,12 @@
       <item itemvalue="JavaScript Debug.Angular Application (frotend)" />
       <item itemvalue="JUnit.TeamServiceTest" />
       <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
-      <item itemvalue="npm.Angular CLI Server (frotend)" />
-      <item itemvalue="Protractor.E2E Tests (frotend)" />
-      <item itemvalue="Spring Boot.BackendApplication" />
       <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
       <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClassList_whenTransformToAdminFromEntityList_returnAListObjectDto" />
       <item itemvalue="JUnit.TypeClassConverterTest" />
+      <item itemvalue="npm.Angular CLI Server (frotend)" />
+      <item itemvalue="Protractor.E2E Tests (frotend)" />
+      <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
