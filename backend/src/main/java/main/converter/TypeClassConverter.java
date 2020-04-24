@@ -20,16 +20,15 @@ public class TypeClassConverter {
         TypeClassDtoForAdmin typeClassDtoForAdmin = new TypeClassDtoForAdmin();
         typeClassDtoForAdmin.setId(typeClass.getId());
         typeClassDtoForAdmin.setName(typeClass.getName());
-        int allByTypeClass = classDirectedDao.countAllByTypeClass(typeClass);
-        typeClassDtoForAdmin.setnClassesDirected(allByTypeClass);
+        typeClassDtoForAdmin.setnClassesDirected(classDirectedDao.countAllByTypeClass(typeClass));
         return typeClassDtoForAdmin;
     }
 
     public List<TypeClassDtoForAdmin> transformToAdminFromEntityList(List<TypeClass> typeClassList) {
-        List<TypeClassDtoForAdmin> typesClassDtoForAdmin = new ArrayList<>();
-        for (TypeClass typeClass : typeClassList) {
-            typesClassDtoForAdmin.add(transformToAdminFromEntity(typeClass));
-        }
-        return typesClassDtoForAdmin;
+        List<TypeClassDtoForAdmin> typeClassDtoForAdminList = new ArrayList<>();
+        typeClassList.forEach(
+                typeClass ->
+                        typeClassDtoForAdminList.add(transformToAdminFromEntity(typeClass)));
+        return typeClassDtoForAdminList;
     }
 }

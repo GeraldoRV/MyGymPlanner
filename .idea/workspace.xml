@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="GYM-3: Added optional password input in form">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" afterDir="false" />
+    <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/converter/TypeClassConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/converter/TypeClassConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,7 @@
       <recent name="main.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto">
+  <component name="RunManager" selected="JUnit.TypeClassConverterTest">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -239,6 +240,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TypeClassConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.converter" />
+      <option name="MAIN_CLASS_NAME" value="main.converter.TypeClassConverterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TypeClassConverterTest.givenATypeClassList_whenTransformToAdminFromEntityList_returnAListObjectDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.converter" />
+      <option name="MAIN_CLASS_NAME" value="main.converter.TypeClassConverterTest" />
+      <option name="METHOD_NAME" value="givenATypeClassList_whenTransformToAdminFromEntityList_returnAListObjectDto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -251,20 +283,6 @@
       <option name="MAIN_CLASS_NAME" value="main.converter.TypeClassConverterTest" />
       <option name="METHOD_NAME" value="givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="main in backend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -392,21 +410,22 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Angular Application (frotend)" />
-      <item itemvalue="JUnit.main in backend" />
       <item itemvalue="JUnit.TeamServiceTest" />
       <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
       <item itemvalue="npm.Angular CLI Server (frotend)" />
       <item itemvalue="Protractor.E2E Tests (frotend)" />
       <item itemvalue="Spring Boot.BackendApplication" />
       <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
+      <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClassList_whenTransformToAdminFromEntityList_returnAListObjectDto" />
+      <item itemvalue="JUnit.TypeClassConverterTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TypeClassConverterTest" />
+        <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClassList_whenTransformToAdminFromEntityList_returnAListObjectDto" />
         <item itemvalue="JUnit.TypeClassConverterTest.givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto" />
         <item itemvalue="JUnit.TeamServiceTest.givenANewTeamWithLeader_whenCreate_returnTheNewTeam" />
         <item itemvalue="JUnit.TeamServiceTest" />
-        <item itemvalue="JUnit.main in backend" />
-        <item itemvalue="JUnit.main in backend" />
       </list>
     </recent_temporary>
   </component>
@@ -822,7 +841,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586953325606</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="GYM-23: Added test to the converter">
+      <created>1587719612823</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1587719612823</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,7 +873,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Working in the medias queries" />
     <MESSAGE value="Some changes important in front for home and reserve" />
     <MESSAGE value="Added the test for reserve a class" />
     <MESSAGE value="Change one test in the user service" />
@@ -872,17 +897,18 @@
     <MESSAGE value="GYM-23: Modified TypeClass model" />
     <MESSAGE value="GYM-23: Added dto and converter to typeclass" />
     <MESSAGE value="GYM-23: See all the classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: See all the classes" />
+    <MESSAGE value="GYM-23: Added test to the converter" />
+    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: Added test to the converter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Assign_Data_Sources" timestamp="1586948489100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Assign_Data_Sources/0.0.1366.728@0.0.1366.728" timestamp="1586948489100" />
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580995641934">
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587720437856">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580995641934" />
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1587720437856" />
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1586950794227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -891,30 +917,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1586944146316" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1586953317403">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1587719609936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586953317403" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587719609936" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587719526767">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587720381030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587719526767">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587720381030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587719526767">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587720381030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587719526767">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587720381030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587719526767" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
     <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587717305998">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
