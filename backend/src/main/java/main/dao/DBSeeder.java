@@ -30,10 +30,12 @@ public class DBSeeder implements CommandLineRunner {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void run(String... args) {
-        /*Gym gym = gymDao.save(createGym());
+/*
+        Gym gym = gymDao.save(createGym());
         userDao.saveAll(createUsers(gym));
         createWorkoutTables();
-        createClassesDirected(gym);*/
+        createClassesDirected(gym);
+*/
     }
 
     private void createClassesDirected(Gym gym) {
@@ -57,6 +59,7 @@ public class DBSeeder implements CommandLineRunner {
         newClassDirected(gym, "10:00", "10:45", "Sunday", "monitor", cycling);
         newClassDirected(gym, "13:15", "14:00", "Sunday", "noOne", cycling);
     }
+
 
     private TypeClass newTypeClass(String name, Integer duration, String description) {
         TypeClass typeClass = new TypeClass();

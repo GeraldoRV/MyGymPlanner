@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Global} from '../utilities/global';
+import {TypeClassAdminDto} from '../dto/type-class-admin.dto';
 import {TypeClass} from '../model/type-class';
 
 @Injectable({
@@ -14,6 +15,10 @@ export class TypeClassService {
   }
 
   getAllTaughtClass() {
+    return this._http.get<TypeClassAdminDto[]>(this.baseUrl + '/admin');
+  }
+
+  getAll() {
     return this._http.get<TypeClass[]>(this.baseUrl);
   }
 }

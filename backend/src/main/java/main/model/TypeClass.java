@@ -43,4 +43,5 @@ public class TypeClass {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
 }
