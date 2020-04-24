@@ -14,8 +14,8 @@ public class Team {
     private User leader;
     @OneToMany
     private List<User> members = new ArrayList<>();
-    @OneToMany
-    private List<TypeClass> classes;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<TypeClass> typeClasses;
 
     public Integer getId() {
         return id;
@@ -49,11 +49,11 @@ public class Team {
         this.members = members;
     }
 
-    public List<TypeClass> getClasses() {
-        return classes;
+    public List<TypeClass> getTypeClasses() {
+        return typeClasses;
     }
 
-    public void setClasses(List<TypeClass> classes) {
-        this.classes = classes;
+    public void setTypeClasses(List<TypeClass> classes) {
+        this.typeClasses = classes;
     }
 }

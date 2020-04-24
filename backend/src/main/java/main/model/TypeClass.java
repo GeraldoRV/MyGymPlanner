@@ -11,6 +11,8 @@ public class TypeClass {
     @Column(length = 1000)
     private String description;
     private Integer duration;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Team team;
 
     public Integer getId() {
         return id;
@@ -44,4 +46,11 @@ public class TypeClass {
         this.duration = duration;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team teamAssigned) {
+        this.team = teamAssigned;
+    }
 }
