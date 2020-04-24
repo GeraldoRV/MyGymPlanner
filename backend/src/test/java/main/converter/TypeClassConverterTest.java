@@ -4,7 +4,7 @@ import main.dao.TypeClassDAO;
 import main.dto.TypeClassDtoForAdmin;
 import main.model.TypeClass;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Test;

@@ -14,7 +14,7 @@ public class TypeClassService {
         this.typeClassDAO = typeClassDAO;
     }
 
-    public List<TypeClass> getAllTypeClass() {
+    public List<TypeClass> getAll() {
         return (List<TypeClass>) typeClassDAO.findAll();
     }
 }

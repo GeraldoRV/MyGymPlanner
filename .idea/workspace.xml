@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5dd474f0-6649-4c84-985c-a71fe77e583c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/converter/TypeClassConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/converter/TypeClassConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/controller/TypeClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/dao/ClassDirectedDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/main/service/TypeClassService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/main/converter/TypeClassConverterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +129,7 @@
       <recent name="main.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TypeClassConverterTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -848,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587719612823</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="GYM-23: Added test to the converter and refactor the method of it">
+      <created>1587720477042</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1587720477042</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -873,7 +882,6 @@
       <path value="$PROJECT_DIR$/frotend" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Some changes important in front for home and reserve" />
     <MESSAGE value="Added the test for reserve a class" />
     <MESSAGE value="Change one test in the user service" />
     <MESSAGE value="Added the test to the method delete routine" />
@@ -898,7 +906,8 @@
     <MESSAGE value="GYM-23: Added dto and converter to typeclass" />
     <MESSAGE value="GYM-23: See all the classes" />
     <MESSAGE value="GYM-23: Added test to the converter" />
-    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: Added test to the converter" />
+    <MESSAGE value="GYM-23: Added test to the converter and refactor the method of it" />
+    <option name="LAST_COMMIT_MESSAGE" value="GYM-23: Added test to the converter and refactor the method of it" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Assign_Data_Sources" timestamp="1586948489100">
@@ -917,46 +926,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1586944146316" />
-    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1587719609936">
+    <state x="169" y="0" key="CommitChangelistDialog2" timestamp="1587720474803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587719609936" />
+    <state x="169" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587720474803" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1580822970334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1580822970334" />
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587720381030">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
-    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587720381030">
+    <state width="1323" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.0.center" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
-    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587720381030">
+    <state width="1323" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.0.left" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
-    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587720381030">
+    <state width="1323" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.0.right" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587720381030" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587717305998">
+    <state width="1323" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1587720629909">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587717305998" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1587717305997">
+    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587720629909" />
+    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587717305997" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1587717305997">
+    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587717305997" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1587717305998">
+    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1587720629908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587717305998" />
+    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587720629908" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1581000945269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

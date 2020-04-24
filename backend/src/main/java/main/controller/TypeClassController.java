@@ -23,13 +23,13 @@ public class TypeClassController {
         this.typeClassConverter = typeClassConverter;
     }
 
-    @GetMapping("/admin")
+    @GetMapping("admin")
     public List<TypeClassDtoForAdmin> getAllTypeClassForAdmin() {
-        return typeClassConverter.transformToAdminFromEntityList(typeClassService.getAllTypeClass());
+        return typeClassConverter.transformToAdminFromEntityList(typeClassService.getAll());
     }
 
     @GetMapping
     public List<TypeClass> getAll() {
-        return typeClassService.getAllTypeClass();
+        return typeClassService.getAll();
     }
 }
