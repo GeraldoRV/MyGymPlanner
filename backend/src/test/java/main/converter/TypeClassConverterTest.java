@@ -5,6 +5,7 @@ import main.dto.TypeClassDtoForAdmin;
 import main.model.TypeClass;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.After;
 import org.junit.Test;
@@ -26,7 +27,7 @@ public class TypeClassConverterTest {
     private TypeClassConverter typeClassConverter;
 
     @Test
-    public void givenATypeClass_whenTransformToAdminFromEntity_returnAObjectDto() {
+    public void givenATypeClassWithNotTeam_whenTransformToAdminFromEntity_returnAObjectDto() {
         TypeClass typeClass = new TypeClass();
         typeClass.setName("test type");
         typeClass.setDescription("Test description");
@@ -38,6 +39,7 @@ public class TypeClassConverterTest {
         assertEquals(typeClassDB.getId(), typeClassDtoForAdmin.getId());
         assertEquals(typeClassDB.getName(), typeClassDtoForAdmin.getName());
         assertEquals(0, typeClassDtoForAdmin.getnClassesDirected());
+        assertNull(typeClassDtoForAdmin.getTeam());
     }
 
     @Test
