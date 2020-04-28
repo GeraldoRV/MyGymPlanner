@@ -10,7 +10,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let typeClass of classes" (click)="openModal()">
+    <tr *ngFor="let typeClass of classes" (click)="openModal(typeClass.id)">
       <td>{{typeClass.name}}</td>
       <td>{{typeClass.nClassesDirected}}</td>
       <td>

@@ -23,8 +23,8 @@ export class ClassListComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  openModal() {
-    this.modalRef.open(AddTeamComponent);
-
+  openModal(typeClassId: number) {
+    const modalRef = this.modalRef.open(AddTeamComponent);
+    modalRef.componentInstance.typeClass = typeClassId;
   }
 }

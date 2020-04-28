@@ -5,20 +5,13 @@
   </button>
 </div>
 <div class="modal-body">
-  <form>
-    <select class="form-control" name="team" id="team" size="3">
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
-      <option>Team A</option>
+  <form id="form-to-assign" [formGroup]="assignTeamForm">
+    <select class="form-control" name="team" id="team" size="3" formControlName="team">
+      <option *ngFor="let team of teams" [ngValue]="team.id">Team {{team.name}}-{{team.classes?.length || 0}} classes</option>
     </select>
   </form>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  <button type="button" class="btn button">Assign</button>
+  <button type="submit" form="form-to-assign" class="btn button" (click)="assignTeam()">Assign</button>
 </div>
