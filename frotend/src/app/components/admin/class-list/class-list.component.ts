@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {TypeClassService} from '../../../service/type-class.service';
 import {TypeClassAdminDto} from '../../../dto/type-class-admin.dto';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AddTeamComponent} from './add-team/add-team.component';
 
 @Component({
   selector: 'app-class-list',
@@ -11,7 +13,7 @@ import {TypeClassAdminDto} from '../../../dto/type-class-admin.dto';
 export class ClassListComponent implements OnInit {
   classes: TypeClassAdminDto[];
 
-  constructor(private logUser: LoginService, private typeClassService: TypeClassService) {
+  constructor(private logUser: LoginService, private typeClassService: TypeClassService, private modalRef: NgbModal) {
   }
 
   ngOnInit() {
@@ -21,4 +23,8 @@ export class ClassListComponent implements OnInit {
     }, error => console.log(error));
   }
 
+  openModal() {
+    this.modalRef.open(AddTeamComponent);
+
+  }
 }

@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">Assign to</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <select class="form-control" name="team" id="team" size="3">
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+      <option>Team A</option>
+    </select>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  <button type="button" class="btn button">Assign</button>
+</div>

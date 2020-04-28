@@ -32,6 +32,7 @@ import {TeamsListComponent} from './components/admin/teams-list/teams-list.compo
 import {NewTeamComponent} from './components/admin/new-team/new-team.component';
 import {MyTeamComponent} from './components/leader/my-team/my-team.component';
 import {ClassListComponent} from './components/admin/class-list/class-list.component';
+import {AddTeamComponent} from './components/admin/class-list/add-team/add-team.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -107,7 +108,8 @@ const appRoutes: Routes = [
     TeamsListComponent,
     NewTeamComponent,
     MyTeamComponent,
-    ClassListComponent
+    ClassListComponent,
+    AddTeamComponent
   ],
   imports: [
     FormsModule,
@@ -118,6 +120,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
+  entryComponents: [AddTeamComponent],
   providers: [LoginService, UserService, WorkoutTableService, ExerciseTypeService,
     AuthGuard, DatePipe, Global],
   bootstrap: [AppComponent]
