@@ -4,11 +4,9 @@ import main.converter.TypeClassConverter;
 import main.dto.TypeClassDtoForAdmin;
 import main.model.TypeClass;
 import main.service.TypeClassService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @RestController
@@ -31,5 +29,10 @@ public class TypeClassController {
     @GetMapping
     public List<TypeClass> getAll() {
         return typeClassService.getAll();
+    }
+
+    @PutMapping("add-team/{teamId}")
+    public void addTeam(@RequestBody TypeClassDtoForAdmin typeClassDtoForAdmin, @PathVariable Integer teamId){
+        typeClassService.addTeam(typeClassDtoForAdmin,teamId);
     }
 }
