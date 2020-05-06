@@ -5,6 +5,7 @@ import main.dao.TypeClassDAO;
 import main.dto.TypeClassDtoForAdmin;
 import main.exception.TeamNotFoundException;
 import main.exception.TypeClassNotFound;
+import main.model.Team;
 import main.model.TypeClass;
 import org.springframework.stereotype.Service;
 
@@ -24,12 +25,12 @@ public class TypeClassService {
         return (List<TypeClass>) typeClassDAO.findAll();
     }
 
-    public void addTeam(TypeClassDtoForAdmin typeClassDtoForAdmin, Integer teamId) {
+    public TypeClass addTeam(TypeClassDtoForAdmin typeClassDtoForAdmin, Integer teamId) {
         TypeClass typeClass = typeClassDAO.findById(typeClassDtoForAdmin.getId())
                 .orElseThrow(() ->
                         new TypeClassNotFound("The type class " + typeClassDtoForAdmin.getName() + "doesn't exist"));
         typeClass.setTeam(teamDAO.findById(teamId).orElseThrow(TeamNotFoundException::new));
-        typeClassDAO.save(typeClass);
+        return typeClassDAO.save(typeClass);
     }
 }
 

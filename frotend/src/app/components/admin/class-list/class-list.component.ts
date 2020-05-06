@@ -19,12 +19,17 @@ export class ClassListComponent implements OnInit {
   ngOnInit() {
     this.typeClassService.getAllTaughtClass().subscribe(res => {
       this.classes = res;
-      console.log(res);
     }, error => console.log(error));
   }
 
   openModal(typeClassId: number) {
     const modalRef = this.modalRef.open(AddTeamComponent);
-    modalRef.componentInstance.typeClass = typeClassId;
+    modalRef.componentInstance.typeClassId = typeClassId;
+    modalRef.result.then(result => {
+      if (result !== 'Cross Click') {
+        const typeClassAdminDto = this.classes.find(typeClass => typeClass.id === typeClassId);
+        typeClassAdminDto.team = result.team;
+      }
+    });
   }
 }

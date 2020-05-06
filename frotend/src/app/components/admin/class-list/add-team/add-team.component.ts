@@ -13,7 +13,7 @@ import {TypeClassAdminDto} from '../../../../dto/type-class-admin.dto';
   styleUrls: ['./add-team.component.css']
 })
 export class AddTeamComponent implements OnInit {
-  @Input() typeClass;
+  @Input() typeClassId;
   faTimes = faTimes;
   assignTeamForm: FormGroup;
   teams: Team[];
@@ -24,7 +24,7 @@ export class AddTeamComponent implements OnInit {
 
   ngOnInit() {
     this.assignTeamForm = this.fb.group({
-      team: []
+      teamId: []
     });
     this.teamService.getAllTeams().subscribe(teams => {
       this.teams = teams;
@@ -35,9 +35,9 @@ export class AddTeamComponent implements OnInit {
 
   assignTeam() {
     const typeClassAdminDto = new TypeClassAdminDto();
-    typeClassAdminDto.id = this.typeClass;
-    this.typeClassService.addTeam(typeClassAdminDto, this.assignTeamForm.value.team).subscribe(() => {
-      this.activeModal.close();
+    typeClassAdminDto.id = this.typeClassId;
+    this.typeClassService.addTeam(typeClassAdminDto, this.assignTeamForm.value.teamId).subscribe(typeClass => {
+      this.activeModal.close(typeClass);
     }, error => console.log(error));
 
   }

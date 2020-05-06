@@ -6,8 +6,8 @@
 </div>
 <div class="modal-body">
   <form id="form-to-assign" [formGroup]="assignTeamForm">
-    <select class="form-control" name="team" id="team" size="3" formControlName="team">
-      <option *ngFor="let team of teams" [ngValue]="team.id">Team {{team.name}}-{{team.classes?.length || 0}} classes</option>
+    <select class="form-control" name="team" id="team" size="3" formControlName="teamId">
+      <option *ngFor="let team of teams" [ngValue]="team.id">Team {{team.name}}-{{team.typeClasses?.length || 0}} classes</option>
     </select>
   </form>
 </div>

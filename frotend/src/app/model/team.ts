@@ -6,5 +6,5 @@ export class Team {
   name: string;
   leader: User;
   members: User[];
-  classes: TypeClass[];
+  typeClasses: TypeClass[];
 }
