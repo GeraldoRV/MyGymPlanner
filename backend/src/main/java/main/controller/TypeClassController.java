@@ -6,7 +6,6 @@ import main.model.TypeClass;
 import main.service.TypeClassService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @RestController

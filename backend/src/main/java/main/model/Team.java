@@ -14,7 +14,7 @@ public class Team {
     private User leader;
     @OneToMany
     private List<User> members = new ArrayList<>();
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
     private List<TypeClass> typeClasses;
 
     public Integer getId() {

@@ -12,6 +12,7 @@ public class TypeClass {
     private String description;
     private Integer duration;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id")
     private Team team;
 
     public Integer getId() {
