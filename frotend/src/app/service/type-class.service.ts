@@ -21,4 +21,9 @@ export class TypeClassService {
   getAll() {
     return this._http.get<TypeClass[]>(this.baseUrl);
   }
+
+  addTeam(typeClassAdminDto: TypeClassAdminDto, teamId: number) {
+    return this._http.put(this.baseUrl + '/add-team/' + teamId, typeClassAdminDto);
+  }
 }
+

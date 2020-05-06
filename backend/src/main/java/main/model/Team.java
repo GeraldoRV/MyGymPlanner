@@ -1,5 +1,7 @@
 package main.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class Team {
     @OneToMany
     private List<User> members = new ArrayList<>();
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
+    @JsonManagedReference
     private List<TypeClass> typeClasses;
 
     public Integer getId() {

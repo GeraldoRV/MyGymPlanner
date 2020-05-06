@@ -4,6 +4,8 @@ import {faTimes} from '@fortawesome/free-solid-svg-icons/faTimes';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Team} from '../../../../model/team';
 import {TeamService} from '../../../../service/team.service';
+import {TypeClassService} from '../../../../service/type-class.service';
+import {TypeClassAdminDto} from '../../../../dto/type-class-admin.dto';
 
 @Component({
   selector: 'app-add-team',
@@ -16,7 +18,8 @@ export class AddTeamComponent implements OnInit {
   assignTeamForm: FormGroup;
   teams: Team[];
 
-  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder, private teamService: TeamService) {
+  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder, private teamService: TeamService,
+              private typeClassService: TypeClassService) {
   }
 
   ngOnInit() {
@@ -31,7 +34,11 @@ export class AddTeamComponent implements OnInit {
   }
 
   assignTeam() {
-    console.log(this.assignTeamForm.value);
-    console.log(this.typeClass);
+    const typeClassAdminDto = new TypeClassAdminDto();
+    typeClassAdminDto.id = this.typeClass;
+    this.typeClassService.addTeam(typeClassAdminDto, this.assignTeamForm.value.team).subscribe(() => {
+      this.activeModal.close();
+    }, error => console.log(error));
+
   }
 }
