@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {faTimes} from '@fortawesome/free-solid-svg-icons/faTimes';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Team} from '../../../../model/team';
 import {TeamService} from '../../../../service/team.service';
 import {TypeClassService} from '../../../../service/type-class.service';
@@ -16,7 +16,8 @@ export class AddTeamComponent implements OnInit {
   @Input() typeClassId;
   faTimes = faTimes;
   assignTeamForm: FormGroup;
-  teams: Team[];
+  teams: Team[] = null;
+  submit = false;
 
   constructor(public activeModal: NgbActiveModal, private fb: FormBuilder, private teamService: TeamService,
               private typeClassService: TypeClassService) {
@@ -24,7 +25,7 @@ export class AddTeamComponent implements OnInit {
 
   ngOnInit() {
     this.assignTeamForm = this.fb.group({
-      teamId: []
+      teamId: [null, Validators.required]
     });
     this.teamService.getAllTeams().subscribe(teams => {
       this.teams = teams;
@@ -34,11 +35,19 @@ export class AddTeamComponent implements OnInit {
   }
 
   assignTeam() {
+    if (!this.assignTeamForm.valid) {
+      this.submit = true;
+      return;
+    }
     const typeClassAdminDto = new TypeClassAdminDto();
     typeClassAdminDto.id = this.typeClassId;
     this.typeClassService.addTeam(typeClassAdminDto, this.assignTeamForm.value.teamId).subscribe(typeClass => {
       this.activeModal.close(typeClass);
     }, error => console.log(error));
 
+  }
+
+  get controls() {
+    return this.assignTeamForm.controls;
   }
 }

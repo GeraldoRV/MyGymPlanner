@@ -26,10 +26,11 @@ export class ClassListComponent implements OnInit {
     const modalRef = this.modalRef.open(AddTeamComponent);
     modalRef.componentInstance.typeClassId = typeClassId;
     modalRef.result.then(result => {
-      if (result !== 'Cross Click') {
+      if (result !== 'Close click') {
         const typeClassAdminDto = this.classes.find(typeClass => typeClass.id === typeClassId);
         typeClassAdminDto.team = result.team;
       }
-    });
+    })
+      .catch(() => console.log('Cross click'));
   }
 }
