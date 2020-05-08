@@ -13,7 +13,7 @@ import {TypeClassAdminDto} from '../../../../dto/type-class-admin.dto';
   styleUrls: ['./add-team.component.css']
 })
 export class AddTeamComponent implements OnInit {
-  @Input() typeClassId;
+  @Input() typeClass: TypeClassAdminDto;
   faTimes = faTimes;
   assignTeamForm: FormGroup;
   teams: Team[] = null;
@@ -39,9 +39,8 @@ export class AddTeamComponent implements OnInit {
       this.submit = true;
       return;
     }
-    const typeClassAdminDto = new TypeClassAdminDto();
-    typeClassAdminDto.id = this.typeClassId;
-    this.typeClassService.addTeam(typeClassAdminDto, this.assignTeamForm.value.teamId).subscribe(typeClass => {
+
+    this.typeClassService.addTeam(this.typeClass, this.assignTeamForm.value.teamId).subscribe(typeClass => {
       this.activeModal.close(typeClass);
     }, error => console.log(error));
 

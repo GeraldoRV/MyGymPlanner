@@ -22,12 +22,12 @@ export class ClassListComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  openModal(typeClassId: number) {
+  openModal(typeClass: TypeClassAdminDto) {
     const modalRef = this.modalRef.open(AddTeamComponent);
-    modalRef.componentInstance.typeClassId = typeClassId;
+    modalRef.componentInstance.typeClass = typeClass;
     modalRef.result.then(result => {
       if (result !== 'Close click') {
-        const typeClassAdminDto = this.classes.find(typeClass => typeClass.id === typeClassId);
+        const typeClassAdminDto = this.classes.find(typeClassDto => typeClassDto.id === typeClass.id);
         typeClassAdminDto.team = result.team;
       }
     })
