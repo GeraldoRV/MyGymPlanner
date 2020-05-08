@@ -5,7 +5,6 @@ import main.dao.TypeClassDAO;
 import main.dto.TypeClassDtoForAdmin;
 import main.exception.TeamNotFoundException;
 import main.exception.TypeClassNotFound;
-import main.model.Team;
 import main.model.TypeClass;
 import org.springframework.stereotype.Service;
 

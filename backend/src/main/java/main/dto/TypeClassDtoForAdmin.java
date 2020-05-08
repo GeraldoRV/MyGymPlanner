@@ -1,7 +1,11 @@
 package main.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class TypeClassDtoForAdmin {
+    @NotNull
     private Integer id;
+    @NotNull
     private String name;
     private int nClassesDirected;
     private TeamDtoForAdmin team;

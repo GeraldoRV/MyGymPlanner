@@ -6,6 +6,7 @@ import main.model.TypeClass;
 import main.service.TypeClassService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,7 +32,7 @@ public class TypeClassController {
     }
 
     @PutMapping("add-team/{teamId}")
-    public TypeClassDtoForAdmin addTeam(@RequestBody TypeClassDtoForAdmin typeClassDtoForAdmin, @PathVariable Integer teamId) {
+    public TypeClassDtoForAdmin addTeam(@Valid @RequestBody TypeClassDtoForAdmin typeClassDtoForAdmin, @PathVariable Integer teamId) {
         return typeClassConverter.transformToAdminFromEntity(typeClassService.addTeam(typeClassDtoForAdmin, teamId));
     }
 }
