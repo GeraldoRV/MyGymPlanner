@@ -27,9 +27,22 @@ public class TeamService {
 
         User leader = team.getLeader();
         leader.setLeader(true);
-        User save = userDao.save(leader);
-        team.getMembers().add(save);
+        userDao.save(leader);
+        if (!leaderIsAMember(team.getMembers(), leader)) {
+            team.getMembers().add(leader);
+        }
+
         return teamDAO.save(team);
+    }
+
+    private boolean leaderIsAMember(List<User> members, User leader) {
+        for (User member :
+                members) {
+            if (member.getId().equals(leader.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean existTeamByLeader(User leader) {
@@ -49,21 +62,21 @@ public class TeamService {
     }
 
     private boolean isAValid(Team team) {
-        boolean valid = true;
-        if (team.getName() == null || team.getName().isEmpty()){
+
+        if (team.getName() == null || team.getName().isEmpty()) {
             return false;
         }
-        if (team.getLeader() == null || existTeamByLeader(team.getLeader())){
+        if (team.getLeader() == null || existTeamByLeader(team.getLeader())) {
             return false;
         }
         List<User> members = team.getMembers();
         for (User member :
                 members) {
-            if(existTeamByMember(member)) {
+            if (existTeamByMember(member)) {
                 return false;
             }
         }
-        return valid;
+        return true;
     }
 
     private boolean existTeamByMember(User member) {
