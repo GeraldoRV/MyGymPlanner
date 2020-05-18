@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TeamService} from '../../../service/team.service';
 import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user';
@@ -14,6 +14,7 @@ export class NewTeamComponent implements OnInit {
   teamForm: FormGroup;
   newMonitors: User[] = [];
   monitors: User[];
+  submit = false;
 
   constructor(private fb: FormBuilder, private _teamService: TeamService,
               private _userService: UserService, private _route: Router) {
@@ -22,8 +23,8 @@ export class NewTeamComponent implements OnInit {
   ngOnInit() {
     this.teamForm = this.fb.group(
       {
-        teamName: [''],
-        leader: [''],
+        teamName: [null, Validators.required],
+        leader: [null, Validators.required],
         monitors: [[]],
         members: [[]]
       }
@@ -71,6 +72,10 @@ export class NewTeamComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.teamForm.valid) {
+      this.submit = true;
+      return;
+    }
     const name = this.teamForm.controls.teamName.value;
     const leader = this.teamForm.controls.leader.value;
     const members = this.newMonitors;
@@ -79,5 +84,9 @@ export class NewTeamComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  get controls() {
+    return this.teamForm.controls;
   }
 }

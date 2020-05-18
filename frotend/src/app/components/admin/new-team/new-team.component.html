@@ -6,6 +6,13 @@
       <div class="form-group col-md-6">
         <label for="name-team-form">Name team</label>
         <input class="form-control" formControlName="teamName" id="name-team-form" type="text">
+        <div *ngIf="controls.teamName.invalid && (submit || controls.teamName.dirty || controls.teamName.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.teamName.errors.required">
+            Name is required.
+          </div>
+        </div>
       </div>
 
       <div class="form-group col-md-6">
@@ -14,6 +21,13 @@
           <option *ngFor="let monitor of monitors" [ngValue]="monitor">{{monitor.name}}</option>
 
         </select>
+        <div *ngIf="controls.leader.invalid && (submit || controls.leader.dirty || controls.leader.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.leader.errors.required">
+            Leader is required.
+          </div>
+        </div>
       </div>
 
     </div>
