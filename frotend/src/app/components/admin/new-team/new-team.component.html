@@ -18,7 +18,7 @@
       <div class="form-group col-md-6">
         <label for="leader-team-form">Select leader</label>
         <select class="form-control" formControlName="leader" name="leader" id="leader-team-form">
-          <option *ngFor="let monitor of monitors" [ngValue]="monitor">{{monitor.name}}</option>
+          <option *ngFor="let leader of leaders" [ngValue]="leader">{{leader.name}}</option>
 
         </select>
         <div *ngIf="controls.leader.invalid && (submit || controls.leader.dirty || controls.leader.touched)"

@@ -4,6 +4,7 @@ import {TeamService} from '../../../service/team.service';
 import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user';
 import {Router} from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-new-team',
@@ -15,6 +16,7 @@ export class NewTeamComponent implements OnInit {
   newMonitors: User[] = [];
   monitors: User[];
   submit = false;
+  leaders: User[];
 
   constructor(private fb: FormBuilder, private _teamService: TeamService,
               private _userService: UserService, private _route: Router) {
@@ -31,6 +33,7 @@ export class NewTeamComponent implements OnInit {
     );
     this._userService.getAllMonitorsNotMembers().subscribe(result => {
       this.monitors = result;
+      this.leaders = _.clone(this.monitors);
     }, error => {
       console.log(error);
     });
