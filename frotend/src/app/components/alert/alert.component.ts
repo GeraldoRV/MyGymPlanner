@@ -9,9 +9,9 @@ import {AlertService} from '../../service/alert.service';
 })
 export class AlertComponent implements OnInit {
   @Input() handlerId: string;
-  private type: string;
-  private message: string;
-  private dismissible: boolean;
+  type: string;
+  message: string;
+  dismissible: boolean;
   private element: any;
 
   constructor(private alertService: AlertService, private el: ElementRef) {
