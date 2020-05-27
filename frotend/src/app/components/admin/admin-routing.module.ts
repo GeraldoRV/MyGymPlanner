@@ -10,18 +10,18 @@ import {ClassListComponent} from './class-list/class-list.component';
 const routes: Routes = [
   {
     path: 'admin', component: MainComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin/new-user', component: NewUserComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'new-user', component: NewUserComponent,
+    path: 'admin/teams', component: TeamsListComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'teams', component: TeamsListComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'new-team', component: NewTeamComponent,
+    path: 'admin/new-team', component: NewTeamComponent,
     canActivate: [AuthGuard]
   },
   {

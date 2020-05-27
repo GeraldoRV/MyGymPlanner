@@ -16,9 +16,10 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userLogin = this.loginService.getUser();
   }
 
-  private logout() {
+  logout() {
     this.loginService.logout();
     this._route.navigate(['']).then();
     this.toggleNavBar();

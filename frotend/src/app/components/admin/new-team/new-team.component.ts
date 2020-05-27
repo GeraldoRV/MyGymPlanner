@@ -83,7 +83,7 @@ export class NewTeamComponent implements OnInit {
     const leader = this.teamForm.controls.leader.value;
     const members = this.newMonitors;
     this._teamService.createTeam(name, leader, members).subscribe(() => {
-      this._route.navigate(['/teams']);
+      this._route.navigate(['/admin/teams']);
     }, error => {
       console.log(error);
     });
