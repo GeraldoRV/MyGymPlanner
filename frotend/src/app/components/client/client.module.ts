@@ -9,10 +9,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {TableComponent} from './table/table.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import {AlertComponent} from '../alert/alert.component';
 import {ExerciseDetailsComponent} from './exercise-details/exercise-details.component';
-import {ClassDirectedComponent} from '../class-directed/class-directed.component';
 import {HttpClientModule} from '@angular/common/http';
+import {CommonComponentsModule} from '../commons/common-components.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     TablesComponent,
     TableComponent,
     EvenOrOdd,
-    AlertComponent,
     ExerciseDetailsComponent,
-    ClassDirectedComponent
 
   ],
   imports: [
@@ -32,12 +29,9 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
+    CommonComponentsModule,
     ClientRoutingModule,
 
-  ],
-  exports: [
-    AlertComponent,
-    ClassDirectedComponent
   ]
 })
 export class ClientModule {

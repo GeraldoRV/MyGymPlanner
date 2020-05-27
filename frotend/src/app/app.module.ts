@@ -14,17 +14,15 @@ import {WorkoutTableService} from './service/workout-table.service';
 import {AuthGuard} from './service/authentication/auth.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {DatePipe} from '@angular/common';
-import {MainMonitorComponent} from './components/monitor/main-monitor/main-monitor.component';
 import {ExerciseTypeService} from './service/exercise-type.service';
 import {Global} from './utilities/global';
-import {AssignedClassComponent} from './components/monitor/assigned-class/assigned-class.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {MyTeamComponent} from './components/leader/my-team/my-team.component';
 import {AddTeamComponent} from './components/admin/class-list/add-team/add-team.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AdminModule} from './components/admin/admin.module';
 import {ClientModule} from './components/client/client.module';
 import {MonitorModule} from './components/monitor/monitor.module';
+import {CommonComponentsModule} from './components/commons/common-components.module';
 
 
 @NgModule({
@@ -34,9 +32,7 @@ import {MonitorModule} from './components/monitor/monitor.module';
     NgbdSortableHeader,
     NavbarComponent,
     NotFoundComponent,
-    MainMonitorComponent,
-    AssignedClassComponent,
-    MyTeamComponent,
+
     AddTeamComponent
   ],
   imports: [
@@ -46,6 +42,7 @@ import {MonitorModule} from './components/monitor/monitor.module';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
+    CommonComponentsModule,
     AdminModule,
     ClientModule,
     MonitorModule,
