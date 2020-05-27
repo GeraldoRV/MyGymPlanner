@@ -12,14 +12,14 @@ export class NavbarComponent implements OnInit {
   userLogin: User;
   navbarOpen = false;
 
-  constructor(private _route: Router, private loginService: LoginService) {
+  constructor(private _route: Router, public loginService: LoginService) {
   }
 
   ngOnInit() {
     this.userLogin = this.loginService.getUser();
   }
 
-  logout() {
+   logout() {
     this.loginService.logout();
     this._route.navigate(['']).then();
     this.toggleNavBar();

@@ -12,17 +12,17 @@ const routes: Routes = [
     path: 'client', component: HomeComponent,
     canActivate: [AuthGuard]
   }, {
-    path: 'routines', component: TablesComponent,
+    path: 'client/routines', component: TablesComponent,
     canActivate: [AuthGuard]
   }, {
-    path: 'routine', component: TableComponent,
+    path: 'client/routine', component: TableComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'exercise', component: ExerciseDetailsComponent,
+    path: 'client/exercise', component: ExerciseDetailsComponent,
     canActivate: [AuthGuard]
   }, {
-    path: 'classes', component: ClassDirectedComponent,
+    path: 'client/classes', component: ClassDirectedComponent,
     canActivate: [AuthGuard]
   },
 ];

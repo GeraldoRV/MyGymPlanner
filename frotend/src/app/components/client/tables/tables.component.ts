@@ -33,7 +33,7 @@ export class TablesComponent implements OnInit {
 
   seeRoutine(id: number) {
     this._wtService.setWorkTable(id);
-    this._route.navigate(['/routine']).then();
+    this._route.navigate(['/client/routine']).then();
   }
 
   beforeChange($event: NgbTabChangeEvent) {

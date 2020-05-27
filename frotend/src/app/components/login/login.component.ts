@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.loginService.isLoginIn()) {
-      this._route.navigate([this.loginService.getUserRole()]).then();
+      this._route.navigate([this.loginService.getUserRole()]);
       return;
     }
     this.loginForm = this.fb.group(

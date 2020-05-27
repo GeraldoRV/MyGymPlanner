@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark" *ngIf="userLogin !== null">
+<nav class="navbar navbar-expand-md navbar-dark" *ngIf="loginService.getUser() !== null">
   <button class="navbar-toggler" type="button" (click)="toggleNavBar()">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,12 +12,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/routines" class="nav-link">
+          <a routerLink="/client/routines" class="nav-link">
             Routines
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/classes" class="nav-link">
+          <a routerLink="/client/classes" class="nav-link">
             Classes
           </a>
         </li>

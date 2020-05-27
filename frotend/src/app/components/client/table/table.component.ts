@@ -219,6 +219,6 @@ export class TableComponent implements OnInit {
 
   seeDetails(exercise: Exercise) {
     this._exerciseService.setExercise(exercise);
-    this._route.navigate(['/exercise']).then();
+    this._route.navigate(['/client/exercise']).then();
   }
 }
