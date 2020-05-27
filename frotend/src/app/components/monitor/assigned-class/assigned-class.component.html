@@ -3,7 +3,7 @@
   <button class="btn btn-success modal-mobile" (click)="openModal(content)">Add client</button>
   <div class="row">
     <div class="col">
-      <p *ngIf="clientListOfClass.length === 0">There are not clients</p>
+      <p *ngIf="clientListOfClass?.length === 0">There are not clients</p>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let client of clientListOfClass">
           {{client.name}}

@@ -68,7 +68,7 @@ export class ClassDirectedComponent implements OnInit {
 
   public seeClass(id: number) {
     this._classDirectedService.setClassDirected(id);
-    this._route.navigate(['/assigned-class']).then();
+    this._route.navigate(['/monitor/assigned-class']);
   }
 
   public isTheCorrectTime(classSchedule: ClassSchedule) {
@@ -93,7 +93,7 @@ export class ClassDirectedComponent implements OnInit {
     });
   }
 
-  private isClient() {
+  isClient() {
     return this.user.role === 'client';
   }
 

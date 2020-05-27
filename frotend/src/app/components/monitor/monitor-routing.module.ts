@@ -7,10 +7,10 @@ import {MainMonitorComponent} from './main-monitor/main-monitor.component';
 
 const routes: Routes = [
   {
-    path: 'assigned-class', component: AssignedClassComponent,
+    path: 'monitor/assigned-class', component: AssignedClassComponent,
     canActivate: [AuthGuard]
   }, {
-    path: 'assigned-classes', component: MyTeamComponent,
+    path: 'monitor/assigned-classes', component: MyTeamComponent,
     canActivate: [AuthGuard]
   },
   {
