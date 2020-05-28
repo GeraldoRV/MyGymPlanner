@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AssignedClassComponent} from './assigned-class/assigned-class.component';
 import {AuthGuard} from '../../service/authentication/auth.guard';
-import {MyTeamComponent} from '../leader/my-team/my-team.component';
 import {MainMonitorComponent} from './main-monitor/main-monitor.component';
+import {AssignedClassesComponent} from './leader/assigned-classes/assigned-classes.component';
 
 const routes: Routes = [
   {
     path: 'monitor/assigned-class', component: AssignedClassComponent,
     canActivate: [AuthGuard]
   }, {
-    path: 'monitor/assigned-classes', component: MyTeamComponent,
+    path: 'monitor/assigned-classes', component: AssignedClassesComponent,
     canActivate: [AuthGuard]
   },
   {

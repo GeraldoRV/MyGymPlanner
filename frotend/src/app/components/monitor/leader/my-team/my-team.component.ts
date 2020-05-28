@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../model/user';
-import {TeamService} from '../../../service/team.service';
-import {LoginService} from '../../../service/login.service';
-import {Team} from '../../../model/team';
+import {User} from '../../../../model/user';
+import {TeamService} from '../../../../service/team.service';
+import {LoginService} from '../../../../service/login.service';
+import {Team} from '../../../../model/team';
 
 @Component({
   selector: 'app-my-team',
