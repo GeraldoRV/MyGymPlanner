@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ClassDirected} from '../model/class-directed';
 import {Global} from '../utilities/global';
+import {ClassDirectedToAssignDto} from '../dto/class-directed-to-assign.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class ClassDirectedService {
     this.baseUrl = _global.IpAddress + 'class';
   }
 
-  getAllClassesOfGym(gym_id: number) {
-    return this._http.get<ClassDirected[]>(this.baseUrl + '/gym/' + gym_id);
+  getAllClassesOfTypeClass(typeClassId) {
+    return this._http.get<ClassDirectedToAssignDto[]>(this.baseUrl + '/type-class/' + typeClassId);
   }
 
   getAllClassesOfGymAndDay(gym_id: number, dayOfWeek: string) {
