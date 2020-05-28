@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Global} from '../utilities/global';
 import {TypeClassAdminDto} from '../dto/type-class-admin.dto';
 import {TypeClass} from '../model/type-class';
+import {TypeClassLeaderDto} from '../dto/type-class-leader.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class TypeClassService {
 
   getAllTaughtClass() {
     return this._http.get<TypeClassAdminDto[]>(this.baseUrl + '/admin');
+  }
+
+  getAllClassesForLeader(id: number) {
+    return this._http.get<TypeClassLeaderDto[]>(this.baseUrl + '/team/' + id);
   }
 
   getAll() {

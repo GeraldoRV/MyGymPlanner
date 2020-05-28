@@ -5,9 +5,9 @@
     <th>Number of classes</th>
     <th>Assigned</th>
   </tr>
-  <tr>
-    <td>Zumba</td>
-    <td>2</td>
-    <td>None</td>
+  <tr *ngFor="let typeClass of classes">
+    <td>{{typeClass.name}}</td>
+    <td>{{typeClass.nClassesDirected}}</td>
+    <td>{{typeClass.nClassesDirectedWithMonitor}}</td>
   </tr>
 </table>
