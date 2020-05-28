@@ -11,13 +11,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { AssignedClassesComponent } from './leader/assigned-classes/assigned-classes.component';
+import { ClassDetailsLeaderComponent } from './leader/class-details-leader/class-details-leader.component';
 
 @NgModule({
   declarations: [
     MainMonitorComponent,
     AssignedClassComponent,
     MyTeamComponent,
-    AssignedClassesComponent
+    AssignedClassesComponent,
+    ClassDetailsLeaderComponent
   ],
   imports: [
     CommonModule,
