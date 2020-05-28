@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.converter.ClassDirectedConverter;
+import main.dto.ClassDirectedDtoToAssign;
 import main.exception.ClassDirectedFullException;
 import main.exception.NotValidDayToReserveException;
 import main.exception.TheClientIsInTheClassException;
@@ -15,9 +17,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class ClassDirectedController {
     private final ClassDirectedService classDirectedService;
+    private final ClassDirectedConverter classDirectedConverter;
 
-    public ClassDirectedController(ClassDirectedService classDirectedService) {
+    public ClassDirectedController(ClassDirectedService classDirectedService, ClassDirectedConverter classDirectedConverter) {
         this.classDirectedService = classDirectedService;
+        this.classDirectedConverter = classDirectedConverter;
     }
 
     @GetMapping("{id}")
@@ -28,6 +32,11 @@ public class ClassDirectedController {
     @GetMapping("/gym/{id}")
     public List<ClassDirected> getAllByGym(@PathVariable Integer id) {
         return classDirectedService.getAllClassDirectedOfGym(id);
+    }
+
+    @GetMapping("/type-class/{id}")
+    public List<ClassDirectedDtoToAssign> getAllByTypeClass(@PathVariable Integer id) {
+        return classDirectedConverter.transformToClassDtoToAssignFromEntity(classDirectedService.getAllClassDirectedOfTypeClass(id));
     }
 
     @GetMapping("gym/{id}/{dayOfWeek}")
