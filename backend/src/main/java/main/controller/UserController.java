@@ -31,9 +31,9 @@ public class UserController {
         return userService.getAllClientsWhereNameLike(name);
     }
 
-    @GetMapping("monitor/team/{id}")
-    public List<UserTypeMonitorDto> getAllMonitorsOfTeam(@PathVariable Integer id) {
-        return userConverter.transformToMonitorTypeFromEntity(userService.getAllMonitorOfTeam(id));
+    @GetMapping("monitor/team/leader/{id}")
+    public List<UserTypeMonitorDto> getAllMonitorsOfTeamLeader(@PathVariable Integer id) {
+        return userConverter.transformToMonitorTypeFromEntity(userService.getAllMonitorOfTeamLeader(id));
     }
 
 

@@ -8,9 +8,7 @@
   <form>
 
     <select class="form-control" name="monitor" size="3">
-      <option value="">Jose</option>
-      <option value="">Maria</option>
-      <option value="">Fernanda</option>
+      <option *ngFor="let monitor of monitors" value="">{{monitor.name}} - {{monitor.nClassAssigned}} classes</option>
     </select>
   </form>
 </div>

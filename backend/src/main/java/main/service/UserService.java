@@ -98,8 +98,8 @@ public class UserService {
 
     }
 
-    public List<User> getAllMonitorOfTeam(Integer teamId) {
-        Team team = teamDAO.findById(teamId).orElseThrow(TeamNotFoundException::new);
+    public List<User> getAllMonitorOfTeamLeader(Integer leaderId) {
+        Team team = teamDAO.findByLeader_Id(leaderId);
         return team.getMembers();
 
     }

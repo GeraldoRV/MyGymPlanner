@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../model/user';
 import {Global} from '../utilities/global';
+import {UserTypeMonitorDto} from '../dto/user-type-monitor.dto';
 
 @Injectable()
 export class UserService {
@@ -25,5 +26,9 @@ export class UserService {
 
   getAllMonitorsNotMembers() {
     return this._http.get<User[]>(this.baseUrl + '/monitor/not-members');
+  }
+
+  getAllMonitorsOfTeamLeaderId(id) {
+    return this._http.get<UserTypeMonitorDto[]>(this.baseUrl + '/monitor/team/leader/' + id);
   }
 }

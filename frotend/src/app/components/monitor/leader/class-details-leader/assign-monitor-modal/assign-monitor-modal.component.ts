@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {faTimes} from '@fortawesome/free-solid-svg-icons/faTimes';
 import {ClassDirectedToAssignDto} from '../../../../../dto/class-directed-to-assign.dto';
-import {User} from '../../../../../model/user';
-import {Team} from '../../../../../model/team';
+import {UserTypeMonitorDto} from '../../../../../dto/user-type-monitor.dto';
+import {UserService} from '../../../../../service/user.service';
 
 @Component({
   selector: 'app-assign-monitor-modal',
@@ -13,11 +13,17 @@ import {Team} from '../../../../../model/team';
 export class AssignMonitorModalComponent implements OnInit {
   faTimes = faTimes;
   classDirected: ClassDirectedToAssignDto;
-  monitors: User[];
-  team: Team;
-  constructor(public activeModal: NgbActiveModal) { }
+  monitors: UserTypeMonitorDto[];
+  @Input() leaderId: number;
+
+  constructor(public activeModal: NgbActiveModal, private userService: UserService) {
+  }
 
   ngOnInit() {
+    this.userService.getAllMonitorsOfTeamLeaderId(this.leaderId).subscribe(res => {
+      this.monitors = res;
+    }, error => console.log(error));
+
   }
 
 }
