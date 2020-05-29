@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {AlertComponent} from '../alert/alert.component';
 import {ClassDirectedComponent} from '../class-directed/class-directed.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbAlertModule, NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
@@ -24,7 +24,8 @@ import {AlertService} from '../../service/alert.service';
       BrowserModule,
       HttpClientModule,
       FontAwesomeModule,
-      NgbModule
+      NgbAlertModule,
+      NgbTabsetModule
     ],
     providers: [ClassDirectedService, AlertService],
     exports: [AlertComponent,

@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">Available monitors</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+
+    <select class="form-control" name="monitor" size="3">
+      <option value="">Jose</option>
+      <option value="">Maria</option>
+      <option value="">Fernanda</option>
+    </select>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-success" type="submit">Assign</button>
+  <button class="btn btn-danger" type="button" (click)="activeModal.close()">Cancel</button>
+</div>

@@ -10,10 +10,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { AssignedClassesComponent } from './leader/assigned-classes/assigned-classes.component';
-import { ClassDetailsLeaderComponent } from './leader/class-details-leader/class-details-leader.component';
+import {AssignedClassesComponent} from './leader/assigned-classes/assigned-classes.component';
+import {ClassDetailsLeaderComponent} from './leader/class-details-leader/class-details-leader.component';
 import {UserService} from '../../service/user.service';
 import {TeamService} from '../../service/team.service';
+import {AssignMonitorModalComponent} from './leader/class-details-leader/assign-monitor-modal/assign-monitor-modal.component';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {TeamService} from '../../service/team.service';
     AssignedClassComponent,
     MyTeamComponent,
     AssignedClassesComponent,
-    ClassDetailsLeaderComponent
+    ClassDetailsLeaderComponent,
+    AssignMonitorModalComponent
   ],
   imports: [
     CommonModule,
@@ -30,9 +33,11 @@ import {TeamService} from '../../service/team.service';
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
+    NgbModalModule,
     CommonComponentsModule,
     MonitorRoutingModule
   ],
+  entryComponents: [AssignMonitorModalComponent],
   providers: [UserService, TeamService]
 })
 export class MonitorModule {
