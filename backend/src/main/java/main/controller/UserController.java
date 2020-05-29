@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.converter.UserConverter;
+import main.dto.UserTypeMonitorDto;
 import main.model.User;
 import main.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +14,11 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final UserConverter userConverter;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserConverter userConverter) {
         this.userService = userService;
+        this.userConverter = userConverter;
     }
 
     @GetMapping
@@ -26,6 +30,12 @@ public class UserController {
     public List<User> getClientsLikeTheName(@PathVariable String name) {
         return userService.getAllClientsWhereNameLike(name);
     }
+
+    @GetMapping("monitor/team/{id}")
+    public List<UserTypeMonitorDto> getAllMonitorsOfTeam(@PathVariable Integer id) {
+        return userConverter.transformToMonitorTypeFromEntity(userService.getAllMonitorOfTeam(id));
+    }
+
 
     @GetMapping("monitor/not-members")
     public List<User> getAllMonitorNotInTeam() {

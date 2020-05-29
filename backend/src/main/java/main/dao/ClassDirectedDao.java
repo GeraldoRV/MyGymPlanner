@@ -26,4 +26,6 @@ public interface ClassDirectedDao extends CrudRepository<ClassDirected, Integer>
 
     int countAllByTypeClassAndAssignedMonitorNotNull(TypeClass typeClass);
 
+    int countAllByAssignedMonitor_Id(Integer id);
+
 }

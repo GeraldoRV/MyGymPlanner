@@ -1,21 +1,27 @@
 package main.service;
 
+import main.dao.TeamDAO;
 import main.dao.UserDao;
+import main.exception.TeamNotFoundException;
 import main.exception.UserNotFoundException;
+import main.model.Team;
 import main.model.User;
 import main.model.WorkingHours;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
 public class UserService {
 
     private final UserDao userDao;
+    private final TeamDAO teamDAO;
 
-    public UserService(UserDao userDao) {
+    public UserService(UserDao userDao, TeamDAO teamDAO) {
         this.userDao = userDao;
+        this.teamDAO = teamDAO;
     }
 
     public List<User> getAll() {
@@ -89,6 +95,12 @@ public class UserService {
         workingHours.setMondayToFriday(mondayToFriday);
         workingHours.setSaturday(saturdays);
         workingHours.setSunday(sundays);
+
+    }
+
+    public List<User> getAllMonitorOfTeam(Integer teamId) {
+        Team team = teamDAO.findById(teamId).orElseThrow(TeamNotFoundException::new);
+        return team.getMembers();
 
     }
 }
