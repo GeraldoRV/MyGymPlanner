@@ -12,6 +12,10 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ExerciseDetailsComponent} from './exercise-details/exercise-details.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonComponentsModule} from '../commons/common-components.module';
+import {ExerciseService} from '../../service/exercise.service';
+import {ExerciseTypeService} from '../../service/exercise-type.service';
+import {TypeClassService} from '../../service/type-class.service';
+import {WorkoutTableService} from '../../service/workout-table.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +35,8 @@ import {CommonComponentsModule} from '../commons/common-components.module';
     FontAwesomeModule,
     CommonComponentsModule,
     ClientRoutingModule,
-
-  ]
+  ],
+  providers: [ExerciseService, ExerciseTypeService, TypeClassService, WorkoutTableService]
 })
 export class ClientModule {
 }

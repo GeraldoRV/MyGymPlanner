@@ -12,6 +12,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { AssignedClassesComponent } from './leader/assigned-classes/assigned-classes.component';
 import { ClassDetailsLeaderComponent } from './leader/class-details-leader/class-details-leader.component';
+import {UserService} from '../../service/user.service';
+import {TeamService} from '../../service/team.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ClassDetailsLeaderComponent } from './leader/class-details-leader/class
     FontAwesomeModule,
     CommonComponentsModule,
     MonitorRoutingModule
-  ]
+  ],
+  providers: [UserService, TeamService]
 })
 export class MonitorModule {
 }

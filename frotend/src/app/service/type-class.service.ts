@@ -5,9 +5,7 @@ import {TypeClassAdminDto} from '../dto/type-class-admin.dto';
 import {TypeClass} from '../model/type-class';
 import {TypeClassLeaderDto} from '../dto/type-class-leader.dto';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TypeClassService {
   private readonly baseUrl: string;
 

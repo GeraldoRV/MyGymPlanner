@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Global} from '../utilities/global';
 import {Team} from '../model/team';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TeamService {
   private readonly baseUrl: string;
 

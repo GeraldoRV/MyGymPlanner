@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {WorkoutTable} from '../model/workout-table';
 import {Global} from '../utilities/global';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class WorkoutTableService {
   private id: number;
   private readonly base_url: string;
