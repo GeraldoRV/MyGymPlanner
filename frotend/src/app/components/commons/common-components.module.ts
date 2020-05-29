@@ -7,6 +7,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {ClassDirectedService} from '../../service/class-directed.service';
+import {AlertService} from '../../service/alert.service';
 
 @NgModule(
   {
@@ -24,6 +26,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
       FontAwesomeModule,
       NgbModule
     ],
+    providers: [ClassDirectedService, AlertService],
     exports: [AlertComponent,
       ClassDirectedComponent]
   }

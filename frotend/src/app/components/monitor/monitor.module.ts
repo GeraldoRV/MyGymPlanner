@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {UserService} from '../../service/user.service';
+import {TeamService} from '../../service/team.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
     CommonComponentsModule,
     MonitorRoutingModule
-  ]
+  ],
+  providers: [UserService, TeamService]
 })
 export class MonitorModule {
 }

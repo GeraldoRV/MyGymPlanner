@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ClassDirected} from '../model/class-directed';
 import {Global} from '../utilities/global';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ClassDirectedService {
   private readonly baseUrl: string;
   private classDirectedId: number;

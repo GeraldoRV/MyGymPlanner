@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {User} from '../model/user';
 import {Global} from '../utilities/global';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LoginService {
   private user: User = null;
 

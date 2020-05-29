@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Exercise} from '../model/exercise';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ExerciseService {
   private exercise: Exercise;
 

@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ExerciseType} from '../model/exercise-type';
 import {Global} from '../utilities/global';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ExerciseTypeService {
   private readonly baseUrl: string;
 

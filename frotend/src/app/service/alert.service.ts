@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AlertComponent} from '../components/alert/alert.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AlertService {
   private alert: AlertComponent = null;
 
