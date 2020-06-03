@@ -5,7 +5,7 @@ import main.model.User;
 
 public class ClassDirectedDtoToAssign {
     private Integer id;
-    private User assignedMonitor;
+    private UserTypeMonitorDto assignedMonitor;
     private ClassSchedule classSchedule;
 
     public Integer getId() {
@@ -16,11 +16,11 @@ public class ClassDirectedDtoToAssign {
         this.id = id;
     }
 
-    public User getAssignedMonitor() {
+    public UserTypeMonitorDto getAssignedMonitor() {
         return assignedMonitor;
     }
 
-    public void setAssignedMonitor(User assignedMonitor) {
+    public void setAssignedMonitor(UserTypeMonitorDto assignedMonitor) {
         this.assignedMonitor = assignedMonitor;
     }
 

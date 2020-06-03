@@ -38,7 +38,7 @@ export class AssignMonitorModalComponent implements OnInit {
     this.classDirectedService
       .assignMonitor(this.classDirectedId, this.monitorAssignForm.controls.monitor.value)
       .subscribe(res => {
-        console.log(res);
+        this.activeModal.close(res);
       }, error => console.log(error));
   }
 }

@@ -9,13 +9,22 @@ import java.util.List;
 
 @Service
 public class ClassDirectedConverter {
+    private final UserConverter userConverter;
+
+    public ClassDirectedConverter(UserConverter userConverter) {
+        this.userConverter = userConverter;
+    }
 
     public ClassDirectedDtoToAssign transformToClassDtoToAssignFromEntity(ClassDirected classDirected) {
         ClassDirectedDtoToAssign classDirectedDtoToAssign = new ClassDirectedDtoToAssign();
 
         classDirectedDtoToAssign.setId(classDirected.getId());
         classDirectedDtoToAssign.setClassSchedule(classDirected.getClassSchedule());
-        classDirectedDtoToAssign.setAssignedMonitor(classDirected.getAssignedMonitor());
+
+        if (classDirected.getAssignedMonitor() != null) {
+            classDirectedDtoToAssign.setAssignedMonitor(
+                    userConverter.transformToMonitorTypeFromEntity(classDirected.getAssignedMonitor()));
+        }
 
         return classDirectedDtoToAssign;
     }

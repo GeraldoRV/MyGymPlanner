@@ -7,7 +7,6 @@ import main.exception.ClassDirectedFullException;
 import main.exception.NotValidDayToReserveException;
 import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
-import main.model.User;
 import main.service.ClassDirectedService;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,7 +63,7 @@ public class ClassDirectedController {
     }
 
     @PutMapping("{id}/monitor")
-    public ClassDirected assignMonitor(@RequestBody UserTypeMonitorDto monitor, @PathVariable Integer id) {
-        return classDirectedService.assignMonitor(monitor, id);
+    public ClassDirectedDtoToAssign assignMonitor(@RequestBody UserTypeMonitorDto monitor, @PathVariable Integer id) {
+        return classDirectedConverter.transformToClassDtoToAssignFromEntity(classDirectedService.assignMonitor(monitor, id));
     }
 }

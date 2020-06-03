@@ -34,5 +34,11 @@ export class ClassDetailsLeaderComponent implements OnInit {
     const modalRef = this.modalService.open(AssignMonitorModalComponent);
     modalRef.componentInstance.leaderId = this.userLogged.id;
     modalRef.componentInstance.classDirectedId = classDirectedId;
+    modalRef.result.then(result => {
+      if (result !== 'Close') {
+        const index = this.classes.findIndex(classDirected => classDirected.id === classDirectedId);
+        this.classes[index] = result;
+      }
+    });
   }
 }
