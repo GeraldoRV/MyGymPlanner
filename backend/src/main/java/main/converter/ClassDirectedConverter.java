@@ -22,8 +22,9 @@ public class ClassDirectedConverter {
         classDirectedDtoToAssign.setClassSchedule(classDirected.getClassSchedule());
 
         if (classDirected.getAssignedMonitor() != null) {
-            classDirectedDtoToAssign.setAssignedMonitor(
-                    userConverter.transformToMonitorTypeFromEntity(classDirected.getAssignedMonitor()));
+            classDirectedDtoToAssign
+                    .setAssignedMonitor(userConverter
+                            .transformToMonitorTypeFromEntity(classDirected.getAssignedMonitor()));
         }
 
         return classDirectedDtoToAssign;

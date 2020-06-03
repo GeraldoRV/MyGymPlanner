@@ -2,6 +2,7 @@ package main.converter;
 
 import main.dao.ClassDirectedDao;
 import main.dto.UserTypeMonitorDto;
+import main.exception.UserNotFoundException;
 import main.model.User;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class UserConverter {
 
     public UserTypeMonitorDto transformToMonitorTypeFromEntity(User user) {
         UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
+        if (!user.getRole().equals("monitor")) throw new UserNotFoundException();
 
         userTypeMonitorDto.setId(user.getId());
         userTypeMonitorDto.setName(user.getName());

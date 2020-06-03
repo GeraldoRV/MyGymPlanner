@@ -8,13 +8,14 @@ public class UserTypeMonitorDto {
     private String userName;
     private WorkingHours workingHours;
 
-    private Boolean isLeader = false;
-    private Integer nClassAssigned;
+    private boolean isLeader = false;
+    private int nClassAssigned;
 
 
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -47,7 +48,7 @@ public class UserTypeMonitorDto {
         return isLeader;
     }
 
-    public void setLeader(Boolean leader) {
+    public void setLeader(boolean leader) {
         isLeader = leader;
     }
 
@@ -55,7 +56,7 @@ public class UserTypeMonitorDto {
         return nClassAssigned;
     }
 
-    public void setnClassAssigned(Integer nClassAssigned) {
+    public void setnClassAssigned(int nClassAssigned) {
         this.nClassAssigned = nClassAssigned;
     }
 }
