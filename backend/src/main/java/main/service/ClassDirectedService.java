@@ -45,6 +45,16 @@ public class ClassDirectedService {
         return classDirectedDao.findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(id, dayOfWeek);
     }
 
+    public ClassDirected assignMonitor(UserTypeMonitorDto monitor, Integer classId) {
+        ClassDirected classDirected = classDirectedDao.findById(classId).orElseThrow(ClassDirectedNotFoundException::new);
+        User monitorDB = userDao.findByIdAndRole(monitor.getId(),"monitor").orElseThrow(UserNotFoundException::new);
+
+
+        classDirected.setAssignedMonitor(monitorDB);
+
+        return classDirectedDao.save(classDirected);
+    }
+
     public boolean reserveAClass(ClassDirected classDirected, Integer userId, Date date) throws NotValidDayToReserveException, ClassDirectedFullException, TheClientIsInTheClassException {
         checkClass(classDirected, date);
         User client = getUser(userId);
@@ -146,14 +156,5 @@ public class ClassDirectedService {
         User user = new User();
         user.setId(userId);
         return user;
-    }
-
-    public ClassDirected assignMonitor(UserTypeMonitorDto monitor, Integer classId) {
-        ClassDirected classDirected = classDirectedDao.findById(classId).orElseThrow(ClassDirectedNotFoundException::new);
-        User monitorDB = userDao.findById(monitor.getId()).orElseThrow(UserNotFoundException::new);
-
-        classDirected.setAssignedMonitor(monitorDB);
-
-        return classDirectedDao.save(classDirected);
     }
 }

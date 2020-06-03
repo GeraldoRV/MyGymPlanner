@@ -3,9 +3,8 @@ package main.service;
 import main.dao.ClassDirectedDao;
 import main.dao.GymDao;
 import main.dao.UserDao;
-import main.exception.ClassDirectedFullException;
-import main.exception.NotValidDayToReserveException;
-import main.exception.TheClientIsInTheClassException;
+import main.dto.UserTypeMonitorDto;
+import main.exception.*;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
 import main.model.Gym;
@@ -234,6 +233,57 @@ public class ClassDirectedServiceTest {
     public void givenAExistsNotFullClassAndOneClientInTheClassYetButInTheCorrectTime_whenReserveAClass_thenExpectationSatisfied() throws ParseException, NotValidDayToReserveException, TheClientIsInTheClassException, ClassDirectedFullException {
         Date date = getDate("2019-11-12 19:45:00.0");
         classDirectedService.reserveAClass(notFullClass, clientInTheClass.getId(), date);
+    }
+
+    @Test(expected = ClassDirectedNotFoundException.class)
+    public void givenNotExistClassDirected_whenAssignMonitor_thenExpectationSatisfied() {
+        UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
+        userTypeMonitorDto.setId(1);
+        classDirectedService.assignMonitor(userTypeMonitorDto, 1200);
+
+    }
+
+    @Test(expected = UserNotFoundException.class)
+    public void givenExistClassDirectedAndNotExistUser_whenAssignMonitor_thenExpectationSatisfied() {
+        UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
+        userTypeMonitorDto.setId(789);
+        classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+
+    }
+
+    @Test(expected = UserNotFoundException.class)
+    public void givenExistClassDirectedAndExistUserButNotMonitor_whenAssignMonitor_thenExpectationSatisfied() {
+        User user = new User();
+        user.setName("Not monitor");
+        user.setUserName("notmonitor");
+        user.setRole("notmonitor");
+        userDao.save(user);
+        UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
+        userTypeMonitorDto.setId(user.getId());
+
+        classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+
+    }
+
+    @Test
+    public void givenExistClassDirectedAndExistMonitor_whenAssignMonitor_thenReturnTheClassDirectedWithTheMonitor() {
+        User user = new User();
+        user.setName("Monitor");
+        user.setUserName("monitor");
+        user.setRole("monitor");
+        userDao.save(user);
+        UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
+        userTypeMonitorDto.setId(user.getId());
+
+        ClassDirected classDirected = classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+
+        Integer one = 1;
+
+        assertEquals(one, classDirected.getId());
+        assertNotNull(classDirected.getAssignedMonitor());
+        assertEquals(user.getId(), classDirected.getAssignedMonitor().getId());
+
+
     }
 
     private Date getDate(String date) throws ParseException {
