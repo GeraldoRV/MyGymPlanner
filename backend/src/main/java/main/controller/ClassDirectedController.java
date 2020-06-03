@@ -2,10 +2,12 @@ package main.controller;
 
 import main.converter.ClassDirectedConverter;
 import main.dto.ClassDirectedDtoToAssign;
+import main.dto.UserTypeMonitorDto;
 import main.exception.ClassDirectedFullException;
 import main.exception.NotValidDayToReserveException;
 import main.exception.TheClientIsInTheClassException;
 import main.model.ClassDirected;
+import main.model.User;
 import main.service.ClassDirectedService;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,5 +61,10 @@ public class ClassDirectedController {
     @PutMapping("add/client/{id}")
     public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) throws TheClientIsInTheClassException {
         return classDirectedService.addClientToClass(classDirected, id);
+    }
+
+    @PutMapping("{id}/monitor")
+    public ClassDirected assignMonitor(@RequestBody UserTypeMonitorDto monitor, @PathVariable Integer id) {
+        return classDirectedService.assignMonitor(monitor, id);
     }
 }

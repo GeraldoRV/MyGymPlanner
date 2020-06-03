@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ClassDirected} from '../model/class-directed';
 import {Global} from '../utilities/global';
 import {ClassDirectedToAssignDto} from '../dto/class-directed-to-assign.dto';
+import {UserTypeMonitorDto} from '../dto/user-type-monitor.dto';
 
 @Injectable()
 export class ClassDirectedService {
@@ -39,5 +40,9 @@ export class ClassDirectedService {
 
   addClientToClass(clientId: number, assignedClass: ClassDirected) {
     return this._http.put(this.baseUrl + '/add/client/' + clientId, assignedClass);
+  }
+
+  assignMonitor(classDirectedId, monitor: UserTypeMonitorDto) {
+    return this._http.put(this.baseUrl + '/' + classDirectedId + '/monitor', monitor);
   }
 }

@@ -1,9 +1,9 @@
 package main.service;
 
 import main.dao.ClassDirectedDao;
-import main.exception.ClassDirectedFullException;
-import main.exception.NotValidDayToReserveException;
-import main.exception.TheClientIsInTheClassException;
+import main.dao.UserDao;
+import main.dto.UserTypeMonitorDto;
+import main.exception.*;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
 import main.model.User;
@@ -18,9 +18,11 @@ import java.util.Optional;
 @Service
 public class ClassDirectedService {
     private final ClassDirectedDao classDirectedDao;
+    private final UserDao userDao;
 
-    public ClassDirectedService(ClassDirectedDao classDirectedDao) {
+    public ClassDirectedService(ClassDirectedDao classDirectedDao, UserDao userDao) {
         this.classDirectedDao = classDirectedDao;
+        this.userDao = userDao;
     }
 
     public Optional<ClassDirected> getClassDirected(Integer id) {
@@ -144,5 +146,14 @@ public class ClassDirectedService {
         User user = new User();
         user.setId(userId);
         return user;
+    }
+
+    public ClassDirected assignMonitor(UserTypeMonitorDto monitor, Integer classId) {
+        ClassDirected classDirected = classDirectedDao.findById(classId).orElseThrow(ClassDirectedNotFoundException::new);
+        User monitorDB = userDao.findById(monitor.getId()).orElseThrow(UserNotFoundException::new);
+
+        classDirected.setAssignedMonitor(monitorDB);
+
+        return classDirectedDao.save(classDirected);
     }
 }

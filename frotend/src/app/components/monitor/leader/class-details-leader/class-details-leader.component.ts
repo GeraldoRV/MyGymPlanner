@@ -30,9 +30,9 @@ export class ClassDetailsLeaderComponent implements OnInit {
 
   }
 
-  open() {
+  open(classDirectedId) {
     const modalRef = this.modalService.open(AssignMonitorModalComponent);
     modalRef.componentInstance.leaderId = this.userLogged.id;
-
+    modalRef.componentInstance.classDirectedId = classDirectedId;
   }
 }

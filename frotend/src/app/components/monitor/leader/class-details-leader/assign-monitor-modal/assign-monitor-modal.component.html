@@ -4,15 +4,18 @@
     <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
   </button>
 </div>
-<div class="modal-body">
-  <form>
 
-    <select class="form-control" name="monitor" size="3">
-      <option *ngFor="let monitor of monitors" value="">{{monitor.name}} - {{monitor.nClassAssigned}} classes</option>
+<div class="modal-body">
+  <form id="modal-form" [formGroup]="monitorAssignForm" (submit)="onSubmit()">
+    <select class="form-control" name="monitor" formControlName="monitor" size="3">
+      <option *ngFor="let monitor of monitors" [ngValue]="monitor">{{monitor.name}} - {{monitor.nClassAssigned}}
+        classes
+      </option>
     </select>
   </form>
 </div>
+
 <div class="modal-footer">
-  <button class="btn btn-success" type="submit">Assign</button>
+  <button form="modal-form" class="btn btn-success" type="submit">Assign</button>
   <button class="btn btn-danger" type="button" (click)="activeModal.close()">Cancel</button>
 </div>

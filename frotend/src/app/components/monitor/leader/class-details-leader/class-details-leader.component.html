@@ -10,7 +10,7 @@
       <div class="card-text">
         {{classDirected.assignedMonitor?.name || "None assigned"}}
       </div>
-      <button class="btn btn-success" (click)="open()">Assign to</button>
+      <button class="btn btn-success" (click)="open(classDirected.id)">Assign to</button>
     </div>
   </div>
 </div>
