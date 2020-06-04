@@ -29,6 +29,7 @@ public class TypeClassService {
                 .orElseThrow(() ->
                         new TypeClassNotFound("The type class " + typeClassDtoForAdmin.getName() + "doesn't exist"));
         typeClass.setTeam(teamDAO.findById(teamId).orElseThrow(TeamNotFoundException::new));
+
         return typeClassDAO.save(typeClass);
     }
 

@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface UserDao extends CrudRepository<User, Integer> {
 
-    User findByUserNameAndPassword(String userName, String password);
+    Optional<User> findByUserNameAndPassword(String userName, String password);
 
     List<User> findAllByNameContainingAndRole(String name, String role);
 

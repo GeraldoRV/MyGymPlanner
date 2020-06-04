@@ -20,6 +20,15 @@ public class TeamService {
         this.userDao = userDao;
     }
 
+    public List<Team> getAll() {
+        return (List<Team>) teamDAO.findAll();
+    }
+
+    public Team getTeamOfLeader(Integer leaderId) {
+        return teamDAO.findByLeader_Id(leaderId)
+                .orElseThrow(TeamNotFoundException::new);
+    }
+
     public Team create(Team team) throws NotValidTeamException {
         if (!isAValid(team)) {
             throw new NotValidTeamException();
@@ -47,18 +56,6 @@ public class TeamService {
 
     private boolean existTeamByLeader(User leader) {
         return teamDAO.existsByLeader_Id(leader.getId());
-    }
-
-    public List<Team> getAll() {
-        return (List<Team>) teamDAO.findAll();
-    }
-
-    public Team getTeamOfLeader(Integer leaderId) throws TeamNotFoundException {
-        Team team = teamDAO.findByLeader_Id(leaderId);
-        if (team == null) {
-            throw new TeamNotFoundException();
-        }
-        return team;
     }
 
     private boolean isAValid(Team team) {

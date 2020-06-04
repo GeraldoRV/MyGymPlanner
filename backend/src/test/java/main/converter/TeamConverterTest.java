@@ -35,6 +35,7 @@ public class TeamConverterTest {
         assertEquals(team.getId(), teamDtoForAdmin.getId());
         assertEquals(team.getName(), teamDtoForAdmin.getName());
     }
+
     @Test
     public void givenATeamEntity_whenTransformToTeamDtoFromEntity_returnADtoOfTheEntity() {
         Team team = new Team();
@@ -46,6 +47,6 @@ public class TeamConverterTest {
         assertEquals(team.getId(), teamDto.getId());
         assertEquals(team.getName(), teamDto.getName());
         assertNull(teamDto.getLeader());
-        assertEquals(0,teamDto.getMembers().size());
+        assertEquals(0, teamDto.getMembers().size());
     }
 }

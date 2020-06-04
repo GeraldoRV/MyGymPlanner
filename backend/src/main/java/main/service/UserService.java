@@ -36,10 +36,9 @@ public class UserService {
         return userDao.findAllMonitorsNotInATeam();
     }
 
-    public User login(User user) throws UserNotFoundException {
-        User userLogged = userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword());
-        if (userLogged == null) throw new UserNotFoundException();
-        return userLogged;
+    public List<User> getAllMonitorOfTeamLeader(Integer leaderId) {
+        Team team = teamDAO.findByLeader_Id(leaderId).orElseThrow(TeamNotFoundException::new);
+        return team.getMembers();
     }
 
     public User create(User user) {
@@ -52,6 +51,11 @@ public class UserService {
         }
 
         return null;
+    }
+
+    public User login(User user) {
+        return userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword())
+                .orElseThrow(() -> new UserNotFoundException("UserName or password is incorrect"));
     }
 
     private boolean isValidUser(User user) {
@@ -95,12 +99,6 @@ public class UserService {
         workingHours.setMondayToFriday(mondayToFriday);
         workingHours.setSaturday(saturdays);
         workingHours.setSunday(sundays);
-
-    }
-
-    public List<User> getAllMonitorOfTeamLeader(Integer leaderId) {
-        Team team = teamDAO.findByLeader_Id(leaderId);
-        return team.getMembers();
 
     }
 }

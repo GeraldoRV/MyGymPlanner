@@ -20,7 +20,8 @@ public class ClassDirectedController {
     private final ClassDirectedService classDirectedService;
     private final ClassDirectedConverter classDirectedConverter;
 
-    public ClassDirectedController(ClassDirectedService classDirectedService, ClassDirectedConverter classDirectedConverter) {
+    public ClassDirectedController(ClassDirectedService classDirectedService,
+                                   ClassDirectedConverter classDirectedConverter) {
         this.classDirectedService = classDirectedService;
         this.classDirectedConverter = classDirectedConverter;
     }
@@ -37,7 +38,8 @@ public class ClassDirectedController {
 
     @GetMapping("/type-class/{id}")
     public List<ClassDirectedDtoToAssign> getAllByTypeClass(@PathVariable Integer id) {
-        return classDirectedConverter.transformToClassDtoToAssignFromEntity(classDirectedService.getAllClassDirectedOfTypeClass(id));
+        return classDirectedConverter.transformToClassDtoToAssignFromEntity(
+                classDirectedService.getAllClassDirectedOfTypeClass(id));
     }
 
     @GetMapping("gym/{id}/{dayOfWeek}")
@@ -46,8 +48,16 @@ public class ClassDirectedController {
     }
 
     @GetMapping("monitor/{id}/{dayOfWeek}")
-    public List<ClassDirected> getAllByMonitorAndDay(@PathVariable Integer id, @PathVariable String dayOfWeek) {
+    public List<ClassDirected> getAllByMonitorAndDay(@PathVariable Integer id,
+                                                     @PathVariable String dayOfWeek) {
         return classDirectedService.getAllClassDirectedOfMonitorAndDay(id, dayOfWeek);
+    }
+
+    @PutMapping("{id}/monitor")
+    public ClassDirectedDtoToAssign assignMonitor(@RequestBody UserTypeMonitorDto monitor,
+                                                  @PathVariable Integer id) {
+        return classDirectedConverter.transformToClassDtoToAssignFromEntity(
+                classDirectedService.assignMonitor(monitor, id));
     }
 
     @PutMapping("client/{id}")
@@ -58,12 +68,8 @@ public class ClassDirectedController {
     }
 
     @PutMapping("add/client/{id}")
-    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id) throws TheClientIsInTheClassException {
+    public boolean addClientToClass(@RequestBody ClassDirected classDirected, @PathVariable Integer id)
+            throws TheClientIsInTheClassException {
         return classDirectedService.addClientToClass(classDirected, id);
-    }
-
-    @PutMapping("{id}/monitor")
-    public ClassDirectedDtoToAssign assignMonitor(@RequestBody UserTypeMonitorDto monitor, @PathVariable Integer id) {
-        return classDirectedConverter.transformToClassDtoToAssignFromEntity(classDirectedService.assignMonitor(monitor, id));
     }
 }

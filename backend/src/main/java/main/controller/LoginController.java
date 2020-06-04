@@ -17,7 +17,7 @@ public class LoginController {
     }
 
     @PostMapping
-    public User login(@RequestBody User user) throws UserNotFoundException {
+    public User login(@RequestBody User user) {
         return userService.login(user);
     }
 }

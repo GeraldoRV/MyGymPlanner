@@ -80,7 +80,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void givenUserRegister_whenLogin_returnUser() throws UserNotFoundException {
+    public void givenUserRegister_whenLogin_returnUser() {
         User user = new User();
         user.setUserName("juan");
         user.setPassword("juan");

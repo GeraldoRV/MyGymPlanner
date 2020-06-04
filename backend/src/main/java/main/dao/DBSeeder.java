@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class DBSeeder implements CommandLineRunner {
@@ -90,8 +91,11 @@ public class DBSeeder implements CommandLineRunner {
         } else {
             classDirected.setTypeClass(typeClass);
         }
-        User user = userDao.findByUserNameAndPassword(monitor, monitor);
-        if (user != null) classDirected.setAssignedMonitor(user);
+        Optional<User> byUserNameAndPassword = userDao.findByUserNameAndPassword(monitor, monitor);
+        if (byUserNameAndPassword.isPresent()) {
+            User user = byUserNameAndPassword.get();
+            classDirected.setAssignedMonitor(user);
+        }
         classDirected.setCapacity(30);
         ClassDirected classDirectedSave = classDirectedDao.save(classDirected);
         return classDirectedSave.getTypeClass();
@@ -108,8 +112,12 @@ public class DBSeeder implements CommandLineRunner {
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
         workoutTable.setName("Three days workout- First Day");
-        User byUserNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
-        if (byUserNameAndPassword != null) workoutTable.setUser(byUserNameAndPassword);
+        Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
+        if (userNameAndPassword.isPresent()) {
+            User byUserNameAndPassword = userNameAndPassword.get();
+            workoutTable.setUser(byUserNameAndPassword);
+
+        }
         workoutTable.setLevel('C');
         workoutTableDao.save(workoutTable);
     }
@@ -119,8 +127,12 @@ public class DBSeeder implements CommandLineRunner {
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
         workoutTable.setName("Three days workout- Second Day");
-        User byUserNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
-        if (byUserNameAndPassword != null) workoutTable.setUser(byUserNameAndPassword);
+        Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
+        if (userNameAndPassword.isPresent()) {
+
+            User byUserNameAndPassword = userNameAndPassword.get();
+            workoutTable.setUser(byUserNameAndPassword);
+        }
         workoutTable.setLevel('C');
         workoutTableDao.save(workoutTable);
     }
@@ -130,8 +142,11 @@ public class DBSeeder implements CommandLineRunner {
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
         workoutTable.setName("Three days workout- Third Day");
-        User byUserNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
-        if (byUserNameAndPassword != null) workoutTable.setUser(byUserNameAndPassword);
+        Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
+        if (userNameAndPassword.isPresent()) {
+            User byUserNameAndPassword = userNameAndPassword.get();
+            workoutTable.setUser(byUserNameAndPassword);
+        }
         workoutTable.setLevel('C');
         workoutTableDao.save(workoutTable);
     }

@@ -28,7 +28,7 @@ public class TeamController {
     }
 
     @GetMapping("leader/{id}")
-    public TeamDto getTeamOfLeader(@PathVariable Integer id) throws TeamNotFoundException {
+    public TeamDto getTeamOfLeader(@PathVariable Integer id) {
         return teamConverter.transformToTeamDtoFromEntity(teamService.getTeamOfLeader(id));
     }
 

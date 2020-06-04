@@ -38,16 +38,20 @@ public class ClassDirectedService {
     }
 
     public List<ClassDirected> getAllClassDirectedOfDayAndGym(String dayOfWeek, Integer id) {
-        return classDirectedDao.findAllByClassSchedule_DayOfWeekAndGym_IdOrderByClassSchedule_StartTimeAsc(dayOfWeek, id);
+        return classDirectedDao
+                .findAllByClassSchedule_DayOfWeekAndGym_IdOrderByClassSchedule_StartTimeAsc(dayOfWeek, id);
     }
 
     public List<ClassDirected> getAllClassDirectedOfMonitorAndDay(Integer id, String dayOfWeek) {
-        return classDirectedDao.findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(id, dayOfWeek);
+        return classDirectedDao
+                .findAllByAssignedMonitor_IdAndClassSchedule_DayOfWeekOrderByClassSchedule_StartTimeAsc(id, dayOfWeek);
     }
 
     public ClassDirected assignMonitor(UserTypeMonitorDto monitor, Integer classId) {
-        ClassDirected classDirected = classDirectedDao.findById(classId).orElseThrow(ClassDirectedNotFoundException::new);
-        User monitorDB = userDao.findByIdAndRole(monitor.getId(),"monitor").orElseThrow(UserNotFoundException::new);
+        ClassDirected classDirected = classDirectedDao.findById(classId)
+                .orElseThrow(ClassDirectedNotFoundException::new);
+        User monitorDB = userDao.findByIdAndRole(monitor.getId(),"monitor").orElseThrow(
+                ()-> new UserNotFoundException("The monitor with the name " + monitor.getName() + " not exist"));
 
 
         classDirected.setAssignedMonitor(monitorDB);

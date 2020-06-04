@@ -19,7 +19,8 @@ public class UserConverter {
 
     public UserTypeMonitorDto transformToMonitorTypeFromEntity(User user) {
         UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
-        if (!user.getRole().equals("monitor")) throw new UserNotFoundException();
+        if (!user.getRole().equals("monitor"))
+            throw new UserNotFoundException("The user with userName "+user.getUserName() + " is not a monitor");
 
         userTypeMonitorDto.setId(user.getId());
         userTypeMonitorDto.setName(user.getName());
