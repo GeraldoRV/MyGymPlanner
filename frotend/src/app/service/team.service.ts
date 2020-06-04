@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Global} from '../utilities/global';
 import {Team} from '../model/team';
+import {TeamDto} from '../dto/team.dto';
 
 @Injectable()
 export class TeamService {
@@ -24,6 +25,6 @@ export class TeamService {
   }
 
   getTeamByLeader(id: number) {
-    return this._http.get<Team>(this.baseUrl + '/leader/' + id);
+    return this._http.get<TeamDto>(this.baseUrl + '/leader/' + id);
   }
 }

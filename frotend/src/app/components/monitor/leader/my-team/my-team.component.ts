@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../../model/user';
 import {TeamService} from '../../../../service/team.service';
 import {LoginService} from '../../../../service/login.service';
-import {Team} from '../../../../model/team';
+import {TeamDto} from '../../../../dto/team.dto';
+import {UserTypeMonitorDto} from '../../../../dto/user-type-monitor.dto';
 
 @Component({
   selector: 'app-my-team',
@@ -10,8 +10,8 @@ import {Team} from '../../../../model/team';
   styleUrls: ['./my-team.component.css']
 })
 export class MyTeamComponent implements OnInit {
-  members: User[];
-  myTeam: Team;
+  members: UserTypeMonitorDto[];
+  myTeam: TeamDto;
   teamName: string;
 
   constructor(private _teamService: TeamService, private _loginUser: LoginService) {

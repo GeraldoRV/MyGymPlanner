@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.converter.TeamConverter;
+import main.dto.TeamDto;
 import main.exception.NotValidTeamException;
 import main.exception.TeamNotFoundException;
 import main.model.Team;
@@ -13,9 +15,11 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class TeamController {
     private final TeamService teamService;
+    private final TeamConverter teamConverter;
 
-    public TeamController(TeamService teamService) {
+    public TeamController(TeamService teamService, TeamConverter teamConverter) {
         this.teamService = teamService;
+        this.teamConverter = teamConverter;
     }
 
     @GetMapping
@@ -24,8 +28,8 @@ public class TeamController {
     }
 
     @GetMapping("leader/{id}")
-    public Team getTeamOfLeader(@PathVariable Integer id) throws TeamNotFoundException {
-        return teamService.getTeamOfLeader(id);
+    public TeamDto getTeamOfLeader(@PathVariable Integer id) throws TeamNotFoundException {
+        return teamConverter.transformToTeamDtoFromEntity(teamService.getTeamOfLeader(id));
     }
 
     @PostMapping

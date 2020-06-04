@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Team} from '../../../../model/team';
 import {TypeClassService} from '../../../../service/type-class.service';
 import {TypeClassLeaderDto} from '../../../../dto/type-class-leader.dto';
 import {Router} from '@angular/router';
+import {TeamDto} from '../../../../dto/team.dto';
 
 @Component({
   selector: 'app-assigned-classes',
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./assigned-classes.component.css']
 })
 export class AssignedClassesComponent implements OnInit {
-  @Input() team: Team;
+  @Input() team: TeamDto;
   classes: TypeClassLeaderDto[];
 
   constructor(private typeClassService: TypeClassService, private  route: Router) {
