@@ -7,7 +7,6 @@ public class TeamDto {
     private String name;
     private UserTypeMonitorDto leader;
     private List<UserTypeMonitorDto> members;
-    private List<TypeClassDtoForLeader> typeClasses;
 
     public Integer getId() {
         return id;
@@ -41,11 +40,4 @@ public class TeamDto {
         this.members = members;
     }
 
-    public List<TypeClassDtoForLeader> getTypeClasses() {
-        return typeClasses;
-    }
-
-    public void setTypeClasses(List<TypeClassDtoForLeader> typeClasses) {
-        this.typeClasses = typeClasses;
-    }
 }

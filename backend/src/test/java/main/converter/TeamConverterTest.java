@@ -1,5 +1,6 @@
 package main.converter;
 
+import main.dto.TeamDto;
 import main.dto.TeamDtoForAdmin;
 import main.model.Team;
 import org.junit.After;
@@ -33,5 +34,18 @@ public class TeamConverterTest {
 
         assertEquals(team.getId(), teamDtoForAdmin.getId());
         assertEquals(team.getName(), teamDtoForAdmin.getName());
+    }
+    @Test
+    public void givenATeamEntity_whenTransformToTeamDtoFromEntity_returnADtoOfTheEntity() {
+        Team team = new Team();
+        team.setId(1);
+        team.setName("Team T");
+
+        TeamDto teamDto = teamConverter.transformToTeamDtoFromEntity(team);
+
+        assertEquals(team.getId(), teamDto.getId());
+        assertEquals(team.getName(), teamDto.getName());
+        assertNull(teamDto.getLeader());
+        assertEquals(0,teamDto.getMembers().size());
     }
 }
