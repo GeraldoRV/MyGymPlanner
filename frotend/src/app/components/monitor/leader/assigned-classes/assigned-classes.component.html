@@ -1,13 +1,18 @@
 <h1>Classes</h1>
 <table class="table">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Number of classes</th>
     <th>Assigned</th>
   </tr>
+  </thead>
+
+  <tbody>
   <tr *ngFor="let typeClass of classes" (click)="seeClass(typeClass)">
     <td>{{typeClass.name}}</td>
     <td>{{typeClass.nClassesDirected}}</td>
     <td>{{typeClass.nClassesDirectedWithMonitor}}</td>
   </tr>
+  </tbody>
 </table>
