@@ -20,10 +20,6 @@ public class TeamConverterTest {
     @Autowired
     private TeamConverter teamConverter;
 
-    @After
-    public void tearDown() {
-    }
-
     @Test
     public void givenATeamEntity_whenTransformToTeamDtoAdminFromEntity_returnADtoOfTheEntity() {
         Team team = new Team();

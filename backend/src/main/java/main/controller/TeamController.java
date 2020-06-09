@@ -3,7 +3,6 @@ package main.controller;
 import main.converter.TeamConverter;
 import main.dto.TeamDto;
 import main.exception.NotValidTeamException;
-import main.exception.TeamNotFoundException;
 import main.model.Team;
 import main.service.TeamService;
 import org.springframework.web.bind.annotation.*;

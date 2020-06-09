@@ -53,7 +53,6 @@ public class ClassDirectedService {
         User monitorDB = userDao.findByIdAndRole(monitor.getId(),"monitor").orElseThrow(
                 ()-> new UserNotFoundException("The monitor with the name " + monitor.getName() + " not exist"));
 
-
         classDirected.setAssignedMonitor(monitorDB);
 
         return classDirectedDao.save(classDirected);

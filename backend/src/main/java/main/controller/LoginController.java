@@ -1,6 +1,5 @@
 package main.controller;
 
-import main.exception.UserNotFoundException;
 import main.model.User;
 import main.service.UserService;
 import org.springframework.web.bind.annotation.*;

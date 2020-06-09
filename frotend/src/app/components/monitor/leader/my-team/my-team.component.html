@@ -1,20 +1,22 @@
-<app-assigned-classes *ngIf="myTeam" [team]="myTeam"></app-assigned-classes>
-<h2>{{teamName}}</h2>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Full Name</th>
-    <th scope="col">UserName</th>
-    <th scope="col">Nº Classes assigned</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of members; let i = index">
-    <th scope="row">{{i + 1}}</th>
-    <td>{{user.name}}</td>
-    <td>{{user.userName}}</td>
-    <td>{{user.nClassAssigned}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <app-assigned-classes *ngIf="myTeam" [team]="myTeam"></app-assigned-classes>
+  <h2>{{teamName}}</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Nº Classes assigned</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of members; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.userName}}</td>
+      <td>{{user.nClassAssigned}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,7 +3,6 @@ package main.converter;
 import main.dto.ClassDirectedDtoToAssign;
 import main.model.ClassDirected;
 import main.model.ClassSchedule;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

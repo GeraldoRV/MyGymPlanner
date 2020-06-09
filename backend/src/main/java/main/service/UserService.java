@@ -10,7 +10,6 @@ import main.model.WorkingHours;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -22,6 +21,11 @@ public class UserService {
     public UserService(UserDao userDao, TeamDAO teamDAO) {
         this.userDao = userDao;
         this.teamDAO = teamDAO;
+    }
+
+    public User login(User user) {
+        return userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword())
+                .orElseThrow(() -> new UserNotFoundException("UserName or password is incorrect"));
     }
 
     public List<User> getAll() {
@@ -51,11 +55,6 @@ public class UserService {
         }
 
         return null;
-    }
-
-    public User login(User user) {
-        return userDao.findByUserNameAndPassword(user.getUserName(), user.getPassword())
-                .orElseThrow(() -> new UserNotFoundException("UserName or password is incorrect"));
     }
 
     private boolean isValidUser(User user) {

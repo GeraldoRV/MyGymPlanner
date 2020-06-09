@@ -24,6 +24,10 @@ public class TypeClassService {
         return (List<TypeClass>) typeClassDAO.findAll();
     }
 
+    public List<TypeClass> getAllByTeam(Integer id) {
+        return typeClassDAO.findAllByTeam_Id(id);
+    }
+
     public TypeClass addTeam(TypeClassDtoForAdmin typeClassDtoForAdmin, Integer teamId) {
         TypeClass typeClass = typeClassDAO.findById(typeClassDtoForAdmin.getId())
                 .orElseThrow(() ->
@@ -31,10 +35,6 @@ public class TypeClassService {
         typeClass.setTeam(teamDAO.findById(teamId).orElseThrow(TeamNotFoundException::new));
 
         return typeClassDAO.save(typeClass);
-    }
-
-    public List<TypeClass> getAllByTeam(Integer id) {
-        return typeClassDAO.findAllByTeam_Id(id);
     }
 }
 

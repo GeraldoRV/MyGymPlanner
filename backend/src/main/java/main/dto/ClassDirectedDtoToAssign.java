@@ -1,7 +1,6 @@
 package main.dto;
 
 import main.model.ClassSchedule;
-import main.model.User;
 
 public class ClassDirectedDtoToAssign {
     private Integer id;

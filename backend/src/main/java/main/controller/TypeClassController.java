@@ -38,7 +38,8 @@ public class TypeClassController {
     }
 
     @PutMapping("add-team/{teamId}")
-    public TypeClassDtoForAdmin addTeam(@Valid @RequestBody TypeClassDtoForAdmin typeClassDtoForAdmin, @PathVariable Integer teamId) {
+    public TypeClassDtoForAdmin addTeam(@Valid @RequestBody TypeClassDtoForAdmin typeClassDtoForAdmin,
+                                        @PathVariable Integer teamId) {
         return typeClassConverter.transformToAdminFromEntity(typeClassService.addTeam(typeClassDtoForAdmin, teamId));
     }
 }
