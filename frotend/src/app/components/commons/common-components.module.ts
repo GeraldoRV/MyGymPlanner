@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
-import {AlertComponent} from '../alert/alert.component';
-import {ClassDirectedComponent} from '../class-directed/class-directed.component';
+import {AlertComponent} from './alert/alert.component';
+import {ClassDirectedComponent} from './class-directed/class-directed.component';
 import {NgbAlertModule, NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';

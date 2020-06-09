@@ -16,7 +16,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'monitor/class/:id', component: ClassDetailsLeaderComponent,
+    path: 'monitor/class/:id/:name', component: ClassDetailsLeaderComponent,
     canActivate: [AuthGuard]
   },
   {

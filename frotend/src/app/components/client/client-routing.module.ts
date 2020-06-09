@@ -5,7 +5,7 @@ import {AuthGuard} from '../../service/authentication/auth.guard';
 import {TablesComponent} from './tables/tables.component';
 import {TableComponent} from './table/table.component';
 import {ExerciseDetailsComponent} from './exercise-details/exercise-details.component';
-import {ClassDirectedComponent} from '../class-directed/class-directed.component';
+import {ClassDirectedComponent} from '../commons/class-directed/class-directed.component';
 
 const routes: Routes = [
   {

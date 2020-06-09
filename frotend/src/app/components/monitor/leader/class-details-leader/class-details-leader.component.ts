@@ -6,6 +6,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AssignMonitorModalComponent} from './assign-monitor-modal/assign-monitor-modal.component';
 import {LoginService} from '../../../../service/login.service';
 import {User} from '../../../../model/user';
+import {UserTypeMonitorDto} from '../../../../dto/user-type-monitor.dto';
 
 @Component({
   selector: 'app-class-details-leader',
@@ -15,6 +16,7 @@ import {User} from '../../../../model/user';
 export class ClassDetailsLeaderComponent implements OnInit {
   classes: ClassDirectedToAssignDto[];
   private userLogged: User;
+  className: string;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private classDirectedService: ClassDirectedService, private modalService: NgbModal,
@@ -23,6 +25,7 @@ export class ClassDetailsLeaderComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
+    this.className = this.route.snapshot.paramMap.get('name');
     this.userLogged = this.loginService.getUser();
     this.classDirectedService.getAllClassesOfTypeClass(id).subscribe(res => {
       this.classes = res;
@@ -40,5 +43,12 @@ export class ClassDetailsLeaderComponent implements OnInit {
         this.classes[index] = result;
       }
     });
+  }
+
+  getButtonName(assignedMonitor: UserTypeMonitorDto) {
+    if (assignedMonitor !== null) {
+      return 'Change to';
+    }
+    return 'Assign to';
   }
 }

@@ -22,8 +22,8 @@ export class AssignedClassesComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  seeClass(id: number) {
-    this.route.navigate(['monitor/class', id]);
+  seeClass(typeClass: TypeClassLeaderDto) {
+    this.route.navigate(['monitor/class', typeClass.id, typeClass.name]);
 
   }
 }

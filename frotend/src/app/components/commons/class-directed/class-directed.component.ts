@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from '../../service/login.service';
-import {ClassDirectedService} from '../../service/class-directed.service';
-import {ClassDirected} from '../../model/class-directed';
+import {LoginService} from '../../../service/login.service';
+import {ClassDirectedService} from '../../../service/class-directed.service';
+import {ClassDirected} from '../../../model/class-directed';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
-import {User} from '../../model/user';
+import {User} from '../../../model/user';
 import {Router} from '@angular/router';
-import {ClassSchedule} from '../../model/class-schedule';
+import {ClassSchedule} from '../../../model/class-schedule';
 
 @Component({
   selector: 'app-class-directed',

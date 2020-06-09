@@ -5,7 +5,7 @@
     <th>Number of classes</th>
     <th>Assigned</th>
   </tr>
-  <tr *ngFor="let typeClass of classes" (click)="seeClass(typeClass.id)">
+  <tr *ngFor="let typeClass of classes" (click)="seeClass(typeClass)">
     <td>{{typeClass.name}}</td>
     <td>{{typeClass.nClassesDirected}}</td>
     <td>{{typeClass.nClassesDirectedWithMonitor}}</td>

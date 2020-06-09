@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AlertComponent} from '../components/alert/alert.component';
+import {AlertComponent} from '../components/commons/alert/alert.component';
 
 @Injectable()
 export class AlertService {

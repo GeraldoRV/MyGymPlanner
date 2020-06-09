@@ -1,4 +1,5 @@
 <div *ngIf="classes" class="container">
+  <h2>{{className}} classes</h2>
   <div *ngFor="let classDirected of classes"  class="card">
     <div  class="card-body">
       <div class="card-title">
@@ -10,7 +11,9 @@
       <div class="card-text">
         {{classDirected.assignedMonitor?.name || "None assigned"}}
       </div>
-      <button class="btn btn-success" (click)="open(classDirected.id)">Assign to</button>
+      <button class="btn btn-success" (click)="open(classDirected.id)">
+        {{getButtonName(classDirected.assignedMonitor)}}
+      </button>
     </div>
   </div>
 </div>
