@@ -1,13 +1,13 @@
 <div class="container py-3">
   <ngb-tabset class="tabSet" (tabChange)="beforeChange($event)">
-    <ngb-tab id="tab-routines" title="Routines">
+    <ngb-tab id="tab-routines" title="Rutinas">
       <ng-template ngbTabContent>
         <table class="table">
           <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Level</th>
+            <th>Nombre</th>
+            <th>Nivel</th>
           </tr>
           </thead>
           <tbody>
@@ -20,14 +20,14 @@
         </table>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-myRoutines" title="My Routines">
+    <ngb-tab id="tab-myRoutines" title="Mis Rutinas">
       <ng-template ngbTabContent>
         <table class="table">
           <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Level</th>
+            <th>Nombre</th>
+            <th>Nivel</th>
             <th></th>
           </tr>
           </thead>
@@ -36,7 +36,8 @@
             <td>{{i + 1}}</td>
             <td>{{table.name}}</td>
             <td>{{table.level}}</td>
-            <td><button class="btn btn-danger" (click)="$event.stopPropagation();deleteRoutine(table.id)"><fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button></td>
+            <td><button class="btn btn-danger" (click)="$event.stopPropagation();deleteRoutine(table.id)">
+              <fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button></td>
           </tr>
           </tbody>
         </table>

@@ -47,7 +47,11 @@ export class LoginComponent implements OnInit {
 
   private errorMessageAlert(error: HttpErrorResponse) {
     this.alertService.setType('danger');
-    this.alertService.setMessage(error.error.message);
+    let message = error.error.message;
+    if (error.error.status === 404) {
+      message = 'Usuario o contraseña incorrectos.';
+    }
+    this.alertService.setMessage(message);
     this.alertService.setDismissible(false);
     this.alertService.show();
     this.alertService.setTimeout(5000);

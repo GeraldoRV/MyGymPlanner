@@ -5,25 +5,25 @@
 
       <div class="form-group col-md-9">
 
-        <label for="name">Full Name</label>
+        <label for="name">Nombre completo</label>
         <input class="form-control" type="text" formControlName="name" id="name">
         <div *ngIf="controls.name.invalid && ( submit ||controls.name.dirty || controls.name.touched)"
              class="text-danger">
 
           <div *ngIf="controls.name.errors.required">
-            Name is required.
+            Se necesita el nombre
           </div>
         </div>
       </div>
       <div class="form-group col-md">
 
-        <label for="username">Username</label>
+        <label for="username">Nick de usuario</label>
         <input class="form-control" type="text" formControlName="userName" id="username">
         <div *ngIf="controls.userName.invalid && (submit || controls.userName.dirty || controls.userName.touched)"
              class="text-danger">
 
           <div *ngIf="controls.userName.errors.required">
-            Username is required.
+            Se necesita un nick
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
 
       <div class="form-group col-md">
 
-        <label for="roles">Role</label>
+        <label for="roles">Rol</label>
         <select class="form-control" formControlName="role" id="roles">
           <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
         </select>
@@ -40,17 +40,17 @@
              class="text-danger">
 
           <div *ngIf="controls.role.errors.required">
-            Role is required.
+            Se necesita el rol
           </div>
         </div>
       </div>
       <div class="form-group col-md">
-        <label for="password-opt">Optional Password</label>
+        <label for="password-opt">Contraseña (opcional)</label>
         <input class="form-control" type="text" formControlName="password" id="password-opt">
 
 
       </div>
     </div>
-    <button class="btn button" type="submit">Add new user</button>
+    <button class="btn button" type="submit">Dar de alta</button>
   </form>
 </div>

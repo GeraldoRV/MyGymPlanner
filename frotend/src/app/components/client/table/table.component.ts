@@ -97,9 +97,9 @@ export class TableComponent implements OnInit {
   }
 
   private builderAddExerciseForm() {
-    this.modalTitle = 'Add Exercise';
-    this.choose = 'Choose ';
-    this.nameButtonAdd = 'Add Exercise';
+    this.modalTitle = 'Añadir un nuevo ejercicio';
+    this.choose = 'Elige ';
+    this.nameButtonAdd = 'Añadir ejercicio';
     this.addForm = this.fb.group(
       {
         sets: ['',
@@ -112,8 +112,8 @@ export class TableComponent implements OnInit {
   }
 
   private builderUpdateExerciseForm() {
-    this.modalTitle = 'Modify Exercise';
-    this.nameButtonAdd = 'Change';
+    this.modalTitle = 'Modificar el ejercicio';
+    this.nameButtonAdd = 'Cambiar';
     this.choose = null;
     this.addForm = this.fb.group(
       {
@@ -166,7 +166,7 @@ export class TableComponent implements OnInit {
     this.newRepetitions = this.addForm.controls.repetitions.value;
     this.addForm.reset();
     this.setDefault();
-    this.nameButtonAdd = 'Click again to another change';
+    this.nameButtonAdd = 'Modificar otra vez';
   }
 
   private submitNewExercises() {
@@ -176,14 +176,14 @@ export class TableComponent implements OnInit {
     newExercise.repetitions = this.addForm.controls.repetitions.value;
     this.newExercises.push(newExercise);
     this.addForm.reset();
-    this.nameButtonAdd = 'Add other exercise';
+    this.nameButtonAdd = 'Añadir otro ejercicio';
 
   }
 
   private routineUpdateMessageAlert() {
     this._alertService.setType('success');
     this._alertService.setDismissible(false);
-    this._alertService.setMessage('Updated done');
+    this._alertService.setMessage('Cambios correctos');
     this._alertService.show();
     this._alertService.setTimeout(2000);
   }

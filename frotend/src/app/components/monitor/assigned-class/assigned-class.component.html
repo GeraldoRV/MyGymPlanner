@@ -1,9 +1,9 @@
 <div class="container">
   <h1>{{classDirectedName}}</h1>
-  <button class="btn btn-success modal-mobile" (click)="openModal(content)">Add client</button>
+  <button class="btn btn-success modal-mobile" (click)="openModal(content)">Añadir socio</button>
   <div class="row">
     <div class="col">
-      <p *ngIf="clientListOfClass?.length === 0">There are not clients</p>
+      <p *ngIf="clientListOfClass?.length === 0">No hay socios</p>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let client of clientListOfClass">
           {{client.name}}
@@ -12,7 +12,7 @@
     </div>
     <div class="col mobile">
       <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
-        <label for="name-to-find">Find client:</label>
+        <label for="name-to-find">Buscar socio por nombre:</label>
         <input class="form-control" id="name-to-find" type="text" formControlName="name"
                placeholder="Write the name...">
         <button class="btn btn-success submit-find-button" type="submit"><fa-icon [icon]="faSearch"></fa-icon> </button>
@@ -23,7 +23,7 @@
           <span>
           {{client.name}}
           </span>
-          <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Add to class</button>
+          <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
         </li>
       </ul>
     </div>
@@ -32,7 +32,7 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Add client</h4>
+    <h4 class="modal-title">Añadir socio</h4>
   </div>
   <div class="modal-body">
     <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
@@ -46,13 +46,13 @@
           <span>
           {{client.name}}
           </span>
-        <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Add to class</button>
+        <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
       </li>
     </ul>
 
   </div>
   <div class="modal-footer">
-    <button class="btn btn-danger" (click)="modal.close()">Close</button>
+    <button class="btn btn-danger" (click)="modal.close()">Cerrar</button>
   </div>
 </ng-template>
 

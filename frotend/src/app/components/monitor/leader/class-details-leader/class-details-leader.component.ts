@@ -47,8 +47,8 @@ export class ClassDetailsLeaderComponent implements OnInit {
 
   getButtonName(assignedMonitor: UserTypeMonitorDto) {
     if (assignedMonitor !== null) {
-      return 'Change to';
+      return 'Cambiar a...';
     }
-    return 'Assign to';
+    return 'Asignar a...';
   }
 }

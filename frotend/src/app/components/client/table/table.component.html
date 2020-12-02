@@ -2,9 +2,9 @@
   <h4>{{nameTable}}</h4>
   <h5>Level {{levelTable}}</h5>
   <app-alert class="message-alert"></app-alert>
-  <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Add new exercise</button>
-  <button *ngIf="userOfTable==='admin'" (click)="saveRoutine()" class="btn my-button-success">Save routine</button>
-  <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Save all changes</button>
+  <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Añadir nuevo ejercicio</button>
+  <button *ngIf="userOfTable==='admin'" (click)="saveRoutine()" class="btn my-button-success">Añadir a "Mis rutinas"</button>
+  <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Guardar todos los cambios</button>
   <div class="card" (click)="seeDetails(exercise)" *ngFor="let exercise of exerciseList">
     <div class="row">
       <div class="col-2">
@@ -20,8 +20,7 @@
               <fa-icon [icon]="faTrashAlt"></fa-icon>
             </button>
             <button class="btn my-button-success"
-                    (click)="$event.stopPropagation();openUpdateExerciseModal(content,exercise)">Change sets or
-              reps
+                    (click)="$event.stopPropagation();openUpdateExerciseModal(content,exercise)">Modificar sets y reps
             </button>
           </div>
         </div>
@@ -41,7 +40,7 @@
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="exerciseType">
-          {{choose}}Exercise
+          {{choose}}ejercicio
         </label>
         <select class="form-control" formControlName="exerciseType" id="exerciseType">
           <option *ngFor="let exerciseType of exerciseTypeList" [ngValue]="exerciseType">{{exerciseType.name}}</option>
@@ -51,7 +50,7 @@
           class="text-danger">
 
           <div *ngIf="controls.exerciseType.errors.required">
-            Exercise is required.
+            Se necesita un ejercicio.
           </div>
         </div>
       </div>
@@ -62,13 +61,13 @@
              class="text-danger">
 
           <div *ngIf="controls.sets.errors.required">
-            Sets is required.
+            Los sets son necesarios
           </div>
           <div *ngIf="controls.sets.errors.min">
-            This number must be higher than 0.
+            Debe ser mayor que 0
           </div>
           <div *ngIf="controls.sets.errors.max">
-            This number is too big.
+            El número es demasiado grande.
           </div>
         </div>
       </div>
@@ -81,13 +80,13 @@
              class="text-danger">
 
           <div *ngIf="controls.repetitions.errors.required">
-            Repetitions is required.
+            Son necesarias el número de repeticiones
           </div>
           <div *ngIf="controls.repetitions.errors.min">
-            This number must be higher than 0.
+            Debe ser mayor que 0
           </div>
           <div *ngIf="controls.repetitions.errors.max">
-            This number is too big.
+            El número es demasiado grande.
           </div>
         </div>
       </div>
@@ -95,7 +94,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn my-button-success" (click)="saveExercises()">Save changes</button>
-    <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
+    <button class="btn my-button-success" (click)="saveExercises()">Guardar los cambios</button>
+    <button class="btn btn-danger" (click)="modal.close()">Cancelar</button>
   </div>
 </ng-template>

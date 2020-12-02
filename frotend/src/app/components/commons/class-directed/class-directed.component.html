@@ -1,6 +1,6 @@
 <div class="container">
   <ngb-tabset class="tabSet" justify="fill" [activeId]="activeId" (tabChange)="beforeChange($event)">
-    <ngb-tab id="tab-Monday" title="Monday">
+    <ngb-tab id="tab-Monday" title="Lunes">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfMon">
@@ -8,127 +8,127 @@
               {{classDirected.typeClass.name}}
             </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Tuesday" title="Tuesday">
+    <ngb-tab id="tab-Tuesday" title="Martes">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfTues"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Wednesday" title="Wednesday">
+    <ngb-tab id="tab-Wednesday" title="Miércoles">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfWed"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Thursday" title="Thursday">
+    <ngb-tab id="tab-Thursday" title="Jueves">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfThur"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Friday" title="Friday">
+    <ngb-tab id="tab-Friday" title="Viernes">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfFri"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Saturday" title="Saturday">
+    <ngb-tab id="tab-Saturday" title="Sábado">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfSat"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
       </ng-template>
     </ngb-tab>
-    <ngb-tab id="tab-Sunday" title="Sunday">
+    <ngb-tab id="tab-Sunday" title="Domingo">
       <ng-template ngbTabContent>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let classDirected of classesOfSun"><h5>
             {{classDirected.typeClass.name}}
           </h5>
             <p>
-              {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
-            <small>Capacity: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
             <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Book class
+                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
             </button>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">See class
+            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
         </ul>
