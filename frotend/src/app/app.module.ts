@@ -16,6 +16,7 @@ import {AdminModule} from './components/admin/admin.module';
 import {ClientModule} from './components/client/client.module';
 import {MonitorModule} from './components/monitor/monitor.module';
 import {CommonComponentsModule} from './components/commons/common-components.module';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -26,17 +27,18 @@ import {CommonComponentsModule} from './components/commons/common-components.mod
     NotFoundComponent,
 
   ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    HttpClientModule,
-    CommonComponentsModule,
-    AdminModule,
-    ClientModule,
-    MonitorModule,
-    AppRoutingModule
-  ],
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        HttpClientModule,
+        CommonComponentsModule,
+        AdminModule,
+        ClientModule,
+        MonitorModule,
+        AppRoutingModule,
+        FontAwesomeModule
+    ],
   providers: [LoginService,
     AuthGuard, DatePipe, Global],
   bootstrap: [AppComponent]

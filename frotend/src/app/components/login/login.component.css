@@ -1,7 +1,9 @@
-
+.logo-img{
+  width: -moz-available;
+}
 .login-page {
   margin-top: 25px;
-  width: 30%;
+  width: max-content;
 }
 
 .button {
@@ -14,9 +16,17 @@
   color: white;
 }
 
+.card{
+  width: 500px;
+}
+
+.card-body{
+  padding: 3.25rem;
+}
+
 @media (max-width: 1200px) {
-  .login-page {
-    width: 40%;
+  .card {
+    width: inherit;
   }
 }
 
@@ -24,5 +34,8 @@
   .login-page {
     width: 100%;
     margin-top: 0;
+  }
+  .card {
+    width: inherit;
   }
 }

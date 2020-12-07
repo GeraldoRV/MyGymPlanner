@@ -4,6 +4,7 @@ import {LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
 import {AlertService} from '../../service/alert.service';
 import {HttpErrorResponse} from '@angular/common/http';
+import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ import {HttpErrorResponse} from '@angular/common/http';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submit = false;
+  faKey = faKey;
+  faUser = faUser;
 
   constructor(private fb: FormBuilder, private loginService: LoginService,
               private _route: Router, private alertService: AlertService) {
