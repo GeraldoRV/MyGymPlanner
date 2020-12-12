@@ -40,12 +40,12 @@ public class DBSeeder implements CommandLineRunner {
     }
 
     private void createClassesDirected(Gym gym) {
-        TypeClass gap = newTypeClass("GAP", 45, "The GAP is a maintenance activity that tries to firm and harden our Buttocks, Abdominals and Legs");
-        TypeClass cross_fit = newTypeClass("Cross Fit", 60, "CrossFit is defined as a system of strength training and conditioning based on constantly varied functional exercises performed at a high intensity.");
-        TypeClass pilates = newTypeClass("Pilates", 45, "Pilates exercises are part of an integral method that helps move the deeper muscles of the body, and thus achieve good posture. ... Pilates proposes an \"intelligent\" technique that allows strengthening the muscles of the shoulders, chest and back.");
-        TypeClass cycling = newTypeClass("Indoor Cycle", 45, "The indoor cycle, as the name implies, is cycling indoors. This physical activity is very similar to spinning, they allow us to lose weight and burn calories, improve heart and lung resistance and tone our legs.");
-        TypeClass boxing = newTypeClass("Boxing", 60, "Boxing is a combat sport in which two people, usually wearing protective gloves, throw punches at each other for a predetermined amount of time in a boxing ring");
-        TypeClass zumba = newClassDirected(gym, "09:00", "09:45", "Monday", "monitor", null);
+        TypeClass gap = newTypeClass("GAP", 45, "GAP es una actividad de mantenimiento que intenta reafirmar y endurecer nuestros glúteos, abdominales y piernas.");
+        TypeClass cross_fit = newTypeClass("Cross Fit", 60, "CrossFit se define como un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a alta intensidad.");
+        TypeClass pilates = newTypeClass("Pilates", 45, "Los ejercicios de Pilates forman parte de un método integral que ayuda a mover los músculos más profundos del cuerpo, y así lograr una buena postura. ... Pilates propone una técnica \"inteligente\" que permite fortalecer los músculos de los hombros, el pecho y la espalda.");
+        TypeClass cycling = newTypeClass("Indoor Cycle", 45, "Esta actividad física es muy similar al spinning, nos permiten adelgazar y quemar calorías, mejorar la resistencia cardíaca y pulmonar y tonificar nuestras piernas.");
+        TypeClass boxing = newTypeClass("Boxeo", 60, "El boxeo es un deporte de combate en el que dos personas, por lo general con guantes protectores, se lanzan golpes durante un tiempo predeterminado en un ring de boxeo.");
+        TypeClass zumba = newClassDirected(gym, "09:00", "09:45", "Lunes", "monitor", null);
         newClassDirected(gym, "09:45", "10:30", "Monday", "monitor", pilates);
         newClassDirected(gym, "10:30", "11:30", "Tuesday", "noOne", cross_fit);
         newClassDirected(gym, "10:30", "11:30", "Tuesday", "monitor", boxing);
@@ -82,10 +82,7 @@ public class DBSeeder implements CommandLineRunner {
         if (typeClass == null) {
             TypeClass zumba = new TypeClass();
             zumba.setName("Zumba");
-            zumba.setDescription("Zumba dancing is best described as a fun, " +
-                    "joyful Latin inspired fitness class that combines all the rhythms in Latin music. " +
-                    "Zumba applies dance moves from Salsa, Cumbia, Merengue, Rumba, Mambo, Belly Dance, " +
-                    "Flamenco, Samba, Tango, Reggaeton and of course Hip Hop.");
+            zumba.setDescription("El baile de zumba se describe mejor como divertido alegre clase de fitness de inspiración latina que combina todos los ritmos de la música latina. Zumba aplica movimientos de baile de salsa, cumbia, merengue, rumba, mambo, danza del vientre, Flamenco, Samba, Tango, Reggaeton y por supuesto Hip Hop.");
             zumba.setDuration(45);
             classDirected.setTypeClass(zumba);
         } else {
@@ -111,7 +108,7 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseFirst();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Three days workout- First Day");
+        workoutTable.setName("Entrenamiento de 3 días- Primer día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
             User byUserNameAndPassword = userNameAndPassword.get();
@@ -126,7 +123,7 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseSecond();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Three days workout- Second Day");
+        workoutTable.setName("Entrenamiento de 3 días- Segundo Día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
 
@@ -141,7 +138,7 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseThird();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Three days workout- Third Day");
+        workoutTable.setName("Entrenamiento de 3 días- Tercer Día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
             User byUserNameAndPassword = userNameAndPassword.get();
@@ -155,12 +152,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToChest1 = new Exercise();
         ExerciseType benchPress = new ExerciseType();
         ExerciseCategory chest = new ExerciseCategory();
-        chest.setName("Chest");
+        chest.setName("Pecho");
         benchPress.setCategory(chest);
-        benchPress.setName("Bench Press");
-        benchPress.setDescription("Push dumbbells straight up until arms are fully extended " +
-                "and dumbbells meet above chest. Return dumbbells until slight stretch is felt in" +
-                " chest or shoulder. Repeat");
+        benchPress.setName("Press de banca");
+        benchPress.setDescription("Empuje las mancuernas hacia arriba hasta que los brazos estén completamente extendidos y las mancuernas se encuentren por encima del pecho. Regrese las mancuernas hasta que sienta un ligero estiramiento en el pecho o el hombro. Repetir");
         ExerciseType benchPressSave = exerciseTypeDao.save(benchPress);
         ExerciseCategory chestCategory = benchPressSave.getCategory();
 
@@ -171,13 +166,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToArm1 = new Exercise();
         ExerciseCategory arm = new ExerciseCategory();
         ExerciseType chestPressCloseGrip = new ExerciseType();
-        arm.setName("Arm");
+        arm.setName("Brazos");
         chestPressCloseGrip.setCategory(arm);
-        chestPressCloseGrip.setName("Chest Press - Close Grip");
-        chestPressCloseGrip.setDescription("Lie flat on the bench using a close grip " +
-                "(about shoulder width). Lift the bar with assistance from the rack, arms locked," +
-                " and holding bar straight over you. Inhale and slowly bring the bar down " +
-                "toward your chest keeping elbows close to your body for the entire exercise.");
+        chestPressCloseGrip.setName("Prensa de pecho: agarre cerrado");
+        chestPressCloseGrip.setDescription("Acuéstese en el banco con un agarre estrecho. Levante la barra con la ayuda de la rejilla, los brazos bloqueados y sujete la barra directamente sobre usted. Inhale y lleve lentamente la barra hacia su pecho manteniendo los codos cerca de su cuerpo durante todo el ejercicio.");
         ExerciseType chestPressCloseGripSave = exerciseTypeDao.save(chestPressCloseGrip);
         armCategory = chestPressCloseGripSave.getCategory();
 
@@ -188,11 +180,8 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToChest2 = new Exercise();
         ExerciseType pushUp = new ExerciseType();
         pushUp.setCategory(chestCategory);
-        pushUp.setName("Push Up");
-        pushUp.setDescription("Get down on all fours, placing your hands " +
-                "slightly wider than your shoulders. Straighten your arms and legs. " +
-                "Lower your body until your chest nearly touches the floor. " +
-                "Pause, then push yourself back up. Repeat.");
+        pushUp.setName("Flexiones");
+        pushUp.setDescription("Póngase a cuatro patas, colocando las manos un poco más anchas que los hombros. Estire los brazos y las piernas. Baje su cuerpo hasta que su pecho casi toque el piso. Haz una pausa y luego vuelve a subir. Repetir.");
         ExerciseType pushUpSave = exerciseTypeDao.save(pushUp);
         exerciseToChest2.setSets(3);
         exerciseToChest2.setRepetitions(12);
@@ -200,9 +189,8 @@ public class DBSeeder implements CommandLineRunner {
 
         Exercise exerciseToArm2 = new Exercise();
         ExerciseType tricepsExtensionOverhead = new ExerciseType();
-        tricepsExtensionOverhead.setName("Triceps Extension - Overhead (Cable)");
-        tricepsExtensionOverhead.setDescription("Extends elbow until arms are straight." +
-                " Return and repeat");
+        tricepsExtensionOverhead.setName("Extensión de tríceps: aérea (cable)");
+        tricepsExtensionOverhead.setDescription("Extienda el codo hasta que los brazos estén rectos. Vuelve y repite");
         tricepsExtensionOverhead.setCategory(armCategory);
         ExerciseType tricepsExtensionOverheadSave = exerciseTypeDao.save(tricepsExtensionOverhead);
         exerciseToArm2.setExerciseType(tricepsExtensionOverheadSave);
@@ -212,9 +200,8 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToArm3 = new Exercise();
         ExerciseType benchDip = new ExerciseType();
         benchDip.setCategory(armCategory);
-        benchDip.setDescription("Using arms, lower body until slight stretch is felt or" +
-                " buttocks touch floor. Return and repeat.");
-        benchDip.setName("Bench Dip");
+        benchDip.setDescription("Usando los brazos, baje el cuerpo hasta que sienta un ligero estiramiento o las nalgas toquen el suelo. Vuelve y repite.");
+        benchDip.setName("Triceps en banco");
         ExerciseType benchDipSave = exerciseTypeDao.save(benchDip);
         exerciseToArm3.setExerciseType(benchDipSave);
         exerciseToArm3.setSets(3);
@@ -222,7 +209,7 @@ public class DBSeeder implements CommandLineRunner {
 
         Exercise exerciseToAbs = new Exercise();
         ExerciseCategory abs = new ExerciseCategory();
-        abs.setName("Abdominal");
+        abs.setName("Abdominales");
         ExerciseType bodyWeightCrunchXBody = new ExerciseType();
         bodyWeightCrunchXBody.setCategory(abs);
         bodyWeightCrunchXBody.setName("BodyWeight Crunch, Cross Body");
@@ -241,14 +228,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToBack1 = new Exercise();
         ExerciseType seatedRow = new ExerciseType();
         ExerciseCategory back = new ExerciseCategory();
-        back.setName("Back");
+        back.setName("Espalda");
         seatedRow.setCategory(back);
-        seatedRow.setName("Seated Row (Cable)");
-        seatedRow.setDescription("Seated with back straight, " +
-                "knees slightly bent and arms fully extended. Grasp the close grip" +
-                " handle with palms facing each other. Extend your body forward, " +
-                "bending at the hips. Keep your back flat. Bring your arms in towards you" +
-                " keeping your elbows close to your sides.");
+        seatedRow.setName("Remo sentado (cable)");
+        seatedRow.setDescription("Sentado con la espalda recta, las rodillas ligeramente flexionadas y los brazos completamente extendidos. Sujete el asa con las palmas una frente a la otra. Extienda su cuerpo hacia adelante, doblando las caderas. Mantenga la espalda plana. Lleve los brazos hacia usted manteniendo los codos juntos a tus lados ");
         ExerciseType seatedRowSave = exerciseTypeDao.save(seatedRow);
         ExerciseCategory backCategory = seatedRowSave.getCategory();
 
@@ -260,9 +243,7 @@ public class DBSeeder implements CommandLineRunner {
         ExerciseType proLatBarPullDown = new ExerciseType();
         proLatBarPullDown.setCategory(backCategory);
         proLatBarPullDown.setName("Pro-Lat-Bar Pull down(cable)");
-        proLatBarPullDown.setDescription("Grasp pro lat bar with wide parallel grip. " +
-                "Sit with thighs under supports. Pull down cable bar to upper chest. " +
-                "Return until arms and shoulders are fully extended.");
+        proLatBarPullDown.setDescription("Sujete la barra lateral profesional con un agarre ancho paralelo. Siéntese con los muslos debajo de los soportes. Baje la barra de cables hacia la parte superior del pecho. Regrese hasta que los brazos y hombros estén completamente extendidos");
         ExerciseType proLatBarPullDownSave = exerciseTypeDao.save(proLatBarPullDown);
 
         exerciseToBack2.setExerciseType(proLatBarPullDownSave);
@@ -272,12 +253,8 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToArm1 = new Exercise();
         ExerciseType bicepsCurl = new ExerciseType();
         bicepsCurl.setCategory(armCategory);
-        bicepsCurl.setName("Biceps Curl (Cable)");
-        bicepsCurl.setDescription("Grab the cable bar at shoulder width and keep the " +
-                "elbows close to the torso. The palm of your hands should be facing up" +
-                " (supinated grip). This will be your starting position. While holding the " +
-                "upper arms stationary, curl the weights while contracting the biceps as you" +
-                " breathe out.");
+        bicepsCurl.setName("Curl de bíceps (cable)");
+        bicepsCurl.setDescription("Agarre la barra a la altura de los hombros y mantenga los codos cerca del torso. La palma de sus manos debe estar hacia arriba (agarre supinado). Esta será su posición inicial. Mientras sostiene la parte superior de los brazos estacionaria, doble las pesas mientras contrae bíceps mientras exhala ");
         ExerciseType bicepsCurlSave = exerciseTypeDao.save(bicepsCurl);
         exerciseToArm1.setSets(3);
         exerciseToArm1.setRepetitions(15);
@@ -285,7 +262,7 @@ public class DBSeeder implements CommandLineRunner {
 
         Exercise exerciseToArm2 = new Exercise();
         ExerciseType bicepsCurlDumbbell = new ExerciseType();
-        bicepsCurlDumbbell.setName("Biceps Curl (Dumbbell)");
+        bicepsCurlDumbbell.setName("Curl de bíceps (mancuernas)");
         bicepsCurlDumbbell.setDescription("Stand up and hold one dumbbell with " +
                 "each hand down the side of your body, palms facing each other." +
                 " Raise both dumbbells until they reach your shoulders' height and" +
@@ -416,9 +393,9 @@ public class DBSeeder implements CommandLineRunner {
         monitor.setRole("monitor");
         monitor.setGym(gym);
         WorkingHours workingHours = new WorkingHours();
-        workingHours.setMondayToFriday("08:00 to 15:00");
+        workingHours.setMondayToFriday("08:00 a 15:00");
         workingHours.setSaturday("Free");
-        workingHours.setSunday("08:00 to 15:00");
+        workingHours.setSunday("08:00 a 15:00");
         monitor.setWorkingHours(workingHours);
         return Arrays.asList(admin, monitor, client);
     }
@@ -428,9 +405,9 @@ public class DBSeeder implements CommandLineRunner {
         gym.setName("FalseFit");
         gym.setDirection("Fake Street, nº 14");
         OpeningHours openingHours = new OpeningHours();
-        openingHours.setMondaysToFridays("08:00 to 23:00");
-        openingHours.setSaturdays("09:00 to 21:00");
-        openingHours.setSundaysAndHolidays("08:00 to 15:00");
+        openingHours.setMondaysToFridays("08:00 a 23:00");
+        openingHours.setSaturdays("09:00 a 21:00");
+        openingHours.setSundaysAndHolidays("08:00 a 15:00");
         gym.setOpeningHours(openingHours);
         return gym;
     }
