@@ -27,18 +27,18 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     NotFoundComponent,
 
   ],
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-        BrowserModule,
-        HttpClientModule,
-        CommonComponentsModule,
-        AdminModule,
-        ClientModule,
-        MonitorModule,
-        AppRoutingModule,
-        FontAwesomeModule
-    ],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    HttpClientModule,
+    CommonComponentsModule,
+    AdminModule,
+    ClientModule,
+    MonitorModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+  ],
   providers: [LoginService,
     AuthGuard, DatePipe, Global],
   bootstrap: [AppComponent]
