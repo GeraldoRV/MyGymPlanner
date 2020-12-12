@@ -1,0 +1,21 @@
+.container{
+  padding: 25px 100px;
+}
+
+.button{
+  background-color: #8bc34a;
+  color: white;
+  margin-bottom: 5px;
+  float: right;
+}
+
+table{
+  width: inherit;
+}
+
+@media (max-width: 740px) {
+  .container{
+    padding: 0;
+  }
+}
+

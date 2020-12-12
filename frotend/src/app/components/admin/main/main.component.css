@@ -1,9 +1,11 @@
 table{
   width: inherit;
 }
+
 .container{
   padding: 25px 100px;
 }
+
 #form-button{
   position: relative;
 }

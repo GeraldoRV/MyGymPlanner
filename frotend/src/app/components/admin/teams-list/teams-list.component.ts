@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TeamService} from '../../../service/team.service';
 import {Team} from '../../../model/team';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-teams-list',
@@ -9,6 +11,9 @@ import {Team} from '../../../model/team';
 })
 export class TeamsListComponent implements OnInit {
   teams: Team[];
+  dataSource = null;
+  @ViewChild(MatSort) sort: MatSort;
+  displayedColumns: string[] = ['name', 'leader.name', 'members.length'];
 
   constructor(private _teamService: TeamService) {
   }
@@ -16,6 +21,8 @@ export class TeamsListComponent implements OnInit {
   ngOnInit() {
     this._teamService.getAllTeams().subscribe(result => {
       this.teams = result;
+      this.dataSource = new MatTableDataSource(this.teams);
+      setTimeout(() => this.dataSource.sort = this.sort);
     }, error => {
       console.log(error);
     });
