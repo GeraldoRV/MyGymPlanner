@@ -1,0 +1,68 @@
+.container {
+  padding: 25px;
+}
+
+#form-box-team {
+  padding: 25px 90px 100px;
+  margin: auto 50px;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+.btn-group-vertical {
+  padding-left: 20px;
+}
+
+#button-group-horizontal {
+  display: none;
+}
+
+.button {
+  background-color: #8bc34a;
+  color: white;
+}
+
+#submit-new-team-form {
+  float: right;
+}
+
+@media (max-width: 1200px) {
+  .col-5 {
+    flex: 0 0 37.667%;;
+  }
+
+  #button-group-vertical {
+    display: contents;
+  }
+}
+
+@media (max-width: 740px) {
+  #form-box-team {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 0;
+  }
+
+
+  #button-group-horizontal {
+    display: contents;
+  }
+
+  .btn-group {
+    margin: 7px auto;
+  }
+
+  #button-group-vertical {
+    display: none;
+  }
+
+  .form-group {
+    display: contents;
+
+  }
+
+  #submit-new-team-form {
+    margin: 2px auto;
+  }
+}
