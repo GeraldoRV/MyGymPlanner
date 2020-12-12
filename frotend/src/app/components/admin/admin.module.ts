@@ -17,6 +17,9 @@ import {TeamService} from '../../service/team.service';
 import {TypeClassService} from '../../service/type-class.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {MatSortModule} from '@angular/material/sort';
     BrowserAnimationsModule,
     AdminRoutingModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   entryComponents: [AddTeamComponent],
   providers: [UserService, TeamService, TypeClassService]

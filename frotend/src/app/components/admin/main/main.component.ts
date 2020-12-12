@@ -28,5 +28,8 @@ export class MainComponent implements OnInit {
       console.log(error);
     });
   }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }

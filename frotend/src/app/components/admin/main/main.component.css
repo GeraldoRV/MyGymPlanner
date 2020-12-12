@@ -1,8 +1,46 @@
 table{
   width: inherit;
 }
+.container{
+  padding: 25px 100px;
+}
+#form-button{
+  position: relative;
+}
+/*Texto del input*/
+::ng-deep input.mat-input-element {
+  color: pink;
+}
+/*No Focus*/
+:host ::ng-deep .mat-form-field-label {
+  color: black;
+}
+:host ::ng-deep .mat-form-field-underline {
+  background-color: black;
+}
+/*Focus*/
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: green;
+}
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: green;
+}
 
 .button{
   background-color: #8bc34a;
   color: white;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+@media (max-width: 740px) {
+  .container{
+    padding: 0;
+  }
+  mat-form-field{
+    margin-left: 5px;
+  }
+  .button {
+    margin-right: 5px;
+  }
 }
