@@ -1,10 +1,15 @@
 <div class="container">
   <h4>{{nameTable}}</h4>
-  <h5>Level {{levelTable}}</h5>
+  <h5>Nivel {{levelTable}}</h5>
   <app-alert class="message-alert"></app-alert>
-  <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Añadir nuevo ejercicio</button>
-  <button *ngIf="userOfTable==='admin'" (click)="saveRoutine()" class="btn my-button-success">Añadir a "Mis rutinas"</button>
-  <button *ngIf="userOfTable==='client'" (click)="saveChanges()" class="btn my-button-success">Guardar todos los cambios</button>
+  <div id="button-group">
+
+    <button class="btn my-button-success" (click)="openAddExercisesModal(content)">Añadir nuevo ejercicio</button>
+    <button (click)="saveRoutine()" [ngClass]="{'mobile':roleUserOfTable==='client'}"
+            class="btn my-button-success">
+      {{getButtonName()}}</button>
+  </div>
+
   <div class="card" (click)="seeDetails(exercise)" *ngFor="let exercise of exerciseList">
     <div class="row">
       <div class="col-2">
@@ -16,12 +21,13 @@
           <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
           <div class="mobile">
             <p class="card-text mb-1">{{exercise.exerciseType.description}} </p>
-            <button class="btn btn-danger" (click)="$event.stopPropagation();remove(exercise)">
-              <fa-icon [icon]="faTrashAlt"></fa-icon>
-            </button>
             <button class="btn my-button-success"
                     (click)="$event.stopPropagation();openUpdateExerciseModal(content,exercise)">Modificar sets y reps
             </button>
+            <button class="btn btn-danger" (click)="$event.stopPropagation();remove(exercise)">
+              <fa-icon [icon]="faTrashAlt"></fa-icon>
+            </button>
+
           </div>
         </div>
 

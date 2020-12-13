@@ -17,12 +17,13 @@ li:hover {
   cursor: pointer;
   background-color: aquamarine;
 }
-
+@media (max-width: 1200px) {
+  .my-btn-success {
+    border: 1px solid;
+  }
+}
 @media (max-width: 740px) {
   .container {
     padding: 10px;
-  }
-  .my-btn-success{
-    border: 1px solid;
   }
 }

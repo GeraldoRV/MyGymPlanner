@@ -1,3 +1,9 @@
+.container{
+  padding: 25px 100px;
+}
+#button-group{
+  padding-bottom: 5px;
+}
 .my-button-success {
   background-color: #8bc34a;
   color: white;
@@ -47,6 +53,9 @@ img {
 }
 
 @media (max-width: 740px) {
+  .container {
+    padding: 10px;
+  }
   .card {
     pointer-events: auto;
   }
@@ -65,5 +74,12 @@ img {
     display: none;
   }
 
+  .my-button-success {
+    float: right;
+  }
+  #button-group{
+    float: right;
+
+  }
 
 }

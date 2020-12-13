@@ -20,7 +20,7 @@ import {ExerciseService} from '../../../service/exercise.service';
 export class TableComponent implements OnInit {
   table: WorkoutTable;
   exerciseList: Exercise[];
-  userOfTable: string;
+  roleUserOfTable: string;
   exerciseTypeList: ExerciseType[] = null;
   addForm: FormGroup;
   private newExercises: Exercise[] = [];
@@ -55,10 +55,18 @@ export class TableComponent implements OnInit {
     this.nameTable = table.name;
     this.levelTable = table.level;
     this.exerciseList = table.exerciseList;
-    this.userOfTable = table.user.role;
+    this.roleUserOfTable = table.user.role;
   }
 
   saveRoutine() {
+    if (this.roleUserOfTable === 'admin') {
+      this.saveToMyRoutines();
+    } else {
+      this.saveChanges();
+    }
+  }
+
+  private saveToMyRoutines() {
     this.table.user = this._loginService.getUser();
     this._wtService.saveTable(this.table).subscribe(table => {
       this.setRoutine(table);
@@ -220,5 +228,12 @@ export class TableComponent implements OnInit {
   seeDetails(exercise: Exercise) {
     this._exerciseService.setExercise(exercise);
     this._route.navigate(['/client/exercise']).then();
+  }
+
+  getButtonName() {
+    if (this.roleUserOfTable === 'admin') {
+      return 'Añadir a "Mis Rutinas"';
+    }
+    return 'Guardas todos los cambios';
   }
 }
