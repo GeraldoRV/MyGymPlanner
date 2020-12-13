@@ -1,6 +1,9 @@
-tbody > tr:hover {
-  cursor: pointer;
-  background-color: #c8e6c9;
+.container{
+  padding: 25px 100px;
+}
+
+table{
+  width: -moz-available;
 }
 
 :host ::ng-deep .tabSet a.nav-link {
@@ -11,7 +14,18 @@ tbody > tr:hover {
   color: #8bc34a;
 }
 
-.btn-danger {
-  padding-top: 1px;
-  padding-bottom: 3px;
+.button-danger {
+  /*background-color: indianred;*/
+  color: indianred;
+}
+
+.button-see{
+  /*background-color: #8bc34a;*/
+  color: #8bc34a;
+}
+
+@media (max-width: 740px) {
+  .container{
+    padding: 0;
+  }
 }

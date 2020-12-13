@@ -1,45 +1,60 @@
-<div class="container py-3">
+<div class="container">
   <ngb-tabset class="tabSet" (tabChange)="beforeChange($event)">
     <ngb-tab id="tab-routines" title="Rutinas">
       <ng-template ngbTabContent>
-        <table class="table">
-          <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Nivel</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let table of tables; let i = index" (click)="seeRoutine(table.id)">
-            <td>{{i + 1}}</td>
-            <td>{{table.name}}</td>
-            <td>{{table.level}}</td>
-          </tr>
-          </tbody>
+        <table *ngIf="dataSourceRoutines!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSourceRoutines" matSort>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let table"> {{table.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nivel</th>
+            <td mat-cell *matCellDef="let table"> {{table.level}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let table">
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="seeRoutine(table.id);$event.stopPropagation()">
+                <fa-icon [icon]="faEye" size="sm"></fa-icon></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let table; columns: displayedColumns;" (click)="isColumnsMobile && seeRoutine(table.id)"></tr>
+
         </table>
       </ng-template>
     </ngb-tab>
     <ngb-tab id="tab-myRoutines" title="Mis Rutinas">
       <ng-template ngbTabContent>
-        <table class="table">
-          <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Nivel</th>
-            <th></th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let table of myTables; let i = index" (click)="seeRoutine(table.id)">
-            <td>{{i + 1}}</td>
-            <td>{{table.name}}</td>
-            <td>{{table.level}}</td>
-            <td><button class="btn btn-danger" (click)="$event.stopPropagation();deleteRoutine(table.id)">
-              <fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button></td>
-          </tr>
-          </tbody>
+        <table *ngIf="dataSourceRoutines!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSourceMyRoutines" matSort>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let table"> {{table.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nivel</th>
+            <td mat-cell *matCellDef="let table"> {{table.level}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let table">
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="$event.stopPropagation();seeRoutine(table.id)">
+                <fa-icon [icon]="faEye" size="xs"></fa-icon></button>
+              <button mat-icon-button class="button-danger" (click)="$event.stopPropagation();deleteRoutine(table.id)">
+                <fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let table; columns: displayedColumns;" (click)="isColumnsMobile && seeRoutine(table.id)"></tr>
+
         </table>
 
       </ng-template>
