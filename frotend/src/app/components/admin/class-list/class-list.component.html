@@ -1,23 +1,30 @@
 <div class="container">
   <h1>Clases</h1>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Clase</th>
-      <th>Cantidad de clases</th>
-      <th>Equipo asignado</th>
-    </tr>
-    </thead>
+  <table *ngIf="dataSource!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Clase</th>
+      <td mat-cell *matCellDef="let typeClass"> {{typeClass.name}} </td>
+    </ng-container>
 
-    <tbody>
-    <tr *ngFor="let typeClass of classes" (click)="openModal(typeClass)">
-      <td>{{typeClass.name}}</td>
-      <td>{{typeClass.nClassesDirected}}</td>
-      <td>
-        <div *ngIf="typeClass.team === null">Aún no asignado</div>
-        {{typeClass.team?.name}}</td>
+    <ng-container matColumnDef="nClassesDirected">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Número de clases</th>
+      <td mat-cell *matCellDef="let typeClass"> {{typeClass.nClassesDirected}} </td>
+    </ng-container>
 
-    </tr>
-    </tbody>
+    <ng-container matColumnDef="team.name">
+      <th mat-header-cell *matHeaderCellDef> Equipo Asignado</th>
+      <td mat-cell *matCellDef="let typeClass"> {{typeClass.team?.name || "Aún no asignado"}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="options">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let typeClass">
+        <button mat-raised-button class="button-update" type="button" (click)="openModal(typeClass);$event.stopPropagation()">{{getNameButton(typeClass)}}</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let typeClass; columns: displayedColumns;" (click)="isColumnsMobile && openModal(typeClass)"></tr>
+
   </table>
 </div>

@@ -1,5 +1,22 @@
+.container {
+  padding: 25px 100px;
+}
+
+table {
+  width: inherit;
+}
 
 tbody > tr:hover {
   cursor: pointer;
   background-color: #8bc34a;;
+}
+
+.button-update{
+  background-color: #8bc34a;
+  color: white;
+}
+@media (max-width: 740px) {
+  .container {
+    padding: 0;
+  }
 }
