@@ -8,9 +8,10 @@ import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../../../service/alert.service';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faTimes, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router';
 import {ExerciseService} from '../../../service/exercise.service';
+import {ExerciseCategory} from '../../../model/exercise-category';
 
 @Component({
   selector: 'app-table',
@@ -27,7 +28,7 @@ export class TableComponent implements OnInit {
   other: string;
   modalTitle: string;
   choose: string;
-  private addExerciseModal = true;
+  addExerciseModal = true;
   private modifiedExercise: Exercise = null;
   private newSets: any;
   private newRepetitions: any;
@@ -35,6 +36,8 @@ export class TableComponent implements OnInit {
   nameTable: string;
   levelTable: string;
   faTrashAlt = faTrashAlt;
+  categories: ExerciseCategory[];
+  faTimes = faTimes;
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,
@@ -114,7 +117,8 @@ export class TableComponent implements OnInit {
           [Validators.required, Validators.min(1), Validators.max(30)]],
         repetitions: ['',
           [Validators.required, Validators.min(1), Validators.max(200)]],
-        exerciseType: ['', Validators.required]
+        exerciseType: ['', Validators.required],
+        category: ''
       }
     );
   }
@@ -122,41 +126,28 @@ export class TableComponent implements OnInit {
   private builderUpdateExerciseForm() {
     this.modalTitle = 'Modificar el ejercicio';
     this.nameButtonAdd = 'Cambiar';
-    this.choose = null;
+    this.choose = 'El ';
     this.addForm = this.fb.group(
       {
         sets: [this.modifiedExercise.sets,
           [Validators.required, Validators.min(1), Validators.max(30)]],
         repetitions: [this.modifiedExercise.repetitions,
           [Validators.required, Validators.min(1), Validators.max(200)]],
-        exerciseType: []
+        exerciseType: [this.modifiedExercise.exerciseType.name],
+        category: [this.modifiedExercise.exerciseType.category.name]
+
       }
     );
-    this.addForm.controls.exerciseType.setValue(
-      this.modifiedExercise.exerciseType, {onlySelf: true});
   }
 
   private getAllExercisesType() {
     if (this.exerciseTypeList == null) {
       this._exeTService.getAllExerciseType().subscribe((res) => {
         this.exerciseTypeList = res;
-        this.setDefault();
       }, error => {
         console.log(error);
       });
-    } else {
-      this.setDefault();
     }
-  }
-
-  private setDefault() {
-    if (this.modifiedExercise != null) {
-      const exerciseTypeDefault = this.exerciseTypeList.find(
-        exerciseTypeInList => exerciseTypeInList.id === this.modifiedExercise.exerciseType.id);
-      this.addForm.controls.exerciseType.setValue(exerciseTypeDefault, {onlySelf: true});
-      this.addForm.controls.exerciseType.disable();
-    }
-
   }
 
   onSubmit() {
@@ -172,8 +163,8 @@ export class TableComponent implements OnInit {
   private submitUpdateExercise() {
     this.newSets = this.addForm.controls.sets.value;
     this.newRepetitions = this.addForm.controls.repetitions.value;
-    this.addForm.reset();
-    this.setDefault();
+    this.addForm.controls.sets.reset();
+    this.addForm.controls.repetitions.reset();
     this.nameButtonAdd = 'Modificar otra vez';
   }
 
