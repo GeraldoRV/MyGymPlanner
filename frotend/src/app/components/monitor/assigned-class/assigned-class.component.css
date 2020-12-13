@@ -2,6 +2,15 @@
   display: none;
 }
 
+.container{
+  padding: 25px 100px;
+}
+.header{
+  display: inline-flex;
+}
+.header > span{
+  margin: auto 25px;
+}
 #name-to-find, .submit-find-button {
   margin-left: 3px;
 }
@@ -10,7 +19,15 @@
   .mobile {
     display: none;
   }
-
+  .container{
+    padding: 10px;
+  }
+  .header{
+    display: unset;
+  }
+  .header > span{
+    margin: unset;
+  }
   .modal-mobile {
     display: block;
   }
