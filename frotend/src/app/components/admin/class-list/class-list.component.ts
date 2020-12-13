@@ -35,7 +35,7 @@ export class ClassListComponent implements OnInit {
   }
 
   openModal(typeClass: TypeClassAdminDto) {
-    const modalRef = this.modalRef.open(AddTeamComponent);
+    const modalRef = this.modalRef.open(AddTeamComponent, {centered: true});
     modalRef.componentInstance.typeClass = typeClass;
     modalRef.result.then(result => {
       if (result !== 'Close click') {

@@ -1,22 +1,22 @@
 <div class="modal-header">
-  <h4 class="modal-title">Assign to</h4>
+  <h4 class="modal-title">Asignar a</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
   </button>
 </div>
 <div class="modal-body">
-  <h4 *ngIf="teams?.length === 0">There are not teams</h4>
+  <h4 *ngIf="teams?.length === 0">No hay equipos</h4>
   <form *ngIf="teams?.length !== 0" id="form-to-assign" [formGroup]="assignTeamForm">
     <select class="form-control" name="team" id="team" size="3" formControlName="teamId">
-      <option *ngFor="let team of teams" [ngValue]="team.id">Team {{team.name}}-{{team.typeClasses?.length || 0}}
-        classes
+      <option *ngFor="let team of teams" [ngValue]="team.id">Equipo {{team.name}} - {{team.typeClasses?.length || 0}}
+        {{team.typeClasses?.length < 2 ? "clase": "clases"}}
       </option>
     </select>
     <div *ngIf="controls.teamId.invalid && ( submit ||controls.teamId.dirty || controls.teamId.touched)"
          class="text-danger">
 
       <div *ngIf="controls.teamId.errors.required">
-        Select one team
+        Seleciona un equipo
       </div>
     </div>
   </form>
@@ -24,6 +24,6 @@
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
   <button *ngIf="teams?.length !== 0" type="submit" form="form-to-assign" class="btn button" (click)="assignTeam()">
-    Assign
+    Asignar
   </button>
 </div>
