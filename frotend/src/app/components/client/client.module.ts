@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSortModule,
     MatButtonModule,
     MatTabsModule,
+    MatIconModule,
   ],
   providers: [ExerciseService, ExerciseTypeService, TypeClassService, WorkoutTableService]
 })
