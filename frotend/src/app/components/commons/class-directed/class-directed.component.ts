@@ -38,21 +38,14 @@ export class ClassDirectedComponent implements OnInit {
     const todayDate = new Date();
     const todayDayOfWeek = this._datePipe.transform(todayDate, 'EEEE');
     this.activeId = 'tab-' + todayDayOfWeek;
-    if (this.isClient()) {
-      this.setClassesForClient(this.user.gym.id, todayDayOfWeek);
-    } else {
-      this.setClassesForMonitor(this.user.id, todayDayOfWeek);
-    }
+    this.setClasses(this.user.gym.id, todayDayOfWeek);
+
   }
 
   public beforeChange($event: NgbTabChangeEvent) {
     const dayOfWeek = $event.nextId.substring(4);
     if (this.isNullList(dayOfWeek)) {
-      if (this.isClient()) {
-        this.setClassesForClient(this.user.gym.id, dayOfWeek);
-      } else {
-        this.setClassesForMonitor(this.user.id, dayOfWeek);
-      }
+      this.setClasses(this.user.gym.id, dayOfWeek);
     }
   }
 
@@ -81,15 +74,7 @@ export class ClassDirectedComponent implements OnInit {
     return classSchedule.dayOfWeek === todayDayOfWeek;
   }
 
-  private setClassesForMonitor(userId: number, dayOfWeek: string) {
-    this._classDirectedService.getAllClassesOfMonitorAndDay(userId, dayOfWeek).subscribe(res => {
-      this.setClass(dayOfWeek, res);
-    }, error => {
-      console.log(error);
-    });
-  }
-
-  private setClassesForClient(gymId: number, dayOfWeek: string) {
+  private setClasses(gymId: number, dayOfWeek: string) {
     this._classDirectedService.getAllClassesOfGymAndDay(gymId, dayOfWeek).subscribe(res => {
       this.setClass(dayOfWeek, res);
     }, error => {
@@ -99,6 +84,10 @@ export class ClassDirectedComponent implements OnInit {
 
   isClient() {
     return this.user.role === 'client';
+  }
+
+  isMyClass(assignedMonitorId) {
+    return assignedMonitorId === this.user.id;
   }
 
   private setClass(dayOfWeek: string, classes: ClassDirected[]) {
@@ -175,5 +164,12 @@ export class ClassDirectedComponent implements OnInit {
   open(content, typeClass: TypeClass) {
     this._modalService.open(content);
     this.typeClass = typeClass;
+  }
+
+  getNameOrNothing(assignedMonitor: User) {
+    if (assignedMonitor) {
+      return 'Asignada a ' + assignedMonitor.name;
+    }
+    return 'Aún no asignada';
   }
 }

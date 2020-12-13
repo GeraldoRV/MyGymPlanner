@@ -36,8 +36,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -61,8 +65,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -86,8 +94,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -111,8 +123,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -136,8 +152,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -161,8 +181,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
@@ -186,8 +210,12 @@
                 <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
 
             </div>
-            <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
-            </button>
+            <div *ngIf="!isClient()">
+
+              <button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
           </li>
         </ul>
       </ng-template>
