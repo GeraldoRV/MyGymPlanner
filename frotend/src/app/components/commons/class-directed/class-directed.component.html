@@ -1,3 +1,19 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{typeClass.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{typeClass.description}}</p>
+    <span>Duración media de una clase {{typeClass.duration}} minutos</span>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cerrar</button>
+  </div>
+</ng-template>
+
 <div class="container">
   <ngb-tabset class="tabSet" justify="fill" [activeId]="activeId" (tabChange)="beforeChange($event)">
     <ngb-tab id="tab-Monday" title="Lunes">
@@ -11,9 +27,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -30,9 +52,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -49,9 +77,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -68,9 +102,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -87,9 +127,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -106,9 +152,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>
@@ -125,9 +177,15 @@
               {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
             </p>
             <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
-            <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
-                    (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
-            </button>
+            <div *ngIf="isClient()">
+              <button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="btn btn-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
             <button *ngIf="!isClient()" (click)="seeClass(classDirected.id)" class="btn btn-success">Ver lista de socios
             </button>
           </li>

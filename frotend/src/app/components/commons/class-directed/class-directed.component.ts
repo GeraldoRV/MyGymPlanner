@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {ClassDirectedService} from '../../../service/class-directed.service';
 import {ClassDirected} from '../../../model/class-directed';
-import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
 import {User} from '../../../model/user';
 import {Router} from '@angular/router';
 import {ClassSchedule} from '../../../model/class-schedule';
+import {faEye} from '@fortawesome/free-solid-svg-icons';
+import {TypeClass} from '../../../model/type-class';
 
 @Component({
   selector: 'app-class-directed',
@@ -23,10 +25,12 @@ export class ClassDirectedComponent implements OnInit {
   classesOfSat: ClassDirected[] = null;
   classesOfSun: ClassDirected[] = null;
   activeId: string;
+  faEye = faEye;
+  typeClass: TypeClass;
 
 
   constructor(private _loginService: LoginService, private _classDirectedService: ClassDirectedService,
-              private _datePipe: DatePipe, private _route: Router) {
+              private _datePipe: DatePipe, private _route: Router, private _modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -166,5 +170,10 @@ export class ClassDirectedComponent implements OnInit {
         }
     }
     return true;
+  }
+
+  open(content, typeClass: TypeClass) {
+    this._modalService.open(content);
+    this.typeClass = typeClass;
   }
 }
