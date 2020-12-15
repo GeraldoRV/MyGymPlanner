@@ -1,10 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-body{
+* {
   font-family: Garamond, fantasy !important;
 }
 
-.form-control{
+.form-control {
   color: #757575;
 }
+
+.my-button-success {
+  background-color: #8bc34a;
+  color: white;
+}
+
+.my-button-success:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #8bc35f;
+}
+
+table {
+  border: 1px solid #bdbdbd !important;
+}
+
+th {
+  background-color: #959595 !important;
+  color: white !important;
+}
+
+tr {
+  height: 40px !important;
+}
+
+tr.mat-row {
+  color: #212121 !important;
+}
+
+tr.mat-row:nth-child(even) {
+  background-color: #fcfcfc !important;
+
+}
+

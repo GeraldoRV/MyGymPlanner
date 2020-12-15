@@ -4,16 +4,6 @@
 #button-group{
   padding-bottom: 5px;
 }
-.my-button-success {
-  background-color: #8bc34a;
-  color: white;
-}
-
-.my-button-success:hover {
-  color: white;
-  text-decoration: none;
-  background-color: #388e3c;
-}
 
 .card {
   pointer-events: none;
@@ -73,17 +63,4 @@ img {
   .mobile {
     display: none;
   }
-
-  .my-button-success {
-    float: right;
-  }
-
-  .button-group-noop{
-    float: right;
-
-  }
-  .button-noop{
-    float: unset;
-  }
-
 }

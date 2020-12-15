@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col">
       <p *ngIf="clientListOfClass?.length === 0">No hay socios</p>
-      <button class="btn btn-success modal-mobile" (click)="openModal(content)">Añadir socio</button>
+      <button mat-raised-button class="my-button-success modal-mobile" (click)="openModal(content)">Añadir socio</button>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let client of clientListOfClass">
           {{client.name}}
@@ -19,7 +19,7 @@
         <label for="name-to-find">Buscar socio por nombre:</label>
         <input class="form-control" id="name-to-find" type="text" formControlName="name"
                placeholder="Nombre del socio...">
-        <button class="btn btn-success submit-find-button" type="submit">
+        <button mat-raised-button class="my-button-success submit-find-button" type="submit">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </form>
@@ -29,7 +29,7 @@
           <span>
           {{client.name}}
           </span>
-          <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
+          <button mat-raised-button class="my-button-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
         </li>
       </ul>
     </div>
@@ -44,7 +44,7 @@
     <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
       <input class="form-control" id="name-to-find-modal" type="text" formControlName="name"
              placeholder="Nombre del socio...">
-      <button class="btn btn-success submit-find-button" type="submit">
+      <button mat-raised-button class="my-button-success submit-find-button" type="submit">
         <fa-icon [icon]="faSearch"></fa-icon>
       </button>
     </form>
@@ -54,7 +54,7 @@
           <span>
           {{client.name}}
           </span>
-        <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
+        <button mat-raised-button class="my-button-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
       </li>
     </ul>
 

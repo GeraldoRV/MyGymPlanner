@@ -14,7 +14,7 @@
       <div class="card-text">
         {{classDirected.assignedMonitor?.name || "Aún no asignada"}}
       </div>
-      <button mat-raised-button (click)="open(classDirected.id)">
+      <button mat-raised-button class="my-button-success" (click)="open(classDirected.id)">
         {{getButtonName(classDirected.assignedMonitor)}}
       </button>
     </div>

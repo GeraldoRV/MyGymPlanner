@@ -24,9 +24,9 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-    <button *ngIf="teams?.length !== 0" type="submit" form="form-to-assign" class="btn button" (click)="assignTeam()">
+    <button mat-raised-button *ngIf="teams?.length !== 0" type="submit" form="form-to-assign" class="my-button-success" (click)="assignTeam()">
       Asignar
     </button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
   </div>
 </div>
