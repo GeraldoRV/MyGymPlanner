@@ -2,15 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from '../../service/login.service';
 import {User} from '../../model/user';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
+
 })
 export class NavbarComponent implements OnInit {
   userLogin: User;
   navbarOpen = false;
+  faArrowLeft = faArrowLeft;
 
   constructor(private _route: Router, public loginService: LoginService) {
   }
@@ -19,7 +22,7 @@ export class NavbarComponent implements OnInit {
     this.userLogin = this.loginService.getUser();
   }
 
-   logout() {
+  logout() {
     this.loginService.logout();
     this._route.navigate(['']).then();
     this.toggleNavBar();
@@ -37,5 +40,13 @@ export class NavbarComponent implements OnInit {
 
   isLeader() {
     return this.userLogin.leader;
+  }
+
+  rollBack() {
+    this._route.navigate([sessionStorage.getItem('rollback')]);
+  }
+
+  thereAreRollBack() {
+    return sessionStorage.getItem('rollback') !== null;
   }
 }

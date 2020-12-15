@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark" *ngIf="loginService.getUser() !== null">
+  <span class="navbar-brand"><mat-icon *ngIf="thereAreRollBack()" (click)="rollBack()"><fa-icon [icon]="faArrowLeft"></fa-icon></mat-icon>MyGymPlanner</span>
   <button class="navbar-toggler" type="button" (click)="toggleNavBar()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">MyGymPlanner</a>
   <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
     <ul (click)="toggleNavBar()" class="navbar-nav">
       <ng-template [ngIf]="getRole()==='client'">
@@ -55,6 +55,9 @@
         </ng-template>
       </ng-template>
     </ul>
-    <button class="btn button" (click)="logout()">Cerrar sesión</button>
+    <button class="button" mat-button [matMenuTriggerFor]="menu">{{userLogin.name}}</button>
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+    </mat-menu>
   </div>
 </nav>

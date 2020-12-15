@@ -17,6 +17,9 @@ import {ClientModule} from './components/client/client.module';
 import {MonitorModule} from './components/monitor/monitor.module';
 import {CommonComponentsModule} from './components/commons/common-components.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -38,6 +41,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     MonitorModule,
     AppRoutingModule,
     FontAwesomeModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
   ],
   providers: [LoginService,
     AuthGuard, DatePipe, Global],
