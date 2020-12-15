@@ -1,0 +1,4 @@
+:host ::ng-deep mat-list {
+  overflow: auto;
+  max-height: 130px;
+}

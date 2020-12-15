@@ -7,12 +7,22 @@
 
 <div class="modal-body">
   <form id="modal-form" [formGroup]="monitorAssignForm" (submit)="onSubmit()">
-    <select class="form-control" name="monitor" formControlName="monitor" size="3">
+    <select class="form-control" name="monitor" formControlName="monitor" size="3" (change)="seeClassOfMonitor()">
       <option *ngFor="let monitor of monitors" [ngValue]="monitor">{{monitor.name}} - {{monitor.nClassAssigned}}
         classes
       </option>
     </select>
   </form>
+  <div *ngIf="monitorToSee">
+    <h3>Asignadas</h3>
+    <mat-list>
+      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
+      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
+      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
+      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
+    </mat-list>
+  </div>
+
 </div>
 
 <div class="modal-footer">
