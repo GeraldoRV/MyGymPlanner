@@ -40,6 +40,9 @@
 }
 
 @media (max-width: 740px) {
+  .container{
+    padding: 5px 25px;
+  }
   #form-box-team {
     padding: 0;
     margin: 0;

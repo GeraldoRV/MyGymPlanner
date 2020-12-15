@@ -6,22 +6,13 @@
   padding-bottom: 5px;
 }
 
-.card {
-  pointer-events: none;
-}
-
 .container {
   position: relative;
 }
 
 .button-see {
   /*background-color: #8bc34a;*/
-  color: #8bc34a;
   display: none;
-}
-
-.btn-danger, .my-button-success {
-  pointer-events: auto;
 }
 
 .message-alert {
@@ -58,10 +49,6 @@ img {
     padding: 10px;
   }
 
-  .card {
-    pointer-events: auto;
-  }
-
   .col-2 {
     flex: 0 0 35%;
     max-width: 35%;
@@ -74,7 +61,6 @@ img {
 
   .button-see{
     /*background-color: #8bc34a;*/
-    color: #8bc34a;
     display: unset;
   }
   .mobile {

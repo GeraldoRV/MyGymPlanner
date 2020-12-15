@@ -8,7 +8,7 @@ import {ExerciseType} from '../../../model/exercise-type';
 import {ExerciseTypeService} from '../../../service/exercise-type.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../../../service/alert.service';
-import {faTimes, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faEye, faTimes, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router';
 import {ExerciseService} from '../../../service/exercise.service';
 import {ExerciseCategory} from '../../../model/exercise-category';
@@ -38,6 +38,7 @@ export class TableComponent implements OnInit {
   faTrashAlt = faTrashAlt;
   categories: ExerciseCategory[];
   faTimes = faTimes;
+  faEye = faEye;
 
   constructor(private _wtService: WorkoutTableService, private _loginService: LoginService,
               private _modalService: NgbModal, private _exeTService: ExerciseTypeService,

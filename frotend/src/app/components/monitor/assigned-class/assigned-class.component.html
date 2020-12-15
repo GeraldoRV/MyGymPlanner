@@ -44,8 +44,10 @@
     <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
       <input class="form-control" id="name-to-find-modal" type="text" formControlName="name"
              placeholder="Nombre del socio...">
-      <button mat-raised-button class="my-button-success submit-find-button" type="submit">
-        <fa-icon [icon]="faSearch"></fa-icon>
+      <button mat-icon-button class="button-see submit-find-button" type="submit">
+        <mat-icon>
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </mat-icon>
       </button>
     </form>
     <ul id="client-found-modal" class="list-group">

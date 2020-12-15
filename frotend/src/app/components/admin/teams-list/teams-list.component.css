@@ -13,7 +13,7 @@ table{
 
 @media (max-width: 740px) {
   .container{
-    padding: 0;
+    padding: 5px 0;
   }
 }
 

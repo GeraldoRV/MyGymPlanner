@@ -20,6 +20,15 @@
   background-color: #8bc35f;
 }
 
+.button-see {
+  color: #8bc34a;
+}
+
+.button-danger {
+  /*background-color: indianred;*/
+  color: indianred;
+}
+
 table {
   border: 1px solid #bdbdbd !important;
 }

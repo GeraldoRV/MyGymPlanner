@@ -162,7 +162,7 @@ export class ClassDirectedComponent implements OnInit {
   }
 
   open(content, typeClass: TypeClass) {
-    this._modalService.open(content);
+    this._modalService.open(content, {centered: true});
     this.typeClass = typeClass;
   }
 

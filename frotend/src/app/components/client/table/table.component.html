@@ -10,7 +10,7 @@
       {{getButtonName()}}</button>
   </div>
 
-  <div class="card" (click)="seeDetails(exercise)" *ngFor="let exercise of exerciseList">
+  <div class="card" *ngFor="let exercise of exerciseList">
     <div class="row">
       <div class="col-2">
         <img alt="default" src="assets/default.png">
@@ -19,15 +19,16 @@
         <div class="card-body">
           <h5 class="card-title mb-1">{{exercise.exerciseType.name}}</h5>
           <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
+          <button mat-icon-button class="button-see" type="button"
+                  (click)="seeDetails(exercise)">
+            <fa-icon [icon]="faEye" size="xs"></fa-icon></button>
+          <button mat-icon-button class="button-danger" (click)="remove(exercise)">
+            <fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button>
           <div class="mobile">
             <p class="card-text mb-1">{{exercise.exerciseType.description}} </p>
             <button mat-raised-button class="my-button-success"
-                    (click)="$event.stopPropagation();openUpdateExerciseModal(content,exercise)">Modificar sets y reps
+                    (click)="openUpdateExerciseModal(content,exercise)">Modificar sets y reps
             </button>
-            <button class="btn btn-danger" (click)="$event.stopPropagation();remove(exercise)">
-              <fa-icon [icon]="faTrashAlt"></fa-icon>
-            </button>
-
           </div>
         </div>
 
