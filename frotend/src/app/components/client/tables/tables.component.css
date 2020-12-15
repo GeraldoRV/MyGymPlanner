@@ -1,8 +1,8 @@
-.container{
+.container {
   padding: 25px 100px;
 }
 
-table{
+table {
   width: -moz-available;
 }
 
@@ -15,9 +15,32 @@ table{
 }
 
 
-
 @media (max-width: 740px) {
-  .container{
+  .container {
     padding: 5px 0;
+  }
+
+  .name-column {
+    padding-left: 15px;
+  }
+
+  :host ::ng-deep td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0;
+  }
+
+  .mat-icon-button {
+    width: 25px;
+  }
+
+  .level-td {
+    padding-left: 9px;
+  }
+
+  .button-see {
+    width: 25px;
+  }
+
+  #option-cell-my-routines {
+    padding-right: inherit;
   }
 }

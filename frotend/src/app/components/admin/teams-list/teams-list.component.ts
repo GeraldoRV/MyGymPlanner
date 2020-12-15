@@ -19,6 +19,7 @@ export class TeamsListComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this._teamService.getAllTeams().subscribe(result => {
       this.teams = result;
       this.dataSource = new MatTableDataSource(this.teams);

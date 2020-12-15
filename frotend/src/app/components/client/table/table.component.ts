@@ -47,6 +47,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/client/routines');
     this._wtService.getWorkTable().subscribe((table) => {
       this.setRoutine(table);
     }, (err) => {

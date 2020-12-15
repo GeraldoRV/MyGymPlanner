@@ -23,6 +23,7 @@ export class NewTeamComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/admin/teams');
     this.teamForm = this.fb.group(
       {
         teamName: [null, Validators.required],

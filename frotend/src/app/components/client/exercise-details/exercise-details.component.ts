@@ -26,6 +26,7 @@ export class ExerciseDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/client/routine');
     this.exercise = this._exerciseService.getExercise();
     this._wtService.getWorkTable().subscribe(result => {
       this.table = result;

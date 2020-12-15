@@ -25,6 +25,7 @@ export class AssignedClassesComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this.typeClassService.getAllClassesForLeader(this.team.id).subscribe(res => {
       this.classes = res;
       this.dataSource = new MatTableDataSource(this.classes);

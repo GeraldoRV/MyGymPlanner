@@ -7,6 +7,10 @@
   display: grid;
 }
 
+mat-icon {
+  cursor: pointer;
+}
+
 .dropdown-menu.show > button {
   background-color: inherit;
   border: 0;

@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     if (this.loginService.isLoginIn()) {
       this._route.navigate([this.loginService.getUserRole()]);
       return;

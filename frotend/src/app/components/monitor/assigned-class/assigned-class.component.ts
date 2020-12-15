@@ -27,6 +27,7 @@ export class AssignedClassComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/monitor');
     this._classDirectedService.getClassDirected().subscribe(classDirected => {
       this.setAssignedClass(classDirected);
     }, error => {

@@ -25,6 +25,7 @@ export class NewUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/admin');
     this.userAddForm = this.fb.group(
       {
         name: ['', Validators.required],

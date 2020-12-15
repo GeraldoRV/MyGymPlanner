@@ -31,6 +31,7 @@ export class TablesComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this.gym = this._loginService.getUser().gym;
     this._wtService.getAllWorkTableByGym(this.gym.id).subscribe((tables) => {
       this.tables = tables;

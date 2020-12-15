@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this._userService.getAllUsers().subscribe((users) => {
       this.users = users;
       this.dataSource = new MatTableDataSource(this.users);
