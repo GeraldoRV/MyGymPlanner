@@ -1,10 +1,33 @@
 .navbar {
   background-color: #4caf50;
+  font-family: Garamond, fantasy;
+}
+
+.dropdown-menu.show {
+  display: grid;
+}
+
+.dropdown-menu.show > button {
+  background-color: inherit;
+  border: 0;
+}
+
+#dropdown {
+  margin-left: auto;
 }
 
 .button {
   color: white;
+  background-color: #388e3c;
   margin-left: auto;
+}
+
+:host ::ng-deep .mat-button {
+  font-family: Garamond, fantasy
+}
+
+:host ::ng-deep div.cdk-overlay-container > div.cdk-overlay-connected-position-bounding-box div.mat-menu-content {
+  font-family: Garamond, fantasy;
 }
 
 mat-icon {

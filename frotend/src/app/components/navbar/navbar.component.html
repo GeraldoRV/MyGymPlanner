@@ -55,9 +55,11 @@
         </ng-template>
       </ng-template>
     </ul>
-    <button class="button" mat-button [matMenuTriggerFor]="menu">{{userLogin.name}}</button>
-    <mat-menu #menu="matMenu" >
-      <button mat-menu-item (click)="logout()">Cerrar sesión</button>
-    </mat-menu>
+    <div id="dropdown" ngbDropdown [placement]="['bottom-right']" class="d-inline-block">
+      <button class="btn button" ngbDropdownToggle>{{userLogin.name}}</button>
+      <div ngbDropdownMenu>
+        <button (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
   </div>
 </nav>

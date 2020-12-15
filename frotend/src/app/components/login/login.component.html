@@ -1,7 +1,8 @@
 <div class="login-page mx-auto">
   <div class="card">
     <div class="card-header">
-      <img class="logo-img" src="assets/Copia%20de%20Copia%20de%20Copia%20de%20MyGymplanner.png" alt="logo">
+      <img class="logo-img" src="assets/logo-white.png" alt="logo">
+      <span>Tu gimnasio, tu control</span>
     </div>
     <div *ngIf="loginForm" class="card-body">
       <h3>Bienvenido!</h3>
@@ -10,7 +11,7 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><fa-icon [icon]="faUser" size="xs"></fa-icon></div>
           </div>
-          <input class="form-control" id="userName" formControlName="userName" placeholder="Nick de usuario..."
+          <input class="form-control form-control-global" id="userName" formControlName="userName" placeholder="Nick de usuario..."
                  type="text">
 
         </div>
