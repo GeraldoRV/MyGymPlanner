@@ -19,6 +19,7 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatButtonModule} from '@angular/material/button';
     MonitorRoutingModule,
     MatTableModule,
     MatSortModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   entryComponents: [AssignMonitorModalComponent],
   providers: [UserService, TeamService]
