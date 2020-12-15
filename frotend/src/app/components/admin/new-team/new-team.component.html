@@ -4,7 +4,7 @@
 
     <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
 
-      <div class="form-row">
+      <div class="row">
 
         <div class="form-group col-md-6">
           <label for="name-team-form">Nombre del equipo</label>
@@ -68,7 +68,12 @@
         </div>
 
       </div>
-      <button mat-raised-button id="submit-new-team-form" class="my-button-success" type="submit">Crear equipo</button>
+      <div id="buttons-form-new-team">
+
+        <button mat-raised-button id="submit-new-team-form" class="my-button-success" type="submit">Crear equipo
+        </button>
+        <button mat-raised-button color="warn">Cancelar</button>
+      </div>
     </form>
   </div>
 </div>

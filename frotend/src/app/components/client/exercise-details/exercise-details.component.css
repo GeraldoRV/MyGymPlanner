@@ -9,3 +9,7 @@
 #reps-category > small{
   margin: auto;
 }
+
+#submit-update-modal{
+  margin-right: 5px;
+}

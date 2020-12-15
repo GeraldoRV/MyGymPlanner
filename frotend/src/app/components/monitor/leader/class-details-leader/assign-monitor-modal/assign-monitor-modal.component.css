@@ -2,3 +2,7 @@
   overflow: auto;
   max-height: 130px;
 }
+
+#submit-class-detail-modal{
+  margin-right: 5px;
+}

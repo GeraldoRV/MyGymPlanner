@@ -17,11 +17,19 @@
   display: none;
 }
 
-#submit-new-team-form {
+#buttons-form-new-team {
   float: right;
 }
 
 @media (max-width: 1200px) {
+  #form-box-team {
+    padding: 25px 80px 100px;
+    margin: auto 25px;
+    background-color: aliceblue;
+    border: 1px solid black;
+  }
+
+
   .col-5 {
     flex: 0 0 37.667%;;
   }
@@ -56,8 +64,11 @@
     display: contents;
 
   }
+  #buttons-form-new-team {
+    margin-top: 5px;
+  }
 
   #submit-new-team-form {
-    margin: 2px auto;
+    margin-right: 5px;
   }
 }

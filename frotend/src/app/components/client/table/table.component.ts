@@ -80,11 +80,13 @@ export class TableComponent implements OnInit {
   }
 
   remove(exercise: Exercise) {
-    this.table.exerciseList.forEach((exerciseOfList, index) => {
-      if (exerciseOfList.id === exercise.id) {
-        this.table.exerciseList.splice(index, 1);
-      }
-    });
+    if (confirm('Are you sure to delete the routine?')) {
+      this.table.exerciseList.forEach((exerciseOfList, index) => {
+        if (exerciseOfList.id === exercise.id) {
+          this.table.exerciseList.splice(index, 1);
+        }
+      });
+    }
   }
 
   openAddExercisesModal(content) {

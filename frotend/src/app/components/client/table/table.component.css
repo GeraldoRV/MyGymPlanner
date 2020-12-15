@@ -1,7 +1,8 @@
-.container{
+.container {
   padding: 25px 100px;
 }
-#button-group{
+
+#button-group {
   padding-bottom: 5px;
 }
 
@@ -13,6 +14,12 @@
   position: relative;
 }
 
+.button-see {
+  /*background-color: #8bc34a;*/
+  color: #8bc34a;
+  display: none;
+}
+
 .btn-danger, .my-button-success {
   pointer-events: auto;
 }
@@ -21,6 +28,10 @@
   position: absolute;
   top: 14px;
   left: 30%;
+}
+
+#submit-update-exercise-modal {
+  margin-right: 5px;
 }
 
 img {
@@ -46,6 +57,7 @@ img {
   .container {
     padding: 10px;
   }
+
   .card {
     pointer-events: auto;
   }
@@ -60,6 +72,11 @@ img {
     max-width: 65%;
   }
 
+  .button-see{
+    /*background-color: #8bc34a;*/
+    color: #8bc34a;
+    display: unset;
+  }
   .mobile {
     display: none;
   }
