@@ -9,12 +9,18 @@
   border: 1px solid black;
 }
 
-.btn-group-vertical {
-  padding-left: 20px;
+#button-group-arrow {
+  padding-top: 25px;
+  padding-left: 50px;
 }
 
-#button-group-horizontal {
+#mat-toggle-horizontal {
   display: none;
+}
+
+mat-button-toggle{
+  background-color: #8bc34a;
+  color: white;
 }
 
 #buttons-form-new-team {
@@ -29,20 +35,13 @@
     border: 1px solid black;
   }
 
-
-  .col-5 {
-    flex: 0 0 37.667%;;
-  }
-
-  #button-group-vertical {
-    display: contents;
-  }
 }
 
 @media (max-width: 740px) {
-  .container{
+  .container {
     padding: 5px 25px;
   }
+
   #form-box-team {
     padding: 0;
     margin: 0;
@@ -50,23 +49,20 @@
     border: 0;
   }
 
-
-  #button-group-horizontal {
-    display: contents;
+  #button-group-arrow {
+    padding-top: 0;
+    padding-left: 35%;
   }
 
-  .btn-group {
-    margin: 7px auto;
+
+  #mat-toggle-horizontal {
+    display: block;
   }
 
-  #button-group-vertical {
+  #mat-toggle-vertical {
     display: none;
   }
 
-  .form-group {
-    display: contents;
-
-  }
   #buttons-form-new-team {
     margin-top: 5px;
   }

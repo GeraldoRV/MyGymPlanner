@@ -5,6 +5,12 @@ import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user';
 import {Router} from '@angular/router';
 import * as _ from 'lodash';
+import {
+  faChevronCircleDown,
+  faChevronCircleLeft,
+  faChevronCircleRight,
+  faChevronCircleUp
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-new-team',
@@ -17,6 +23,10 @@ export class NewTeamComponent implements OnInit {
   monitors: User[];
   submit = false;
   leaders: User[];
+  faChevronRight = faChevronCircleRight;
+  faChevronLeft = faChevronCircleLeft;
+  faChevronUp = faChevronCircleUp;
+  faChevronDown = faChevronCircleDown;
 
   constructor(private fb: FormBuilder, private _teamService: TeamService,
               private _userService: UserService, private _route: Router) {
