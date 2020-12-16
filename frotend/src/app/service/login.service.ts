@@ -35,6 +35,9 @@ export class LoginService {
   }
 
   getUserRole() {
+    if (this.user.role === 'socio') {
+      return 'client';
+    }
     return this.user.role;
   }
 }

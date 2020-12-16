@@ -31,12 +31,12 @@ public class DBSeeder implements CommandLineRunner {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void run(String... args) {
-/*
+
         Gym gym = gymDao.save(createGym());
         userDao.saveAll(createUsers(gym));
         createWorkoutTables();
         createClassesDirected(gym);
-*/
+
     }
 
     private void createClassesDirected(Gym gym) {
@@ -46,19 +46,19 @@ public class DBSeeder implements CommandLineRunner {
         TypeClass cycling = newTypeClass("Indoor Cycle", 45, "Esta actividad física es muy similar al spinning, nos permiten adelgazar y quemar calorías, mejorar la resistencia cardíaca y pulmonar y tonificar nuestras piernas.");
         TypeClass boxing = newTypeClass("Boxeo", 60, "El boxeo es un deporte de combate en el que dos personas, por lo general con guantes protectores, se lanzan golpes durante un tiempo predeterminado en un ring de boxeo.");
         TypeClass zumba = newClassDirected(gym, "09:00", "09:45", "Lunes", "monitor", null);
-        newClassDirected(gym, "09:45", "10:30", "Monday", "monitor", pilates);
-        newClassDirected(gym, "10:30", "11:30", "Tuesday", "noOne", cross_fit);
-        newClassDirected(gym, "10:30", "11:30", "Tuesday", "monitor", boxing);
-        newClassDirected(gym, "12:15", "13:00", "Wednesday", "monitor", gap);
-        newClassDirected(gym, "17:00", "17:45", "Wednesday", "noOne", zumba);
-        newClassDirected(gym, "09:45", "10:00", "Thursday", "noOne", cycling);
-        newClassDirected(gym, "10:00", "10:45", "Thursday", "monitor", zumba);
-        newClassDirected(gym, "09:00", "09:45", "Friday", "monitor", zumba);
-        newClassDirected(gym, "09:45", "10:00", "Friday", "monitor", gap);
-        newClassDirected(gym, "10:00", "10:45", "Saturday", "noOne", boxing);
-        newClassDirected(gym, "17:00", "17:45", "Saturday", "noOne", boxing);
-        newClassDirected(gym, "10:00", "10:45", "Sunday", "monitor", cycling);
-        newClassDirected(gym, "13:15", "14:00", "Sunday", "noOne", cycling);
+        newClassDirected(gym, "09:45", "10:30", "Lunes", "noOne", pilates);
+        newClassDirected(gym, "10:30", "11:30", "Martes", "noOne", cross_fit);
+        newClassDirected(gym, "10:30", "11:30", "Martes", "noOne", boxing);
+        newClassDirected(gym, "12:15", "13:00", "Miercoles", "noOne", gap);
+        newClassDirected(gym, "17:00", "17:45", "Miercoles", "noOne", zumba);
+        newClassDirected(gym, "09:45", "10:00", "Jueves", "noOne", cycling);
+        newClassDirected(gym, "10:00", "10:45", "Jueves", "noOne", zumba);
+        newClassDirected(gym, "09:00", "09:45", "Viernes", "noOne", zumba);
+        newClassDirected(gym, "09:45", "10:00", "Viernes", "noOne", gap);
+        newClassDirected(gym, "10:00", "10:45", "Sábado", "noOne", boxing);
+        newClassDirected(gym, "17:00", "17:45", "Sábado", "noOne", boxing);
+        newClassDirected(gym, "10:00", "10:45", "Domingo", "noOne", cycling);
+        newClassDirected(gym, "13:15", "14:00", "Domingo", "noOne", cycling);
     }
 
 
@@ -108,7 +108,7 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseFirst();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Entrenamiento de 3 días- Primer día");
+        workoutTable.setName("Entrenamiento de 2 días- Primer día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
             User byUserNameAndPassword = userNameAndPassword.get();
@@ -123,7 +123,7 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseSecond();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Entrenamiento de 3 días- Segundo Día");
+        workoutTable.setName("Entrenamiento de 2 días- Segundo Día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
 
@@ -138,13 +138,13 @@ public class DBSeeder implements CommandLineRunner {
         List<Exercise> exercises = createExerciseThird();
         WorkoutTable workoutTable = new WorkoutTable();
         workoutTable.setExerciseList(exercises);
-        workoutTable.setName("Entrenamiento de 3 días- Tercer Día");
+        workoutTable.setName("Entrenamiento de intenso- Un Día");
         Optional<User> userNameAndPassword = userDao.findByUserNameAndPassword("admin", "admin");
         if (userNameAndPassword.isPresent()) {
             User byUserNameAndPassword = userNameAndPassword.get();
             workoutTable.setUser(byUserNameAndPassword);
         }
-        workoutTable.setLevel('C');
+        workoutTable.setLevel('A');
         workoutTableDao.save(workoutTable);
     }
 
@@ -212,9 +212,9 @@ public class DBSeeder implements CommandLineRunner {
         abs.setName("Abdominales");
         ExerciseType bodyWeightCrunchXBody = new ExerciseType();
         bodyWeightCrunchXBody.setCategory(abs);
-        bodyWeightCrunchXBody.setName("BodyWeight Crunch, Cross Body");
-        bodyWeightCrunchXBody.setDescription("Curl your body up by bringing your elbow" +
-                " and shoulder on one side of your body to your opposite knee.");
+        bodyWeightCrunchXBody.setName("BodyWeight Crunch - Cross Body");
+        bodyWeightCrunchXBody.setDescription("Doble el cuerpo hacia " +
+                "arriba llevando el codo y el hombro de un lado del cuerpo a la rodilla opuesta");
         bodyWeightCrunchXBodySave = exerciseTypeDao.save(bodyWeightCrunchXBody);
         exerciseToAbs.setExerciseType(bodyWeightCrunchXBodySave);
         exerciseToAbs.setSets(3);
@@ -263,11 +263,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToArm2 = new Exercise();
         ExerciseType bicepsCurlDumbbell = new ExerciseType();
         bicepsCurlDumbbell.setName("Curl de bíceps (mancuernas)");
-        bicepsCurlDumbbell.setDescription("Stand up and hold one dumbbell with " +
-                "each hand down the side of your body, palms facing each other." +
-                " Raise both dumbbells until they reach your shoulders' height and" +
-                " slowly lower them back down after a short pause." +
-                " Try NOT to jerk your upper body in an effort to help you lift the weights.");
+        bicepsCurlDumbbell.setDescription("Levántese y sostenga una mancuerna con cada mano por el costado de su cuerpo," +
+                " las palmas una frente a la otra. Levante ambas mancuernas hasta que alcancen la altura de sus hombros " +
+                "y bájelas lentamente hacia abajo después de una breve pausa. Trate de NO sacudir la parte superior del " +
+                "cuerpo en un esfuerzo por ayudarte a levantar pesas ");
         bicepsCurlDumbbell.setCategory(armCategory);
         ExerciseType bicepsCurlDumbbellSave = exerciseTypeDao.save(bicepsCurlDumbbell);
         exerciseToArm2.setExerciseType(bicepsCurlDumbbellSave);
@@ -277,10 +276,7 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToBack3 = new Exercise();
         ExerciseType superman = new ExerciseType();
         superman.setCategory(backCategory);
-        superman.setDescription("Lie face down on a mat, with your legs" +
-                " straight and your arms outstretched in front of you. Raise" +
-                " both your arms and legs at the same time so that they" +
-                " are 10-15cm off the floor, forming a bowl shape with your body..");
+        superman.setDescription("Acuéstese boca abajo sobre una colchoneta, con las piernas estiradas y los brazos extendidos frente a usted. Levante los brazos y las piernas al mismo tiempo para que estén a 10-15 cm del suelo, formando un cuenco con su cuerpo. ");
         superman.setName("BodyWeight Superman");
         ExerciseType supermanSave = exerciseTypeDao.save(superman);
         exerciseToBack3.setExerciseType(supermanSave);
@@ -297,14 +293,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToLegs1 = new Exercise();
         ExerciseType seatedLegCurl = new ExerciseType();
         ExerciseCategory legs = new ExerciseCategory();
-        legs.setName("Legs");
+        legs.setName("Piernas");
         seatedLegCurl.setCategory(legs);
-        seatedLegCurl.setName("Seated Leg Curl (Lever)");
-        seatedLegCurl.setDescription("Adjust the machine lever to fit your height" +
-                " and sit on the machine with your back against the back" +
-                " support pad. As you exhale, pull the machine lever as far as" +
-                " possible to the back of your thighs by flexing at the knees." +
-                " Keep your torso stationary at all times.");
+        seatedLegCurl.setName("Flexión de piernas sentado (palanca)");
+        seatedLegCurl.setDescription("Ajuste la palanca de la máquina para que se adapte a su altura y siéntese en la máquina con la espalda contra la almohadilla de soporte de la espalda. Mientras exhala, tire de la palanca de la máquina lo más posible hacia la parte posterior de los muslos flexionando las rodillas. Mantenga el torso inmóvil en todo momento ");
         ExerciseType seatedLegCurlSave = exerciseTypeDao.save(seatedLegCurl);
         ExerciseCategory legsCategory = seatedLegCurlSave.getCategory();
 
@@ -315,14 +307,10 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToLegs2 = new Exercise();
         ExerciseCategory arm = new ExerciseCategory();
         ExerciseType legExtension = new ExerciseType();
-        arm.setName("Arm");
+        arm.setName("Brazos");
         legExtension.setCategory(legsCategory);
-        legExtension.setName("Leg Extension (Lever)");
-        legExtension.setDescription("Place your hands on the hand bars." +
-                "Lift the weight while exhaling until your legs are almost straight." +
-                " Do not lock your knees. Keep your back against the backrest" +
-                " and do not arch your back. " +
-                "Exhale and lower the weight back to starting position.");
+        legExtension.setName("Extensión de pierna (palanca)");
+        legExtension.setDescription("Coloque las manos en las barras de las manos. Levante el peso mientras exhala hasta que sus piernas estén casi rectas. No bloquee las rodillas. Mantenga la espalda contra el respaldo y no arquee la espalda. Exhale y baje el peso a la posición inicial. ");
         ExerciseType legExtensionSave = exerciseTypeDao.save(legExtension);
 
         exerciseToLegs2.setExerciseType(legExtensionSave);
@@ -332,9 +320,8 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToLegs3 = new Exercise();
         ExerciseType legPress = new ExerciseType();
         legPress.setCategory(legsCategory);
-        legPress.setName("Leg Press (Lever)");
-        legPress.setDescription("Extend knees and hips until knees are fully" +
-                " extended. Return and repeat.");
+        legPress.setName("Prensa de piernas (palanca)");
+        legPress.setDescription("Extienda las rodillas y las caderas hasta que las rodillas estén completamente extendidas. Regrese y repita");
         ExerciseType legPressSave = exerciseTypeDao.save(legPress);
         exerciseToLegs3.setSets(3);
         exerciseToLegs3.setRepetitions(12);
@@ -342,9 +329,8 @@ public class DBSeeder implements CommandLineRunner {
 
         Exercise exerciseToArm1 = new Exercise();
         ExerciseType militaryPress = new ExerciseType();
-        militaryPress.setName("Military Press (Lever)");
-        militaryPress.setDescription("Push lever upwards until arms are" +
-                " extended. Lower and repeat.");
+        militaryPress.setName("Prensa militar (palanca)");
+        militaryPress.setDescription("Empuje la palanca hacia arriba hasta que los brazos estén extendidos. Baje y repita");
         militaryPress.setCategory(armCategory);
         ExerciseType militaryPressSave = exerciseTypeDao.save(militaryPress);
         exerciseToArm1.setExerciseType(militaryPressSave);
@@ -354,9 +340,8 @@ public class DBSeeder implements CommandLineRunner {
         Exercise exerciseToArm2 = new Exercise();
         ExerciseType frontRaise = new ExerciseType();
         frontRaise.setCategory(armCategory);
-        frontRaise.setDescription("Raise dumbbells forward and upward until " +
-                "upper arms are above horizontal. Lower and repeat.");
-        frontRaise.setName("Front Raise (Dumbbells)");
+        frontRaise.setDescription("Levante las mancuernas hacia adelante y hacia arriba hasta que los brazos estén por encima de la horizontal. Baje y repita");
+        frontRaise.setName("Levantamiento frontal (mancuernas)");
         ExerciseType frontRaiseSave = exerciseTypeDao.save(frontRaise);
         exerciseToArm2.setExerciseType(frontRaiseSave);
         exerciseToArm2.setSets(3);
@@ -380,21 +365,21 @@ public class DBSeeder implements CommandLineRunner {
         admin.setGym(gym);
 
         User client = new User();
-        client.setName("Client of the gym");
-        client.setUserName("client");
-        client.setPassword("client");
-        client.setRole("client");
+        client.setName("Fernado Peréz");
+        client.setUserName("ferna");
+        client.setPassword("ferna");
+        client.setRole("socio");
         client.setGym(gym);
 
         User monitor = new User();
-        monitor.setName("Monitor of the gym");
-        monitor.setUserName("monitor");
-        monitor.setPassword("monitor");
+        monitor.setName("Pedro Peña");
+        monitor.setUserName("monitorA");
+        monitor.setPassword("monitorA");
         monitor.setRole("monitor");
         monitor.setGym(gym);
         WorkingHours workingHours = new WorkingHours();
         workingHours.setMondayToFriday("08:00 a 15:00");
-        workingHours.setSaturday("Free");
+        workingHours.setSaturday("Libre");
         workingHours.setSunday("08:00 a 15:00");
         monitor.setWorkingHours(workingHours);
         return Arrays.asList(admin, monitor, client);
@@ -402,8 +387,8 @@ public class DBSeeder implements CommandLineRunner {
 
     private Gym createGym() {
         Gym gym = new Gym();
-        gym.setName("FalseFit");
-        gym.setDirection("Fake Street, nº 14");
+        gym.setName("MyGymFit");
+        gym.setDirection("Las Palmas de Gran Canaria");
         OpeningHours openingHours = new OpeningHours();
         openingHours.setMondaysToFridays("08:00 a 23:00");
         openingHours.setSaturdays("09:00 a 21:00");
