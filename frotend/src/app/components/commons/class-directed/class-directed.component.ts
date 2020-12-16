@@ -59,7 +59,7 @@ export class ClassDirectedComponent implements OnInit {
       }
     }, error => {
       console.log(error);
-      alert(error.error.message);
+      alert('Ya tiene su reserva!');
     });
   }
 
@@ -71,7 +71,7 @@ export class ClassDirectedComponent implements OnInit {
   public isTheCorrectTime(classSchedule: ClassSchedule) {
     const today = new Date();
     const todayDayOfWeek = this._datePipe.transform(today, 'EEEE');
-    return classSchedule.dayOfWeek === todayDayOfWeek;
+    return classSchedule.dayOfWeek !== todayDayOfWeek;
   }
 
   private setClasses(gymId: number, dayOfWeek: string) {
@@ -83,7 +83,7 @@ export class ClassDirectedComponent implements OnInit {
   }
 
   isClient() {
-    return this.user.role === 'client';
+    return this.user.role === 'socio';
   }
 
   isMyClass(assignedMonitorId) {
@@ -92,68 +92,68 @@ export class ClassDirectedComponent implements OnInit {
 
   private setClass(dayOfWeek: string, classes: ClassDirected[]) {
     switch (dayOfWeek) {
-      case 'Monday':
+      case 'Lunes':
         this.classesOfMon = classes;
         break;
-      case 'Tuesday':
+      case 'Martes':
         this.classesOfTues = classes;
         break;
-      case 'Wednesday':
+      case 'Miercoles':
         this.classesOfWed = classes;
         break;
-      case 'Thursday':
+      case 'Jueves':
         this.classesOfThur = classes;
         break;
-      case 'Friday':
+      case 'Viernes':
         this.classesOfFri = classes;
         break;
-      case 'Saturday':
+      case 'Sábado':
         this.classesOfSat = classes;
         break;
-      case 'Sunday':
+      case 'Domingo':
         this.classesOfSun = classes;
     }
   }
 
   private isNullList(dayOfWeek: string) {
     switch (dayOfWeek) {
-      case 'Monday':
+      case 'Lunes':
         if (this.classesOfMon !== null) {
           return false;
         }
         break;
 
-      case 'Tuesday':
+      case 'Martes':
         if (this.classesOfTues !== null) {
           return false;
         }
         break;
 
-      case 'Wednesday':
+      case 'Miercoles':
         if (this.classesOfWed !== null) {
           return false;
         }
         break;
 
-      case 'Thursday':
+      case 'Jueves':
         if (this.classesOfThur !== null) {
           return false;
         }
         break;
 
-      case 'Friday':
+      case 'Viernes':
         if (this.classesOfFri !== null) {
           return false;
         }
         break;
 
-      case 'Saturday':
+      case 'Sábado':
         if (this.classesOfSat !== null) {
           return false;
         }
         break;
 
-      case 'Sunday':
+      case 'Domingo':
         if (this.classesOfSun !== null) {
           return false;
         }
