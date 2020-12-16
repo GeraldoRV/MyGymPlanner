@@ -160,4 +160,8 @@ public class ClassDirectedService {
         user.setId(userId);
         return user;
     }
+
+    public List<ClassDirected> getAllClassDirectedOfMonitor(Integer id) {
+        return classDirectedDao.findAllByAssignedMonitor_Id(id);
+    }
 }

@@ -47,9 +47,13 @@ public class ClassDirectedController {
         return classDirectedService.getAllClassDirectedOfDayAndGym(dayOfWeek, id);
     }
 
+    @GetMapping("assigned/monitor/{id}")
+    public List<ClassDirectedDtoToAssign> getAllByMonitor(@PathVariable Integer id) {
+        return classDirectedConverter.transformToClassDtoToAssignFromEntity(classDirectedService.getAllClassDirectedOfMonitor(id));
+    }
     @GetMapping("monitor/{id}/{dayOfWeek}")
     public List<ClassDirected> getAllByMonitorAndDay(@PathVariable Integer id,
-                                                     @PathVariable String dayOfWeek) {
+                                               @PathVariable String dayOfWeek) {
         return classDirectedService.getAllClassDirectedOfMonitorAndDay(id, dayOfWeek);
     }
 

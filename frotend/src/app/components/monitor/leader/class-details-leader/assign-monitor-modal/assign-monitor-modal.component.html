@@ -13,13 +13,13 @@
       </option>
     </select>
   </form>
-  <div *ngIf="monitorToSee">
+  <h3 *ngIf="!classesOfMonitor">Seleccione para ver las clases</h3>
+  <div *ngIf="classesOfMonitor">
     <h3>Asignadas</h3>
     <mat-list>
-      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
-      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
-      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
-      <mat-list-item>Zumba: Martes, 10:00-10:45</mat-list-item>
+      <mat-list-item *ngFor="let classOfMonitor of classesOfMonitor">
+        {{classOfMonitor.typeClass.name}}: {{classOfMonitor.classSchedule.dayOfWeek}}, {{classOfMonitor
+        .classSchedule.startTime}}-{{classOfMonitor.classSchedule.endTime}}</mat-list-item>
     </mat-list>
   </div>
 
