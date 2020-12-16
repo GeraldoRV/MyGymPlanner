@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {ClassDirectedService} from '../../../service/class-directed.service';
 import {ClassDirected} from '../../../model/class-directed';
-import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
 import {User} from '../../../model/user';
 import {Router} from '@angular/router';
 import {ClassSchedule} from '../../../model/class-schedule';
+import {faEye} from '@fortawesome/free-solid-svg-icons';
+import {TypeClass} from '../../../model/type-class';
 
 @Component({
   selector: 'app-class-directed',
@@ -23,10 +25,12 @@ export class ClassDirectedComponent implements OnInit {
   classesOfSat: ClassDirected[] = null;
   classesOfSun: ClassDirected[] = null;
   activeId: string;
+  faEye = faEye;
+  typeClass: TypeClass;
 
 
   constructor(private _loginService: LoginService, private _classDirectedService: ClassDirectedService,
-              private _datePipe: DatePipe, private _route: Router) {
+              private _datePipe: DatePipe, private _route: Router, private _modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -34,21 +38,14 @@ export class ClassDirectedComponent implements OnInit {
     const todayDate = new Date();
     const todayDayOfWeek = this._datePipe.transform(todayDate, 'EEEE');
     this.activeId = 'tab-' + todayDayOfWeek;
-    if (this.isClient()) {
-      this.setClassesForClient(this.user.gym.id, todayDayOfWeek);
-    } else {
-      this.setClassesForMonitor(this.user.id, todayDayOfWeek);
-    }
+    this.setClasses(this.user.gym.id, todayDayOfWeek);
+
   }
 
   public beforeChange($event: NgbTabChangeEvent) {
     const dayOfWeek = $event.nextId.substring(4);
     if (this.isNullList(dayOfWeek)) {
-      if (this.isClient()) {
-        this.setClassesForClient(this.user.gym.id, dayOfWeek);
-      } else {
-        this.setClassesForMonitor(this.user.id, dayOfWeek);
-      }
+      this.setClasses(this.user.gym.id, dayOfWeek);
     }
   }
 
@@ -77,15 +74,7 @@ export class ClassDirectedComponent implements OnInit {
     return classSchedule.dayOfWeek === todayDayOfWeek;
   }
 
-  private setClassesForMonitor(userId: number, dayOfWeek: string) {
-    this._classDirectedService.getAllClassesOfMonitorAndDay(userId, dayOfWeek).subscribe(res => {
-      this.setClass(dayOfWeek, res);
-    }, error => {
-      console.log(error);
-    });
-  }
-
-  private setClassesForClient(gymId: number, dayOfWeek: string) {
+  private setClasses(gymId: number, dayOfWeek: string) {
     this._classDirectedService.getAllClassesOfGymAndDay(gymId, dayOfWeek).subscribe(res => {
       this.setClass(dayOfWeek, res);
     }, error => {
@@ -95,6 +84,10 @@ export class ClassDirectedComponent implements OnInit {
 
   isClient() {
     return this.user.role === 'client';
+  }
+
+  isMyClass(assignedMonitorId) {
+    return assignedMonitorId === this.user.id;
   }
 
   private setClass(dayOfWeek: string, classes: ClassDirected[]) {
@@ -166,5 +159,17 @@ export class ClassDirectedComponent implements OnInit {
         }
     }
     return true;
+  }
+
+  open(content, typeClass: TypeClass) {
+    this._modalService.open(content, {centered: true});
+    this.typeClass = typeClass;
+  }
+
+  getNameOrNothing(assignedMonitor: User) {
+    if (assignedMonitor) {
+      return 'Asignada a ' + assignedMonitor.name;
+    }
+    return 'Aún no asignada';
   }
 }

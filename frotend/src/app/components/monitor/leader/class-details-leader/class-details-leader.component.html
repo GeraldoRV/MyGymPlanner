@@ -1,17 +1,20 @@
 <div *ngIf="classes" class="container">
-  <h2>{{className}} classes</h2>
-  <div *ngFor="let classDirected of classes"  class="card">
-    <div  class="card-body">
+  <h2>Clases de {{className}}</h2>
+  <div *ngFor="let classDirected of classes" class="card">
+    <div class="card-body">
       <div class="card-title">
-        {{classDirected.classSchedule.dayOfWeek}}
+        <h4>
+          {{classDirected.classSchedule.dayOfWeek}}
+
+        </h4>
       </div>
       <div class="card-subtitle">
-        {{classDirected.classSchedule.startTime}} to {{classDirected.classSchedule.endTime}}
+        {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
       </div>
       <div class="card-text">
-        {{classDirected.assignedMonitor?.name || "None assigned"}}
+        {{classDirected.assignedMonitor?.name || "Aún no asignada"}}
       </div>
-      <button class="btn btn-success" (click)="open(classDirected.id)">
+      <button mat-raised-button class="my-button-success" (click)="open(classDirected.id)">
         {{getButtonName(classDirected.assignedMonitor)}}
       </button>
     </div>

@@ -1,11 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {WorkoutTableService} from '../../../service/workout-table.service';
 import {WorkoutTable} from '../../../model/workout-table';
 import {Router} from '@angular/router';
 import {LoginService} from '../../../service/login.service';
 import {Gym} from '../../../model/gym';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {faEye, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-tables',
@@ -16,16 +18,25 @@ export class TablesComponent implements OnInit {
   tables: WorkoutTable[];
   myTables: WorkoutTable[] = null;
   private gym: Gym;
+  faEye = faEye;
   faTrashAlt = faTrashAlt;
+  dataSourceRoutines = null;
+  dataSourceMyRoutines = null;
+  @ViewChild(MatSort) sort: MatSort;
+  displayedColumns: string[] = ['name', 'level', 'options'];
+  isColumnsMobile = false;
 
   constructor(private _route: Router, private _wtService: WorkoutTableService,
               private _loginService: LoginService) {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this.gym = this._loginService.getUser().gym;
     this._wtService.getAllWorkTableByGym(this.gym.id).subscribe((tables) => {
       this.tables = tables;
+      this.dataSourceRoutines = new MatTableDataSource(this.tables);
+      setTimeout(() => this.dataSourceRoutines.sort = this.sort);
     }, (err) => {
       console.log(err);
     });
@@ -41,6 +52,8 @@ export class TablesComponent implements OnInit {
     if (id === 'tab-myRoutines' && this.myTables === null) {
       this._wtService.getAllMyWorkTable(this._loginService.getUser().id).subscribe((tables) => {
         this.myTables = tables;
+        this.dataSourceMyRoutines = new MatTableDataSource(this.myTables);
+        setTimeout(() => this.dataSourceMyRoutines.sort = this.sort);
       }, error => {
         console.log(error);
       });
@@ -50,8 +63,9 @@ export class TablesComponent implements OnInit {
   deleteRoutine(id: number) {
     if (confirm('Are you sure to delete the routine?')) {
       this._wtService.deleteWorkoutTable(id).subscribe(() => {
-        const indexToDelete = this.myTables.findIndex(routine => routine.id === id);
-        this.myTables.splice(indexToDelete, 1);
+        const indexToDelete = this.dataSourceMyRoutines.data.findIndex(routine => routine.id === id);
+        this.dataSourceMyRoutines.data.splice(indexToDelete, 1);
+        this.dataSourceMyRoutines._updateChangeSubscription();
       }, error => {
         console.log(error);
       });

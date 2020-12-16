@@ -1,56 +1,61 @@
-<div class="container py-3">
+<div class="container">
+  <div id="form-box-user">
+    <h3>Nuevo usuario</h3>
+    <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
 
-  <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
-    <div class="form-row">
+        <div class="form-group col-md-7">
 
-      <div class="form-group col-md-9">
+          <label for="name">Nombre completo</label>
+          <input class="form-control" type="text" formControlName="name" id="name">
+          <div *ngIf="controls.name.invalid && ( submit ||controls.name.dirty || controls.name.touched)"
+               class="text-danger">
 
-        <label for="name">Full Name</label>
-        <input class="form-control" type="text" formControlName="name" id="name">
-        <div *ngIf="controls.name.invalid && ( submit ||controls.name.dirty || controls.name.touched)"
-             class="text-danger">
+            <div *ngIf="controls.name.errors.required">
+              Se necesita el nombre
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md">
 
-          <div *ngIf="controls.name.errors.required">
-            Name is required.
+          <label for="username">Nick de usuario</label>
+          <input class="form-control" type="text" formControlName="userName" id="username">
+          <div *ngIf="controls.userName.invalid && (submit || controls.userName.dirty || controls.userName.touched)"
+               class="text-danger">
+
+            <div *ngIf="controls.userName.errors.required">
+              Se necesita un nick
+            </div>
           </div>
         </div>
       </div>
-      <div class="form-group col-md">
+      <div class="form-row">
 
-        <label for="username">Username</label>
-        <input class="form-control" type="text" formControlName="userName" id="username">
-        <div *ngIf="controls.userName.invalid && (submit || controls.userName.dirty || controls.userName.touched)"
-             class="text-danger">
+        <div class="form-group col-md">
 
-          <div *ngIf="controls.userName.errors.required">
-            Username is required.
+          <label for="roles">Rol</label>
+          <select class="form-control" formControlName="role" id="roles">
+            <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
+          </select>
+          <div *ngIf="controls.role.invalid && (submit || controls.role.dirty || controls.role.touched)"
+               class="text-danger">
+
+            <div *ngIf="controls.role.errors.required">
+              Se necesita el rol
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="form-row">
+        <div class="form-group col-md">
+          <label for="password-opt">Contraseña (opcional)</label>
+          <input class="form-control" type="text" formControlName="password" placeholder="Contraseña por defecto" id="password-opt">
 
-      <div class="form-group col-md">
 
-        <label for="roles">Role</label>
-        <select class="form-control" formControlName="role" id="roles">
-          <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
-        </select>
-        <div *ngIf="controls.role.invalid && (submit || controls.role.dirty || controls.role.touched)"
-             class="text-danger">
-
-          <div *ngIf="controls.role.errors.required">
-            Role is required.
-          </div>
         </div>
       </div>
-      <div class="form-group col-md">
-        <label for="password-opt">Optional Password</label>
-        <input class="form-control" type="text" formControlName="password" id="password-opt">
-
-
+      <div id="buttons-form-new-user">
+        <button mat-raised-button class="my-button-success button" type="submit">Dar de alta</button>
+        <button mat-raised-button color="warn" [routerLink]="'/admin'">Cancelar</button>
       </div>
-    </div>
-    <button class="btn button" type="submit">Add new user</button>
-  </form>
+    </form>
+  </div>
 </div>

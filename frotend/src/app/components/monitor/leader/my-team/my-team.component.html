@@ -1,22 +1,24 @@
 <div class="container">
   <app-assigned-classes *ngIf="myTeam" [team]="myTeam"></app-assigned-classes>
-  <h2>{{teamName}}</h2>
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Full Name</th>
-      <th scope="col">UserName</th>
-      <th scope="col">Nº Classes assigned</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of members; let i = index">
-      <th scope="row">{{i + 1}}</th>
-      <td>{{user.name}}</td>
-      <td>{{user.userName}}</td>
-      <td>{{user.nClassAssigned}}</td>
-    </tr>
-    </tbody>
+  <h2>Monitores</h2>
+  <table *ngIf="dataSource!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let member"> {{member.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nick</th>
+      <td mat-cell *matCellDef="let member"> {{member.userName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nClassAssigned">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº clases asignadas</th>
+      <td mat-cell *matCellDef="let member"> {{member.nClassAssigned}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let member; columns: displayedColumns;"></tr>
+
   </table>
 </div>

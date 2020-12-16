@@ -1,9 +1,13 @@
 <div class="container">
-  <h1>{{classDirectedName}}</h1>
-  <button class="btn btn-success modal-mobile" (click)="openModal(content)">Add client</button>
+  <div class="header">
+    <h1>{{classDirectedName}}</h1>
+    <span>{{schedule.dayOfWeek}}, {{schedule.startTime}} a {{schedule.endTime}} </span>
+  </div>
+      <h2>Socios apuntados</h2>
   <div class="row">
     <div class="col">
-      <p *ngIf="clientListOfClass?.length === 0">There are not clients</p>
+      <p *ngIf="clientListOfClass?.length === 0">No hay socios</p>
+      <button mat-raised-button class="my-button-success modal-mobile" (click)="openModal(content)">Añadir socio</button>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let client of clientListOfClass">
           {{client.name}}
@@ -12,10 +16,12 @@
     </div>
     <div class="col mobile">
       <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
-        <label for="name-to-find">Find client:</label>
+        <label for="name-to-find">Buscar socio por nombre:</label>
         <input class="form-control" id="name-to-find" type="text" formControlName="name"
-               placeholder="Write the name...">
-        <button class="btn btn-success submit-find-button" type="submit"><fa-icon [icon]="faSearch"></fa-icon> </button>
+               placeholder="Nombre del socio...">
+        <button mat-raised-button class="my-button-success submit-find-button" type="submit">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
       </form>
       <ul class="list-group">
         <li class=" list-group-item list-group-item-action  d-flex justify-content-between align-items-center"
@@ -23,7 +29,7 @@
           <span>
           {{client.name}}
           </span>
-          <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Add to class</button>
+          <button mat-raised-button class="my-button-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
         </li>
       </ul>
     </div>
@@ -32,13 +38,17 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Add client</h4>
+    <h4 class="modal-title">Añadir socio</h4>
   </div>
   <div class="modal-body">
     <form class="form-inline" [formGroup]="searchClientForm" (ngSubmit)="onSubmit()">
       <input class="form-control" id="name-to-find-modal" type="text" formControlName="name"
-             placeholder="Write the name...">
-      <button class="btn btn-success submit-find-button" type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
+             placeholder="Nombre del socio...">
+      <button mat-icon-button class="button-see submit-find-button" type="submit">
+        <mat-icon>
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </mat-icon>
+      </button>
     </form>
     <ul id="client-found-modal" class="list-group">
       <li class=" list-group-item list-group-item-action  d-flex justify-content-between align-items-center"
@@ -46,13 +56,13 @@
           <span>
           {{client.name}}
           </span>
-        <button class="btn btn-success" type="button" (click)="addToClass(client.id)">Add to class</button>
+        <button mat-raised-button class="my-button-success" type="button" (click)="addToClass(client.id)">Añadir a la lista</button>
       </li>
     </ul>
 
   </div>
   <div class="modal-footer">
-    <button class="btn btn-danger" (click)="modal.close()">Close</button>
+    <button class="btn btn-danger" (click)="modal.close()">Cerrar</button>
   </div>
 </ng-template>
 

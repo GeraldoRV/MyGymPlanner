@@ -4,6 +4,7 @@ import {LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
 import {AlertService} from '../../service/alert.service';
 import {HttpErrorResponse} from '@angular/common/http';
+import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,15 @@ import {HttpErrorResponse} from '@angular/common/http';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submit = false;
+  faKey = faKey;
+  faUser = faUser;
 
   constructor(private fb: FormBuilder, private loginService: LoginService,
               private _route: Router, private alertService: AlertService) {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     if (this.loginService.isLoginIn()) {
       this._route.navigate([this.loginService.getUserRole()]);
       return;
@@ -47,7 +51,11 @@ export class LoginComponent implements OnInit {
 
   private errorMessageAlert(error: HttpErrorResponse) {
     this.alertService.setType('danger');
-    this.alertService.setMessage(error.error.message);
+    let message = error.error.message;
+    if (error.error.status === 404) {
+      message = 'Usuario o contraseña incorrectos.';
+    }
+    this.alertService.setMessage(message);
     this.alertService.setDismissible(false);
     this.alertService.show();
     this.alertService.setTimeout(5000);

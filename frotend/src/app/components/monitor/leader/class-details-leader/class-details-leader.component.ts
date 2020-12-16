@@ -24,6 +24,7 @@ export class ClassDetailsLeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', 'monitor/assigned-classes');
     const id = this.route.snapshot.paramMap.get('id');
     this.className = this.route.snapshot.paramMap.get('name');
     this.userLogged = this.loginService.getUser();
@@ -47,8 +48,8 @@ export class ClassDetailsLeaderComponent implements OnInit {
 
   getButtonName(assignedMonitor: UserTypeMonitorDto) {
     if (assignedMonitor !== null) {
-      return 'Change to';
+      return 'Cambiar a...';
     }
-    return 'Assign to';
+    return 'Asignar a...';
   }
 }

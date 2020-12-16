@@ -16,6 +16,11 @@ import {UserService} from '../../service/user.service';
 import {TeamService} from '../../service/team.service';
 import {AssignMonitorModalComponent} from './leader/class-details-leader/assign-monitor-modal/assign-monitor-modal.component';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NgbModalModule,
     CommonComponentsModule,
-    MonitorRoutingModule
+    MonitorRoutingModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule
   ],
   entryComponents: [AssignMonitorModalComponent],
   providers: [UserService, TeamService]

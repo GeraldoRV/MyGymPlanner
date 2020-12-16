@@ -1,0 +1,19 @@
+.container{
+  padding: 25px 100px;
+}
+
+.button{
+  margin-bottom: 5px;
+  float: right;
+}
+
+table{
+  width: inherit;
+}
+
+@media (max-width: 740px) {
+  .container{
+    padding: 5px 0;
+  }
+}
+

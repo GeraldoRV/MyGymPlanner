@@ -16,6 +16,7 @@ export class MainMonitorComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
     this.user = this._loginService.getUser();
     this.setWorkingHours();
   }

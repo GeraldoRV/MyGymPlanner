@@ -16,6 +16,11 @@ import {ExerciseService} from '../../service/exercise.service';
 import {ExerciseTypeService} from '../../service/exercise-type.service';
 import {TypeClassService} from '../../service/type-class.service';
 import {WorkoutTableService} from '../../service/workout-table.service';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import {WorkoutTableService} from '../../service/workout-table.service';
     FontAwesomeModule,
     CommonComponentsModule,
     ClientRoutingModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatIconModule,
   ],
   providers: [ExerciseService, ExerciseTypeService, TypeClassService, WorkoutTableService]
 })

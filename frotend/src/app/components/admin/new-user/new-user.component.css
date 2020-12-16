@@ -1,4 +1,39 @@
-.button{
-  background-color: #8bc34a;
-  color: white;
+.button {
+  margin-right: 5px;
 }
+
+#buttons-form-new-user {
+  float: right;
+}
+
+.container {
+  padding: 25px;
+}
+
+#form-box-user {
+  padding: 25px 129px 100px;
+  margin: auto 119px;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+@media (max-width: 1200px) {
+  #form-box-user {
+    padding: 25px 80px 100px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 740px) {
+  .container{
+    padding: 5px 25px;
+  }
+
+  #form-box-user {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 0;
+  }
+}
+

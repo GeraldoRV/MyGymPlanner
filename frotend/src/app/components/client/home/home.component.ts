@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {LoginService} from '../../../service/login.service';
 import {Gym} from '../../../model/gym';
 import {TypeClassService} from '../../../service/type-class.service';
 import {TypeClass} from '../../../model/type-class';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +18,10 @@ export class HomeComponent implements OnInit {
   mondayToFriday: string;
   saturdays: string;
   sundaysAndHolidays: string;
+  public typeClass: TypeClass;
 
   constructor(private _loginService: LoginService,
-              private _typeClassService: TypeClassService) {
+              private _typeClassService: TypeClassService, private _modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -43,5 +45,10 @@ export class HomeComponent implements OnInit {
     this.mondayToFriday = this.gym.openingHours.mondaysToFridays;
     this.saturdays = this.gym.openingHours.saturdays;
     this.sundaysAndHolidays = this.gym.openingHours.sundaysAndHolidays;
+  }
+
+  open(taughtClass: TypeClass, content: TemplateRef<any>) {
+    this._modalService.open(content, {centered: true});
+    this.typeClass = taughtClass;
   }
 }

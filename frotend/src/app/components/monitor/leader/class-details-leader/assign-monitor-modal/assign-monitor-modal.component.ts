@@ -17,6 +17,7 @@ export class AssignMonitorModalComponent implements OnInit {
   faTimes = faTimes;
   monitors: UserTypeMonitorDto[];
   monitorAssignForm: FormGroup;
+  monitorToSee: UserTypeMonitorDto;
 
   constructor(public activeModal: NgbActiveModal, private userService: UserService, private fb: FormBuilder,
               private classDirectedService: ClassDirectedService) {
@@ -40,5 +41,9 @@ export class AssignMonitorModalComponent implements OnInit {
       .subscribe(res => {
         this.activeModal.close(res);
       }, error => console.log(error));
+  }
+
+  seeClassOfMonitor() {
+    this.monitorToSee = this.monitorAssignForm.controls.monitor.value;
   }
 }

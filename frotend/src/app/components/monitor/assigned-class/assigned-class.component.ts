@@ -6,6 +6,7 @@ import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {ClassSchedule} from '../../../model/class-schedule';
 
 @Component({
   selector: 'app-assigned-class',
@@ -19,12 +20,14 @@ export class AssignedClassComponent implements OnInit {
   classDirectedName: string;
   clientListOfClass: User[];
   faSearch = faSearch;
+  schedule: ClassSchedule;
 
   constructor(private _classDirectedService: ClassDirectedService, private _fb: FormBuilder,
               private _userService: UserService, private _modalService: NgbModal) {
   }
 
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/monitor');
     this._classDirectedService.getClassDirected().subscribe(classDirected => {
       this.setAssignedClass(classDirected);
     }, error => {
@@ -52,6 +55,7 @@ export class AssignedClassComponent implements OnInit {
   private setAssignedClass(classDirected: ClassDirected) {
     this.assignedClass = classDirected;
     this.classDirectedName = classDirected.typeClass.name;
+    this.schedule = classDirected.classSchedule;
     this.clientListOfClass = classDirected.clientList;
   }
 

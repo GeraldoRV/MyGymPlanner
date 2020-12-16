@@ -1,25 +1,58 @@
-th[sortable] {
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
+table {
+  width: inherit;
 }
 
-th[sortable].desc:before, th[sortable].asc:before {
-  content: '';
-  display: block;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAmxJREFUeAHtmksrRVEUx72fH8CIGQNJkpGUUmakDEiZSJRIZsRQmCkTJRmZmJgQE0kpX0D5DJKJgff7v+ru2u3O3vvc67TOvsdatdrnnP1Y///v7HvvubdbUiIhBISAEBACQkAICAEhIAQ4CXSh2DnyDfmCPEG2Iv9F9MPlM/LHyAecdyMzHYNwR3fdNK/OH9HXl1UCozD24TCvILxizEDWIEzA0FcM8woCgRrJCoS5PIwrANQSMAJX1LEI9bqpQo4JYNFFKRSvIgsxHDVnqZgIkPnNBM0rIGtYk9YOOsqgbgepRCfdbmFtqhFkVEDVPjJp0+Z6e6hRHhqBKgg6ZDCvYBygVmUoEGoh5JTRvIJwhJo1aUOoh4CLPMyvxxi7EWOMgnCGsXXI1GIXlZUYX7ucU+kbR8NW8lh3O7cue0Pk32MKndfUxQFAwxdirk3fHappAnc0oqDPzDfGTBrCfHP04dM4oTV8cxr0SVzH9FF07xD3ib6xCDE+M+aUcVygtWzzbtGX2rPBrEUYfecfQkaFzYi6HjVnGBdtL7epqAlc1+jRdAap74RrnPc4BCijttY2tRcdN0g17w7HqZrXhdJTYAuS3hd8z+vKgK3V1zWPae0mZDMykadBn1hTQBLnZNwVrJpSe/NwEeDsEwCctEOsJTsgxLvCqUl2ACftEGvJDgjxrnBqkh3ASTvEWrIDQrwrnJpkB3DSDrGW7IAQ7wqnJtkBnLRztejXXVu4+mxz/nQ9jR1w5VB86ejLTFcnnDwhzV+F6T+CHZlx6THSjn76eyyBIOPHyDakhBAQAkJACAgBISAEhIAQYCLwC8JxpAmsEGt6AAAAAElFTkSuQmCC') no-repeat;
-  background-size: 22px;
-  width: 22px;
-  height: 22px;
-  float: left;
-  margin-left: -22px;
+:host ::ng-deep .mat-sort-header-arrow{
+  color:white;;
 }
 
-th[sortable].desc:before {
-  transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
+.container {
+  padding: 25px 100px;
 }
-.button{
-  background-color: #8bc34a;
-  color: white;
+
+#form-button {
+  position: relative;
+}
+
+/*Texto del input*/
+::ng-deep input.mat-input-element {
+  color: #212121;
+}
+
+/*No Focus*/
+:host ::ng-deep .mat-form-field-label {
+  color: #757575;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+  background-color: #757575;
+}
+
+/*Focus*/
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #c8e6c9;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: #c8e6c9;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+@media (max-width: 740px) {
+  .container {
+    padding: 0;
+  }
+
+  mat-form-field {
+    margin-left: 5px;
+  }
+
+  .button {
+    margin-right: 5px;
+  }
 }

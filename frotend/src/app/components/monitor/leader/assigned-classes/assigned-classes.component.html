@@ -1,18 +1,33 @@
-<h1>Classes</h1>
-<table class="table">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Number of classes</th>
-    <th>Assigned</th>
-  </tr>
-  </thead>
+<h1>Clases</h1>
+<table *ngIf="dataSource!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+    <td mat-cell *matCellDef="let typeClass"> {{typeClass.name}} </td>
+  </ng-container>
 
-  <tbody>
-  <tr *ngFor="let typeClass of classes" (click)="seeClass(typeClass)">
-    <td>{{typeClass.name}}</td>
-    <td>{{typeClass.nClassesDirected}}</td>
-    <td>{{typeClass.nClassesDirectedWithMonitor}}</td>
-  </tr>
-  </tbody>
+  <ng-container matColumnDef="nClassesDirected">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº Clases</th>
+    <td mat-cell *matCellDef="let typeClass"> {{typeClass.nClassesDirected}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nClassesDirectedWithMonitor">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Asignadas</th>
+    <td mat-cell *matCellDef="let typeClass"> {{typeClass.nClassesDirectedWithMonitor}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="options">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+    <td mat-cell *matCellDef="let typeClass">
+      <button mat-icon-button class="button-see" type="button"
+              (click)="$event.stopPropagation();seeClass(typeClass)">
+        <mat-icon>
+          <fa-icon [icon]="faEye" size="xs"></fa-icon>
+        </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let typeClass; columns: displayedColumns;"></tr>
+
 </table>

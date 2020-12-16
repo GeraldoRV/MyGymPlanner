@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {ClassDirectedService} from '../../service/class-directed.service';
 import {AlertService} from '../../service/alert.service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule(
   {
@@ -25,7 +27,9 @@ import {AlertService} from '../../service/alert.service';
       HttpClientModule,
       FontAwesomeModule,
       NgbAlertModule,
-      NgbTabsetModule
+      NgbTabsetModule,
+      MatButtonModule,
+      MatIconModule
     ],
     providers: [ClassDirectedService, AlertService],
     exports: [AlertComponent,

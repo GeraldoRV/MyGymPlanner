@@ -1,0 +1,16 @@
+:host ::ng-deep mat-list {
+  overflow: auto;
+  max-height: 75px;
+}
+
+#submit-class-detail-modal{
+  margin-right: 5px;
+}
+
+:host ::ng-deep .mat-list-base .mat-list-option .mat-list-item-content{
+  height: 25px;
+}
+
+:host ::ng-deep .mat-list-base .mat-list-item{
+  height: auto;
+}

@@ -1,7 +1,15 @@
-.title {
-  display: flex;
+.img {
+  width: 224px;
+  margin:auto 50px;
 }
 
-.title > small {
+#reps-category{
+  display: flex;
+}
+#reps-category > small{
   margin: auto;
+}
+
+#submit-update-modal{
+  margin-right: 5px;
 }
