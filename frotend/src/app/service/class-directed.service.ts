@@ -22,8 +22,8 @@ export class ClassDirectedService {
     return this._http.get<ClassDirected[]>(this.baseUrl + '/gym/' + gym_id + '/' + dayOfWeek);
   }
 
-  getAllClassesOfMonitorAndDay(monitor_id: number, dayOfWeek: string) {
-    return this._http.get<ClassDirected[]>(this.baseUrl + '/monitor/' + monitor_id + '/' + dayOfWeek);
+  getAllClassesOfMonitor(monitor_id: number) {
+    return this._http.get<ClassDirectedToAssignDto[]>(this.baseUrl + '/assigned/monitor/' + monitor_id);
   }
 
   reserveClass(classDirected: ClassDirected, user_id: number) {

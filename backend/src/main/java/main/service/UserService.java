@@ -33,7 +33,7 @@ public class UserService {
     }
 
     public List<User> getAllClientsWhereNameLike(String name) {
-        return userDao.findAllByNameContainingAndRole(name, "client");
+        return userDao.findAllByNameContainingAndRole(name, "socio");
     }
 
     public List<User> getAllMonitorsNotInATeam() {
@@ -70,7 +70,7 @@ public class UserService {
     }
 
     private boolean isNotARoleValid(String role) {
-        return !role.equals("admin") && !role.equals("client") && !role.equals("monitor");
+        return !role.equals("admin") && !role.equals("socio") && !role.equals("monitor");
     }
 
     private WorkingHours createRandomWorkingHours() {

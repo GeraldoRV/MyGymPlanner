@@ -10,9 +10,11 @@ import java.util.List;
 @Service
 public class ClassDirectedConverter {
     private final UserConverter userConverter;
+    private final TypeClassConverter typeClassConverter;
 
-    public ClassDirectedConverter(UserConverter userConverter) {
+    public ClassDirectedConverter(UserConverter userConverter, TypeClassConverter typeClassConverter) {
         this.userConverter = userConverter;
+        this.typeClassConverter = typeClassConverter;
     }
 
     public ClassDirectedDtoToAssign transformToClassDtoToAssignFromEntity(ClassDirected classDirected) {
@@ -25,6 +27,11 @@ public class ClassDirectedConverter {
             classDirectedDtoToAssign
                     .setAssignedMonitor(userConverter
                             .transformToMonitorTypeFromEntity(classDirected.getAssignedMonitor()));
+        }
+
+        if (classDirected.getTypeClass() != null) {
+            classDirectedDtoToAssign.setTypeClass(typeClassConverter
+                    .transformToLeaderFromEntity(classDirected.getTypeClass()));
         }
 
         return classDirectedDtoToAssign;

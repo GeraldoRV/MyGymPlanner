@@ -2,10 +2,7 @@ package main.controller;
 
 import main.model.ExerciseType;
 import main.service.ExerciseTypeService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +20,10 @@ public class ExerciseTypeController {
     public List<ExerciseType> getAllExerciseType() {
         return exerciseTypeService.getAll();
     }
+
+    @GetMapping("category/{name}")
+    public List<ExerciseType> getAllExerciseTypeByCategoryName(@PathVariable String name) {
+        return exerciseTypeService.getAllByCategoryName(name);
+    }
+
 }

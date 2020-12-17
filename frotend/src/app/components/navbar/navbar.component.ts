@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
   getRole() {
     this.userLogin = this.loginService.getUser();
-    return this.userLogin.role;
+    return this.loginService.getUserRole();
   }
 
   toggleNavBar() {

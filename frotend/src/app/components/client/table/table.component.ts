@@ -88,13 +88,15 @@ export class TableComponent implements OnInit {
           this.table.exerciseList.splice(index, 1);
         }
       });
+      if (this.roleUserOfTable === 'socio') {
+        this.saveChanges();
+      }
     }
   }
 
   openAddExercisesModal(content) {
     this.addExerciseModal = true;
     this.builderAddExerciseForm();
-    this.getAllExercisesType();
     this._modalService.open(content);
 
   }
@@ -103,7 +105,6 @@ export class TableComponent implements OnInit {
     this.modifiedExercise = exercise;
     this.addExerciseModal = false;
     this.builderUpdateExerciseForm();
-    this.getAllExercisesType();
     this._modalService.open(content).result.then(() => {
       this.modifiedExercise = null;
     }, () => {
@@ -122,7 +123,7 @@ export class TableComponent implements OnInit {
         repetitions: ['',
           [Validators.required, Validators.min(1), Validators.max(200)]],
         exerciseType: ['', Validators.required],
-        category: ''
+        category: ['', Validators.required]
       }
     );
   }
@@ -137,21 +138,11 @@ export class TableComponent implements OnInit {
           [Validators.required, Validators.min(1), Validators.max(30)]],
         repetitions: [this.modifiedExercise.repetitions,
           [Validators.required, Validators.min(1), Validators.max(200)]],
-        exerciseType: [this.modifiedExercise.exerciseType.name],
-        category: [this.modifiedExercise.exerciseType.category.name]
+        exerciseType: [{value: this.modifiedExercise.exerciseType.name, disabled: true}],
+        category: [{value: this.modifiedExercise.exerciseType.category.name, disabled: true}]
 
       }
     );
-  }
-
-  private getAllExercisesType() {
-    if (this.exerciseTypeList == null) {
-      this._exeTService.getAllExerciseType().subscribe((res) => {
-        this.exerciseTypeList = res;
-      }, error => {
-        console.log(error);
-      });
-    }
   }
 
   onSubmit() {
@@ -230,5 +221,15 @@ export class TableComponent implements OnInit {
       return 'Añadir a "Mis Rutinas"';
     }
     return 'Guardas todos los cambios';
+  }
+
+  getExerciseTypeCategory() {
+    this._exeTService.getAllExerciseTypeByCategory(this.addForm.controls.category.value).subscribe((res) => {
+      this.addForm.controls.exerciseType.reset();
+      this.exerciseTypeList = res;
+    }, error => {
+      console.log(error);
+    });
+
   }
 }

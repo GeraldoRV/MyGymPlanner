@@ -5,6 +5,7 @@ import {UserTypeMonitorDto} from '../../../../../dto/user-type-monitor.dto';
 import {UserService} from '../../../../../service/user.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ClassDirectedService} from '../../../../../service/class-directed.service';
+import {ClassDirectedToAssignDto} from '../../../../../dto/class-directed-to-assign.dto';
 
 @Component({
   selector: 'app-assign-monitor-modal',
@@ -18,6 +19,7 @@ export class AssignMonitorModalComponent implements OnInit {
   monitors: UserTypeMonitorDto[];
   monitorAssignForm: FormGroup;
   monitorToSee: UserTypeMonitorDto;
+  classesOfMonitor: ClassDirectedToAssignDto[];
 
   constructor(public activeModal: NgbActiveModal, private userService: UserService, private fb: FormBuilder,
               private classDirectedService: ClassDirectedService) {
@@ -45,5 +47,8 @@ export class AssignMonitorModalComponent implements OnInit {
 
   seeClassOfMonitor() {
     this.monitorToSee = this.monitorAssignForm.controls.monitor.value;
+    this.classDirectedService.getAllClassesOfMonitor(this.monitorToSee.id).subscribe(result => {
+      this.classesOfMonitor = result;
+    }, error => console.log(error));
   }
 }

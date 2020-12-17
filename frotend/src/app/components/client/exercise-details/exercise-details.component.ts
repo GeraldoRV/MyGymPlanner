@@ -31,7 +31,7 @@ export class ExerciseDetailsComponent implements OnInit {
     this._wtService.getWorkTable().subscribe(result => {
       this.table = result;
       this.exercise = this.table.exerciseList.find(value => value.id === this.exercise.id);
-      if (this.table.user.role === 'client') {
+      if (this.table.user.role === 'socio') {
         this.role = true;
       }
     }, (err) => {

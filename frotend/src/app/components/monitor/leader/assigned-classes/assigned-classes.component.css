@@ -4,5 +4,5 @@ tbody > tr:hover {
 }
 
 table {
-  width: -moz-available;
+  width: 100%;
 }

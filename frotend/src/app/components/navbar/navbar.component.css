@@ -3,10 +3,6 @@
   font-family: Garamond, fantasy;
 }
 
-.dropdown-menu.show {
-  display: grid;
-}
-
 mat-icon {
   cursor: pointer;
 }
@@ -24,14 +20,6 @@ mat-icon {
   color: white;
   background-color: #388e3c;
   margin-left: auto;
-}
-
-:host ::ng-deep .mat-button {
-  font-family: Garamond, fantasy
-}
-
-:host ::ng-deep div.cdk-overlay-container > div.cdk-overlay-connected-position-bounding-box div.mat-menu-content {
-  font-family: Garamond, fantasy;
 }
 
 mat-icon {
