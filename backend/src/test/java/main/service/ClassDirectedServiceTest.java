@@ -81,19 +81,19 @@ public class ClassDirectedServiceTest {
         classDirected3.setGym(gymWithClasses);
 
         ClassSchedule classSchedule = new ClassSchedule();
-        classSchedule.setDayOfWeek("Monday");
+        classSchedule.setDayOfWeek("Lunes");
         classSchedule.setStartTime("20:00");
         classSchedule.setEndTime("20:45");
         classDirected.setClassSchedule(classSchedule);
 
         ClassSchedule classSchedule2 = new ClassSchedule();
-        classSchedule2.setDayOfWeek("Tuesday");
+        classSchedule2.setDayOfWeek("Martes");
         classSchedule2.setStartTime("20:00");
         classSchedule2.setEndTime("20:45");
         classDirected2.setClassSchedule(classSchedule2);
 
         ClassSchedule classSchedule3 = new ClassSchedule();
-        classSchedule3.setDayOfWeek("Tuesday");
+        classSchedule3.setDayOfWeek("Martes");
         classSchedule3.setStartTime("20:00");
         classSchedule3.setEndTime("20:45");
         classDirected3.setClassSchedule(classSchedule3);
@@ -146,33 +146,33 @@ public class ClassDirectedServiceTest {
 
     @Test
     public void givenACorrectDayOfWeekAndAExistGymWithClassesInThatDay_whenGetAllClassDirectedOfDayAndGym_returnANotEmptyList() {
-        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Monday", gymWithClasses.getId());
+        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Lunes", gymWithClasses.getId());
         assertFalse(classes.isEmpty());
     }
 
     @Test
     public void givenACorrectDayOfWeekAndAExistGymWithNotClassesInThatDay_whenGetAllClassDirectedOfDayAndGym_returnAEmptyList() {
-        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Wednesday", gymWithClasses.getId());
+        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Miercoles", gymWithClasses.getId());
         assertTrue(classes.isEmpty());
     }
 
     @Test
     public void givenANotCorrectDayOfWeekAndAExistGym_whenGetAllClassDirectedOfDayAndGym_returnAEmptyList() {
-        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Tusday", gymWithClasses.getId());
+        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfDayAndGym("Mates", gymWithClasses.getId());
         assertTrue(classes.isEmpty());
     }
 
 
     @Test
     public void givenAExistMonitorAndACorrectDayOfWeekWithClassesInThatDayWithThatMonitor_whenGetAllClassDirectedOfMonitorAndDay_returnANotEmptyWithTheClassesAssigned() {
-        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfMonitorAndDay(monitor.getId(), "Monday");
+        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfMonitorAndDay(monitor.getId(), "Lunes");
         assertFalse(classes.isEmpty());
         assertEquals(1, classes.size());
     }
 
     @Test
     public void givenAExistMonitorAndACorrectDayOfWeekWithClassesInThatDayWithoutThatMonitor_whenGetAllClassDirectedOfMonitorAndDay_returnAEmptyWith() {
-        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfMonitorAndDay(monitor.getId(), "Tuesday");
+        List<ClassDirected> classes = classDirectedService.getAllClassDirectedOfMonitorAndDay(monitor.getId(), "Martes");
         assertTrue(classes.isEmpty());
     }
 
