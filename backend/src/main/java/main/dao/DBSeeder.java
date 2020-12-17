@@ -31,14 +31,10 @@ public class DBSeeder implements CommandLineRunner {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void run(String... args) {
-/*
-
         Gym gym = gymDao.save(createGym());
         userDao.saveAll(createUsers(gym));
         createWorkoutTables();
         createClassesDirected(gym);
-
-*/
     }
 
     private void createClassesDirected(Gym gym) {
