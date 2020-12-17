@@ -35,11 +35,25 @@ export class ClassDirectedComponent implements OnInit {
 
   ngOnInit() {
     this.user = this._loginService.getUser();
-    const todayDate = new Date();
-    const todayDayOfWeek = this._datePipe.transform(todayDate, 'EEEE');
+
+    const todayDayOfWeek = this.getTodayDayOfWeek();
+
     this.activeId = 'tab-' + todayDayOfWeek;
     this.setClasses(this.user.gym.id, todayDayOfWeek);
 
+  }
+
+  private getTodayDayOfWeek() {
+    const todayDate = new Date();
+    return this.titleCaseWord(this._datePipe
+      .transform(todayDate, 'EEEE', todayDate.getTimezoneOffset().toString(), 'es-ESP'));
+  }
+
+  private titleCaseWord(word: string) {
+    if (!word) {
+      return word;
+    }
+    return word[0].toUpperCase() + word.substr(1).toLowerCase();
   }
 
   public beforeChange($event: NgbTabChangeEvent) {
@@ -53,13 +67,13 @@ export class ClassDirectedComponent implements OnInit {
     this._classDirectedService.reserveClass(classDirected, this.user.id).subscribe((res) => {
       if (res === true) {
         classDirected.clientList.push(this.user);
-        alert('Added');
+        alert('Ya tiene su plaza!');
       } else {
-        alert('Something wrong');
+        alert('Algo fue mal');
       }
     }, error => {
       console.log(error);
-      alert('Ya tiene su reserva!');
+      alert(error.error.message);
     });
   }
 
@@ -69,9 +83,8 @@ export class ClassDirectedComponent implements OnInit {
   }
 
   public isTheCorrectTime(classSchedule: ClassSchedule) {
-    const today = new Date();
-    const todayDayOfWeek = this._datePipe.transform(today, 'EEEE');
-    return classSchedule.dayOfWeek !== todayDayOfWeek;
+    const todayDayOfWeek = this.getTodayDayOfWeek();
+    return classSchedule.dayOfWeek === todayDayOfWeek;
   }
 
   private setClasses(gymId: number, dayOfWeek: string) {

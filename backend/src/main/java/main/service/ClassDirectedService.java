@@ -104,7 +104,7 @@ public class ClassDirectedService {
         Date today = getCurrentDay(date);
 
         String todayDayOfWeek = getTodayDayOfWeek(today);
-        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek())) {
+        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek().toLowerCase())) {
             return checkTime(today, classSchedule.getStartTime());
         }
         return false;
