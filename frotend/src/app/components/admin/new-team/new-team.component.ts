@@ -51,38 +51,25 @@ export class NewTeamComponent implements OnInit {
   }
 
   moveRight() {
-    const monitors = this.teamForm.controls.monitors.value;
-    monitors.forEach(item => {
-      this.newMonitors.push(item);
-      const index = this.monitors.indexOf(item);
-      if (index > -1) {
-        this.monitors.splice(index, 1);
-      }
-    });
-
+    this.added('monitors', this.newMonitors, this.monitors);
   }
 
   moveLeft() {
-    const members = this.teamForm.controls.members.value;
-    members.forEach(item => {
-      this.monitors.push(item);
-      const index = this.newMonitors.indexOf(item);
-      if (index > -1) {
-        this.newMonitors.splice(index, 1);
-      }
-    });
-
-
+    this.added('members', this.monitors, this.newMonitors);
   }
 
-  moveAllRight() {
-    this.monitors.forEach(item => this.newMonitors.push(item));
-    this.monitors = [];
-  }
-
-  moveAllLeft() {
-    this.newMonitors.forEach(item => this.monitors.push(item));
-    this.newMonitors = [];
+  added(monitorControl: string, monitorsToAdd: User [], monitorsToQuit: User[]) {
+    const monitorsChoose = this.teamForm.controls[monitorControl].value;
+    if (monitorsChoose !== null) {
+      monitorsChoose.forEach(monitor => {
+        monitorsToAdd.push(monitor);
+        const index = monitorsToQuit.indexOf(monitor);
+        if (index > -1) {
+          monitorsToQuit.splice(index, 1);
+        }
+      });
+      this.teamForm.controls[monitorControl].reset();
+    }
   }
 
   onSubmit() {
