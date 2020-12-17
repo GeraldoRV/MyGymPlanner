@@ -224,8 +224,8 @@ export class TableComponent implements OnInit {
   }
 
   getExerciseTypeCategory() {
-    console.log(this.addForm.controls.category.value);
     this._exeTService.getAllExerciseTypeByCategory(this.addForm.controls.category.value).subscribe((res) => {
+      this.addForm.controls.exerciseType.reset();
       this.exerciseTypeList = res;
     }, error => {
       console.log(error);

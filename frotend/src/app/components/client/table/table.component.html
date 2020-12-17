@@ -63,7 +63,7 @@
               <option>Pecho</option>
               <option>Espalda</option>
               <option>Brazos</option>
-              <option>Piernas</option>
+              <option>Abdominales</option>
             </select>
             <div
               *ngIf="controls.category.invalid && (controls.category.dirty || controls.category.touched)"
@@ -86,6 +86,7 @@
           <div *ngIf="addExerciseModal; then selectExercise; else inputExercise"></div>
           <ng-template #selectExercise>
             <select class="form-control" formControlName="exerciseType" id="exerciseType">
+              <option hidden></option>
               <option *ngFor="let exerciseType of exerciseTypeList"
                       [ngValue]="exerciseType">{{exerciseType.name}}</option>
             </select>

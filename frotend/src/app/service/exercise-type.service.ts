@@ -16,7 +16,7 @@ export class ExerciseTypeService {
   }
 
   getAllExerciseTypeByCategory(categoryName: string) {
-    return this._http.get<ExerciseType[]>(this.baseUrl);
+    return this._http.get<ExerciseType[]>(this.baseUrl + '/category/' + categoryName);
 
   }
 }

@@ -17,4 +17,8 @@ public class ExerciseTypeService {
     public List<ExerciseType> getAll() {
         return (List<ExerciseType>) exerciseTypeDao.findAll();
     }
+
+    public List<ExerciseType> getAllByCategoryName(String name) {
+        return exerciseTypeDao.findAllByCategory_Name(name);
+    }
 }

@@ -307,9 +307,7 @@ public class DBSeeder implements CommandLineRunner {
         exerciseToLegs1.setRepetitions(12);
 
         Exercise exerciseToLegs2 = new Exercise();
-        ExerciseCategory arm = new ExerciseCategory();
         ExerciseType legExtension = new ExerciseType();
-        arm.setName("Brazos");
         legExtension.setCategory(legsCategory);
         legExtension.setName("Extensión de pierna (palanca)");
         legExtension.setDescription("Coloque las manos en las barras de las manos. Levante el peso mientras exhala hasta que sus piernas estén casi rectas. No bloquee las rodillas. Mantenga la espalda contra el respaldo y no arquee la espalda. Exhale y baje el peso a la posición inicial. ");
