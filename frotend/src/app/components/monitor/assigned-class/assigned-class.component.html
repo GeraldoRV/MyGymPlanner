@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
     <h1>{{classDirectedName}}</h1>
-    <span>{{schedule.dayOfWeek}}, {{schedule.startTime}} a {{schedule.endTime}} </span>
+    <span *ngIf="schedule">{{schedule.dayOfWeek}}, {{schedule.startTime}} a {{schedule.endTime}} </span>
   </div>
       <h2>Socios apuntados</h2>
   <div class="row">
