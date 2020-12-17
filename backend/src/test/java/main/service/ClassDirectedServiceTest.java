@@ -247,7 +247,7 @@ public class ClassDirectedServiceTest {
     public void givenExistClassDirectedAndNotExistUser_whenAssignMonitor_thenExpectationSatisfied() {
         UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
         userTypeMonitorDto.setId(789);
-        classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+        classDirectedService.assignMonitor(userTypeMonitorDto, fullClass.getId());
 
     }
 
@@ -261,7 +261,7 @@ public class ClassDirectedServiceTest {
         UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
         userTypeMonitorDto.setId(user.getId());
 
-        classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+        classDirectedService.assignMonitor(userTypeMonitorDto, fullClass.getId());
 
     }
 
@@ -275,9 +275,9 @@ public class ClassDirectedServiceTest {
         UserTypeMonitorDto userTypeMonitorDto = new UserTypeMonitorDto();
         userTypeMonitorDto.setId(user.getId());
 
-        ClassDirected classDirected = classDirectedService.assignMonitor(userTypeMonitorDto, 1);
+        ClassDirected classDirected = classDirectedService.assignMonitor(userTypeMonitorDto, fullClass.getId());
 
-        Integer one = 1;
+        Integer one = fullClass.getId();
 
         assertEquals(one, classDirected.getId());
         assertNotNull(classDirected.getAssignedMonitor());
