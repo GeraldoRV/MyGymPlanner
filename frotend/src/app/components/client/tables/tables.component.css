@@ -20,10 +20,6 @@ table {
     padding: 5px 0;
   }
 
-  .name-column {
-    padding-left: 15px;
-  }
-
   :host ::ng-deep td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
     padding-right: 0;
   }
@@ -40,7 +36,4 @@ table {
     width: 25px;
   }
 
-  #option-cell-my-routines {
-    padding-right: inherit;
-  }
 }

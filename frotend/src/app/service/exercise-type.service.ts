@@ -11,10 +11,6 @@ export class ExerciseTypeService {
     this.baseUrl = _global.IpAddress + 'exerciseType';
   }
 
-  getAllExerciseType() {
-    return this._http.get<ExerciseType[]>(this.baseUrl);
-  }
-
   getAllExerciseTypeByCategory(categoryName: string) {
     return this._http.get<ExerciseType[]>(this.baseUrl + '/category/' + categoryName);
 

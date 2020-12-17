@@ -33,6 +33,13 @@ export class ClassDirectedComponent implements OnInit {
               private _datePipe: DatePipe, private _route: Router, private _modalService: NgbModal) {
   }
 
+  private static titleCaseWord(word: string) {
+    if (!word) {
+      return word;
+    }
+    return word[0].toUpperCase() + word.substr(1).toLowerCase();
+  }
+
   ngOnInit() {
     this.user = this._loginService.getUser();
 
@@ -45,15 +52,8 @@ export class ClassDirectedComponent implements OnInit {
 
   private getTodayDayOfWeek() {
     const todayDate = new Date();
-    return this.titleCaseWord(this._datePipe
+    return ClassDirectedComponent.titleCaseWord(this._datePipe
       .transform(todayDate, 'EEEE', todayDate.getTimezoneOffset().toString(), 'es-ESP'));
-  }
-
-  private titleCaseWord(word: string) {
-    if (!word) {
-      return word;
-    }
-    return word[0].toUpperCase() + word.substr(1).toLowerCase();
   }
 
   public beforeChange($event: NgbTabChangeEvent) {
