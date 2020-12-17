@@ -1,0 +1,18 @@
+:host ::ng-deep .classesDirected .container{
+  padding: 0;
+}
+
+.container{
+  padding: 25px 100px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 25px;
+  }
+}
+@media (max-width: 740px) {
+  .container {
+    padding: 5px 25px;
+  }
+}

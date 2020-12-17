@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
-import {User} from '../../model/user';
 import {AlertService} from '../../service/alert.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -12,45 +13,55 @@ import {AlertService} from '../../service/alert.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  submit = false;
+  faKey = faKey;
+  faUser = faUser;
 
   constructor(private fb: FormBuilder, private loginService: LoginService,
               private _route: Router, private alertService: AlertService) {
   }
 
   ngOnInit() {
+    sessionStorage.removeItem('rollback');
+    if (this.loginService.isLoginIn()) {
+      this._route.navigate([this.loginService.getUserRole()]);
+      return;
+    }
     this.loginForm = this.fb.group(
       {
-        userName: [''],
-        password: ['']
+        userName: ['', Validators.required],
+        password: ['', Validators.required]
       });
   }
 
   onSubmit() {
-    this.loginService.login(
-      this.loginForm.controls.userName.value, this.loginForm.controls.password.value).subscribe((user) => {
-      if (user === null) {
-        this.userNotFoundAlert();
-      } else {
+    this.submit = true;
+    if (this.loginForm.valid) {
+      const username = this.loginForm.controls.userName.value.toLowerCase();
+      this.loginService.login(
+        username, this.loginForm.controls.password.value).subscribe((user) => {
         this.loginService.setUser(user);
-        this.navigate(user);
-      }
-    }, (error) => {
-      console.log(error);
-    });
+        this._route.navigate([this.loginService.getUserRole()]).then();
+      }, (error) => {
+        console.log(error);
+        this.errorMessageAlert(error);
+      });
+    }
   }
 
-  private userNotFoundAlert() {
+  private errorMessageAlert(error: HttpErrorResponse) {
     this.alertService.setType('danger');
-    this.alertService.setMessage('User not found');
+    let message = error.error.message;
+    if (error.error.status === 404) {
+      message = 'Usuario o contraseña incorrectos.';
+    }
+    this.alertService.setMessage(message);
     this.alertService.setDismissible(false);
     this.alertService.show();
+    this.alertService.setTimeout(5000);
   }
 
-  navigate(user: User) {
-    if (user.rol === 'Cliente' || user.rol === 'cliente') {
-      this._route.navigate(['/home']);
-    } else {
-      this._route.navigate(['/admin']);
-    }
+  get controls() {
+    return this.loginForm.controls;
   }
 }

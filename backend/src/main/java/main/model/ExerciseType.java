@@ -6,11 +6,12 @@ import javax.persistence.*;
 public class ExerciseType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(length = 1000)
     private String description;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private ExerciseCategory category;
 
     public ExerciseType() {

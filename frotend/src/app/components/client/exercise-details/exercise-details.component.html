@@ -1,0 +1,79 @@
+<div class="container">
+  <h2>
+    {{exercise.exerciseType.name}}
+  </h2>
+
+  <img class="img" alt="default" src="assets/default.png">
+  <div id="reps-category">
+    <h3>
+      Músculo
+    </h3>
+    <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps <button mat-icon-button class="button-see" (click)="open(content)"><mat-icon><fa-icon [icon]="faPen"></fa-icon></mat-icon></button></small>
+
+  </div>
+  <span>
+{{exercise.exerciseType.category.name}}
+  </span>
+  <h3>
+    Descripción
+  </h3>
+  <p>
+    {{exercise.exerciseType.description}}
+  </p>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modificar series y reps</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form id="form" [formGroup]="modalForm" (ngSubmit)="onSubmit()">
+
+
+      <div class="form-group">
+        <label for="sets">Series</label>
+        <input class="form-control" id="sets" type="number" formControlName="sets" placeholder="Sets">
+        <div *ngIf="controls.sets.invalid && (controls.sets.dirty || controls.sets.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.sets.errors.required">
+            Las series son necesarias
+          </div>
+          <div *ngIf="controls.sets.errors.min">
+            Deben ser mayor que 0
+          </div>
+          <div *ngIf="controls.sets.errors.max">
+            El número es demasiado grande.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="repetitions">Repeticiones</label>
+        <input class="form-control" id="repetitions" type="number" formControlName="repetitions"
+               placeholder="Repetitions">
+        <div *ngIf="controls.repetitions.invalid
+        && (controls.repetitions.dirty || controls.repetitions.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.repetitions.errors.required">
+            Son necesarias el número de repeticiones
+          </div>
+          <div *ngIf="controls.repetitions.errors.min">
+            Debe ser mayor que 0
+          </div>
+          <div *ngIf="controls.repetitions.errors.max">
+            El número es demasiado grande.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button mat-raised-button id="submit-update-modal" class="my-button-success" type="submit" form="form">Modificar</button>
+    <button mat-raised-button color="warn" (click)="modal.close()">Descartar cambios</button>
+  </div>
+</ng-template>

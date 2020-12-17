@@ -1,29 +1,65 @@
-<nav class="navbar navbar-expand-sm navbar-dark" *ngIf="loginService.getUser() !== null">
-  <a class="navbar-brand" href="#">MyGymPlanner</a>
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav">
-    <div *ngIf="isClient() == true; then client else admin "></div>
-      <ng-template #client>
+<nav class="navbar navbar-expand-md navbar-dark" *ngIf="loginService.getUser() !== null">
+  <span class="navbar-brand"><mat-icon *ngIf="thereAreRollBack()" (click)="rollBack()"><fa-icon [icon]="faArrowLeft"></fa-icon></mat-icon>MyGymPlanner</span>
+  <button class="navbar-toggler" type="button" (click)="toggleNavBar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
+    <ul (click)="toggleNavBar()" class="navbar-nav">
+      <ng-template [ngIf]="getRole()==='client'">
         <li class="nav-item">
-          <a routerLink="/home" class="nav-link">
-            Home
+          <a routerLink="/client" class="nav-link">
+            Inicio
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/routines" class="nav-link">
-            Routines
+          <a routerLink="/client/routines" class="nav-link">
+            Rutinas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/client/classes" class="nav-link">
+            Clases colectivas
           </a>
         </li>
 
       </ng-template>
-      <ng-template #admin>
+      <ng-template [ngIf]="getRole()==='admin'">
         <li class="nav-item">
           <a routerLink="/admin" class="nav-link">
-            Users
+            Usuarios
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/teams" class="nav-link">
+            Equipos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/class-list" class="nav-link">
+            Clases colectivas
           </a>
         </li>
       </ng-template>
+      <ng-template [ngIf]="getRole()==='monitor'">
+        <li class="nav-item">
+          <a routerLink="/monitor" class="nav-link">
+            Horario de trabajo
+          </a>
+        </li>
+        <ng-template [ngIf]="isLeader()===true">
+          <li class="nav-item">
+            <a routerLink="/monitor/assigned-classes" class="nav-link">
+              Clases colectivas
+            </a>
+          </li>
+        </ng-template>
+      </ng-template>
     </ul>
+    <div id="dropdown" ngbDropdown [placement]="['bottom-right']" class="d-inline-block">
+      <button class="btn button" ngbDropdownToggle>{{userLogin.name}}</button>
+      <div ngbDropdownMenu>
+        <button (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
   </div>
-  <button class="btn button" (click)="logout()">Sign out</button>
 </nav>

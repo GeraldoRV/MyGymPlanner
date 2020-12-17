@@ -1,0 +1,12 @@
+.container {
+  padding: 25px 100px;
+}
+
+table {
+  width: inherit;
+}
+@media (max-width: 740px) {
+  .container {
+    padding: 0;
+  }
+}

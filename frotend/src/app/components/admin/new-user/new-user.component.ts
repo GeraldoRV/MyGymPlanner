@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../../model/user';
 import {LoginService} from '../../../service/login.service';
 import {UserService} from '../../../service/user.service';
@@ -11,46 +11,55 @@ import {Router} from '@angular/router';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  userAddForm: FormGroup;
-  roles = [];
 
   constructor(private fb: FormBuilder, private _loginService: LoginService,
               private _userService: UserService, private _route: Router) {
   }
 
+  userAddForm: FormGroup;
+  roles = [];
+  submit = false;
+
+  private static getRoles() {
+    return ['socio', 'admin', 'monitor'];
+  }
+
   ngOnInit() {
+    sessionStorage.setItem('rollback', '/admin');
     this.userAddForm = this.fb.group(
       {
-        name: [''],
-        username: [''],
-        roles: ['']
+        name: ['', Validators.required],
+        userName: ['', Validators.required],
+        role: ['', Validators.required],
+        password: [null]
       }
     );
-    this.roles = this.getRoles();
+    this.roles = NewUserComponent.getRoles();
   }
 
-  private getRoles() {
-    return ['cliente', 'admin'];
-  }
+  onSubmit() {
+    this.submit = true;
+    if (this.userAddForm.valid) {
+      const user = this.getUserDetails();
 
-  submit() {
-    const user = this.getUserDetails();
+      this._userService.createUser(user).subscribe(() => {
+        this._route.navigate(['/admin']).then();
+      }, error => {
+        console.log(error);
+      });
 
-    this._userService.createUser(user).subscribe(res => {
-      this._route.navigate(['/admin']);
-    }, error => {
-      console.log(error);
-    });
+    }
   }
 
   private getUserDetails(): User {
-    const user = new User();
-    user.name = this.userAddForm.controls.name.value;
+    let user;
+    user = {...this.userAddForm.value} as User;
     user.gym = this._loginService.getUser().gym;
-    user.rol = this.userAddForm.controls.roles.value;
-    user.userName = this.userAddForm.controls.username.value;
-    user.password = '1234';
     return user;
+  }
+
+  get controls() {
+    return this.userAddForm.controls;
   }
 
 }

@@ -1,62 +1,54 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
-import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './service/login.service';
-import {HomeComponent} from './components/home/home.component';
-import {MainComponent, NgbdSortableHeader} from './components/admin/main/main.component';
-import {UserService} from './service/user.service';
-import {NewUserComponent} from './components/admin/new-user/new-user.component';
-import {AlertComponent} from './components/alert/alert.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {TablesComponent} from './components/tables/tables.component';
-import {WorkoutTableService} from './service/workout-table.service';
-import {TableComponent} from './components/table/table.component';
 import {AuthGuard} from './service/authentication/auth.guard';
+import {NotFoundComponent} from './components/not-found/not-found.component';
+import {DatePipe} from '@angular/common';
+import {Global} from './utilities/global';
+import {AppRoutingModule} from './app-routing.module';
+import {AdminModule} from './components/admin/admin.module';
+import {ClientModule} from './components/client/client.module';
+import {MonitorModule} from './components/monitor/monitor.module';
+import {CommonComponentsModule} from './components/commons/common-components.module';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
-const appRoutes: Routes = [
-  {path: '', component: LoginComponent},
-  {
-    path: 'home', component: HomeComponent,
-    canActivate: [AuthGuard]
-  },
-  {path: 'admin', component: MainComponent,
-    canActivate: [AuthGuard]},
-  {path: 'new-user', component: NewUserComponent,
-    canActivate: [AuthGuard]},
-  {path: 'routines', component: TablesComponent,
-    canActivate: [AuthGuard]},
-  {path: 'routine', component: TableComponent,
-    canActivate: [AuthGuard]}
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    MainComponent,
-    NewUserComponent,
-    AlertComponent,
-    NgbdSortableHeader,
     NavbarComponent,
-    TablesComponent,
-    TableComponent
+    NotFoundComponent,
+
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
-    NgbModule,
-    RouterModule.forRoot(appRoutes, {useHash: true})
+    CommonComponentsModule,
+    AdminModule,
+    ClientModule,
+    MonitorModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    NgbDropdownModule,
   ],
-  providers: [LoginService, UserService, WorkoutTableService, AuthGuard],
+  providers: [LoginService,
+    AuthGuard, DatePipe, Global],
   bootstrap: [AppComponent]
 })
 export class AppModule {

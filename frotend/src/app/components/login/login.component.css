@@ -1,15 +1,52 @@
-
 .login-page {
   margin-top: 25px;
-  width: 30%;
+  width: max-content;
 }
 
-.button {
-  background-color: #8bc34a;
-  color: white;
+.logo-img{
+  width: 350px;
+}
+
+h3{
+  color: #212121;
 }
 
 .card-header {
   background-color: #4caf50;
   color: white;
+  height: 190px;
+  padding: 50px;
+}
+.card-header>span{
+  display: block;
+}
+
+.card{
+  width: 500px;
+}
+
+.card-body{
+  padding: 3.25rem;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: inherit;
+  }
+}
+
+@media (max-width: 740px) {
+  .login-page {
+    width: 100%;
+    margin-top: 0;
+  }
+  .card {
+    width: inherit;
+  }
+  .card-header {
+    padding: 50px 30px;
+  }
+  .logo-img{
+    width: -moz-available;
+  }
 }

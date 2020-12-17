@@ -1,0 +1,39 @@
+.container {
+  padding: 25px 100px;
+}
+
+table {
+  width: 100%;
+}
+
+:host ::ng-deep .tabSet a.nav-link {
+  color: #c8e6c9;
+}
+
+:host ::ng-deep .tabSet a.nav-link.active {
+  color: #8bc34a;
+}
+
+
+@media (max-width: 740px) {
+  .container {
+    padding: 5px 0;
+  }
+
+  :host ::ng-deep td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0;
+  }
+
+  .mat-icon-button {
+    width: 25px;
+  }
+
+  .level-td {
+    padding-left: 9px;
+  }
+
+  .button-see {
+    width: 25px;
+  }
+
+}

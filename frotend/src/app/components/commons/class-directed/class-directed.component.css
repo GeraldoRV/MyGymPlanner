@@ -1,0 +1,28 @@
+.container{
+  padding: 25px 100px;
+}
+
+:host ::ng-deep .tabSet a.nav-link {
+  color: #c8e6c9;
+}
+
+:host ::ng-deep .tabSet a.nav-link.active {
+  color: #8bc34a;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 25px 50px;
+  }
+}
+
+@media (max-width: 740px) {
+  :host ::ng-deep .tabSet ul.nav-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+  }
+  .container {
+    padding: 10px;
+  }
+}

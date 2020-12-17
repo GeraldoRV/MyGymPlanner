@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title">Monitores disponibles</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form id="modal-form" [formGroup]="monitorAssignForm" (submit)="onSubmit()">
+    <select class="form-control" name="monitor" formControlName="monitor" size="3" (change)="seeClassOfMonitor()">
+      <option *ngFor="let monitor of monitors" [ngValue]="monitor">{{monitor.name}} - {{monitor.nClassAssigned}}
+        classes
+      </option>
+    </select>
+  </form>
+  <h3 *ngIf="!classesOfMonitor">Seleccione para ver las clases</h3>
+  <div *ngIf="classesOfMonitor">
+    <h3>Asignadas</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let classOfMonitor of classesOfMonitor">
+        {{classOfMonitor.typeClass.name}}: {{classOfMonitor.classSchedule.dayOfWeek}}, {{classOfMonitor
+        .classSchedule.startTime}}-{{classOfMonitor.classSchedule.endTime}}</mat-list-item>
+    </mat-list>
+  </div>
+
+</div>
+
+<div class="modal-footer">
+  <button mat-raised-button id="submit-class-detail-modal" form="modal-form" class="my-button-success" type="submit">Asignar</button>
+  <button mat-raised-button color="warn" type="button" (click)="activeModal.close('Close')">Cancelar</button>
+</div>

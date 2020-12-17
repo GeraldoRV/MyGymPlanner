@@ -1,21 +1,30 @@
-<div class="container py-3">
-  <a routerLink="/new-user" class="btn button">Add</a>
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col" sortable="name" (sort)="onSort($event)">Full Name</th>
-      <th scope="col" sortable="userName" (sort)="onSort($event)">Username</th>
-      <th scope="col" sortable="rol" (sort)="onSort($event)">Role</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users; let i = index">
-      <th scope="row">{{i + 1}}</th>
-      <td>{{user.name}}</td>
-      <td>{{user.userName}}</td>
-      <td>{{user.rol}}</td>
-    </tr>
-    </tbody>
+<div class="container">
+  <div id="form-button">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+    </mat-form-field>
+    <button mat-raised-button routerLink="/admin/new-user" class="my-button-success button">Dar de alta</button>
+
+  </div>
+
+  <table *ngIf="dataSource!=null" mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Completo</th>
+      <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nick</th>
+      <td mat-cell *matCellDef="let user"> {{user.userName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rol</th>
+      <td mat-cell *matCellDef="let user"> {{user.role}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
   </table>
 </div>

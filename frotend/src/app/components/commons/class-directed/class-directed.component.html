@@ -1,0 +1,224 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{typeClass.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{typeClass.description}}</p>
+    <span>Duración media de una clase {{typeClass.duration}} minutos</span>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cerrar</button>
+  </div>
+</ng-template>
+
+<div class="container">
+  <ngb-tabset class="tabSet" justify="fill" [activeId]="activeId" (tabChange)="beforeChange($event)">
+    <ngb-tab id="tab-Lunes" title="Lunes">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfMon">
+            <h5>
+              {{classDirected.typeClass.name}}
+            </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Martes" title="Martes">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfTues"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Miercoles" title="Miércoles">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfWed"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Jueves" title="Jueves">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfThur"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Viernes" title="Viernes">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfFri"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Sábado" title="Sábado">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfSat"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-Domingo" title="Domingo">
+      <ng-template ngbTabContent>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let classDirected of classesOfSun"><h5>
+            {{classDirected.typeClass.name}}
+          </h5>
+            <p>
+              {{classDirected.classSchedule.startTime}} a {{classDirected.classSchedule.endTime}}
+            </p>
+            <small>Capacidad: {{classDirected.clientList.length}}/{{classDirected.capacity}}</small><br>
+            <div *ngIf="isClient()">
+              <button mat-raised-button *ngIf="isClient()" [disabled]="!isTheCorrectTime(classDirected.classSchedule)"
+                      (click)="addClientToClass(classDirected)" class="my-button-success">Reservar plaza
+              </button>
+              <button mat-icon-button class="button-see" type="button"
+                      (click)="open(content,classDirected.typeClass)">
+                <mat-icon><fa-icon [icon]="faEye"></fa-icon></mat-icon></button>
+
+            </div>
+            <div *ngIf="!isClient()">
+
+              <button mat-raised-button *ngIf="isMyClass(classDirected.assignedMonitor?.id)" (click)="seeClass(classDirected.id)" class="my-button-success">Ver lista de socios
+              </button>
+              <h6 *ngIf="!isMyClass(classDirected.assignedMonitor?.id)">{{getNameOrNothing(classDirected.assignedMonitor)}}</h6>
+            </div>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

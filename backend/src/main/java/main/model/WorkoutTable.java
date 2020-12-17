@@ -7,15 +7,15 @@ import java.util.List;
 public class WorkoutTable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Character level;
 
     @ManyToOne
-    private Gym gym;
+    private User user;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Exercise> exerciseList;
 
     public WorkoutTable() {
@@ -45,19 +45,19 @@ public class WorkoutTable {
         this.level = level;
     }
 
-    public Gym getGym() {
-        return gym;
-    }
-
-    public void setGym(Gym gym) {
-        this.gym = gym;
-    }
-
     public List<Exercise> getExerciseList() {
         return exerciseList;
     }
 
     public void setExerciseList(List<Exercise> exerciseList) {
         this.exerciseList = exerciseList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,0 +1,153 @@
+<div class="container">
+  <h4>{{nameTable}}</h4>
+  <h5>Nivel {{levelTable}}</h5>
+  <app-alert class="message-alert"></app-alert>
+  <div id="button-group">
+
+    <button mat-raised-button class="my-button-success" (click)="openAddExercisesModal(content)">Añadir nuevo ejercicio</button>
+    <button mat-raised-button (click)="saveRoutine()" [ngClass]="{'mobile':roleUserOfTable==='socio'}"
+            class=" my-button-success">
+      {{getButtonName()}}</button>
+  </div>
+
+  <div class="card" *ngFor="let exercise of exerciseList">
+    <div class="row">
+      <div class="col-2">
+        <img alt="default" src="assets/default.png">
+      </div>
+      <div class="col-10">
+        <div class="card-body">
+          <h5 class="card-title mb-1">{{exercise.exerciseType.name}}</h5>
+          <small>{{exercise.sets}} sets X {{exercise.repetitions}} reps</small>
+          <button mat-icon-button class="button-see" type="button"
+                  (click)="seeDetails(exercise)">
+            <fa-icon [icon]="faEye" size="xs"></fa-icon></button>
+          <button mat-icon-button class="button-danger" (click)="remove(exercise)">
+            <fa-icon [icon]="faTrashAlt" size="xs"></fa-icon></button>
+          <div class="mobile">
+            <p class="card-text mb-1">{{exercise.exerciseType.description}} </p>
+            <button mat-raised-button class="my-button-success"
+                    (click)="openUpdateExerciseModal(content,exercise)">Modificar sets y reps
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"><fa-icon [icon]="faTimes"></fa-icon></span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="exerciseType">
+            Músculo/s
+          </label>
+          <div *ngIf="addExerciseModal; then selectCategory; else inputCategory"></div>
+          <ng-template #selectCategory>
+            <select class="form-control" formControlName="category" id="category" (change)="getExerciseTypeCategory()">
+              <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+              <option>Piernas</option>
+              <option>Pecho</option>
+              <option>Espalda</option>
+              <option>Brazos</option>
+              <option>Abdominales</option>
+            </select>
+            <div
+              *ngIf="controls.category.invalid && (controls.category.dirty || controls.category.touched)"
+              class="text-danger">
+
+              <div *ngIf="controls.category.errors.required">
+                Elige una zona
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #inputCategory>
+            <input class="form-control" formControlName="category" id="category-input">
+          </ng-template>
+
+        </div>
+        <div class="form-group col-md">
+          <label for="exerciseType">
+            {{choose}}ejercicio
+          </label>
+          <div *ngIf="addExerciseModal; then selectExercise; else inputExercise"></div>
+          <ng-template #selectExercise>
+            <select class="form-control" formControlName="exerciseType" id="exerciseType">
+              <option hidden></option>
+              <option *ngFor="let exerciseType of exerciseTypeList"
+                      [ngValue]="exerciseType">{{exerciseType.name}}</option>
+            </select>
+            <div
+              *ngIf="controls.exerciseType.invalid && (controls.exerciseType.dirty || controls.exerciseType.touched)"
+              class="text-danger">
+
+              <div *ngIf="controls.exerciseType.errors.required">
+                Se necesita un ejercicio.
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #inputExercise>
+            <input class="form-control" formControlName="exerciseType" id="exerciseType-input">
+
+          </ng-template>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sets">Sets</label>
+        <input class="form-control" id="sets" type="number" formControlName="sets" placeholder="Sets">
+        <div *ngIf="controls.sets.invalid && (controls.sets.dirty || controls.sets.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.sets.errors.required">
+            Los sets son necesarios
+          </div>
+          <div *ngIf="controls.sets.errors.min">
+            Debe ser mayor que 0
+          </div>
+          <div *ngIf="controls.sets.errors.max">
+            El número es demasiado grande.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="repetitions">Set the repetitions</label>
+        <input class="form-control" id="repetitions" type="number" formControlName="repetitions"
+               placeholder="Repetitions">
+        <div *ngIf="controls.repetitions.invalid
+        && (controls.repetitions.dirty || controls.repetitions.touched)"
+             class="text-danger">
+
+          <div *ngIf="controls.repetitions.errors.required">
+            Son necesarias el número de repeticiones
+          </div>
+          <div *ngIf="controls.repetitions.errors.min">
+            Debe ser mayor que 0
+          </div>
+          <div *ngIf="controls.repetitions.errors.max">
+            El número es demasiado grande.
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button class="my-button-success" type="submit">{{nameButtonAdd}}</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button id="submit-update-exercise-modal" mat-raised-button class="my-button-success" (click)="saveExercises()">Guardar los cambios</button>
+    <button mat-raised-button color="warn" (click)="modal.close()">Descartar cambios</button>
+  </div>
+</ng-template>

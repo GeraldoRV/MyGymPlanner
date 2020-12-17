@@ -1,0 +1,45 @@
+.modal-mobile {
+  display: none;
+}
+
+.container{
+  padding: 25px 100px;
+}
+.header{
+  display: inline-flex;
+}
+.header > span{
+  margin: auto 25px;
+}
+#name-to-find, .submit-find-button {
+  margin-left: 3px;
+}
+
+@media (max-width: 740px) {
+  .mobile {
+    display: none;
+  }
+  .container{
+    padding: 5px 25px;
+  }
+  .header{
+    display: unset;
+  }
+  .header > span{
+    margin: unset;
+  }
+  .modal-mobile {
+    display: block;
+  }
+
+  #name-to-find-modal {
+    width: 86%;
+  }
+  .submit-find-button {
+    margin: auto;
+  }
+
+  #client-found-modal{
+    padding-top: 5px;
+  }
+}

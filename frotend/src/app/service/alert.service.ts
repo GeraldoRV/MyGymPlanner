@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
-import {AlertComponent} from '../components/alert/alert.component';
+import {AlertComponent} from '../components/commons/alert/alert.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AlertService {
   private alert: AlertComponent = null;
 
@@ -24,6 +22,10 @@ export class AlertService {
 
   setDismissible(dismissible) {
     this.alert.setDismissible(dismissible);
+  }
+
+  setTimeout(time: number) {
+    this.alert.setTimeout(time);
   }
 
   show() {

@@ -2,8 +2,6 @@ package main.service;
 
 import main.dao.GymDao;
 import main.model.Gym;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +36,7 @@ public class GymServiceTest {
 
     @Test
     public void givenNotExistGym_WhenGetGym_thenReturnGym() {
-        Optional<Gym> gym = gymService.getGym(2);
+        Optional<Gym> gym = gymService.getGym(200000);
         assertFalse(gym.isPresent());
     }
 }

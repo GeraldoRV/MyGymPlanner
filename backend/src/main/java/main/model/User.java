@@ -1,21 +1,24 @@
 package main.model;
 
-
 import javax.persistence.*;
 
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String userName;
     private String password;
-    private String rol;
+    private String role;
+    @Embedded
+    private WorkingHours workingHours;
 
     @ManyToOne
     private Gym gym;
+
+    private Boolean isLeader = false;
 
     public Integer getId() {
         return id;
@@ -49,12 +52,12 @@ public class User {
         this.password = password;
     }
 
-    public String getRol() {
-        return rol;
+    public String getRole() {
+        return role;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Gym getGym() {
@@ -63,5 +66,21 @@ public class User {
 
     public void setGym(Gym gym) {
         this.gym = gym;
+    }
+
+    public WorkingHours getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(WorkingHours workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    public Boolean isLeader() {
+        return isLeader;
+    }
+
+    public void setLeader(Boolean leader) {
+        isLeader = leader;
     }
 }
