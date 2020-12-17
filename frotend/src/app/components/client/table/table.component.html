@@ -5,7 +5,7 @@
   <div id="button-group">
 
     <button mat-raised-button class="my-button-success" (click)="openAddExercisesModal(content)">Añadir nuevo ejercicio</button>
-    <button mat-raised-button (click)="saveRoutine()" [ngClass]="{'mobile':roleUserOfTable==='client'}"
+    <button mat-raised-button (click)="saveRoutine()" [ngClass]="{'mobile':roleUserOfTable==='socio'}"
             class=" my-button-success">
       {{getButtonName()}}</button>
   </div>
@@ -57,8 +57,13 @@
           </label>
           <div *ngIf="addExerciseModal; then selectCategory; else inputCategory"></div>
           <ng-template #selectCategory>
-            <select class="form-control" formControlName="category" id="category">
+            <select class="form-control" formControlName="category" id="category" (change)="getExerciseTypeCategory()">
               <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+              <option>Piernas</option>
+              <option>Pecho</option>
+              <option>Espalda</option>
+              <option>Brazos</option>
+              <option>Piernas</option>
             </select>
             <div
               *ngIf="controls.category.invalid && (controls.category.dirty || controls.category.touched)"
@@ -70,7 +75,7 @@
             </div>
           </ng-template>
           <ng-template #inputCategory>
-            <input class="form-control" formControlName="category" id="category-input" disabled>
+            <input class="form-control" formControlName="category" id="category-input">
           </ng-template>
 
         </div>
@@ -94,7 +99,7 @@
             </div>
           </ng-template>
           <ng-template #inputExercise>
-            <input class="form-control" formControlName="exerciseType" id="exerciseType-input" disabled>
+            <input class="form-control" formControlName="exerciseType" id="exerciseType-input">
 
           </ng-template>
 

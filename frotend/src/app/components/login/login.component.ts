@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.loginService.login(
         username, this.loginForm.controls.password.value).subscribe((user) => {
         this.loginService.setUser(user);
-        this._route.navigate([user.role]).then();
+        this._route.navigate([this.loginService.getUserRole()]).then();
       }, (error) => {
         console.log(error);
         this.errorMessageAlert(error);

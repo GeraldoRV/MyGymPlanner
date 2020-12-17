@@ -104,7 +104,7 @@ public class ClassDirectedService {
         Date today = getCurrentDay(date);
 
         String todayDayOfWeek = getTodayDayOfWeek(today);
-        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek())) {
+        if (todayDayOfWeek.equals(classSchedule.getDayOfWeek().toLowerCase())) {
             return checkTime(today, classSchedule.getStartTime());
         }
         return false;
@@ -139,7 +139,7 @@ public class ClassDirectedService {
 
     private String getTodayDayOfWeek(Date today) {
         String pattern = "EEEEE";
-        Locale locale = new Locale("en", "UK");
+        Locale locale = new Locale("es", "ES");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, locale);
 
         return simpleDateFormat.format(today);

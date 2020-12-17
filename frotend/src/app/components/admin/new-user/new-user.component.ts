@@ -21,7 +21,7 @@ export class NewUserComponent implements OnInit {
   submit = false;
 
   private static getRoles() {
-    return ['client', 'admin', 'monitor'];
+    return ['socio', 'admin', 'monitor'];
   }
 
   ngOnInit() {
